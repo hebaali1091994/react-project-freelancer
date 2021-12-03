@@ -1,0 +1,23 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.svIcon {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .Tsectiontwo {
+    font-family: 'Roboto', sans-serif;
+    line-height: 56px;
+    font-size: 48px;
+    color: #0e1724;
+  }
+  
+  .titleIcon:hover {
+    text-decoration: underline !important;
+  }
