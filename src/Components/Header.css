@@ -1,0 +1,15 @@
+.image-w{
+    max-width: 130px;
+    margin-right: 15px;
+}
+.postproject{
+    color: white;
+background: #f20091;
+border-color: #f20091;
+font-size: 15px;
+
+}
+.postproject:hover{
+background-color: #fa5f9b;
+color: white;
+}
