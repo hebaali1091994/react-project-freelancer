@@ -1,29 +1,26 @@
-import React from "react";
-import {useForm} from 'react-hook-form'
+import React, { useState } from "react";
+import { useForm } from "react-hook-form";
 import "./SignUp.css";
 const SignUp = () => {
+  const [Signup, setData] = useState({
+    Email: "",
+    Password: "",
+    username:"",
+    work:"",
+    hire:""
+
+  });
+  console.log("data", Signup);
   const [formStep, setFormStep] = React.useState(0);
-  const{watch,register}=useForm()
-  const completeFormstep=()=>{
+  const completeFormstep = () => {
+    setFormStep((cur) => cur + 1);
+  };
+  const renderForm = () => {
+    if (formStep > 2) {
+      return undefined;
+    }
+  };
 
-    setFormStep(cur=>cur+1)
-  }
-  const renderForm=()=>{
-      if(formStep>4){
-      return undefined}
-      else if(formStep===3){
-return(
-
-<p>Please wait while we redirect you.........</p>
-
-)
-
-      }
-      else {
-
-
-      }
-  }
   return (
     <div classNameName="bg-signup">
       <div className="fluid ">
@@ -58,10 +55,14 @@ return(
                 <div className="col inpute">
                   <input
                     type="email"
+                    name="Email"
                     className="form-control email"
                     id="inputAddress"
-                    placeholder="Email"
-                    ref={register()}
+                   
+                    value={Signup.Email}
+                    onChange={(event) =>
+                      setData({ ...Signup, Email: event.target.value })
+                    }
                   />
                 </div>
                 <div id="email_error">
@@ -76,9 +77,13 @@ return(
                 <div className="col inpute">
                   <input
                     type="password"
+                    name="Password"
                     className="form-control"
                     id="inputAddress"
-                    placeholder="Password"
+                    value={Signup.Password}
+                    onChange={(event) =>
+                      setData({ ...Signup, Password: event.target.value })
+                    }
                   />
                 </div>
                 <div id="pass_error">
@@ -105,7 +110,11 @@ return(
                 </label>
               </div>
               <div className="card submit ">
-                <button type="submit" className="btn  btn-lg btn-block" onClick={completeFormstep}>
+                <button
+                  type="button"
+                  className="btn  btn-lg btn-block"
+                  onClick={completeFormstep}
+                >
                   Join Freelancer
                 </button>
               </div>
@@ -139,16 +148,23 @@ return(
                 <input
                   type="text"
                   className="form-control1"
-                  className=" user"
+                  className=" user" name="username"
                   id="inputAddress"
-                  placeholder="Username"
                   value=""
                   onclick="myFunction()"
+                  value={Signup.username}
+                    onChange={(event) =>
+                      setData({ ...Signup, username: event.target.value })
+                    }
                 />
               </div>
               <p id="suggest">Suggestions:</p>
               <div className=" submit ">
-                <button type="submit" className="btn  btn-lg btn-block"  onClick={completeFormstep}>
+                <button
+                  type="submit"
+                  className="btn  btn-lg btn-block"
+                  onClick={completeFormstep}
+                >
                   <a href="#">Next</a>
                 </button>
               </div>
@@ -179,7 +195,12 @@ return(
                   id="img"
                   alt="Responsive image"
                 />
-                <p className=" account" onClick={completeFormstep}>I want to work</p>
+                <p className=" account" onClick={completeFormstep}  name="work"  value={Signup.work}
+                    onChange={(event) =>
+                      setData({ ...Signup, work: event.target.value })
+                    }>
+                  I want to work
+                </p>
                 <i className="bi bi-arrow-right"></i>
               </div>
               <div className="hire">
@@ -189,7 +210,12 @@ return(
                   id="img"
                   alt="Responsive image"
                 />
-                <p className=" account" onClick={completeFormstep}>I want to hire</p>
+                <p className=" account" onClick={completeFormstep}  name="hire" value={Signup.hire}
+                    onChange={(event) =>
+                      setData({ ...Signup, hire: event.target.value })
+                    } >
+                  I want to hire
+                </p>
                 <i className="bi bi-arrow-right"></i>
               </div>
             </section>
@@ -206,10 +232,9 @@ return(
                 />
               </div>
               <h3>Sign Up Success</h3>
-              
             </section>
           )}
-          <pre>{JSON.stringify(watch(),null,2)}</pre>
+          {renderForm()}
         </form>
       </div>
     </div>
