@@ -31,10 +31,21 @@ const PostEnterFace = () => {
           }
     }
     else if (formStep===4){
-        if(Data.type_of_project!==""||Data.StepFiveLongContest!==""){
+        if(Data.type_of_project!==""){
+            setFormStep((cur) => cur + 1);
+          }else if(Data.Day!=="") {
+            if(Data.Day==="manyDay")
+           {
+              if(Data.StepFiveLongContest!=="")
+            {
+                setFormStep((cur) => cur + 1);
+            }
+           }
+          else if(Data.Day==="Day"){
             setFormStep((cur) => cur + 1);
           }
-    }
+        }
+  }
     else if (formStep===5){
         // if(Data.pay!==""&&Data.budget!==""){
         //     setFormStep((cur) => cur + 1);

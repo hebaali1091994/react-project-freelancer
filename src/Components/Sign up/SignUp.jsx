@@ -1,6 +1,11 @@
+<<<<<<< HEAD
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 
+=======
+import React from "react";
+import { useForm } from "react-hook-form";
+>>>>>>> 14ac8e757de6fe7f03ddc92bdb60334bf77492f1
 import "./SignUp.css";
 const SignUp = () => {
   const [Signup, setData] = useState({
@@ -12,34 +17,38 @@ const SignUp = () => {
   });
   console.log("data", Signup);
   const [formStep, setFormStep] = React.useState(0);
+<<<<<<< HEAD
+=======
+  const { watch, register } = useForm();
+>>>>>>> 14ac8e757de6fe7f03ddc92bdb60334bf77492f1
   const completeFormstep = () => {
     setFormStep((cur) => cur + 1);
   };
   const renderForm = () => {
+<<<<<<< HEAD
     if (formStep > 2) {
       return undefined;
     }
   };
   const { register, handleSubmit } = useForm();
+=======
+    if (formStep > 4) {
+      return undefined;
+    } else if (formStep === 3) {
+      return <p>Please wait while we redirect you.........</p>;
+    } else {
+    }
+  };
+>>>>>>> 14ac8e757de6fe7f03ddc92bdb60334bf77492f1
   return (
-    <div classNameName="bg-signup">
-      <div className="fluid ">
-        <form
-          className="login_form"
-          action=""
-          method="post"
-          name="form"
-          onsubmit="return validated()"
-        >
+    <div className="container">
+      <div className="row">
+      <div className="fluid col-md-12">
+        <form className="login_form" action="" method="post"name="form" onsubmit="return validated()">
           {formStep === 0 && (
             <section>
               <div className="">
-                <img
-                  src="logo.JPG"
-                  className="img-fluid"
-                  id="img"
-                  alt="Responsive image"
-                />
+                <img src="logo.JPG" className="img-fluid"id="img"alt="Responsive image"/>
               </div>
               <h5 className="card-text">Sign Up</h5>
               <div className="card  btu">
@@ -71,12 +80,7 @@ const SignUp = () => {
                   />
                 </div>
                 <div id="email_error">
-                  <img
-                    src="warning.JPG"
-                    className="img-fluid"
-                    id="img"
-                    alt="Responsive image"
-                  />
+                  <img src="warning.JPG"className="img-fluid"id="img"alt="Responsive image"/>
                   Please enter an email address.{" "}
                 </div>
                 <div className="col inpute">
@@ -93,12 +97,7 @@ const SignUp = () => {
                   />
                 </div>
                 <div id="pass_error">
-                  <img
-                    src="warning.JPG"
-                    className="img-fluid"
-                    id="img"
-                    alt="Responsive image"
-                  />
+                  <img src="warning.JPG"className="img-fluid" id="img" alt="Responsive image" />
                   Please enter a password.
                 </div>
               </div>
@@ -117,7 +116,11 @@ const SignUp = () => {
               </div>
               <div className="card submit ">
                 <button
+<<<<<<< HEAD
                   type="button"
+=======
+                  type="submit"
+>>>>>>> 14ac8e757de6fe7f03ddc92bdb60334bf77492f1
                   className="btn  btn-lg btn-block"
                   onClick={completeFormstep}
                 >
@@ -141,12 +144,7 @@ const SignUp = () => {
                   {" "}
                   <i className="bi bi-chevron-left"></i>
                 </a>
-                <img
-                  src="logo.JPG"
-                  className="img-fluid"
-                  id="img"
-                  alt="Responsive image"
-                />
+                <img src="logo.JPG" className="img-fluid" id="img" alt="Responsive image"/>
               </div>
               <h5 className="card-text">Choose a username</h5>
               <p>Please note that a username cannot be changed once chosen.</p>
@@ -202,6 +200,7 @@ const SignUp = () => {
                   id="img"
                   alt="Responsive image"
                 />
+<<<<<<< HEAD
                 <p
                   className=" account"
                   onClick={completeFormstep}
@@ -211,6 +210,9 @@ const SignUp = () => {
                     setData({ ...Signup, work: event.target.value })
                   }
                 >
+=======
+                <p className=" account" onClick={completeFormstep}>
+>>>>>>> 14ac8e757de6fe7f03ddc92bdb60334bf77492f1
                   I want to work
                 </p>
                 <i className="bi bi-arrow-right"></i>
@@ -222,6 +224,7 @@ const SignUp = () => {
                   id="img"
                   alt="Responsive image"
                 />
+<<<<<<< HEAD
                 <p
                   className=" account"
                   onClick={completeFormstep}
@@ -231,6 +234,9 @@ const SignUp = () => {
                     setData({ ...Signup, hire: event.target.value })
                   }
                 >
+=======
+                <p className=" account" onClick={completeFormstep}>
+>>>>>>> 14ac8e757de6fe7f03ddc92bdb60334bf77492f1
                   I want to hire
                 </p>
                 <i className="bi bi-arrow-right"></i>
@@ -241,19 +247,19 @@ const SignUp = () => {
           {formStep === 3 && (
             <section>
               <div className="">
-                <img
-                  src="logo.JPG"
-                  className="img-fluid"
-                  id="img"
-                  alt="Responsive image"
-                />
+                <img src="logo.JPG" className="img-fluid" id="img" alt="Responsive image"/>
               </div>
               <h3>Sign Up Success</h3>
             </section>
           )}
+<<<<<<< HEAD
           {renderForm()}
+=======
+          <pre>{JSON.stringify(watch(), null, 2)}</pre>
+>>>>>>> 14ac8e757de6fe7f03ddc92bdb60334bf77492f1
         </form>
       </div>
+    </div>
     </div>
   );
 };
