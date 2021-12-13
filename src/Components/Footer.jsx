@@ -1,4 +1,9 @@
+
+import i18next from "i18next";
+import '../i18n'
+import { useTranslation } from 'react-i18next'
 function Footer() {
+  const { t, i18n } = useTranslation();
   return (
     <footer className="footer">
       <div className="container">
