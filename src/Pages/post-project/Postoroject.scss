@@ -1,0 +1,13 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+};
+.first-section{
+    background-image: linear-gradient(to right, #0f53a5 , #0375dd);
+    height: 72vh;
+    .svgg{
+        display: none;
+    }
+   
+}
