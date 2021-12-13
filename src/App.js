@@ -5,7 +5,9 @@ import Postproject from "./Pages/post-project/Postproject.jsx"
 import { Routes, Route } from "react-router";
 import SignUp from "./Components/Sign up/SignUp";
 import Paypal from "./Components/Paypal/paypal";
+import Login from"./Components/Login/Login.jsx"
 import { Suspense, useState } from "react";
+
 import '../src/i18n'
 function App() {
   const lang = localStorage.getItem('lang') || 'en';

@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+
 import "./SignUp.css";
 const SignUp = () => {
   const [Signup, setData] = useState({
     Email: "",
     Password: "",
-    username:"",
-    work:"",
-    hire:""
-
+    username: "",
+    work: "",
+    hire: "",
   });
   console.log("data", Signup);
   const [formStep, setFormStep] = React.useState(0);
@@ -20,7 +20,7 @@ const SignUp = () => {
       return undefined;
     }
   };
-
+  const { register, handleSubmit } = useForm();
   return (
     <div classNameName="bg-signup">
       <div className="fluid ">
@@ -57,8 +57,13 @@ const SignUp = () => {
                     type="email"
                     name="Email"
                     className="form-control email"
-                    id="inputAddress"
-                   
+                    required="Email is required"
+                    validations={[
+                      {
+                        rule: isEmail(),
+                        message: "Not a valid email",
+                      },
+                    ]}
                     value={Signup.Email}
                     onChange={(event) =>
                       setData({ ...Signup, Email: event.target.value })
@@ -78,8 +83,9 @@ const SignUp = () => {
                   <input
                     type="password"
                     name="Password"
+                    id="Password"
                     className="form-control"
-                    id="inputAddress"
+                    {...register("Password", { pattern: /^[A-Za-z]+$/i })}
                     value={Signup.Password}
                     onChange={(event) =>
                       setData({ ...Signup, Password: event.target.value })
@@ -148,14 +154,15 @@ const SignUp = () => {
                 <input
                   type="text"
                   className="form-control1"
-                  className=" user" name="username"
+                  className=" user"
+                  name="username"
                   id="inputAddress"
                   value=""
                   onclick="myFunction()"
                   value={Signup.username}
-                    onChange={(event) =>
-                      setData({ ...Signup, username: event.target.value })
-                    }
+                  onChange={(event) =>
+                    setData({ ...Signup, username: event.target.value })
+                  }
                 />
               </div>
               <p id="suggest">Suggestions:</p>
@@ -195,10 +202,15 @@ const SignUp = () => {
                   id="img"
                   alt="Responsive image"
                 />
-                <p className=" account" onClick={completeFormstep}  name="work"  value={Signup.work}
-                    onChange={(event) =>
-                      setData({ ...Signup, work: event.target.value })
-                    }>
+                <p
+                  className=" account"
+                  onClick={completeFormstep}
+                  name="work"
+                  value={Signup.work}
+                  onChange={(event) =>
+                    setData({ ...Signup, work: event.target.value })
+                  }
+                >
                   I want to work
                 </p>
                 <i className="bi bi-arrow-right"></i>
@@ -210,10 +222,15 @@ const SignUp = () => {
                   id="img"
                   alt="Responsive image"
                 />
-                <p className=" account" onClick={completeFormstep}  name="hire" value={Signup.hire}
-                    onChange={(event) =>
-                      setData({ ...Signup, hire: event.target.value })
-                    } >
+                <p
+                  className=" account"
+                  onClick={completeFormstep}
+                  name="hire"
+                  value={Signup.hire}
+                  onChange={(event) =>
+                    setData({ ...Signup, hire: event.target.value })
+                  }
+                >
                   I want to hire
                 </p>
                 <i className="bi bi-arrow-right"></i>
