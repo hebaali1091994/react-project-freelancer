@@ -1,7 +1,6 @@
 *, :after, :before {
   box-sizing: border-box;
 }
-<<<<<<< HEAD
 .bg-signup{
 
     width: 100%;
@@ -15,12 +14,6 @@
 
 .fluid 
 {
-=======
-
-.fluid 
-{
-     margin: auto;
->>>>>>> 9bac911c217fa6b91d56a71072e2ec0842c18024
     justify-content: center;
     text-align: center;
     width: 370px;
