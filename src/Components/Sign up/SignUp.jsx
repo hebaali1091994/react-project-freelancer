@@ -1,48 +1,29 @@
 import React from "react";
-import {useForm} from 'react-hook-form'
+import { useForm } from "react-hook-form";
 import "./SignUp.css";
 const SignUp = () => {
   const [formStep, setFormStep] = React.useState(0);
-  const{watch,register}=useForm()
-  const completeFormstep=()=>{
-
-    setFormStep(cur=>cur+1)
-  }
-  const renderForm=()=>{
-      if(formStep>4){
-      return undefined}
-      else if(formStep===3){
-return(
-
-<p>Please wait while we redirect you.........</p>
-
-)
-
-      }
-      else {
-
-
-      }
-  }
+  const { watch, register } = useForm();
+  const completeFormstep = () => {
+    setFormStep((cur) => cur + 1);
+  };
+  const renderForm = () => {
+    if (formStep > 4) {
+      return undefined;
+    } else if (formStep === 3) {
+      return <p>Please wait while we redirect you.........</p>;
+    } else {
+    }
+  };
   return (
-    <div classNameName="bg-signup">
-      <div className="fluid ">
-        <form
-          className="login_form"
-          action=""
-          method="post"
-          name="form"
-          onsubmit="return validated()"
-        >
+    <div className="container">
+      <div className="row">
+      <div className="fluid col-md-12">
+        <form className="login_form" action="" method="post"name="form" onsubmit="return validated()">
           {formStep === 0 && (
             <section>
               <div className="">
-                <img
-                  src="logo.JPG"
-                  className="img-fluid"
-                  id="img"
-                  alt="Responsive image"
-                />
+                <img src="logo.JPG" className="img-fluid"id="img"alt="Responsive image"/>
               </div>
               <h5 className="card-text">Sign Up</h5>
               <div className="card  btu">
@@ -65,12 +46,7 @@ return(
                   />
                 </div>
                 <div id="email_error">
-                  <img
-                    src="warning.JPG"
-                    className="img-fluid"
-                    id="img"
-                    alt="Responsive image"
-                  />
+                  <img src="warning.JPG"className="img-fluid"id="img"alt="Responsive image"/>
                   Please enter an email address.{" "}
                 </div>
                 <div className="col inpute">
@@ -82,12 +58,7 @@ return(
                   />
                 </div>
                 <div id="pass_error">
-                  <img
-                    src="warning.JPG"
-                    className="img-fluid"
-                    id="img"
-                    alt="Responsive image"
-                  />
+                  <img src="warning.JPG"className="img-fluid" id="img" alt="Responsive image" />
                   Please enter a password.
                 </div>
               </div>
@@ -105,7 +76,11 @@ return(
                 </label>
               </div>
               <div className="card submit ">
-                <button type="submit" className="btn  btn-lg btn-block" onClick={completeFormstep}>
+                <button
+                  type="submit"
+                  className="btn  btn-lg btn-block"
+                  onClick={completeFormstep}
+                >
                   Join Freelancer
                 </button>
               </div>
@@ -126,12 +101,7 @@ return(
                   {" "}
                   <i className="bi bi-chevron-left"></i>
                 </a>
-                <img
-                  src="logo.JPG"
-                  className="img-fluid"
-                  id="img"
-                  alt="Responsive image"
-                />
+                <img src="logo.JPG" className="img-fluid" id="img" alt="Responsive image"/>
               </div>
               <h5 className="card-text">Choose a username</h5>
               <p>Please note that a username cannot be changed once chosen.</p>
@@ -148,7 +118,11 @@ return(
               </div>
               <p id="suggest">Suggestions:</p>
               <div className=" submit ">
-                <button type="submit" className="btn  btn-lg btn-block"  onClick={completeFormstep}>
+                <button
+                  type="submit"
+                  className="btn  btn-lg btn-block"
+                  onClick={completeFormstep}
+                >
                   <a href="#">Next</a>
                 </button>
               </div>
@@ -179,7 +153,9 @@ return(
                   id="img"
                   alt="Responsive image"
                 />
-                <p className=" account" onClick={completeFormstep}>I want to work</p>
+                <p className=" account" onClick={completeFormstep}>
+                  I want to work
+                </p>
                 <i className="bi bi-arrow-right"></i>
               </div>
               <div className="hire">
@@ -189,7 +165,9 @@ return(
                   id="img"
                   alt="Responsive image"
                 />
-                <p className=" account" onClick={completeFormstep}>I want to hire</p>
+                <p className=" account" onClick={completeFormstep}>
+                  I want to hire
+                </p>
                 <i className="bi bi-arrow-right"></i>
               </div>
             </section>
@@ -198,20 +176,15 @@ return(
           {formStep === 3 && (
             <section>
               <div className="">
-                <img
-                  src="logo.JPG"
-                  className="img-fluid"
-                  id="img"
-                  alt="Responsive image"
-                />
+                <img src="logo.JPG" className="img-fluid" id="img" alt="Responsive image"/>
               </div>
               <h3>Sign Up Success</h3>
-              
             </section>
           )}
-          <pre>{JSON.stringify(watch(),null,2)}</pre>
+          <pre>{JSON.stringify(watch(), null, 2)}</pre>
         </form>
       </div>
+    </div>
     </div>
   );
 };
