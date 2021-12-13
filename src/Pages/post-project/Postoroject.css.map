@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,CAAC,CAAA;EACG,OAAO,EAAE,CAAC;EACV,MAAM,EAAE,CAAC;EACT,UAAU,EAAE,UAAU;CACzB;;AACD,AAAA,cAAc,CAAA;EACV,gBAAgB,EAAE,2CAA4C;EAC9D,MAAM,EAAE,IAAI;CAKf;;AAPD,AAGI,cAHU,CAGV,KAAK,CAAA;EACD,OAAO,EAAE,IAAI;CAChB",
+    "sources": [
+        "Postoroject.scss"
+    ],
+    "names": [],
+    "file": "Postoroject.css"
+}

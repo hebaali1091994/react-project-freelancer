@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 import './App.css';
 import Home from './Pages/Home';
@@ -15,6 +16,44 @@ function App() {
         <Route path="/SignUp" element={<SignUp/>}/>
      </Routes>
     </div>
+=======
+<<<<<<< HEAD
+
+import "./App.css";
+import Home from "./Pages/Home";
+import Postproject from "./Pages/post-project/Postproject.jsx"
+=======
+
+
+import './App.css';
+import Home from './Pages/Home';
+import Postproject from './Pages/post-project/Postproject.jsx';
+import Login from './Components/Login/Login.jsx';
+>>>>>>> 14ac8e757de6fe7f03ddc92bdb60334bf77492f1
+import { Routes, Route } from "react-router";
+import SignUp from "./Components/Sign up/SignUp";
+import Paypal from "./Components/Paypal/paypal";
+import Login from"./Components/Login/Login.jsx"
+import { Suspense, useState } from "react";
+
+import '../src/i18n'
+
+function App() {
+  const lang = localStorage.getItem('lang') || 'en';
+  document.documentElement.language = lang;
+  return (
+    <Suspense fallback="Loading ...">
+    <div className="App">
+      <Routes>
+        <Route path="/" exact="true" element={<Home />} />
+        <Route path="/Post-project" element={<Postproject />} />
+        <Route path="/Login" element={<Login />} />
+        <Route path="/SignUp" element={<SignUp />} />
+        <Route path='/paypal'  element={<Paypal  />}/>
+      </Routes>
+    </div>
+    </Suspense>
+>>>>>>> 9bac911c217fa6b91d56a71072e2ec0842c18024
   );
 }
 

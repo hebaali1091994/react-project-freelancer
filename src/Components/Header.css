@@ -13,3 +13,7 @@ font-size: 15px;
 background-color: #fa5f9b;
 color: white;
 }
+html:lang(ar){
+    text-align: right;
+  direction: rtl;
+}

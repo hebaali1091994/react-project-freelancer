@@ -1,12 +1,18 @@
 import { Link } from "react-router-dom";
+
+
+import i18next from "i18next";
+import '../i18n'
+import { useTranslation } from 'react-i18next'
 function Footer() {
+  const { t, i18n } = useTranslation();
   return (
     <footer className="footer">
       <div className="container">
         <div className="row">
           <div className="footer col left-icon">
-            {/* <h5></h5> */}
-            <ul >
+            <h5></h5>
+            <ul className="list-unstyled">
               <svg
                 width="42"
                 height="42"
@@ -316,7 +322,7 @@ function Footer() {
           </div>
           <div className="footer-s col-6">
             <p>
-              Freelancer ® is Link registered Trademark of Freelancer Technology
+              Freelancer ® is a registered Trademark of Freelancer Technology
               Pty Limited (ACN 142 189 759)
             </p>
             <p>
