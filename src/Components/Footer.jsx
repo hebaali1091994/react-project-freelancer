@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 
 import i18next from "i18next";
 import '../i18n'
@@ -25,11 +27,11 @@ function Footer() {
               </svg>
               <li>
                 <i className="fas fa-globe"></i>
-                <a href="">English - US (International)</a>
+                <Link to="#">English - US (International)</Link>
               </li>
               <li>
                 <i className="far fa-question-circle"></i>
-                <a href="">Help & Support</a>
+                <Link to="#">Help & Support</Link>
               </li>
             </ul>
           </div>
@@ -37,37 +39,37 @@ function Footer() {
             <h5>Freelancer</h5>
             <ul className="list-unstyled">
               <li>
-                <a href="#">Categories</a>
+                <Link to="#">Categories</Link>
               </li>
               <li>
-                <a href="#">Projects</a>
+                <Link to="#">Projects</Link>
               </li>
               <li>
-                <a href="#">Contests</a>
+                <Link to="#">Contests</Link>
               </li>
               <li>
-                <a href="#">Freelancers</a>
+                <Link to="#">Freelancers</Link>
               </li>
               <li>
-                <a href="#">Enterprise</a>
+                <Link to="#">Enterprise</Link>
               </li>
               <li>
-                <a href="#">Preferred Freelancer Program</a>
+                <Link to="#">Preferred Freelancer Program</Link>
               </li>
               <li>
-                <a href="#">Project Management</a>
+                <Link to="#">Project Management</Link>
               </li>
               <li>
-                <a href="#">Local Jobs</a>
+                <Link to="#">Local Jobs</Link>
               </li>
               <li>
-                <a href="#">Photo Anywhere</a>
+                <Link to="#">Photo Anywhere</Link>
               </li>
               <li>
-                <a href="#">Showcase</a>
+                <Link to="#">Showcase</Link>
               </li>
               <li>
-                <a href="#">API for Developers</a>
+                <Link to="#">API for Developers</Link>
               </li>
             </ul>
           </div>
@@ -75,25 +77,25 @@ function Footer() {
             <h5>About</h5>
             <ul className="list-unstyled">
               <li>
-                <a href="#">About us</a>
+                <Link  to="#">About us</Link>
               </li>
               <li>
-                <a href="#">How it Works</a>
+                <Link to="#">How it Works</Link>
               </li>
               <li>
-                <a href="#">Security</a>
+                <Link to="#">Security</Link>
               </li>
               <li>
-                <a href="#">Investor</a>
+                <Link to="#">Investor</Link>
               </li>
               <li>
-                <a href="#">Sitemap</a>
+                <Link to="#">Sitemap</Link>
               </li>
               <li>
-                <a href="#">Quotes</a>
+                <Link to="#">Quotes</Link>
               </li>
               <li>
-                <a href="#">News</a>
+                <Link to="#">News</Link>
               </li>
             </ul>
           </div>
@@ -101,19 +103,19 @@ function Footer() {
             <h5>Terms</h5>
             <ul className="list-unstyled">
               <li>
-                <a href="#">Privacy Policy</a>
+                <Link to="#">Privacy Policy</Link>
               </li>
               <li>
-                <a href="#">Terms and Conditions</a>
+                <Link to="#">Terms and Conditions</Link>
               </li>
               <li>
-                <a href="#">Copyright Policy</a>
+                <Link to="#">Copyright Policy</Link>
               </li>
               <li>
-                <a href="#">Code of Conduct</a>
+                <Link to="#">Code of Conduct</Link>
               </li>
               <li>
-                <a href="#">Fees and Charges</a>
+                <Link to="#">Fees and Charges</Link>
               </li>
             </ul>
           </div>
@@ -287,22 +289,22 @@ function Footer() {
                 </g>
               </svg>
             </div>
-            <div className="social-links">
-              <a href="">
+            <div className="social-as">
+              <Link to="#">
                 <i className="fab fa-facebook"></i>
-              </a>
-              <a href="">
+              </Link>
+              <Link to="#">
                 <i className="fab fa-twitter"></i>
-              </a>
-              <a href="">
+              </Link>
+              <Link to="#">
                 <i className="fab fa-instagram"></i>
-              </a>
-              <a href="">
+              </Link>
+              <Link to="#">
                 <i className="fab fa-youtube"></i>
-              </a>
-              <a href="">
+              </Link>
+              <Link to="#">
                 <i className="fab fa-github"></i>
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -336,7 +338,7 @@ function Footer() {
           background-color: #161e2c;
         }
 
-        .footer .left-icon a {
+        .footer .left-icon Link {
           padding-left: 10px;
           color: #f7f7f7;
           font-weight: 700;
@@ -358,7 +360,7 @@ function Footer() {
           margin-top: 15px;
         }
 
-        .footer .social-links i {
+        .footer .social-as i {
           color: #f7f7f7;
           font-size: 20px;
           margin-top: 25px;
@@ -372,7 +374,7 @@ function Footer() {
           font-size: 19px;
         }
 
-        .footer a {
+        .footer Link {
           font-family: "Roboto", sans-serif;
           font-weight: 400;
           color: #f7f7f7bd;
@@ -380,7 +382,7 @@ function Footer() {
           text-decoration: none;
         }
 
-        .footer a:hover {
+        .footer Link:hover {
           color: #f7f7f7;
           border-bottom: 1px solid #f7f7f7;
         }

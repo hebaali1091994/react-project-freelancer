@@ -1,10 +1,19 @@
 *, :after, :before {
   box-sizing: border-box;
 }
+.bg-signup{
+
+    width: 100%;
+    height: 100vh;
+    background-color:#f0f0f0 ;
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+}
+
 
 .fluid 
 {
-     margin: auto;
     justify-content: center;
     text-align: center;
     width: 370px;

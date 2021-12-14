@@ -1,44 +1,48 @@
-
-import React, { useState } from "react";
-import { useForm } from "react-hook-form";
+import React from "react";
+import {useForm} from 'react-hook-form'
 import "./SignUp.css";
 const SignUp = () => {
-  const [Signup, setData] = useState({
-    Email: "",
-    Password: "",
-    username: "",
-    work: "",
-    hire: "",
-  });
-  console.log("data", Signup);
   const [formStep, setFormStep] = React.useState(0);
-  
-  const completeFormstep = () => {
-    setFormStep((cur) => cur + 1);
-  };
-  const renderForm = () => {
-   if (formStep > 2) {
-      return undefined;
-    }
-  };
-  const { register, handleSubmit } = useForm();
+  const{watch,register}=useForm()
+  const completeFormstep=()=>{
 
-    if (formStep > 4) {
-      return undefined;
-    } else if (formStep === 3) {
-      return <p>Please wait while we redirect you.........</p>;
-    } else {
-    }
-  
+    setFormStep(cur=>cur+1)
+  }
+  const renderForm=()=>{
+      if(formStep>4){
+      return undefined}
+      else if(formStep===3){
+return(
+
+<p>Please wait while we redirect you.........</p>
+
+)
+
+      }
+      else {
+
+
+      }
+  }
   return (
-    <div className="container">
-      <div className="row">
-      <div className="fluid col-md-12">
-        <form className="login_form" action="" method="post"name="form" onsubmit="return validated()">
+    <div classNameName="bg-signup">
+      <div className="fluid ">
+        <form
+          className="login_form"
+          action=""
+          method="post"
+          name="form"
+          onsubmit="return validated()"
+        >
           {formStep === 0 && (
             <section>
               <div className="">
-                <img src="logo.JPG" className="img-fluid"id="img"alt="Responsive image"/>
+                <img
+                  src="logo.JPG"
+                  className="img-fluid"
+                  id="img"
+                  alt="Responsive image"
+                />
               </div>
               <h5 className="card-text">Sign Up</h5>
               <div className="card  btu">
@@ -54,40 +58,36 @@ const SignUp = () => {
                 <div className="col inpute">
                   <input
                     type="email"
-                    name="Email"
                     className="form-control email"
-                    // required="Email is required"
-                    // validations={[
-                    //   {
-                    //     rule: isEmail(),
-                    //     message: "Not a valid email",
-                    //   },
-                    // ]}
-                    // value={Signup.Email}
-                    onChange={(event) =>
-                      setData({ ...Signup, Email: event.target.value })
-                    }
+                    id="inputAddress"
+                    placeholder="Email"
+                    ref={register()}
                   />
                 </div>
                 <div id="email_error">
-                  <img src="warning.JPG"className="img-fluid"id="img"alt="Responsive image"/>
+                  <img
+                    src="warning.JPG"
+                    className="img-fluid"
+                    id="img"
+                    alt="Responsive image"
+                  />
                   Please enter an email address.{" "}
                 </div>
                 <div className="col inpute">
                   <input
                     type="password"
-                    name="Password"
-                    id="Password"
                     className="form-control"
-                    {...register("Password", { pattern: /^[A-Za-z]+$/i })}
-                    value={Signup.Password}
-                    onChange={(event) =>
-                      setData({ ...Signup, Password: event.target.value })
-                    }
+                    id="inputAddress"
+                    placeholder="Password"
                   />
                 </div>
                 <div id="pass_error">
-                  <img src="warning.JPG"className="img-fluid" id="img" alt="Responsive image" />
+                  <img
+                    src="warning.JPG"
+                    className="img-fluid"
+                    id="img"
+                    alt="Responsive image"
+                  />
                   Please enter a password.
                 </div>
               </div>
@@ -105,13 +105,7 @@ const SignUp = () => {
                 </label>
               </div>
               <div className="card submit ">
-                <button
-
-                  type="button"
-                  type="submit"
-                  className="btn  btn-lg btn-block"
-                  onClick={completeFormstep}
-                >
+                <button type="submit" className="btn  btn-lg btn-block" onClick={completeFormstep}>
                   Join Freelancer
                 </button>
               </div>
@@ -132,7 +126,12 @@ const SignUp = () => {
                   {" "}
                   <i className="bi bi-chevron-left"></i>
                 </a>
-                <img src="logo.JPG" className="img-fluid" id="img" alt="Responsive image"/>
+                <img
+                  src="logo.JPG"
+                  className="img-fluid"
+                  id="img"
+                  alt="Responsive image"
+                />
               </div>
               <h5 className="card-text">Choose a username</h5>
               <p>Please note that a username cannot be changed once chosen.</p>
@@ -141,23 +140,15 @@ const SignUp = () => {
                   type="text"
                   className="form-control1"
                   className=" user"
-                  name="username"
                   id="inputAddress"
+                  placeholder="Username"
                   value=""
                   onclick="myFunction()"
-                  value={Signup.username}
-                  onChange={(event) =>
-                    setData({ ...Signup, username: event.target.value })
-                  }
                 />
               </div>
               <p id="suggest">Suggestions:</p>
               <div className=" submit ">
-                <button
-                  type="submit"
-                  className="btn  btn-lg btn-block"
-                  onClick={completeFormstep}
-                >
+                <button type="submit" className="btn  btn-lg btn-block"  onClick={completeFormstep}>
                   <a href="#">Next</a>
                 </button>
               </div>
@@ -188,17 +179,7 @@ const SignUp = () => {
                   id="img"
                   alt="Responsive image"
                 />
-                <p className=" account"
-                  onClick={completeFormstep}
-                  name="work"
-                  value={Signup.work}
-                  onChange={(event) =>
-                    setData({ ...Signup, work: event.target.value })
-                  }
-               />
-               <p className=" account" onClick={completeFormstep}>
-                 I want to work
-                </p>
+                <p className=" account" onClick={completeFormstep}>I want to work</p>
                 <i className="bi bi-arrow-right"></i>
               </div>
               <div className="hire">
@@ -208,18 +189,7 @@ const SignUp = () => {
                   id="img"
                   alt="Responsive image"
                 />
-                <p
-                  className=" account"
-                  onClick={completeFormstep}
-                  name="hire"
-                  value={Signup.hire}
-                  onChange={(event) =>
-                    setData({ ...Signup, hire: event.target.value })
-                  }
-                />
-                <p className=" account" onClick={completeFormstep}>
-                  I want to hire
-                </p>
+                <p className=" account" onClick={completeFormstep}>I want to hire</p>
                 <i className="bi bi-arrow-right"></i>
               </div>
             </section>
@@ -228,15 +198,20 @@ const SignUp = () => {
           {formStep === 3 && (
             <section>
               <div className="">
-                <img src="logo.JPG" className="img-fluid" id="img" alt="Responsive image"/>
+                <img
+                  src="logo.JPG"
+                  className="img-fluid"
+                  id="img"
+                  alt="Responsive image"
+                />
               </div>
               <h3>Sign Up Success</h3>
+              
             </section>
           )}
-          {renderForm()}
-                </form>
+          <pre>{JSON.stringify(watch(),null,2)}</pre>
+        </form>
       </div>
-    </div>
     </div>
   );
 };
