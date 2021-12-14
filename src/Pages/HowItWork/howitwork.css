@@ -1,0 +1,147 @@
+
+.header-title {
+  font-size: 41px;
+  font-weight: 700;
+  line-height: 1.17;
+  margin-bottom: 35px;
+  margin-top: 40px;
+}
+
+.tab-content > .active {
+  padding: 0 !important;
+}
+
+p {
+  font-size: 20px;
+  line-height: 1.4;
+}
+
+.img-size {
+  width: 85%;
+}
+
+.active {
+  z-index: 999;
+}
+
+.cover-Image {
+  background-image: url("https://i.ibb.co/tB1R0rz/client.jpg");
+  background-size: cover;
+  height: 800px;
+}
+
+.cover-Image {
+  font-weight: 700;
+  color: #f7f7f7;
+}
+
+.cover-Image .header-title {
+  font-size: 48px;
+  line-height: 1.17;
+  margin-top: 35%;
+}
+
+.cover-Image .header-paragraph {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.4;
+}
+
+.cover-Image .Color-button {
+  background: #f20091;
+  font-size: 20px;
+  line-height: 1.4;
+  padding: 13px 26px;
+  margin-bottom: 213px;
+}
+
+.Color-button {
+  background: #f20091;
+  font-size: 20px;
+  line-height: 1.4;
+  padding: 13px 26px;
+  border: none;
+}
+
+.nav-tab-new-future nav {
+  background: #0a58ca;
+  color: #fff;
+  font-size: 24px;
+}
+
+.how-work img {
+  width: 85%;
+}
+
+.contest h1 {
+  font-size: 41px;
+  margin-bottom: 35px;
+  margin-top: 40px;
+}
+
+.contest h3 {
+  font-size: 20px;
+  line-height: 1.4;
+  font-weight: 700;
+}
+
+.contest p {
+  font-weight: 400;
+  color: #0e1724;
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 32px;
+}
+
+.contest .background-master {
+  background: #f20091;
+  border: none;
+  padding: 20px;
+  width: 200px;
+  height: 60px;
+}
+
+.waiting-for {
+  background: #1f2836;
+  padding: 20px;
+  max-height: 400px;
+}
+
+.waiting-for p {
+  font-size: 24px;
+}
+
+.blog img {
+  width: 90%;
+}
+
+.blog .article {
+  margin-bottom: 20px;
+}
+
+.blog .article-button {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.blog .article-button a {
+  width: 350px;
+  height: 50px;
+}
+
+.Help {
+  background: #1f2836;
+  padding: 20px;
+  max-height: 400px;
+}
+
+.Help p {
+  font-size: 24px;
+}
+
+.Help a {
+  font-size: 26px;
+  line-height: 1.33;
+  color: #fff;
+}
+/*# sourceMappingURL=how-it-works.css.map */

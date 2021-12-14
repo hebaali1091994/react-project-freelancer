@@ -1,0 +1,49 @@
+.to-max {
+  display: flex;
+}
+
+.input-group-text {
+  background: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.filter-freelancer {
+  box-shadow: 0 0 4px 0 #00000014, 0 2px 4px 0 #0000001f;
+  margin-top: 15px;
+  padding: 20px;
+  background: #fff;
+  max-height: 1033px;
+  border-radius: 10px;
+}
+
+.freelancer-img {
+  min-height: 150px;
+  object-fit: cover;
+}
+
+.heart-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-none {
+  text-decoration: none;
+}
+
+.hire-person {
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+}
+
+.filter-project {
+  box-shadow: 0 0 4px 0 #00000014, 0 2px 4px 0 #0000001f;
+  margin-top: 15px;
+  padding: 20px;
+  background: #fff;
+  max-height: 1160px;
+  border-radius: 10px;
+}
+/*# sourceMappingURL=projects.css.map */
