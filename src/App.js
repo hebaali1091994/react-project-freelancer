@@ -1,20 +1,15 @@
-<<<<<<< HEAD
 
-import "./App.css";
-import Home from "./Pages/Home";
-import Postproject from "./Pages/post-project/Postproject.jsx"
-=======
 
 
 import './App.css';
 import Home from './Pages/Home';
 import Postproject from './Pages/post-project/Postproject.jsx';
 import Login from './Components/Login/Login.jsx';
->>>>>>> 14ac8e757de6fe7f03ddc92bdb60334bf77492f1
+
 import { Routes, Route } from "react-router";
 import SignUp from "./Components/Sign up/SignUp";
 import Paypal from "./Components/Paypal/paypal";
-import Login from"./Components/Login/Login.jsx"
+
 import { Suspense, useState } from "react";
 
 import '../src/i18n'
