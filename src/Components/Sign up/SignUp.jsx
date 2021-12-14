@@ -138,7 +138,8 @@ return(
               <div className="col inpute">
                 <input
                   type="text"
-                  className="form-control1 user"
+                  className="form-control1"
+                  className=" user"
                   id="inputAddress"
                   placeholder="Username"
                   value=""
@@ -154,7 +155,7 @@ return(
             </section>
           )}
 
-          {formStep === 2 && (
+          {formStep == 2 && (
             <section>
               <div className="icon">
                 <a href="username.html">
@@ -162,8 +163,9 @@ return(
                   <i className="bi bi-chevron-left"></i>
                 </a>
                 <img
+                  className="img"
                   src="logo.JPG"
-                  className="img-fluid img"
+                  className="img-fluid"
                   id="img"
                   alt="Responsive image"
                 />

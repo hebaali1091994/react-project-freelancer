@@ -1,8 +1,17 @@
 
+
 import './App.css';
 import Home from './Pages/Home';
 import Postproject from './Pages/post-project/Postproject.jsx';
+<<<<<<< HEAD
+import Login from './Components/Login/Login.jsx';
+
+
+
+
+=======
 import Login from './Pages/Login/Login';
+>>>>>>> ffc8ba0169c52757079d97bc0cab06f86107c825
 import { Routes, Route } from "react-router";
 import SignUp from "./Components/Sign up/SignUp";
 import Paypal from "./Components/Paypal/paypal";

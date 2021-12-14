@@ -8,16 +8,9 @@ const Project = require("../models/Project");
 const router = require("express").Router();
 
 //create new project
-router.post("/:id", verifyTokenAndAuthorization, async (req, res) => {
-  const { projectName, budget, description, state, category } = req.body;
-  const newproject = await new Project({
-    projectName,
-    budget,
-    description,
-    state,
-    user_id: req.user.id,
-    category,
-  });
+router.post("/", verifyTokenAndAuthorization, async (req, res) => {
+  
+  const newproject = await new Project(req.body);
   try {
     const saveproject = await newproject.save();
     res.status(200).json(saveproject);
