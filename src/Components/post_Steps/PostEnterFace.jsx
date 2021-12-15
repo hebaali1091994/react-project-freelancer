@@ -89,6 +89,14 @@ const PostEnterFace = () => {
   //     }
   //     fetchData()
   //   }, []) ;
+  
+   // useEffect(() => {
+    //   axios.post(`http://localhost:3000/`).then((response) => {
+    //       console.log("response", response);
+    //       const newPosts = response.data;
+    //       setPosts(newPosts);
+    //     });
+    // }, []);
 
   const renderButton = () => {
     if (formStep === 0) {

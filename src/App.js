@@ -3,15 +3,11 @@
 import './App.css';
 import Home from './Pages/Home';
 import Postproject from './Pages/post-project/Postproject.jsx';
-<<<<<<< HEAD
+
 import Login from './Components/Login/Login.jsx';
 
+// import Login from './Pages/Login/Login';
 
-
-
-=======
-import Login from './Pages/Login/Login';
->>>>>>> ffc8ba0169c52757079d97bc0cab06f86107c825
 import { Routes, Route } from "react-router";
 import SignUp from "./Components/Sign up/SignUp";
 import Paypal from "./Components/Paypal/paypal";
@@ -20,7 +16,7 @@ import { Suspense, useState, useContext } from "react";
 import '../src/i18n'
 import { Context } from './context/Context';
 import Dashbaord from './Pages/Dashbaord/Dashbaord';
-
+import Massenger from './Pages/Massenger/Massenger.jsx';
 function App() {
       const {user} = useContext(Context);
 
@@ -35,7 +31,8 @@ function App() {
         <Route path="/Login" element={<Login />} />
         <Route path="/SignUp" element={<SignUp />} />
         <Route path='/paypal'  element={<Paypal  />}/>
-                <Route path='/Dashbaord'  element={<Dashbaord  />}/>
+        <Route path='/Dashbaord'  element={<Dashbaord  />}/>
+        <Route path='/Massenger'  element={<Massenger />}/>
 
       </Routes>
     </div>
