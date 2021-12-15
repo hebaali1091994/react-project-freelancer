@@ -1,6 +1,23 @@
 import React from 'react'
 import styled from 'styled-components'
+import i18next from "i18next";
+import '../i18n'
+import { useTranslation } from 'react-i18next';
+
 const SlideHome=()=>{
+    const { t, i18n } = useTranslation();
+    let lang=localStorage.getItem('lang')||'en'
+ const change= (option)=> 
+  {
+
+    localStorage.setItem('lang',option.target.value)
+     lang=localStorage.getItem('lang')||'en'
+    i18next.changeLanguage(lang)
+    // window.location.reload()
+    console.log("lang", lang);
+    console.log("option.target.value", option.target.value);
+  }
+
     return (
         <Container>
             <video
@@ -22,14 +39,14 @@ const SlideHome=()=>{
             </video>
             <LeftSlide>
                 <SlideText>
-                    <h1>Hire the best</h1>
-                    <h1>freelancers for any job,</h1>
-                    <h1>online.</h1>
-                    <p>Millions of people use freelancer.com to turn their ideas into reality.</p>
+                    <h1>{t("Hire the best")}</h1>
+                    <h1>{t("freelancers for any job,")}</h1>
+                    <h1>{t("online.")}</h1>
+                    <p>{t("Millions of people use freelancer.com to turn their ideas into reality.")}</p>
                 </SlideText>
                 <SlideBottons>
-                    <button>Hire a Freelancer</button>
-                    <button>Earn Money Freelancing</button>
+                    <button>{t("Hire a Freelancer")}</button>
+                    <button>{t("Earn Money Freelancing")}</button>
                 </SlideBottons>
             </LeftSlide>
             
