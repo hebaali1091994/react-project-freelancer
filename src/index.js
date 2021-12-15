@@ -2,14 +2,24 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import { useTranslation } from 'react-i18next';
+import i18next from "i18next";
 import './i18n'
 // import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
+
 import { ContextProvider } from './context/Context';
+
+
+
 ReactDOM.render(
   <BrowserRouter>
   <ContextProvider>
+
+    <div>
         <App />
+      
+        </div>
   </ContextProvider>
 
   </BrowserRouter>,

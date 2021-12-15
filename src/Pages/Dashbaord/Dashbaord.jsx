@@ -1,5 +1,6 @@
 import React from 'react'
 import Header from '../../Components/header/Header'
+import Navbar from './../../Components/Navbar'
 import './Dashbaord.css'
 import { Context } from '../../context/Context';
 import { useContext } from 'react';
@@ -9,6 +10,7 @@ export default function Dashbaord() {
     return (
       <div className="Dashbaord">
           <Header/>
+          <Navbar/>
               <div className="container">
       {/* <!-- Start Section Refer Friend --> */}
       <div className="row">

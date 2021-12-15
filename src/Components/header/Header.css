@@ -33,3 +33,25 @@ html:lang(ar){
     text-align: right;
   direction: rtl;
 }
+
+.icon{
+
+    cursor: pointer;
+    position: relative;
+    margin-left: 15px;
+}
+.counter{
+position: absolute;
+width: 13px;
+height: 13px;
+background-color: red;
+border-radius: 50%;
+padding: 5px;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 10px;
+top: 25px;
+margin-left: 20px;
+color: white;
+}

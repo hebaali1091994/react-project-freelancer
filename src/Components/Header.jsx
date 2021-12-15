@@ -40,7 +40,7 @@ export default function Header() {
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                  <Link class="nav-link text-dark" aria-current="page" to="">
+                  <Link class="nav-link text-dark" aria-current="page" to="/howwork">
                     {" "}
                   {t("How It Works")}{" "}
                   </Link>

@@ -1,11 +1,20 @@
 import { Link } from "react-router-dom";
-
-
 import i18next from "i18next";
 import '../i18n'
 import { useTranslation } from 'react-i18next'
 function Footer() {
   const { t, i18n } = useTranslation();
+  let lang=localStorage.getItem('lang')||'en'
+ const change= (option)=> 
+  {
+
+    localStorage.setItem('lang',option.target.value)
+     lang=localStorage.getItem('lang')||'en'
+    i18next.changeLanguage(lang)
+    // window.location.reload()
+    console.log("lang", lang);
+    console.log("option.target.value", option.target.value);
+  }
   return (
     <footer className="footer">
       <div className="container">
@@ -27,100 +36,100 @@ function Footer() {
               </svg>
               <li>
                 <i className="fas fa-globe"></i>
-                <Link to="#">English - US (International)</Link>
+                <Link to="#">{t("English - US (International)")}</Link>
               </li>
               <li>
                 <i className="far fa-question-circle"></i>
-                <Link to="#">Help & Support</Link>
+                <Link to="#"> {t("Help & Support")} </Link>
               </li>
             </ul>
           </div>
           <div className="footer col">
-            <h5>Freelancer</h5>
+            <h5>{t("Freelancer")}</h5>
             <ul className="list-unstyled">
               <li>
-                <Link to="#">Categories</Link>
+                <Link to="#">{t("Categories")}</Link>
               </li>
               <li>
-                <Link to="#">Projects</Link>
+                <Link to="#">{t("Projects")}</Link>
               </li>
               <li>
-                <Link to="#">Contests</Link>
+                <Link to="#">{t("Contests")}</Link>
               </li>
               <li>
-                <Link to="#">Freelancers</Link>
+                <Link to="#">{t("Freelancers")}</Link>
               </li>
               <li>
-                <Link to="#">Enterprise</Link>
+                <Link to="#">{t("Enterprise")}</Link>
               </li>
               <li>
-                <Link to="#">Preferred Freelancer Program</Link>
+                <Link to="#">{t("Preferred Freelancer Program")}</Link>
               </li>
               <li>
-                <Link to="#">Project Management</Link>
+                <Link to="#">{t("Project Management")}</Link>
               </li>
               <li>
-                <Link to="#">Local Jobs</Link>
+                <Link to="#">{t("Local Jobs")}</Link>
               </li>
               <li>
-                <Link to="#">Photo Anywhere</Link>
+                <Link to="#">{t("Photo Anywhere")}</Link>
               </li>
               <li>
-                <Link to="#">Showcase</Link>
+                <Link to="#">{t("Showcase")}</Link>
               </li>
               <li>
-                <Link to="#">API for Developers</Link>
+                <Link to="#">{t("API for Developers")}</Link>
               </li>
             </ul>
           </div>
           <div className="footer col">
-            <h5>About</h5>
+            <h5>{t("About")}</h5>
             <ul className="list-unstyled">
               <li>
-                <Link  to="#">About us</Link>
+                <Link  to="#">{t("About us")}</Link>
               </li>
               <li>
-                <Link to="#">How it Works</Link>
+                <Link to="#">{t("How it Works")}</Link>
               </li>
               <li>
-                <Link to="#">Security</Link>
+                <Link to="#">{t("Security")}</Link>
               </li>
               <li>
-                <Link to="#">Investor</Link>
+                <Link to="#">{t("Investor")}</Link>
               </li>
               <li>
-                <Link to="#">Sitemap</Link>
+                <Link to="#">{t("Sitemap")}</Link>
               </li>
               <li>
-                <Link to="#">Quotes</Link>
+                <Link to="#">{t("")}Quotes</Link>
               </li>
               <li>
-                <Link to="#">News</Link>
+                <Link to="#">{t("News")}</Link>
               </li>
             </ul>
           </div>
           <div className="footer col">
-            <h5>Terms</h5>
+            <h5>{t("Terms")}</h5>
             <ul className="list-unstyled">
               <li>
-                <Link to="#">Privacy Policy</Link>
+                <Link to="#">{t("Privacy Policy")}</Link>
               </li>
               <li>
-                <Link to="#">Terms and Conditions</Link>
+                <Link to="#">{t("Terms and Conditions")}</Link>
               </li>
               <li>
-                <Link to="#">Copyright Policy</Link>
+                <Link to="#">{t("Copyright Policy")}</Link>
               </li>
               <li>
-                <Link to="#">Code of Conduct</Link>
+                <Link to="#">{t("Code of Conduct")}</Link>
               </li>
               <li>
-                <Link to="#">Fees and Charges</Link>
+                <Link to="#">{t("Fees and Charges")}</Link>
               </li>
             </ul>
           </div>
           <div className="footer col">
-            <h5>Apps</h5>
+            <h5>{t("Apps")}</h5>
             <div className="apps">
               <svg
                 id="Layer_1"
@@ -314,20 +323,18 @@ function Footer() {
         <div className="row">
           <div className="footer-s col-3">
             <h4>55,741,680</h4>
-            <span>Registered Users</span>
+            <span>{t("Registered Users")}</span>
           </div>
           <div className="footer-s col-3">
             <h4>20,654,152</h4>
-            <span>Total Jobs Posted</span>
+            <span>{t("Total Jobs Posted")}</span>
           </div>
           <div className="footer-s col-6">
-            <p>
-              Freelancer ® is a registered Trademark of Freelancer Technology
-              Pty Limited (ACN 142 189 759)
+            <p>{t("Freelancer ® is a registered Trademark of Freelancer Technology Pty Limited (ACN 142 189 759)")}
+              
             </p>
             <p>
-              Copyright © 2021 Freelancer Technology Pty Limited (ACN 142 189
-              759)
+            {t("Copyright © 2021 Freelancer Technology Pty Limited (ACN 142 189759)")}
             </p>
           </div>
         </div>

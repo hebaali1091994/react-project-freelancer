@@ -36,7 +36,7 @@ export default function Header() {
        <div className="container">
         <nav className="navbar navbar-expand-lg navbar-light">
           <div className="container-fluid p-0">
-            <img src={Freelancerlogo} alt="" className="image-w" />
+            <Link to="/Dashbaord"><img src={Freelancerlogo}  className="image-w" /></Link>
             <button
               className="navbar-toggler"
               type="button"
@@ -74,10 +74,15 @@ export default function Header() {
                   </select>
                 </div>
       <ul class="navbar-nav me-auto mb-2 mb-lg-0 justify-content-center align-items-center">
-        <NotificationsOutlined></NotificationsOutlined>
-        <ChatBubbleOutlineOutlined></ChatBubbleOutlineOutlined>
+<div  className="icons">
+        <NotificationsOutlined  className="icon">
+
+        </NotificationsOutlined>
+        <div  className="counter">2</div>
+        </div>
+        <ChatBubbleOutlineOutlined ></ChatBubbleOutlineOutlined>
         <span className="px-1"></span>
-        <button type="button" class="btn master-bk"> Post a Project </button>
+        <Link className="link btn postproject m-1" to="/Post-project"> Post a Project </Link>
         <div class="dropdown ">
   <button class="btn dropdown-toggle d-flex" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
   <img
@@ -92,7 +97,7 @@ export default function Header() {
   </button>
   <ul class="dropdown-menu " aria-labelledby="dropdownMenu2">
     <li><button class="dropdown-item" type="button">Action</button></li>
-    <li><button class="dropdown-item" type="button">Another action</button></li>
+    <li><button class="dropdown-item" type="button"><Link className="link" to="/MemberShip">MemberShip</Link></button></li>
     <Link  to="" className="link ms-3" onClick={LogoutHandle}>Logout</Link>
   </ul>
 </div>
@@ -110,7 +115,7 @@ export default function Header() {
       <div className="container">
         <nav className="navbar navbar-expand-lg navbar-light">
           <div className="container-fluid p-0">
-            <img src={Freelancerlogo} alt="" className="image-w" />
+            <Link to="/Dashbaord"><img src={Freelancerlogo} alt="" className="image-w" /></Link>
             <button
               className="navbar-toggler"
               type="button"

@@ -4,11 +4,14 @@
     "Log In":"تسجيل الدخول",
     "Sign Up":"انشاء حساب جديد",
     "Post Project":"نشر مشروع",
-    "Find Job":"ايجاد وظائف",
+    "Find Jobs":"ايجاد وظائف",
     "Find Freelancers":"  ايجاد مستقل ",
     "Get Ideas":"ايجاد افكار",
     "Resources":"المصادر",
-    "Hire the best freelancers for any job,online.":"وظف أفضل المستقلين لأي وظيفة عبر الإنترنت.",
+    "Hire the best":"وظف افضل",
+     "freelancers for any job,":"المستقلين لأي وظيفة",
+     "online.": " .عبر الإنترنت",
+     "Need something done?":"هل تريد فعل شيء ما؟",
     "Millions of people use freelancer.com to turn their ideas into reality.":"ملايين الاشخاص يستخدومون هذا التطبيق لتحويل افكارهم الي حقيقة",
     "Hire a Freelancer":"وظف مستقلاَ",
     "Earn Money Freelancing":"اكسب المال من العمل المستقل",
@@ -73,8 +76,12 @@
     "Copyright Policy":"سياسة حقوق النشر",
     "Code of Conduct":"رمز",
     "Fees and Charges":"الرسوم والمصاريف",
-    "Apps":"البرامج"
-    
+    "Apps":"البرامج",
+    "Registered Users":"المستخدمين",
+     "Total Jobs Posted":"إجمالي الوظائف المنشورة",
+"Freelancer ® is a registered Trademark of Freelancer Technology Pty Limited (ACN 142 189 759)":" Freelancer Technology Pty Limited (ACN 142189759   Freelancer ® هي علامة تجارية مسجلة لشركة",
+
+"Copyright © 2021 Freelancer Technology Pty Limited (ACN 142 189759)":"© 2021 Freelance حقوق النشر محفوظة لشركة "
     
     
     }
