@@ -32,6 +32,7 @@ export default function Header() {
  
   return (
     <div className="bg-white">
+      
       {user  ? <div>
        <div className="container">
         <nav className="navbar navbar-expand-lg navbar-light">
@@ -52,7 +53,7 @@ export default function Header() {
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                 <li className="nav-item">
 
-            <Link className='link ms-4' to="">   <ExploreOutlined></ExploreOutlined> Browse </Link>
+            <Link className='link ms-4' to="/DisplayProject">   <ExploreOutlined></ExploreOutlined> Browse </Link>
                 </li>
                 <li className="nav-item">
                           <Link className='link ms-4' to="">  <LocalMallOutlined></LocalMallOutlined>  Manage  </Link>
