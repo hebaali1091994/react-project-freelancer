@@ -1,8 +1,24 @@
+
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom';
 import { Context } from './../context/Context';
-
+import i18next from "i18next";
+import '../i18n'
+import { useTranslation } from 'react-i18next';
 export default function Header() {
+  const { t, i18n } = useTranslation();
+  let lang=localStorage.getItem('lang')||'en'
+ const change= (option)=> 
+  {
+
+    localStorage.setItem('lang',option.target.value)
+     lang=localStorage.getItem('lang')||'en'
+    i18next.changeLanguage(lang)
+    
+    console.log("lang", lang);
+    console.log("option.target.value", option.target.value);
+  }
+
   const {user} = useContext(Context);
     return (
   <div className="container-fluid p-0">
@@ -12,8 +28,8 @@ export default function Header() {
       <span className="navbar-toggler-icon"></span>
     </button>
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
-      {user ? 
-      
+    
+      {user ?
       <ul className="navbar-nav me-auto mb-2 mb-lg-0 align-items-center ">
         <li className="nav-item">
           <Link to="/Dashbaord" className="link"> Dashboard</Link>
@@ -36,8 +52,8 @@ export default function Header() {
 
 
       </ul> 
-      :
       
+  :
       <ul className="navbar-nav me-auto mb-2 mb-lg-0">
         <li className="nav-item">
           <a className="nav-link text-white" aria-current="page" href="#"> Find Jobs </a>
@@ -54,7 +70,7 @@ export default function Header() {
 
 
       </ul>
-}
+  }
     </div>
   </div>
 </nav>

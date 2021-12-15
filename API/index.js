@@ -1,69 +1,71 @@
-const express= require('express');
+const express = require("express");
 const app = express();
-const http=require('http').createServer(app)
-const io=require('socket.io')(http)
-const dotenv = require('dotenv');
-const i18next = require('i18next')
-const Backend = require('i18next-fs-backend')
-const middleware = require('i18next-http-middleware')
+const http = require("http").createServer(app);
+//const io = require("socket.io")(http);
+const dotenv = require("dotenv");
+const middleware = require("i18next-http-middleware");
 dotenv.config();
-const users = require('./router/user')
-const auth = require('./router/auth')
-const Product = require('./router/Product')
-const Project = require('./router/Project')
-const Cart = require('./router/Cart')
-const Order = require('./router/Order')
-const Category = require('./router/Category')
-const conversion=require('./router/conversion')
-const message=require('./router/message')
-const database = require('./database');
-const { Socket } = require('socket.io');
-
-
-
-i18next.use(Backend).use(middleware.LanguageDetector).init({
-
-fallbackLng:'en',
-backend:{
-    loaPath:'./locals/{{lng}}/transaltion.json'
-}
-
-
-})
-app.use(middleware.handle(i18next))
+const users = require("./router/user");
+const auth = require("./router/auth");
+const Product = require("./router/Product");
+const Project = require("./router/Project");
+const Cart = require("./router/Cart");
+const Order = require("./router/Order");
+const Category = require("./router/Category");
+const conversion = require("./router/conversion");
+const message = require("./router/message");
+const database = require("./database");
+const cors=require("cors")
+server = require('http').Server(app),
+io = require('socket.io')(server);
+const { Socket } = require("socket.io");
+app.use(cors())
 app.use(express.json());
-app.get('/api/test', ()=>{
-    console.log('Test Is Succefual');
+app.get("/api/test", () => {
+  console.log("Test Is Succefual");
+});
+  let onlineusers=[]
+
+  const addNewUser=(username,SocketId)=>{
+
+    !onlineusers.some((user)=>user.username===username)&&onlineusers.push({username,SocketId})
+  }
+  const removeuser=(SocketId)=>{
+
+    onlineusers=onlineusers.filter((user)=>user.SocketId !=SocketId)
+  }
+  const getUser=(username)=>{
+return onlineusers.find((user)=>user.username===username)
+
+  }
+
+ 
+
+io.on("connection", (Socket) => {
+  
+Socket.on("newUser",(username)=>{
+
+    addNewUser(username,Socket.id)
 })
 
-io.on('connection',Socket=>{
+  Socket.on("disconnecter", () => {
+    removeuser(Socket.id)
+  });
+});
+app.use("/users", users);
+app.use("/auth", auth);
+app.use("/Products", Product);
+app.use("/Cart", Cart);
+app.use("/Order", Order);
+app.use("/project", Project);
+app.use("/Category", Category);
+app.use("/conversion", conversion);
+app.use("/message", message);
 
-Socket.on('message',({name,message})=>{
+server.listen(5000, () => {
+  console.log("BackEnd Server Is Running Work In Port : 5000");
+});
 
-
-    io.emit('message',({nmae,message}) )
-})
-
-
-
-})
-app.use('/users', users)
-app.use('/auth', auth)
-app.use('/Products', Product)
-app.use('/Cart', Cart)
-app.use('/Order', Order)
-app.use('/project',   Project)
-app.use('/Category',   Category)
-app.use('/conversion',conversion)
-app.use('/message',message)
-
-
-
-app.listen(5000,()=>{
-    console.log('BackEnd Server Is Running Work In Port : 5000')
-})
-
-
-http.listen(3000,()=>{
-    console.log("chat is running")
-})
+// http.listen(3000, () => {
+//   console.log("chat is running");
+// });

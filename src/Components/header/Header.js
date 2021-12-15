@@ -75,8 +75,13 @@ export default function Header() {
                   </select>
                 </div>
       <ul class="navbar-nav me-auto mb-2 mb-lg-0 justify-content-center align-items-center">
-        <NotificationsOutlined></NotificationsOutlined>
-        <ChatBubbleOutlineOutlined></ChatBubbleOutlineOutlined>
+<div  className="icons">
+        <NotificationsOutlined  className="icon">
+
+        </NotificationsOutlined>
+        <div  className="counter">2</div>
+        </div>
+        <ChatBubbleOutlineOutlined ></ChatBubbleOutlineOutlined>
         <span className="px-1"></span>
         <Link className="link btn postproject m-1" to="/Post-project"> Post a Project </Link>
         <div class="dropdown ">
