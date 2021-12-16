@@ -1,15 +1,9 @@
 
 
-
-import './App.css';
-import Home from './Pages/Home';
-import Postproject from './Pages/post-project/Postproject.jsx';
-
-
-
-import Login from './Pages/Login/Login';
-
-
+import "./App.css";
+import Home from "./Pages/Home";
+import Postproject from "./Pages/post-project/Postproject.jsx";
+import Login from "./Pages/Login/Login";
 import { Routes, Route } from "react-router";
 import SignUp from "./Components/Sign up/SignUp";
 import Paypal from "./Components/Paypal/paypal";
@@ -64,6 +58,9 @@ function App() {
         <Route path='/inbox'  element={<Inbox/>}/>
         <Route path='/DisplayPost'  element={<DisplayProject/>}/>
        <Route path='/Dashbaord'  element={<Dashbaord  />}/>
+                <Route path='/Dashbaord'  element={<Dashbaord  />}/>
+<Route path='/DisplayProject'  element={<DisplayProject  />}/>
+
       </Routes>
     </div>
     </Suspense>
