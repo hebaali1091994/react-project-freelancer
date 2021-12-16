@@ -16,10 +16,10 @@ const conversion = require("./router/conversion");
 const message = require("./router/message");
 const database = require("./database");
 const cors=require("cors")
-server = require('http').Server(app),
-io = require('socket.io')(server);
-const { Socket } = require("socket.io");
-app.use(cors())
+// server = require('http').Server(app),
+// io = require('socket.io')(server);
+// const { Socket } = require("socket.io");
+app.use(cors({}))
 app.use(express.json());
 app.get("/api/test", () => {
   console.log("Test Is Succefual");
@@ -41,31 +41,28 @@ return onlineusers.find((user)=>user.username===username)
 
  
 
-io.on("connection", (Socket) => {
+// io.on("connection", (Socket) => {
   
-Socket.on("newUser",(username)=>{
+// Socket.on("newUser",(username)=>{
 
-    addNewUser(username,Socket.id)
-})
+//     addNewUser(username,Socket.id)
+// })
 
-  Socket.on("disconnecter", () => {
-    removeuser(Socket.id)
-  });
-});
+//   Socket.on("disconnecter", () => {
+//     removeuser(Socket.id)
+//   });
+// });
 app.use("/users", users);
 app.use("/auth", auth);
 app.use("/Products", Product);
 app.use("/Cart", Cart);
 app.use("/Order", Order);
-app.use("/project", Project);
+app.use("/Project", Project);
 app.use("/Category", Category);
 app.use("/conversion", conversion);
 app.use("/message", message);
 
-server.listen(5000, () => {
+
+app.listen(5000, () => {
   console.log("BackEnd Server Is Running Work In Port : 5000");
 });
-
-// http.listen(3000, () => {
-//   console.log("chat is running");
-// });

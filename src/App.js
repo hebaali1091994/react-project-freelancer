@@ -1,9 +1,17 @@
 
 
+<<<<<<< HEAD
 import "./App.css";
 import Home from "./Pages/Home";
 import Postproject from "./Pages/post-project/Postproject.jsx";
 import Login from "./Pages/Login/Login";
+=======
+import './App.css';
+import Login from './Pages/Login/Login';
+import "./App.css";
+import Home from "./Pages/Home";
+import Postproject from "./Pages/post-project/Postproject.jsx";
+>>>>>>> 7f2674b5099d20ab86b58946e007bba4159bfa96
 import { Routes, Route } from "react-router";
 import SignUp from "./Components/Sign up/SignUp";
 import Paypal from "./Components/Paypal/paypal";
@@ -13,9 +21,13 @@ import "../src/i18n";
 
 import { Context } from './context/Context';
 import Dashbaord from './Pages/Dashbaord/Dashbaord';
+<<<<<<< HEAD
 
 import Massenger from './Pages/Massenger/Massenger.jsx';
 
+=======
+import Massenger from './Pages/Massenger/Massenger.jsx';
+>>>>>>> 7f2674b5099d20ab86b58946e007bba4159bfa96
 import Feedback from './Pages/Feedback/feedback';
 import Project_Contests from './Pages/Projects/Project_Contests';
 import MemberShip from './Pages/MemberShip/memberShip';
@@ -43,23 +55,34 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" exact="true" element={<Home />} />
-        <Route path="/Post-project" element={<Postproject />} />
+        <Route path="/Post-project/" element={<Postproject />} />
         <Route path="/Login" element={<Login />} />
         <Route path="/SignUp" element={<SignUp />} />
         <Route path='/paypal'  element={<Paypal  />}/>
+<<<<<<< HEAD
 
         <Route path='/Dashbaord'  element={<Dashbaord  />}/>
         <Route path='/Massenger'  element={<Massenger />}/>
 
+=======
+        <Route path='/Dashbaord'  element={<Dashbaord  />}/>
+        <Route path='/Massenger'  element={<Massenger />}/>
+>>>>>>> 7f2674b5099d20ab86b58946e007bba4159bfa96
         <Route path='/Feedback'  element={<Feedback  />}/>
         <Route path='/Projects'  element={<Project_Contests/>}/>
         <Route path='/MemberShip'  element={<MemberShip  />}/>
         <Route path='/howwork'  element={<HowitWork/>}/>
         <Route path='/inbox'  element={<Inbox/>}/>
         <Route path='/DisplayPost'  element={<DisplayProject/>}/>
+<<<<<<< HEAD
        <Route path='/Dashbaord'  element={<Dashbaord  />}/>
                 <Route path='/Dashbaord'  element={<Dashbaord  />}/>
 <Route path='/DisplayProject'  element={<DisplayProject  />}/>
+=======
+        <Route path='/Dashbaord'  element={<Dashbaord  />}/>
+        <Route path='/DisplayProject'  element={<DisplayProject  />}/>
+
+>>>>>>> 7f2674b5099d20ab86b58946e007bba4159bfa96
 
       </Routes>
     </div>

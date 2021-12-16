@@ -14,7 +14,7 @@ const Login = () => {
     dispatch({type:"LOGIN_START"})
 try{
  
-    const res = await axios.post('/auth/login',{
+    const res = await axios.post('http://localhost:5000/auth/login',{
         Email : EmailRef.current.value,
         Password : PasswordRef.current.value
       });
