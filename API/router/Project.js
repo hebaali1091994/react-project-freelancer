@@ -19,6 +19,24 @@ router.post("/", async (req, res) => {
   }
 });
 
+router.post("/applay/:id",async(req,res)=>{
+  try{
+    const applayProject = await Project.findByIdAndUpdate
+    (
+      req.params.id,
+        {$push:{freelances:req.body }},
+         { new: true }
+        );
+        const nweproject = await applayProject.save();
+      res.status(200).json(nweproject);
+
+      }catch(err){
+    res.status(401).json(error);
+  }
+  
+  
+})
+
 //update project
 
 router.put("/:id", async (req, res) => {

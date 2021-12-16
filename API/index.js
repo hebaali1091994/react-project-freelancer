@@ -26,7 +26,7 @@ app.get("/api/test", () => {
 });
   let onlineusers=[]
 
-  const addNewUser=(username,SocketId)=>{
+  const addNewProject=(username,SocketId)=>{
 
     !onlineusers.some((user)=>user.username===username)&&onlineusers.push({username,SocketId})
   }

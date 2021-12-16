@@ -32,22 +32,22 @@ export default function Header() {
       {user ?
       <ul className="navbar-nav me-auto mb-2 mb-lg-0 align-items-center ">
         <li className="nav-item">
-          <Link to="/Dashbaord" className="link"> Dashboard</Link>
+          <Link to="/Dashbaord" className="link">  {t("Dashboard")} </Link>
         </li>
         <li className="nav-item">
-          <a className="nav-link text-white" aria-current="page" href="#">   My Lists   </a>
+          <a className="nav-link text-white" aria-current="page" href="#"> {t("My Lists")}     </a>
         </li>
         <li className="nav-item">
-          <Link to="/Projects" className="link" > My Projects</Link>
+          <Link to="/Projects" className="link" >{t("My Projects")} </Link>
         </li>
         <li className="nav-item">
-         <Link to="/inbox" className="link" >  Inbox   </Link>
+         <Link to="/inbox" className="link" > {t("Inbox")}    </Link>
         </li>
         <li className="nav-item">
-        <Link to="/Feedback " className="link">    Feedback  </Link>
+        <Link to="/Feedback " className="link"> {t("Feedback")}     </Link>
         </li>
         <li className="nav-item">
-          <a className="nav-link text-white" aria-current="page" href="#">    Free Credit    </a>
+          <a className="nav-link text-white" aria-current="page" href="#"> {t(" Free Credit")}      </a>
         </li>
 
 
@@ -56,16 +56,16 @@ export default function Header() {
   :
       <ul className="navbar-nav me-auto mb-2 mb-lg-0">
         <li className="nav-item">
-          <a className="nav-link text-white" aria-current="page" href="#"> Find Jobs </a>
+          <a className="nav-link text-white" aria-current="page" href="#">{t("Find Jobs")}  </a>
         </li>
         <li className="nav-item">
-          <a className="nav-link text-white" aria-current="page" href="#">  Find Freelancers  </a>
+          <a className="nav-link text-white" aria-current="page" href="#"> {t("Find Freelancers")}   </a>
         </li>
         <li className="nav-item">
-          <a className="nav-link text-white" aria-current="page" href="#">  Get Ideas  </a>
+          <a className="nav-link text-white" aria-current="page" href="#">{t("Get Ideas")}    </a>
         </li>
         <li className="nav-item">
-          <a className="nav-link text-white" aria-current="page" href="#">  Resources  </a>
+          <a className="nav-link text-white" aria-current="page" href="#">{t("Resources")}    </a>
         </li>
 
 

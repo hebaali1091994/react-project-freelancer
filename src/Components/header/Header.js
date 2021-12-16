@@ -21,21 +21,16 @@ export default function Header() {
   let lang=localStorage.getItem('lang')||'en'
  const change= (option)=> 
   {
+
     localStorage.setItem('lang',option.target.value)
-    lang=localStorage.getItem('lang')||'en'
-   i18next.changeLanguage(lang)
-   console.log("lang", lang);
-   console.log("option.target.value", option.target.value);
-   window.location.reload()
-
-   this.setState({
-
-
-   })  
+     lang=localStorage.getItem('lang')||'en'
+    i18next.changeLanguage(lang)
+    // window.location.reload()
+    console.log("lang", lang);
+    console.log("option.target.value", option.target.value);
   }
  
   return (
-    <div className="bg-white" >
     <div className="bg-white">
       
       {user  ? <div>
@@ -58,16 +53,14 @@ export default function Header() {
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                 <li className="nav-item">
 
-            <Link className='link ms-4' to="">   <ExploreOutlined></ExploreOutlined>{t("Browse")}  </Link>
-
             <Link className='link ms-4' to="/DisplayProject">   <ExploreOutlined></ExploreOutlined> Browse </Link>
                 </li>
                 <li className="nav-item">
-                          <Link className='link ms-4' to="">  <LocalMallOutlined></LocalMallOutlined>{t("Manage")}     </Link>
+                          <Link className='link ms-4' to="">  <LocalMallOutlined></LocalMallOutlined>  Manage  </Link>
 
                 </li>
                 <li className="nav-item">
-          <Link className='link ms-4' to=""> <PeopleOutlined></PeopleOutlined>{t("Browse Jobs")}   </Link>
+          <Link className='link ms-4' to=""> <PeopleOutlined></PeopleOutlined> Browse Jobs </Link>
 
                 </li>
                 
@@ -90,7 +83,6 @@ export default function Header() {
         </div>
         <ChatBubbleOutlineOutlined ></ChatBubbleOutlineOutlined>
         <span className="px-1"></span>
-        <Link className="link btn postproject m-1" to="/Post-project">{t("Post a Project")}   </Link>
         <Link className="link btn postproject m-1" to="/Post-project/" > Post a Project </Link>
         <div class="dropdown ">
   <button class="btn dropdown-toggle d-flex" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
@@ -106,8 +98,8 @@ export default function Header() {
   </button>
   <ul class="dropdown-menu " aria-labelledby="dropdownMenu2">
     <li><button class="dropdown-item" type="button">Action</button></li>
-    <li><button class="dropdown-item" type="button"><Link className="link" to="/MemberShip">{t("MemberShip")} </Link></button></li>
-    <Link  to="" className="link ms-3" onClick={LogoutHandle}>{t("")} Logout</Link>
+    <li><button class="dropdown-item" type="button"><Link className="link" to="/MemberShip">MemberShip</Link></button></li>
+    <Link  to="" className="link ms-3" onClick={LogoutHandle}>Logout</Link>
   </ul>
 </div>
         </ul>
@@ -124,7 +116,7 @@ export default function Header() {
       <div className="container">
         <nav className="navbar navbar-expand-lg navbar-light">
           <div className="container-fluid p-0">
-            <Link to="/"><img src={Freelancerlogo} alt="" className="image-w" /></Link>
+            <Link to="/Dashbaord"><img src={Freelancerlogo} alt="" className="image-w" /></Link>
             <button
               className="navbar-toggler"
               type="button"
