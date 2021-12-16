@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import './Proposals.css'
 import Nav2 from './Nav2'
-import Footer from '../../Components/Footer'
-
+import Footer from '../../Components/Footer';
+import { PayPalButton } from "react-paypal-button-v2";
 export default function Proposals(){
+  const[state, setstate] = useState(0)
     return (
       <div className="parent ">
           <Nav2/>
@@ -65,6 +66,54 @@ export default function Proposals(){
                 </div>
                 </div>
               </div>
+
+
+
+              <div className="col-md-12 bg-white mt-3 part2 d-flex justify-content-center align-items-center" style={{height:"400px"}}>
+
+
+              <div>
+<input type="number" value={state}  onChange={e=>{setstate(e.target.value)}}/>
+
+            <PayPalButton
+    
+            options={{
+                clientId:"AbT1_mgcwnlpz_sqRm6u7W3nXN_Xikce50VB8_E1VPL6-mHUT0sD7RFx2ar0BvAMPTco1iHdgUKYaQx5",
+                currency:"USD"
+    
+            }}
+            amount={state}
+            // shippingPreference="NO_SHIPPING" // default is "GET_FROM_FILE"
+            onSuccess={(details, data) => {
+              alert("Transaction completed by " + details.payer.name.given_name);
+    
+              // OPTIONAL: Call your server to save the transaction
+              return fetch("/paypal-transaction-complete", {
+                method: "post",
+                body: JSON.stringify({
+                  orderID: data.orderID
+                })
+              });
+            }}
+          />
+        </div>
+
+
+
+
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
             </div>
           
           <div className="col-4  ml-8 mt-2">
@@ -129,4 +178,3 @@ export default function Proposals(){
       </div>
     )
   }
-

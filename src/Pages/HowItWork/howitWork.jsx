@@ -28,9 +28,9 @@ const howitWork = () => {
                                 <nav>
                                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
 
-                                <button class="nav-link col-xl-6  active  text-body" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true"> How to hire a freelancer </button>
+                                <button class="nav-link col-xl-5 col-sm-12  active  text-body" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true"> How to hire a freelancer </button>
 
-                                <button class="nav-link col-xl-6   text-body" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false"> How to earn money freelancing </button>
+                                <button class="nav-link col-xl-6 col-sm-12   text-body" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false"> How to earn money freelancing </button>
 
 
 

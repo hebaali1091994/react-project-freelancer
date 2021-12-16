@@ -88,9 +88,7 @@ dispatch({ type: "LOGIN_SUCCESS", payload: res.data });
   return (
     <div className="container">
       <div className="row">
-    <div classNameName="bg-signup">
-      <div className="fluid m-auto ">
-
+    <div className="bg-signup">
       <div className="fluid m-auto">
         <form
           className="login_form"
@@ -106,12 +104,7 @@ dispatch({ type: "LOGIN_SUCCESS", payload: res.data });
               </div>
               <h5 className="card-text">Sign Up</h5>
               <div className="card  btu">
-                <button type="button" className="btn  btn-lg btn-block">
-                  <a href="https://www.facebook.com/">
-                    {" "}
-                    <i className="bi bi-facebook"></i>Continue with Facebook{" "}
-                  </a>
-                </button>
+
               </div>
               <div className="divider ">OR</div>
               <div className="login_form">
@@ -266,7 +259,7 @@ dispatch({ type: "LOGIN_SUCCESS", payload: res.data });
       </div>
     </div>
     </div>
-    </div></div>
+    </div>
   );
 };
 

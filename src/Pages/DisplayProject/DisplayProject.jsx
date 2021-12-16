@@ -10,9 +10,11 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import Nav2 from './../projectinfo/Nav2';
 import Footer from '../../Components/Footer';
-import { Link } from 'react-router-dom';
-const DisplayProject = () => {
+import { Link, useParams } from 'react-router-dom';
 
+const DisplayProject = () => {
+const history = useParams();
+console.log();
   const {user} = useContext(Context)
    const [users, setUser] = useState([]); 
    const [project, setProject] = useState([])
@@ -391,6 +393,9 @@ const DisplayProject = () => {
   {project.map((project) =>(
     <SingleProject project={project}/>
     ))}
+
+
+    
     <Nav2 project={project} />
 
 
