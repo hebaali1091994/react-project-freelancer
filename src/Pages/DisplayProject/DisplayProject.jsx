@@ -23,6 +23,17 @@ const DisplayProject = () => {
     }
     fetchData();
   },[]);
+
+
+
+  useEffect(() => {
+    
+    const fetchData = async ()=>{
+      const res = await axios.get("/users/all");
+      setUser(res.data)
+    }
+    fetchData();
+  },[]);
 console.log(users)
 
 

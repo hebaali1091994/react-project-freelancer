@@ -119,7 +119,9 @@ const PostEnterFace = () => {
 //         }
 //   }
 try{
-  await axios.post(`Project/`, newPost)
+  const res = await axios.post(`Project/`, newPost)
+      res.data && window.location.replace('/DisplayProject/');
+
 }catch(error){
 }
 }
