@@ -1,6 +1,7 @@
 import React from 'react'
 import "./howitwork.css"
 import Header from '../../Components/header/Header'
+import Footer from './../../Components/Footer';
 
 const howitWork = () => {
     return (
@@ -74,7 +75,7 @@ const howitWork = () => {
                     <div class="container">
                     <div class="row">
                     <div class="col-md-6 col-sm-12 how-work">
-                    <img src="image\how-it-work.jpg" alt=""/>
+                    <img src="https://www.f-cdn.com/assets/main/en/assets/how-it-works/how-it-works.jpg" alt=""/>
                     </div>
                     <div class="col-md-6 col-sm-12 contest">
                     <h1>How does it work?</h1>
@@ -123,7 +124,7 @@ const howitWork = () => {
                     </div>
                     </div>
                     <div class="col-md-6 col-sm-12 how-work">
-                    <img src="image\how-it-work.jpg" alt=""/>
+                    <img src="https://www.f-cdn.com/assets/main/en/assets/how-it-works/be-in-control.jpg" alt=""/>
                     </div>
                     </div>
                     </div>
@@ -133,7 +134,7 @@ const howitWork = () => {
                     <div class="mt-5">
                     <div class="row">
                     <div class="col-md-6 col-sm-12 how-work">
-                    <img src="image\safety.jpg" alt=""/>
+                    <img src="https://www.f-cdn.com/assets/main/en/assets/how-it-works/safety.jpg" alt=""/>
                     </div>
                     <div class="col-md-6 col-sm-12">
                     <h2 class="header-title">Safe and secure
@@ -249,7 +250,7 @@ const howitWork = () => {
                     <div class="container">
                     <div class="row">
                         <div class="col-md-6 col-sm-12 how-work">
-                            <img src="image\get-started.jpg" alt=""/>
+                            <img src="https://www.f-cdn.com/assets/main/en/assets/how-it-works/get-started.jpg" alt=""/>
                         </div>
                         <div class="col-md-6 col-sm-12 contest">
                             <h1>How do I get started?</h1>
@@ -311,7 +312,7 @@ const howitWork = () => {
                     </div>
                     </div>
                     <div class="col-md-6 col-sm-12 how-work">
-                    <img src="image\how-it-work.jpg" alt=""/>
+                    <img src="https://www.f-cdn.com/assets/main/en/assets/how-it-works/manage-your-career.jpg" alt=""/>
                     </div>
                     </div>
                     </div>
@@ -322,7 +323,7 @@ const howitWork = () => {
                     <div class="mt-5">
                     <div class="row">
                     <div class="col-md-6 col-sm-12 how-work">
-                    <img src="image\safety.jpg" alt=""/>
+                    <img src="https://www.f-cdn.com/assets/main/en/assets/how-it-works/safety.jpg" alt=""/>
                     </div>
                     <div class="col-md-6 col-sm-12">
                     <h2 class="header-title">Safe and secure
@@ -426,6 +427,7 @@ const howitWork = () => {
                     </div>
 
                     </div>
+                    <Footer/>
                     </div>
         </div>
     )

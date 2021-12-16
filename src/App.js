@@ -68,7 +68,7 @@ function App() {
         <Route path='/howwork'  element={<HowitWork/>}/>
         <Route path='/inbox'  element={<Inbox/>}/>
         <Route path='/DisplayPost'  element={<DisplayProject/>}/>
-       <Route path='/Dashbaord'  element={<Dashbaord  />}/>
+       <Route path='/Dashbaord'  element={user ? <Dashbaord /> : <Home/>}/>
                 <Route path='/Dashbaord'  element={<Dashbaord  />}/>
 <Route path='/DisplayProject'  element={<DisplayProject  />}/>
         <Route path='/Dashbaord'  element={<Dashbaord  />}/>
