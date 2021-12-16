@@ -1,12 +1,13 @@
 .Refer-friend {
-    /* background: url("../Image/svgexport-1.svg"); */
+    background: url("https://i.ibb.co/R4VZrpX/svgexport-1.png");
     background-position: 100%;
     background-repeat: no-repeat;
     background-size: cover;
     overflow: hidden;
-    max-height: 200px;
+    max-height: 255px;
   }
-  
+
+
   .button-style {
     font-size: 14px;
     line-height: 1.43;

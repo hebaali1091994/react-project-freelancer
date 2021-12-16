@@ -65,7 +65,7 @@ router.get("/", async (req, res) => {
   const catName = req.query.cat;
 
   try {
-    let posts;
+    let Categorys;
     if (username) {
       Categorys = await Category.find({ username });
     } else if (catName) {

@@ -4,9 +4,15 @@ import Navbar from './../../Components/Navbar'
 import './Dashbaord.css'
 import { Context } from '../../context/Context';
 import { useContext } from 'react';
+import Footer from '../../Components/Footer';
+
 
 export default function Dashbaord() {
+
   const {user} = useContext(Context)
+
+
+
     return (
       <div className="Dashbaord">
           <Header/>
@@ -15,9 +21,10 @@ export default function Dashbaord() {
       {/* <!-- Start Section Refer Friend --> */}
       <div className="row">
         <div className="col">
-          <div className="col-12 mt-5 bg-white border rounded Refer-friend">
+          <div className="col-12 mt-5 bg-white border rounded Refer-friend bk-img">
             <div className="row">
               <div className="col-9">
+                <div className="mx-5">
                 <p className="font-weight-bold pt-4 display-6">
                   Refer a Friend, get $ 15 GBP
                 </p>
@@ -42,13 +49,14 @@ export default function Dashbaord() {
                   </svg>
                 </button>
               </div>
-              <div className="col-3">
-                <img src="Image/gift.png" alt="giftImage" />
+              </div>
+              <div className="col-3 ">
+                <img src="https://i.ibb.co/j46fbGN/gift.png" className='img-fluid' alt="giftImage" />
               </div>
             </div>
           </div>
           <div className="col-12 mt-5 bg-white border rounded">
-            <div className="d-flex justify-content-between border-bottom px-5">
+            <div className="d-flex justify-content-between border-bottom px-5 mt-3">
               <h3 className="p-2 font-weight-bold">Recent Projects
               
               </h3>
@@ -114,10 +122,10 @@ export default function Dashbaord() {
               </div>
             </div>
           </div>
-          <div className="col-12 mt-5 bg-white border rounded Recent-Projects mb-5">
+          <div className="col-12 mt-5 bg-white border rounded Recent-Projects">
             {/* <!-- Start Recent Project  --> */}
             <div className="d-flex justify-content-between border-bottom">
-              <h3 className="p-2 font-weight-bold px-5">News Feed</h3>
+              <h3 className="p-2 font-weight-bold px-5 mt-3">News Feed</h3>
             </div>
             <div className="d-flex justify-content-center mt-4 px-5">
               <div className="row">
@@ -131,13 +139,13 @@ export default function Dashbaord() {
                     get started.
                   </p>
                   <p className="lead font-weight-bold">5 days age</p>
-                  <button type="button" className="btn btn-outline-secondary">
+                  <button type="button" className="btn btn-outline-secondary mx-3">
                     Post a Project
                   </button>
-                  <button type="button" className="btn btn-outline-secondary">
+                  <button type="button" className="btn btn-outline-secondary mx-3">
                     Browse Projects
                   </button>
-                  <button type="button" className="btn btn-outline-secondary">
+                  <button type="button" className="btn btn-outline-secondary mx-3">
                     Set up account details
                   </button>
                 </div>
@@ -148,7 +156,7 @@ export default function Dashbaord() {
 
         <div className="col-lg-4 col-sm-12">
           <div className="col-12">
-            <div className="info bg-white">
+            <div className="info bg-white ">
               <div
                 className="mt-5 dark-blue border rounded Recent-Projects p-3 mb-5"
               >
@@ -160,17 +168,18 @@ export default function Dashbaord() {
                   <p>FREE MEMBER</p>
                 </div>
               </div>
+              <div className="rounder border">
               <div className="container">
                 <div className="d-flex justify-content-between">
                   <h5>Set up your account</h5>
-                  <p>13%</p>
+                  <p>100%</p>
                 </div>
                 <div className="progress">
                   <div
                     className="progress-bar progress-bar-striped pro "
                     role="progressbar"
-                    style={{  "width": "13%",
-                        "aria-Valuenow":"13",
+                    style={{  "width": "100%",
+                        "aria-Valuenow":"100",
                     "aria-valuemin":"0",
                     "aria-valuemax":"100"}}
                   ></div>
@@ -207,13 +216,13 @@ export default function Dashbaord() {
                     </svg>
                   </h6>
                 </div>
-                <hr />
                 <div className="mb-3"></div>
+              </div>
               </div>
             </div>
           </div>
           <div className="col-12 bg-white mt-5">
-            <div className="polls-info">
+            <div className="polls-info border rounder px-3">
               <div className="d-flex justify-content-between border-bottom">
                 <h3 className="p-2 font-weight-bold">Polls</h3>
               </div>
@@ -261,9 +270,11 @@ export default function Dashbaord() {
           </div>
         </div>
       </div>
-
       {/* <!-- end Section Refer Friend --> */}
     </div>
+    <div className="mt-3">
+      <Footer/>
+      </div>
         </div>
     )
 }

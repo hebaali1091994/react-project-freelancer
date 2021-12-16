@@ -68,6 +68,21 @@ router.get('/one/:id',verifyTokenAndAdmin, async (req,res)=>{
            })
 
 
+
+               router.get('/all', async (req,res)=>{
+        const query = req.query.new;
+    
+        try{
+           const Users = query ? await User.find().sort({_id:-1}).limit(5): await User.find({typeUser:"user"});
+                   res.status(200).json(Users)
+           }catch(error){
+            res.status(500).json(error)
+       
+        }
+           })
+
+
+
 //all admins
 
 

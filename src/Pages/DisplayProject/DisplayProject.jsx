@@ -4,21 +4,38 @@ import SingleFreelancer from './../../Components/Single Freelancer/SingleFreelan
 import SingleProject from './../../Components/Single Project/SingleProject';
 import SingleContests from './../../Components/SingleContests/SingleContests';
 import './DisplayProject.css'
-
+import { Context } from '../../context/Context';
+import { useContext } from 'react';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-
-
 const DisplayProject = () => {
-const [project, setProject] = useState([])
+
+  const {user} = useContext(Context)
+   const [users, setUser] = useState([]); 
+   const [project, setProject] = useState([])
 
 
-useEffect(() => {
-  const fetchProject =async ()=>{
-    axios.get("")
-  }
+  useEffect(() => {
+    
+    const fetchData = async ()=>{
+      const res = await axios.get("/users/all");
+      setUser(res.data)
+    }
+    fetchData();
+  },[]);
 
-}, []);
+
+
+  useEffect(() => {
+    
+    const fetchProject = async ()=>{
+      const res = await axios.get("/Project/all");
+      setProject(res.data)
+    }
+    fetchProject();
+  },[]);
+    console.log(project)
+
 
   return (
         <div className='DisplayProject'>
@@ -199,10 +216,11 @@ useEffect(() => {
                 Top results
                 <span>Showing 1-20 of 1989256 results</span>
             </div>
-            <SingleFreelancer/>
-            <SingleFreelancer/>
-            <SingleFreelancer/>
-            <SingleFreelancer/>
+            {users.map((users) =>(
+
+            <SingleFreelancer users={users}/>
+            ))}
+
 
 
         
@@ -366,10 +384,11 @@ useEffect(() => {
                         </div>
 
                     </div>
-              <SingleProject/>
-              <SingleProject/>
-              <SingleProject/>
-              <SingleProject/>
+
+  {users.map((project) =>(
+
+            <SingleProject project={project}/>
+            ))}
 
 
 

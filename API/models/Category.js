@@ -2,8 +2,8 @@ const mongoose = require("mongoose");
 const categrySchema = mongoose.Schema({
   categoryName: { type: String },
   description:{type:String},
-  parentCategry: { type: mongoose.Schema.Types.ObjectId, default:null},
-  subCate :{type:Array}
-   
+  parentCategry: { type:String, default:null},
+  subCate :{type:Array},
+  img:{type:String, default:"hello.jpg"}
 });
 module.exports=mongoose.model("category",categrySchema);

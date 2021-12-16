@@ -24,29 +24,26 @@ app.use(express.json());
 app.get("/api/test", () => {
   console.log("Test Is Succefual");
 });
-  let onlineusers=[]
-
-  const addNewProject=(username,SocketId)=>{
-
-    !onlineusers.some((user)=>user.username===username)&&onlineusers.push({username,SocketId})
-  }
-  const removeuser=(SocketId)=>{
-
-    onlineusers=onlineusers.filter((user)=>user.SocketId !=SocketId)
-  }
-  const getUser=(username)=>{
-return onlineusers.find((user)=>user.username===username)
-
-  }
-
+  
  
 
-// io.on("connection", (Socket) => {
+// io.on("connection", (Socket) => 
   
-// Socket.on("newUser",(username)=>{
-
-//     addNewUser(username,Socket.id)
-// })
+// {
+//   socket.on("getDoc", docId => {
+//     safeJoin(docId);
+//     socket.emit("document", documents[docId]);
+//   });
+//   socket.on("addDoc", doc => {
+//     documents[doc.id] = doc;
+//     safeJoin(doc.id);
+//     io.emit("documents", Object.keys(documents));
+//     socket.emit("document", doc);
+//   });
+//   socket.on("editDoc", doc => {
+//     documents[doc.id] = doc;
+//     socket.to(doc.id).emit("document", doc);
+//   });
 
 //   Socket.on("disconnecter", () => {
 //     removeuser(Socket.id)
@@ -61,6 +58,7 @@ app.use("/Project", Project);
 app.use("/Category", Category);
 app.use("/conversion", conversion);
 app.use("/message", message);
+// MONGO_URL = mongoose.connect("mongodb+srv://freelance:12345@freelance.mhgq8.mongodb.net/freelace?retryWrites=true&w=majority");
 
 
 app.listen(5000, () => {
