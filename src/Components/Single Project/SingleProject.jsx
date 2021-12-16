@@ -1,11 +1,11 @@
 import React from 'react'
-import { useParams } from 'react-router';
+// import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
-import { useLocation } from 'react-router-dom/cjs/react-router-dom.min';
 import './SingleProject.css'
+import {  useNavigate, useLocation } from 'react-router-dom';
+
 const SingleProject = ({project}) => {
-    console.log(project);
-    const history = useParams();
+    const history = useNavigate();
     console.log(project);
 
     return (
@@ -20,7 +20,6 @@ const SingleProject = ({project}) => {
                           <h5 class="card-title text-dark text-none link postTitle">{project.ChooseName}   </h5>
                  
                           <p className='postDesc'>{project.Tellus}</p>
-                          <div class="skill-person link">PHP - JAVASCRIPT - WEB </div>
                             <div class="card-text rating-person link ">
                                 <div class="row">
                                 <div class="fix-price col-md-4"><i class="fas fa-tv link"></i> Fix Price</div>

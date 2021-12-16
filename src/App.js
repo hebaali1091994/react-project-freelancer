@@ -31,6 +31,7 @@ import Proposals from './Pages/projectinfo/Proposals';
 import Tasks from './Pages/projectinfo/Tasks';
 import Details from './Pages/projectinfo/Details';
 import Files from './Pages/projectinfo/Files';
+import DetailsData from './Pages/projectinfo/DetailsData';
 
 function App() {
   const [socket, setSocket] = useState(null);
@@ -74,9 +75,8 @@ function App() {
         <Route path='/DisplayProject/'  element={<DisplayProject  />}/>
             <Route path='/DisplayProject/Proposals/:id'  element={<Proposals  />}/>
             <Route path='/DisplayProject/Tasks/:id'  element={<Tasks  />}/>
-            <Route path='/DisplayProject/Details/:id'  element={<Details  />}/>
+            <Route path='/DisplayProject/Details/:id'  element={<DetailsData  />}/>
             <Route path='/DisplayProject/Files/:id'  element={<Files  />}/>
-        <Route path='/Skills'  element={<Skills/>}/>
         <Route path='/Skills'  element={<Skills/>}/>
 
 

@@ -3,13 +3,39 @@ import { Link } from "react-router-dom";
 import "./Nav2.css";
 import Files from './Files';
 import App from '../../App';
+import { useParams } from 'react-router';
+import {  useNavigate, useLocation } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import axios  from 'axios';
+
+
 export default function Nav2({project}){
+      const location = useLocation();
+
+    const path =   location.pathname.split('/')[3];
+    console.log(path);
+
+    const [Project, setProject] = useState({})
+  useEffect(() => {
+    const getProject = async()=>{
+      const res = await axios.get('/Project/oneproject/'+ path);
+      setProject(res.data);
+      console.log(res.data);
+
+    }
+    getProject();
+  }, [path]);
+
+
+
+
+
 return(
 
 <div className='projectDetails d-flex justify-content-between '>
 <div className='navv'>
 
-<div className='projectName pl-4 pt-5'><h3 ></h3></div>
+<div className='projectName pl-4 pt-5'><h3 >{Project.ChooseName}</h3></div>
 <nav className="navbar navbar-expand-lg navbar-light">
 <div className="container-fluid">
 
@@ -23,16 +49,16 @@ return(
 
 
 <li className="nav-item">
-<Link className="nav-link" to="/DisplayProject/Details/:id">Details</Link>
+<Link className="nav-link" to={`/DisplayProject/Details/${path}`}>Details</Link>
 </li>
 <li className="nav-item">
-<Link className="nav-link" to="/DisplayProject/Proposals/:id">Proposals</Link>
+<Link className="nav-link" to={`/DisplayProject/Proposals/${path}`}>Proposals</Link>
 </li>
 <li className="nav-item">
-<Link className="nav-link" to='/DisplayProject/Files/:id'>Files </Link>
+<Link className="nav-link" to={`/DisplayProject/Files/${path}`}>Files </Link>
 </li>
 <li className="nav-item">
-<Link className="nav-link" to="/DisplayProject/Tasks/:id">Tasks</Link>
+<Link className="nav-link" to={`/DisplayProject/Tasks/${path}`}>Tasks</Link>
 
 </li>
 <li className="nav-item">
