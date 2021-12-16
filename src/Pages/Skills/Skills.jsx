@@ -38,14 +38,12 @@ const Skills = () => {
 
   })
     return (
-<<<<<<< HEAD
         <>
         <div classNameName="container-fluid mt-3">
         <div className="row">
             <div className="col-md-12 d-flex">
                 <img class="freelancer-logo" src={freelancelogo}  alt=""/>
                 <p className="m-auto fs-4"><b>Profile details</b></p>
-=======
         <div className='Skills'>
                 <div class="container">
         <div class="row">
@@ -75,7 +73,6 @@ const Skills = () => {
                     </div>
                 </div>
                 <button>Next</button>
->>>>>>> 11b376ee5be3658beed38a4817b47842e82d51ef
             </div>
             <div className="col-md-12">
             <progress max="7" value={formStep + 1} style={{ width: "100%", height: "5vh" }}/>
@@ -98,7 +95,11 @@ const Skills = () => {
         </form>
             </div>
         </div>
-        </div>
+        </div> 
+        </div> 
+        </div> 
+        </div> 
+        </div> 
         </>
     )
 }

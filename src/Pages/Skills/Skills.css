@@ -1,13 +1,11 @@
 *{
   padding: 0;
-<<<<<<< HEAD
   margin: 0;
   box-sizing: border-box;
 }
 
 .freelancer-logo{
   width: 10%;
-=======
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
@@ -81,7 +79,6 @@
         -ms-flex-direction: column;
             flex-direction: column;
   }
->>>>>>> 11b376ee5be3658beed38a4817b47842e82d51ef
 }
 .profile_img{
 height: 150px;

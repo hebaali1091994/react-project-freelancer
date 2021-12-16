@@ -56,3 +56,6 @@
   border-radius: 10px;
 }
 /*# sourceMappingURL=projects.css.map */
+.DisplayProject .projectDetails {
+    display: none !important;
+}
