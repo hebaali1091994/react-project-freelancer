@@ -27,6 +27,10 @@ import HowitWork from './Pages/HowItWork/howitWork';
 import Inbox from './Pages/inbox/Inbox';
 import DisplayProject from './Pages/DisplayProject/DisplayProject';
 import Skills from './Pages/Skills/Skills';
+import Proposals from './Pages/projectinfo/Proposals';
+import Tasks from './Pages/projectinfo/Tasks';
+import Details from './Pages/projectinfo/Details';
+import Files from './Pages/projectinfo/Files';
 
 function App() {
   const [socket, setSocket] = useState(null);
@@ -67,7 +71,12 @@ function App() {
                 <Route path='/Dashbaord'  element={<Dashbaord  />}/>
 <Route path='/DisplayProject'  element={<DisplayProject  />}/>
         <Route path='/Dashbaord'  element={<Dashbaord  />}/>
-        <Route path='/DisplayProject'  element={<DisplayProject  />}/>
+        <Route path='/DisplayProject/'  element={<DisplayProject  />}/>
+            <Route path='/DisplayProject/Proposals/:id'  element={<Proposals  />}/>
+            <Route path='/DisplayProject/Tasks/:id'  element={<Tasks  />}/>
+            <Route path='/DisplayProject/Details/:id'  element={<Details  />}/>
+            <Route path='/DisplayProject/Files/:id'  element={<Files  />}/>
+        <Route path='/Skills'  element={<Skills/>}/>
         <Route path='/Skills'  element={<Skills/>}/>
 
 

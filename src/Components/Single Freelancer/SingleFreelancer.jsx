@@ -1,12 +1,13 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
-const SingleFreelancer = ({u}) => {
-    console.log(u);
+const SingleFreelancer = ({users}) => {
+    console.log(users);
     return (
         
         <div>
                         <div class="card-body">
-                <a href="#" class="">
+           <Link className="link"  to={`/DisplayProject/${users._id}`}>
                 <div class="row">
                     <div class="col-md-2">
                         <img src="1.jpg" class="card-img-top freelancer-img" alt="..."/>
@@ -32,7 +33,7 @@ const SingleFreelancer = ({u}) => {
             </div>    
             </div>
             </div>
-            </a>
+         </Link>
         </div>
         </div>
     )

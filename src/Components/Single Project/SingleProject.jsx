@@ -1,23 +1,25 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
-const SingleProject = () => {
+const SingleProject = ({project}) => {
+
     return (
         
         <div>
 
-                                    <div class="card-body">
-                            <a href="#" class="">
+                                    <div class="card-body border rounder">
+                           <Link className="link" to={`/DisplayProject/Proposals/${project._id}`}>
                             <div class="row">
 
                                 <div class="col-md-8">
-                          <h5 class="card-title text-dark text-none">   Audio translation from ENGLISH to JAPANESE   </h5>
-                      
-                          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi sit possimus neque distinctio saepe, blanditiis harum rerum commodi voluptate expedita et architecto in laboriosam molestias ea at. Voluptatem, illo modi.</p>
-                          <div class="skill-person">PHP - JAVASCRIPT - WEB </div>
-                            <div class="card-text rating-person">
+                          <h5 class="card-title text-dark text-none link"> {project.ChooseName}  </h5>
+                 
+                          <p>{project.Tellus}</p>
+                          <div class="skill-person link">PHP - JAVASCRIPT - WEB </div>
+                            <div class="card-text rating-person link ">
                                 <div class="row">
-                                <div class="fix-price col-md-4"><i class="fas fa-tv"></i> Fix Price</div>
-                                <div class="fix-price col-md-4"><i class="fas fa-building"></i> No Bird</div>
+                                <div class="fix-price col-md-4"><i class="fas fa-tv link"></i> Fix Price</div>
+                                <div class="fix-price col-md-4"><i class="fas fa-building link"></i> No Bird</div>
                                 <div class="col-md-4">
                                 <i class="fas fa-user"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></div>
                             </div>
@@ -31,7 +33,7 @@ const SingleProject = () => {
     
                         </div>
                         </div>
-                        </a>
+                      </Link>
         </div>
         </div>
     )

@@ -28,13 +28,13 @@ const DisplayProject = () => {
 
   useEffect(() => {
     
-    const fetchData = async ()=>{
-      const res = await axios.get("/users/all");
-      setUser(res.data)
+    const fetchProject = async ()=>{
+      const res = await axios.get("/Project/all");
+      setProject(res.data)
     }
-    fetchData();
+    fetchProject();
   },[]);
-console.log(users)
+    console.log(project)
 
 
   return (
@@ -216,9 +216,9 @@ console.log(users)
                 Top results
                 <span>Showing 1-20 of 1989256 results</span>
             </div>
-            {users.map((u) =>(
+            {users.map((users) =>(
 
-            <SingleFreelancer users={u}/>
+            <SingleFreelancer users={users}/>
             ))}
 
 
@@ -384,10 +384,11 @@ console.log(users)
                         </div>
 
                     </div>
-              <SingleProject/>
-              <SingleProject/>
-              <SingleProject/>
-              <SingleProject/>
+
+  {users.map((project) =>(
+
+            <SingleProject project={project}/>
+            ))}
 
 
 
