@@ -38,7 +38,7 @@ router.put("/:id", async (req, res) => {
   }
 });
 //all projects
-router.get("/all", verifyTokenAndAdmin, async (req, res) => {
+router.get("/all", async (req, res) => {
   try {
     const allproject = await Project.find();
     res.status(200).json(allproject);

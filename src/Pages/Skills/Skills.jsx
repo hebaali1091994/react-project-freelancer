@@ -38,12 +38,44 @@ const Skills = () => {
 
   })
     return (
+<<<<<<< HEAD
         <>
         <div classNameName="container-fluid mt-3">
         <div className="row">
             <div className="col-md-12 d-flex">
                 <img class="freelancer-logo" src={freelancelogo}  alt=""/>
                 <p className="m-auto fs-4"><b>Profile details</b></p>
+=======
+        <div className='Skills'>
+                <div class="container">
+        <div class="row">
+            <div class="sv">
+                <img src="./Skills.svg" alt="" />
+            </div>
+            <h2>Tell us your top skills</h2>
+            <div class="req">This helps us recommend jobs for you.</div>
+            <div class="search">
+                <span><i class="fas fa-search"></i></span>
+                <input type="search" placeholder="Search a skill" class="form-control" />
+            </div>
+            <hr/>
+            <div class="category">
+                <div class="category-item">
+                    <div class="item col">
+                        <h3>Select a category</h3>
+                        <hr/>
+                    </div>
+                    <div class="item col">
+                        <h3>No category selected</h3>
+                        <hr/>
+                    </div>
+                    <div class="item col">
+                        <h3>1 out of 20 skills selected</h3>
+                        <hr/>
+                    </div>
+                </div>
+                <button>Next</button>
+>>>>>>> 11b376ee5be3658beed38a4817b47842e82d51ef
             </div>
             <div className="col-md-12">
             <progress max="7" value={formStep + 1} style={{ width: "100%", height: "5vh" }}/>

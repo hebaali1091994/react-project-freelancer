@@ -3,19 +3,20 @@ const User = require('../models/User')
 const CryptoJS = require("crypto-js");
 const jwt = require('jsonwebtoken');
 
-router.post('/register', async (req,res) =>{
+router.post('/', async (req,res) =>{
     const nameregister = await User.findOne({userName:req.body.userName});
     nameregister && res.status(401).json("user name is already exist");
     const emailregister = await User.findOne({Email:req.body.Email});
     emailregister && res.status(401).json("user email is already exist pleaze login");
+    var work = "work"; 
     const newUser = new User({
         userName: req.body.userName,
         Email: req.body.Email,
         Password:CryptoJS.AES.encrypt(req.body.Password, process.env.PASS_SEC).toString(),
+        acountType: req.body.acountType = "0" ? "Work": "hire"
     });
     try{
         const saveUser = await newUser.save()
-        res.send(req.t(suc));
         res.send(saveUser);
     } catch(error){
         res.status(500).json(error)

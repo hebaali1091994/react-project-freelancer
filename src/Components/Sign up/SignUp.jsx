@@ -1,11 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useContext } from "react";
 import {useForm} from 'react-hook-form'
 import "./SignUp.css";
 import freelancelogo from '../../../src/public/freelancelogo.svg'
 import work from '../../../src/public/work.svg'
 import hire from '../../../src/public/hire.svg'
- 
+import axios from "axios"
+import { Context } from '../../context/Context';
 const SignUp = () => {
+      const { user, dispatch, isFetching} = useContext(Context);
+
+  const EmailRef = useRef();
+    const PasswordRef = useRef();
   const [formStep, setFormStep] = React.useState(0);
   const{watch,register}=useForm()
   const completeFormstep=()=>{
@@ -29,21 +34,55 @@ return(
       }
   }
   const [Sign, setData] = useState({
+
     Email:"",
     Password:"",
-    Username:"",
-    account_type:"",
+    userName:"",
+    acountType:"",
   })
 console.log(Sign)
 const submit=(e)=>{
   if(e===0){
-      setData({...Sign,account_type:"0"})
+
+
+      const handleSubmit = async (e)=>{
+ 
+    
+    try{
+        await axios.post('/auth/',Sign);
+        const res = await axios.post('/auth/login',{
+        Email : Sign.Email,
+        Password : Sign.Password
+      });
+dispatch({ type: "LOGIN_SUCCESS", payload: res.data });
+    res.data && window.location.replace('/Skills');
+  }catch(error){
+  console.log(error.response)
+  }
+}
+      setData({...Sign,acountType:"0"})
       document.getElementById("work").style.border="thick solid #139ff0 ";
       document.getElementById("hire").style.border="";
+      handleSubmit();
   }else if(e===1){
-      setData({...Sign,account_type:"1"})
-      document.getElementById("hire").style.border="thick solid #139ff0 ";
-      document.getElementById("work").style.border="";
+      const handleHire = async (e)=>{
+    try{
+        await axios.post('/auth/',Sign);
+   const res = await axios.post('/auth/login',{
+        Email : Sign.Email,
+        Password : Sign.Password
+      });
+dispatch({ type: "LOGIN_SUCCESS", payload: res.data });
+    res.data && window.location.replace('/Post-project');
+  }catch(error){
+  console.log(error.response)
+  }
+
+}
+  setData({...Sign,acountType:"1"})
+  document.getElementById("hire").style.border="thick solid #139ff0 ";
+  document.getElementById("work").style.border="";
+  handleHire()
   }
 }
   return (
@@ -80,7 +119,7 @@ const submit=(e)=>{
                     className="form-control email"
                     id="inputAddress"
                     placeholder="Email"
-                    ref={register()}
+                    ref={EmailRef}
                      name="Email" 
                     value={Sign.Email}
                    onChange={(event)=>setData({...Sign,Email:event.target.value})}
@@ -99,6 +138,7 @@ const submit=(e)=>{
                     placeholder="Password"
                     name="Password" 
                     value={Sign.Password}
+                    ref={PasswordRef}
                    onChange={(event)=>setData({...Sign,Password:event.target.value})}
                   />
                 </div>
@@ -153,9 +193,9 @@ const submit=(e)=>{
                   id="inputAddress"
                   placeholder="Username"
                   onclick="myFunction()"
-                  name="Username" 
-                    value={Sign.Username}
-                   onChange={(event)=>setData({...Sign,Username:event.target.value})}
+                  name="userName" 
+                    value={Sign.userName}
+                   onChange={(event)=>setData({...Sign,userName:event.target.value})}
                       style={{height:"30px"}}
                 />
               </div>
