@@ -1,7 +1,7 @@
 *, :after, :before {
   box-sizing: border-box;
 }
-.bg-signup{
+/* .bg-signup{
 
     width: 100%;
     height: 100vh;
@@ -10,13 +10,13 @@
     justify-content: center;
     padding-top: 30px;
 }
-
+ */
 
 .fluid 
 {
     justify-content: center;
     text-align: center;
-    width: 370px;
+    width: 400px;
     height: 640px;
     background-color: white;
     box-shadow: 0 0 4px 0 #00000014, 0 2px 4px 0 #0000001f;

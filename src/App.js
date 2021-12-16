@@ -1,10 +1,12 @@
 
-
-import './App.css';
-import Login from './Pages/Login/Login';
 import "./App.css";
 import Home from "./Pages/Home";
 import Postproject from "./Pages/post-project/Postproject.jsx";
+import Login from "./Pages/Login/Login";
+
+import './App.css';
+
+
 import { Routes, Route } from "react-router";
 import SignUp from "./Components/Sign up/SignUp";
 import Paypal from "./Components/Paypal/paypal";
@@ -14,7 +16,10 @@ import "../src/i18n";
 
 import { Context } from './context/Context';
 import Dashbaord from './Pages/Dashbaord/Dashbaord';
+
 import Massenger from './Pages/Massenger/Massenger.jsx';
+
+
 import Feedback from './Pages/Feedback/feedback';
 import Project_Contests from './Pages/Projects/Project_Contests';
 import MemberShip from './Pages/MemberShip/memberShip';
@@ -49,15 +54,22 @@ function App() {
         <Route path='/paypal'  element={<Paypal  />}/>
         <Route path='/Dashbaord'  element={<Dashbaord  />}/>
         <Route path='/Massenger'  element={<Massenger />}/>
+        <Route path='/Dashbaord'  element={<Dashbaord  />}/>
+        <Route path='/Massenger'  element={<Massenger />}/>
+
         <Route path='/Feedback'  element={<Feedback  />}/>
-        <Route path='/Projects'  element={<Project_Contests  />}/>
+        <Route path='/Projects'  element={<Project_Contests/>}/>
         <Route path='/MemberShip'  element={<MemberShip  />}/>
         <Route path='/howwork'  element={<HowitWork/>}/>
         <Route path='/inbox'  element={<Inbox/>}/>
         <Route path='/DisplayPost'  element={<DisplayProject/>}/>
+       <Route path='/Dashbaord'  element={<Dashbaord  />}/>
+                <Route path='/Dashbaord'  element={<Dashbaord  />}/>
+<Route path='/DisplayProject'  element={<DisplayProject  />}/>
         <Route path='/Dashbaord'  element={<Dashbaord  />}/>
         <Route path='/DisplayProject'  element={<DisplayProject  />}/>
         <Route path='/Skills'  element={<Skills/>}/>
+
 
 
       </Routes>

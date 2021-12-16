@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import {useForm} from 'react-hook-form'
 import "./SignUp.css";
+import freelancelogo from '../../../src/public/freelancelogo.svg'
+import work from '../../../src/public/work.svg'
+import hire from '../../../src/public/hire.svg'
+ 
 const SignUp = () => {
   const [formStep, setFormStep] = React.useState(0);
   const{watch,register}=useForm()
@@ -24,9 +28,29 @@ return(
 
       }
   }
+  const [Sign, setData] = useState({
+    Email:"",
+    Password:"",
+    Username:"",
+    account_type:"",
+  })
+console.log(Sign)
+const submit=(e)=>{
+  if(e===0){
+      setData({...Sign,account_type:"0"})
+      document.getElementById("work").style.border="thick solid #139ff0 ";
+      document.getElementById("hire").style.border="";
+  }else if(e===1){
+      setData({...Sign,account_type:"1"})
+      document.getElementById("hire").style.border="thick solid #139ff0 ";
+      document.getElementById("work").style.border="";
+  }
+}
   return (
+    <div className="container">
+      <div className="row">
     <div classNameName="bg-signup">
-      <div className="fluid ">
+      <div className="fluid m-auto">
         <form
           className="login_form"
           action=""
@@ -37,12 +61,7 @@ return(
           {formStep === 0 && (
             <section>
               <div className="">
-                <img
-                  src="logo.JPG"
-                  className="img-fluid"
-                  id="img"
-                  alt="Responsive image"
-                />
+                <img className="img-fluid " src={freelancelogo}  alt="" id="img"/>
               </div>
               <h5 className="card-text">Sign Up</h5>
               <div className="card  btu">
@@ -62,16 +81,15 @@ return(
                     id="inputAddress"
                     placeholder="Email"
                     ref={register()}
+                     name="Email" 
+                    value={Sign.Email}
+                   onChange={(event)=>setData({...Sign,Email:event.target.value})}
+
                   />
                 </div>
                 <div id="email_error">
-                  <img
-                    src="warning.JPG"
-                    className="img-fluid"
-                    id="img"
-                    alt="Responsive image"
-                  />
-                  Please enter an email address.{" "}
+                  <img src="warning.JPG" className="img-fluid"  id="img" alt=""/>
+                  Please enter an email address.
                 </div>
                 <div className="col inpute">
                   <input
@@ -79,15 +97,13 @@ return(
                     className="form-control"
                     id="inputAddress"
                     placeholder="Password"
+                    name="Password" 
+                    value={Sign.Password}
+                   onChange={(event)=>setData({...Sign,Password:event.target.value})}
                   />
                 </div>
                 <div id="pass_error">
-                  <img
-                    src="warning.JPG"
-                    className="img-fluid"
-                    id="img"
-                    alt="Responsive image"
-                  />
+                  <img src="warning.JPG" className="img-fluid" id="img"  alt="" />
                   Please enter a password.
                 </div>
               </div>
@@ -126,12 +142,7 @@ return(
                   {" "}
                   <i className="bi bi-chevron-left"></i>
                 </a>
-                <img
-                  src="logo.JPG"
-                  className="img-fluid"
-                  id="img"
-                  alt="Responsive image"
-                />
+                <img src={freelancelogo} className="img-fluid" id="img" alt="" />
               </div>
               <h5 className="card-text">Choose a username</h5>
               <p>Please note that a username cannot be changed once chosen.</p>
@@ -141,8 +152,11 @@ return(
                   className="form-control1 user"
                   id="inputAddress"
                   placeholder="Username"
-                  value=""
                   onclick="myFunction()"
+                  name="Username" 
+                    value={Sign.Username}
+                   onChange={(event)=>setData({...Sign,Username:event.target.value})}
+                      style={{height:"30px"}}
                 />
               </div>
               <p id="suggest">Suggestions:</p>
@@ -155,62 +169,60 @@ return(
           )}
 
           {formStep == 2 && (
-            <section>
-              <div className="icon">
+            <div className="container">
+            <section className="row">
+              <div className="coll-md-12">
                 <a href="username.html">
-                  {" "}
-                  <i className="bi bi-chevron-left"></i>
+                <b><i className="bi bi-chevron-left fs-4 text-dark"></i></b> 
                 </a>
-                <img
-                  className="img"
-                  src="logo.JPG"
-                  className="img-fluid"
-                  id="img"
-                  alt="Responsive image"
-                />
+                <img src={freelancelogo} className="img-fluid img" id="img" alt="" />
               </div>
               <h5>Select account type</h5>
               <p>Don't worry, this can be changed later.</p>
-              <div className="work">
-                <img
-                  src="work.JPG"
-                  className="img-fluid"
-                  id="img"
-                  alt="Responsive image"
-                />
+              <div className="workclint col-md-12  shadow bg-body rounded " onClick={()=>submit(0)} id="work">
+                <div className="row d-flex flex-row">
+                <div className="col-md-5  align-self-center">
+                <img src={work}  className="img-fluid" alt="" />
+                </div>
+                <div className="col-md-5 text-center align-self-center">
                 <p className=" account" onClick={completeFormstep}>I want to work</p>
+                </div>
+                <div className="col-md-2  align-self-center">
                 <i className="bi bi-arrow-right"></i>
+                </div>
+                </div>
               </div>
-              <div className="hire">
-                <img
-                  src="hire.JPG"
-                  className="img-fluid"
-                  id="img"
-                  alt="Responsive image"
-                />
+              
+              <div className="hireclint col-md-12  shadow bg-body rounded mt-5" id="hire">
+              <div className="row d-flex flex-row" onClick={()=>submit(1)}>
+              <div className="col-md-5  align-self-center">
+                <img src={hire} className="img-fluid" alt="" />
+                </div>
+                <div className="col-md-5 text-center align-self-center">
                 <p className=" account" onClick={completeFormstep}>I want to hire</p>
+                </div>
+                <div className="col-md-2  align-self-center">
                 <i className="bi bi-arrow-right"></i>
+                </div>
+                </div>
               </div>
             </section>
+            </div>
           )}
 
           {formStep === 3 && (
             <section>
               <div className="">
-                <img
-                  src="logo.JPG"
-                  className="img-fluid"
-                  id="img"
-                  alt="Responsive image"
-                />
+                <img src={freelancelogo} className="img-fluid" id="img" alt=""/>
               </div>
               <h3>Sign Up Success</h3>
               
             </section>
           )}
-          <pre>{JSON.stringify(watch(),null,2)}</pre>
         </form>
       </div>
+    </div>
+    </div>
     </div>
   );
 };
