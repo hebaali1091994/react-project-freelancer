@@ -31,11 +31,11 @@ function App() {
   // }, [socket, user]);
 
   const lang = localStorage.getItem("lang") || "en";
-  document.documentElement.language = lang;
+    document.documentElement.language = lang;
   return (
+    <div className="App" dir={lang === "ar" ? "rtl" : "ltr"}>
     <Suspense fallback="Loading ...">
       
-    <div className="App">
       <Routes>
         <Route path="/" exact="true" element={<Home />} />
         <Route path="/Post-project" element={<Postproject />} />
@@ -51,8 +51,8 @@ function App() {
                 <Route path='/Dashbaord'  element={<Dashbaord  />}/>
 
       </Routes>
-    </div>
     </Suspense>
+    </div>
   );
 }
 

@@ -25,8 +25,10 @@ return(
       }
   }
   return (
+    <div className="container">
+      <div className="row">
     <div classNameName="bg-signup">
-      <div className="fluid ">
+      <div className="fluid m-auto ">
         <form
           className="login_form"
           action=""
@@ -144,6 +146,7 @@ return(
                   placeholder="Username"
                   value=""
                   onclick="myFunction()"
+                  style={{height:"4vh"}}
                 />
               </div>
               <p id="suggest">Suggestions:</p>
@@ -209,9 +212,11 @@ return(
               
             </section>
           )}
-          <pre>{JSON.stringify(watch(),null,2)}</pre>
+          
         </form>
       </div>
+    </div>
+    </div>
     </div>
   );
 };
