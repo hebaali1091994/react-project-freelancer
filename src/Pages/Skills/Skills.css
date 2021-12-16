@@ -1,6 +1,13 @@
-* {
-  margin: 0;
+*{
   padding: 0;
+<<<<<<< HEAD
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.freelancer-logo{
+  width: 10%;
+=======
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
@@ -74,18 +81,9 @@
         -ms-flex-direction: column;
             flex-direction: column;
   }
+>>>>>>> 11b376ee5be3658beed38a4817b47842e82d51ef
 }
+.profile_img{
+height: 150px;
 
-.container .category button {
-  background-color: #007fed;
-  color: white;
-  padding: 8px 18px;
-  border: 0;
-  font-size: 18px;
-  margin-top: 25px;
-  right: 100;
-  font-weight: 700;
-  -webkit-transform: translateX(0%);
-          transform: translateX(0%);
 }
-/*# sourceMappingURL=Style.css.map */
