@@ -22,13 +22,16 @@ const Skills = () => {
     fetchSkills();
   },[]);
   console.log(Skills);
-
+ 
 
   const [formStep, setFormStep] = React.useState(0);
 
   const completeFormstep = () => {
     setFormStep((cur) => cur + 1);
-  }
+if (formStep===5){
+  window.location.replace('/Dashbaord');
+
+}  }
   const FormStepBack = () => {
     setFormStep((cur) => cur - 1);
   };
@@ -54,7 +57,7 @@ const Skills = () => {
   })
     return (
         <>
-        <div classNameName="container-fluid mt-3">
+        <div className="container-fluid mt-3">
         <div className="row">
             <div className="col-md-12 d-flex">
                 <img class="freelancer-logo" src={freelancelogo}  alt=""/>
@@ -69,7 +72,7 @@ const Skills = () => {
         <div class="row">
             <div classname="col-md-12">
             <form className="col-sm-12 col-md-12">
-          {formStep === 0 && (<Tell   Data={skill} setData={setData}/>)}
+          {formStep === 0 && (<Tell Skills={Skills}  Data={skill} setData={setData}/>)}
           {formStep === 1 && <Profile Data={skill} setData={setData}/>}
           {formStep === 2 && <About Profile Data={skill} setData={setData} />}
           {formStep === 3 && <Whatlang Data={skill} setData={setData} />}

@@ -11,8 +11,7 @@ const Login = () => {
     </div>
 <h5 class="card-text">Welcome Back</h5>
 <div class="card  btu" >
-<button type="button" class="btn  btn-lg btn-block" >
-    <a href="https://www.facebook.com/">  <i class="bi bi-facebook"></i>Continue with Facebook  </a></button>
+
    
 </div>
   <div class="divider ">OR</div>

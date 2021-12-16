@@ -2,6 +2,12 @@
   padding: 0;
   margin: 0;
 }
+@media(min-width:1200px){
+.nav-tabs{
+      margin-top: -56px;
+}
+
+}
 
 .DisplayProject .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active{
   color: #495057 !important;
