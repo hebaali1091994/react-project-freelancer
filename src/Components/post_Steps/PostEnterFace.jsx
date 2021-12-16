@@ -49,7 +49,7 @@ const PostEnterFace = () => {
         if(Data.postproject!==""){
             setFormStep((cur) => cur + 1);
           }
-    }else if (formStep===2){
+    }else if (formStep===2){ 
         if(Data.pay!==""||Data.budget!==""){
             setFormStep((cur) => cur + 1);
           }
@@ -160,11 +160,19 @@ console.log(Data);
           <button type="button" className="btn btn-primary" onClick={completeFormstep}> Next Step</button>
         </>
       );
-    } else {
+    } else if (formStep <=4) {
       return (
         <>
           <button  type="button"className="btn btn-secondary" onClick={FormStepBack}>Back</button>
           <button  type="button"className="btn btn-primary"onClick={completeFormstep}>Next Step</button>
+        </>
+      );
+    }
+    else if (formStep ===5) {
+      return (
+        <>
+          <button  type="button"className="btn btn-secondary" onClick={FormStepBack}>Back</button>
+          <button  type="button"className="btn btn-primary"onClick={completeFormstep}>Submet</button>
         </>
       );
     }
@@ -176,9 +184,9 @@ console.log(Data);
       <div className="row">
         <div className="col-md-12">
           <p>
-            <b>Step {formStep + 1} of 7</b>
+            <b>Step {formStep + 1} of 6</b>
           </p>
-          <progress max="7" value={formStep + 1} style={{ width: "100%", height: "5vh" }}/>
+          <progress max="6" value={formStep + 1} style={{ width: "100%", height: "5vh" }}/>
         </div>
         <form className="col-sm-12 col-md-12">
           {formStep === 0 && (<Firstform Data={Data} setData={setData}/>)}
