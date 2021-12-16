@@ -8,6 +8,9 @@ import { Context } from '../../context/Context';
 import { useContext } from 'react';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import Nav2 from './../projectinfo/Nav2';
+import Footer from '../../Components/Footer';
+import { Link } from 'react-router-dom';
 const DisplayProject = () => {
 
   const {user} = useContext(Context)
@@ -385,10 +388,10 @@ const DisplayProject = () => {
 
                     </div>
 
-  {users.map((project) =>(
-
-            <SingleProject project={project}/>
-            ))}
+  {project.map((project) =>(
+    <SingleProject project={project}/>
+    ))}
+    <Nav2 project={project} />
 
 
 
@@ -413,8 +416,9 @@ const DisplayProject = () => {
     </div>
     
 </div>
-
-
+    <div className="mt-3">
+    <Footer/>
+    </div>
         </div>
     )
 }

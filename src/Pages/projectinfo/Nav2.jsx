@@ -3,13 +3,13 @@ import { Link } from "react-router-dom";
 import "./Nav2.css";
 import Files from './Files';
 import App from '../../App';
-export default function Nav2(){
+export default function Nav2({project}){
 return(
 
 <div className='projectDetails d-flex justify-content-between '>
 <div className='navv'>
 
-<div className='projectName pl-4 pt-5'><h3 >projectName</h3></div>
+<div className='projectName pl-4 pt-5'><h3 ></h3></div>
 <nav className="navbar navbar-expand-lg navbar-light">
 <div className="container-fluid">
 

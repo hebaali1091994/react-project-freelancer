@@ -1,13 +1,11 @@
 *{
   padding: 0;
-
   margin: 0;
   box-sizing: border-box;
 }
 
 .freelancer-logo{
   width: 10%;
-
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
