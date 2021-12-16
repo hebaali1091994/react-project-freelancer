@@ -1,7 +1,9 @@
 import React from 'react'
 
-const SingleFreelancer = () => {
+const SingleFreelancer = ({u}) => {
+    console.log(u);
     return (
+        
         <div>
                         <div class="card-body">
                 <a href="#" class="">
@@ -11,7 +13,7 @@ const SingleFreelancer = () => {
 
                         </div>
                     <div class="col-md-8">
-              <h5 class="card-title text-dark text-none">   Programmatis @  Programmatis  </h5>
+              <h5 class="card-title text-dark text-none">  adipisicing</h5>
               <p class="card-text rating-person"><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></p>
               <h6>WebDeveloper </h6>   
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi sit possimus neque distinctio saepe, blanditiis harum rerum commodi voluptate expedita et architecto in laboriosam molestias ea at. Voluptatem, illo modi.</p>

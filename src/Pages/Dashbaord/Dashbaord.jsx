@@ -5,8 +5,13 @@ import './Dashbaord.css'
 import { Context } from '../../context/Context';
 import { useContext } from 'react';
 
+
 export default function Dashbaord() {
+
   const {user} = useContext(Context)
+
+
+
     return (
       <div className="Dashbaord">
           <Header/>

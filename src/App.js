@@ -21,6 +21,7 @@ import MemberShip from './Pages/MemberShip/memberShip';
 import HowitWork from './Pages/HowItWork/howitWork';
 import Inbox from './Pages/inbox/Inbox';
 import DisplayProject from './Pages/DisplayProject/DisplayProject';
+import Skills from './Pages/Skills/Skills';
 
 function App() {
   const [socket, setSocket] = useState(null);
@@ -56,6 +57,7 @@ function App() {
         <Route path='/DisplayPost'  element={<DisplayProject/>}/>
         <Route path='/Dashbaord'  element={<Dashbaord  />}/>
         <Route path='/DisplayProject'  element={<DisplayProject  />}/>
+        <Route path='/Skills'  element={<Skills/>}/>
 
 
       </Routes>
