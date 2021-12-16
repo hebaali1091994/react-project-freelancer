@@ -11,6 +11,7 @@
     }
     p{
     padding-top: 6px;
+        word-break: break-word;
     }
     
     .alert
@@ -26,3 +27,4 @@
     .dddd{
         border-left: 4px red solid;
     }
+

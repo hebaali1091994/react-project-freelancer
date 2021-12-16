@@ -13,7 +13,7 @@ const StepsixOne = ({ Data, setData }) => {
                      </div>
                  <div className="row shadow bg-body rounded ">
                      <div className="col-md-3 text-center border-end border-5">
-                        <img src={projectIcon} alt=""/>
+                        <img src={projectIcon} className='img-fluid' alt=""/>
                         <p>PROJECT</p>
                         <p className="s-4">{Data.Minimum_Per_hour} To {Data.Maximum_Per_hour} {Data.step_Four_Currency_code} per hour</p>
                      </div>
@@ -68,7 +68,7 @@ const StepsixOne = ({ Data, setData }) => {
                         <p>PROJECT</p>
                         <p className="s-4">{Data.Minimum_fix_price} To {Data.Maximum_fix_price} {Data.step_Four_Currency_code}</p>
                      </div>
-                     <div className="col-md-8">
+                     <div className="col-md-8 col-sm-12">
                          <p>{Data.ChooseName}</p>
                          <p>{Data.Tellus}</p>
                          <p>{Data.skills}</p>
@@ -83,7 +83,7 @@ const StepsixOne = ({ Data, setData }) => {
                          <p className="fs-6"><b>Are these details correct?</b></p>
                      </div>
                  <div className="row shadow bg-body rounded mt-2 col-md-12 ">
-                     <div className="col-md-3 text-center border-end border-5">
+                     <div className="col-md-12 text-center border-end border-5">
                         <img src={projectIcon} alt=""/>
                         <p>PROJECT</p>
                         <p className="s-4">{Data.Minimum_fix_price} To {Data.Maximum_fix_price} {Data.step_Four_Currency_code}</p>
