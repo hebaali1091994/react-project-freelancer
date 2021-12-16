@@ -53,7 +53,7 @@ export default function Header() {
                 </li>
               </ul>
               
-                <div className="row mb-2">
+                <div className="row mb-3 mx-3 mt-3">
                   <select className="custom-select Pull-right" onChange={change} value={lang}>
                     <option value="ar">عربي</option>
                     <option value="en">English</option>

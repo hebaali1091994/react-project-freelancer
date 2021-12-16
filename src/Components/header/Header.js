@@ -36,6 +36,8 @@ export default function Header() {
  
   return (
     <div className="bg-white" >
+    <div className="bg-white">
+      
       {user  ? <div>
        <div className="container">
         <nav className="navbar navbar-expand-lg navbar-light">
@@ -57,6 +59,8 @@ export default function Header() {
                 <li className="nav-item">
 
             <Link className='link ms-4' to="">   <ExploreOutlined></ExploreOutlined>{t("Browse")}  </Link>
+
+            <Link className='link ms-4' to="/DisplayProject">   <ExploreOutlined></ExploreOutlined> Browse </Link>
                 </li>
                 <li className="nav-item">
                           <Link className='link ms-4' to="">  <LocalMallOutlined></LocalMallOutlined>{t("Manage")}     </Link>
@@ -87,6 +91,7 @@ export default function Header() {
         <ChatBubbleOutlineOutlined ></ChatBubbleOutlineOutlined>
         <span className="px-1"></span>
         <Link className="link btn postproject m-1" to="/Post-project">{t("Post a Project")}   </Link>
+        <Link className="link btn postproject m-1" to="/Post-project/" > Post a Project </Link>
         <div class="dropdown ">
   <button class="btn dropdown-toggle d-flex" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
   <img

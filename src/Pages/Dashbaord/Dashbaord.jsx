@@ -154,9 +154,9 @@ export default function Dashbaord() {
               >
                 <h6>Welcome back,</h6>
 
-                <h5>abobakerhanfy</h5>
+                <h5>{user.userName}</h5>
                 <div className="d-flex justify-content-between">
-                  <h5>@abobakerhanfy</h5>
+                  <h5>@{user.userName}</h5>
                   <p>FREE MEMBER</p>
                 </div>
               </div>

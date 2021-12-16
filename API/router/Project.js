@@ -3,12 +3,12 @@ const {
   verifyTokenAndAuthorization,
   verifyTokenAndAdmin,
 } = require("./verifyToken");
-const CryptoJS = require("crypto-js");
 const Project = require("../models/Project");
 const router = require("express").Router();
 
-//create new project
-router.post("/", verifyTokenAndAuthorization, async (req, res) => {
+//create new project 
+// Must Send User Id
+router.post("/", async (req, res) => {
   
   const newproject = await new Project(req.body);
   try {
@@ -21,7 +21,7 @@ router.post("/", verifyTokenAndAuthorization, async (req, res) => {
 
 //update project
 
-router.put("/:id", verifyTokenAndAuthorization, async (req, res) => {
+router.put("/:id", async (req, res) => {
   try {
     const updatedProject = await Project.findByIdAndUpdate(
       req.params.id,
