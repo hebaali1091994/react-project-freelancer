@@ -1,5 +1,9 @@
 import React from 'react'
 import "./howitwork.css"
+import one from "../../public/1.jpg"
+import two from "../../public/2.jpg"
+import three from "../../public/3.jpg"
+
 import Header from '../../Components/header/Header'
 
 const howitWork = () => {
@@ -74,7 +78,7 @@ const howitWork = () => {
                     <div class="container">
                     <div class="row">
                     <div class="col-md-6 col-sm-12 how-work">
-                    <img src="image\how-it-work.jpg" alt=""/>
+                    <img src={one} alt=""/>
                     </div>
                     <div class="col-md-6 col-sm-12 contest">
                     <h1>How does it work?</h1>
@@ -123,7 +127,7 @@ const howitWork = () => {
                     </div>
                     </div>
                     <div class="col-md-6 col-sm-12 how-work">
-                    <img src="image\how-it-work.jpg" alt=""/>
+                    <img src={three}  alt=""/>
                     </div>
                     </div>
                     </div>
@@ -133,7 +137,7 @@ const howitWork = () => {
                     <div class="mt-5">
                     <div class="row">
                     <div class="col-md-6 col-sm-12 how-work">
-                    <img src="image\safety.jpg" alt=""/>
+                    <img src={two}  alt=""/>
                     </div>
                     <div class="col-md-6 col-sm-12">
                     <h2 class="header-title">Safe and secure
@@ -336,7 +340,7 @@ const howitWork = () => {
                     <p>Pay safely and securely in over 39 currencies through the Milestone Payments system. Only release payments when you are satisfied with the work.
                     </p>
                     </div>  <div class=" col-md-6 col-sm-12">
-                    <img src="../image/Paywithconfidence.svg" alt=""/>
+                    <img src={two} alt=""/>
                     <h5>24/7 support
                     </h5>
                     <p>We're always here to help. Our representatives are available 24/7 to assist you with any issues.

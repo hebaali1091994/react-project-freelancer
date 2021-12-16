@@ -1,7 +1,6 @@
 import React from 'react'
 import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
-import { useLocation } from 'react-router-dom/cjs/react-router-dom.min';
 import './SingleProject.css'
 const SingleProject = ({project}) => {
     console.log(project);
