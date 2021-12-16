@@ -1,10 +1,7 @@
 import React from 'react'
 // import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
-<<<<<<< HEAD
 // import { useLocation } from 'react-router-dom/cjs/react-router-dom.min';
-=======
->>>>>>> 5cdfee5b00e9bf96e05c859ac1901930a765a667
 import './SingleProject.css'
 import {  useNavigate, useLocation } from 'react-router-dom';
 

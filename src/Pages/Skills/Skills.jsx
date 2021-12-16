@@ -7,8 +7,23 @@ import About from "../../Components/skillscomponents/about/About";
 import Whatlang from "../../Components/skillscomponents/whatlang/Whatlang";
 import Located from "../../Components/skillscomponents/you located/located";
 import Verification from "../../Components/skillscomponents/verification/Verification";
+import axios from 'axios';
 
 const Skills = () => {
+   const [Skills, setSkills] = useState([])
+
+
+  useEffect(() => {
+    
+    const fetchSkills = async ()=>{
+      const res = await axios.get("/Category/");
+      setSkills(res.data)
+    }
+    fetchSkills();
+  },[]);
+  console.log(Skills);
+
+
   const [formStep, setFormStep] = React.useState(0);
 
   const completeFormstep = () => {
@@ -44,6 +59,7 @@ const Skills = () => {
             <div className="col-md-12 d-flex">
                 <img class="freelancer-logo" src={freelancelogo}  alt=""/>
                 <p className="m-auto fs-4"><b>Profile details</b></p>
+<<<<<<< HEAD
 
 
         <div className='Skills'>
@@ -76,17 +92,19 @@ const Skills = () => {
                 </div>
                 <button>Next</button>
 
+=======
+        
+>>>>>>> cfb4b069ca92085a4d8d6eb4a74980f3dae183ac
             </div>
             <div className="progress col-md-12">
             <progress max="7" value={formStep + 1} style={{ width: "100%", height: "5vh" }}/>
         </div>
-    </div>
-    </div>
+   
     <div class="container">
         <div class="row">
             <div classname="col-md-12">
             <form className="col-sm-12 col-md-12">
-          {formStep === 0 && (<Tell Data={skill} setData={setData}/>)}
+          {formStep === 0 && (<Tell   Data={skill} setData={setData}/>)}
           {formStep === 1 && <Profile Data={skill} setData={setData}/>}
           {formStep === 2 && <About Profile Data={skill} setData={setData} />}
           {formStep === 3 && <Whatlang Data={skill} setData={setData} />}
@@ -98,11 +116,9 @@ const Skills = () => {
         </form>
             </div>
         </div>
-        </div> 
-        </div> 
-        </div> 
-        </div> 
-        </div> 
+        </div>
+        </div>
+        </div>
         </>
     )
 }

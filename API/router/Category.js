@@ -10,7 +10,7 @@ const project = require("../models/Project");
 const Project = require("../models/Project");
 
 //create  new catogry
-router.post("/newCategory", verifyTokenAndAdmin, async (req, res) => {
+router.post("/", verifyTokenAndAdmin, async (req, res) => {
   const newCategory = await new Category(req.body);
   try {
     const saveCategory = await newCategory.save();

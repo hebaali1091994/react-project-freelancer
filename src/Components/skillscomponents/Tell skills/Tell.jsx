@@ -1,6 +1,9 @@
 import React from 'react'
 import './Tell.css'
 const Tell = () => {
+
+
+    
     return (
         <div className="Tell">
                 <div class="container">
