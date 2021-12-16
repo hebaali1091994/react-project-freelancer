@@ -17,7 +17,6 @@ const PostEnterFace = () => {
     const [Data, setData] = useState({
     ChooseName: "",
     Tellus: "",
-    skills:[],
     uploadimg: "",
     postproject: "",
     pay: "",
@@ -37,6 +36,7 @@ const PostEnterFace = () => {
     HIGHLIGHT: "",
     SEALED: "",
     NDA: "",
+    state:"",
     PRIVATE: "",
     StepFiveLongContest: "",
   });
@@ -104,6 +104,8 @@ const PostEnterFace = () => {
     HIGHLIGHT:Data.HIGHLIGHT,
     SEALED:Data.SEALED,
     NDA:Data.NDA,
+    state:Data.state,
+
     PRIVATE:Data.PRIVATE,
     StepFiveLongContest:Data.StepFiveLongContest    
   };
