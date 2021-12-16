@@ -83,7 +83,7 @@ export default function Header() {
         </div>
         <ChatBubbleOutlineOutlined ></ChatBubbleOutlineOutlined>
         <span className="px-1"></span>
-        <Link className="link btn postproject m-1" to="/Post-project"> Post a Project </Link>
+        <Link className="link btn postproject m-1" to="/Post-project/" > Post a Project </Link>
         <div class="dropdown ">
   <button class="btn dropdown-toggle d-flex" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
   <img

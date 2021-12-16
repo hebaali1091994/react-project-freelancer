@@ -6,7 +6,39 @@ import Stepthree from "./step three/Stepthree";
 import { Stepfour } from "./stepfour/Stepfour";
 import Stepfive from "./stepfive/Stepfive";
 import Stepsix from "../post_Steps/stepsix/Stepsix";
+import { Context } from '../../context/Context';
+import { useContext } from 'react';
+import axios from "axios";
+
 const PostEnterFace = () => {
+  const {user} = useContext(Context)
+   const [file, setFile] = useState(null);
+
+    const [Data, setData] = useState({
+    ChooseName: "",
+    Tellus: "",
+    uploadimg: "",
+    postproject: "",
+    pay: "",
+    budget: "",
+    CurrencyCode: "",
+    CurrencySymbol: "",
+    step_Four_Currency_code: "",
+    Minimum_Per_hour: "",
+    Maximum_Per_hour: "",
+    Maximum_fix_price: "",
+    Minimum_fix_price: "",
+    Day: "",
+    type_of_project: "",
+    GUARANTEED: "",
+    FEATURED: "",
+    TOP_CONTEST: "",
+    HIGHLIGHT: "",
+    SEALED: "",
+    NDA: "",
+    PRIVATE: "",
+    StepFiveLongContest: "",
+  });
   const [formStep, setFormStep] = React.useState(0);
   const completeFormstep = () => {
       if(formStep===0){
@@ -45,44 +77,61 @@ const PostEnterFace = () => {
             setFormStep((cur) => cur + 1);
           }
         }
+        
   }
     else if (formStep===5){
-        // if(Data.pay!==""&&Data.budget!==""){
-        //     setFormStep((cur) => cur + 1);
-        //   }
+        const handleSubmit = async () =>{
+            const newPost = {
+    userid : user._id,
+    ChooseName:Data.ChooseName,
+    Tellus:Data.Tellus,
+    skills:Data.skills,
+    postproject:Data.postproject,
+    pay:Data.pay,
+    budget:Data.budget,
+    CurrencyCode:Data.CurrencyCode,
+    CurrencySymbol:Data.CurrencySymbol,
+    step_Four_Currency_code:Data.step_Four_Currency_code,
+    Minimum_Per_hour:Data.Minimum_Per_hour,
+    Maximum_Per_hour:Data.Maximum_Per_hour,
+    Maximum_fix_price:Data.Maximum_fix_price,
+    Minimum_fix_price:Data.Minimum_fix_price,
+    Day:Data.Day,
+    type_of_project:Data.type_of_project,
+    FEATURED:Data.FEATURED,
+    TOP_CONTEST:Data.TOP_CONTEST,
+    HIGHLIGHT:Data.HIGHLIGHT,
+    SEALED:Data.SEALED,
+    NDA:Data.NDA,
+    PRIVATE:Data.PRIVATE,
+    StepFiveLongContest:Data.StepFiveLongContest    
+  };
+//   if(file){
+//     const data = new FormData();
+//     const fileName = Date.now() + file.name;
+//     data.append("name", fileName);
+//     data.append("file", file)
+//     Data.uploadimg  = fileName;
+//     try{
+//       await axios.post("/upload",Data);
+//         }catch(error){
+// console.log("Sorry No Image Upload");
+//         }
+//   }
+try{
+  await axios.post(`Project/`, newPost)
+}catch(error){
+}
+}
+handleSubmit()
+console.log(Data);
     }
   };
   const FormStepBack = () => {
     setFormStep((cur) => cur - 1);
   };
   //-----------------------------------------------------------------------------//
-  const [Data, setData] = useState({
-    ChooseName: "",
-    Tellus: "",
-    uploadimg: "",
-    skills: [],
-    postproject: "",
-    pay: "",
-    budget: "",
-    CurrencyCode: "",
-    CurrencySymbol: "",
-    step_Four_Currency_code: "",
-    Minimum_Per_hour: "",
-    Maximum_Per_hour: "",
-    Maximum_fix_price: "",
-    Minimum_fix_price: "",
-    Day: "",
-    type_of_project: "",
-    GUARANTEED: "",
-    FEATURED: "",
-    TOP_CONTEST: "",
-    HIGHLIGHT: "",
-    SEALED: "",
-    NDA: "",
-    PRIVATE: "",
-    StepFiveLongContest: "",
-  });
-  console.log(Data);
+
   // useEffect(() => {
   //     const fetchData = async () => {
   //       setData(await getUserData())
@@ -97,6 +146,9 @@ const PostEnterFace = () => {
     //       setPosts(newPosts);
     //     });
     // }, []);
+
+
+
 
   const renderButton = () => {
     if (formStep === 0) {

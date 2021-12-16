@@ -4,8 +4,23 @@ import SingleFreelancer from './../../Components/Single Freelancer/SingleFreelan
 import SingleProject from './../../Components/Single Project/SingleProject';
 import SingleContests from './../../Components/SingleContests/SingleContests';
 import './DisplayProject.css'
+
+import axios from 'axios';
+import { useEffect, useState } from 'react';
+
+
 const DisplayProject = () => {
-    return (
+const [project, setProject] = useState([])
+
+
+useEffect(() => {
+  const fetchProject =async ()=>{
+    axios.get("")
+  }
+
+}, []);
+
+  return (
         <div className='DisplayProject'>
 <Header/>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -27,7 +42,7 @@ const DisplayProject = () => {
       <button class="nav-link col-2  active text-white" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true"> Freelancer </button>
 
       <button class="nav-link col-2   text-white" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false"> Project </button>
-      <button class="nav-link col-2   text-white" id="nav-contests-tab" data-bs-toggle="tab" data-bs-target="#nav-contests" type="button" role="tab" aria-controls="nav-contests" aria-selected="false">  Contests  </button>
+    
    
 
     </div>

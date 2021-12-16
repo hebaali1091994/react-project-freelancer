@@ -138,8 +138,7 @@ return(
               <div className="col inpute">
                 <input
                   type="text"
-                  className="form-control1"
-                  className=" user"
+                  className="form-control1 user"
                   id="inputAddress"
                   placeholder="Username"
                   value=""
