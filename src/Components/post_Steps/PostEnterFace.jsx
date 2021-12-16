@@ -17,6 +17,7 @@ const PostEnterFace = () => {
     const [Data, setData] = useState({
     ChooseName: "",
     Tellus: "",
+    skills:[],
     uploadimg: "",
     postproject: "",
     pay: "",

@@ -1,13 +1,19 @@
 *{
   padding: 0;
+<<<<<<< HEAD
 
+=======
+>>>>>>> a8b4281b0f5bd887d49f722ae762863c785729c4
   margin: 0;
   box-sizing: border-box;
 }
 
 .freelancer-logo{
   width: 10%;
+<<<<<<< HEAD
 
+=======
+>>>>>>> a8b4281b0f5bd887d49f722ae762863c785729c4
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
@@ -81,7 +87,6 @@
         -ms-flex-direction: column;
             flex-direction: column;
   }
-
 }
 .profile_img{
 height: 150px;
