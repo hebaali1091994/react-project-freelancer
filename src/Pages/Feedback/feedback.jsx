@@ -7,10 +7,10 @@ export default function Feedback() {
         <div>
               <Header/>
           <Navbar/>
-                <div class="feedback">
-      <div class="container">
-        <h1 class="mt-5">Project Awaiting Feedback</h1>
-        <div class="alert alert-secondary text-center mt-4" role="alert">
+                <div className="feedback">
+      <div className="container">
+        <h1 className="mt-5">Project Awaiting Feedback</h1>
+        <div className="alert alert-secondary text-center mt-4" role="alert">
           You have no projects awaiting feedback
         </div>
       </div>

@@ -221,12 +221,12 @@ function Footer() {
                     y2="-130.371"
                     gradientTransform="matrix(1.0024 0 0 -.9907 -9.248 -114.474)"
                   >
-                    <stop offset="0" stop-color="#00A0FF" />
-                    <stop offset=".007" stop-color="#00A1FF" />
-                    <stop offset=".26" stop-color="#00BEFF" />
-                    <stop offset=".512" stop-color="#00D2FF" />
-                    <stop offset=".76" stop-color="#00DFFF" />
-                    <stop offset="1" stop-color="#00E3FF" />
+                    <stop offset="0" stopColor="#00A0FF" />
+                    <stop offset=".007" stopColor="#00A1FF" />
+                    <stop offset=".26" stopColor="#00BEFF" />
+                    <stop offset=".512" stopColor="#00D2FF" />
+                    <stop offset=".76" stopColor="#00DFFF" />
+                    <stop offset="1" stopColor="#00E3FF" />
                   </linearGradient>
                   <path
                     id="path64"
@@ -244,10 +244,10 @@ function Footer() {
                     y2="-135.862"
                     gradientTransform="matrix(1.0024 0 0 -.9907 -9.248 -114.474)"
                   >
-                    <stop offset="0" stop-color="#FFE000" />
-                    <stop offset=".409" stop-color="#FFBD00" />
-                    <stop offset=".775" stop-color="#FFA500" />
-                    <stop offset="1" stop-color="#FF9C00" />
+                    <stop offset="0" stopColor="#FFE000" />
+                    <stop offset=".409" stopColor="#FFBD00" />
+                    <stop offset=".775" stopColor="#FFA500" />
+                    <stop offset="1" stopColor="#FF9C00" />
                   </linearGradient>
                   <path
                     id="path78"
@@ -265,8 +265,8 @@ function Footer() {
                     y2="-119.152"
                     gradientTransform="matrix(1.0024 0 0 -.9907 -9.248 -114.474)"
                   >
-                    <stop offset="0" stop-color="#FF3A44" />
-                    <stop offset="1" stop-color="#C31162" />
+                    <stop offset="0" stopColor="#FF3A44" />
+                    <stop offset="1" stopColor="#C31162" />
                   </linearGradient>
                   <path
                     id="path88"
@@ -284,11 +284,11 @@ function Footer() {
                     y2="-137.181"
                     gradientTransform="matrix(1.0024 0 0 -.9907 -9.248 -114.474)"
                   >
-                    <stop offset="0" stop-color="#32A071" />
-                    <stop offset=".069" stop-color="#2DA771" />
-                    <stop offset=".476" stop-color="#15CF74" />
-                    <stop offset=".801" stop-color="#06E775" />
-                    <stop offset="1" stop-color="#00F076" />
+                    <stop offset="0" stopColor="#32A071" />
+                    <stop offset=".069" stopColor="#2DA771" />
+                    <stop offset=".476" stopColor="#15CF74" />
+                    <stop offset=".801" stopColor="#06E775" />
+                    <stop offset="1" stopColor="#00F076" />
                   </linearGradient>
                   <path
                     id="path104"

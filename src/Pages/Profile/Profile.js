@@ -2,67 +2,67 @@ import react from "react";
 import { Link } from "react-router-dom";
 export default function Profile(){
     return(
-        <div class="container">
-        <div class="row">
-        <div className="show">
-        <aside id="asideleft" class="col-md-3">
-                <div class="btn-group-vertical w-100">
-                <Link to="/Profile" class="btn text-primary text-start">Profile</Link>
-                <Link to="/Email" class="btn text-primary text-start">Email & Notifications</Link>
-                    <Link to="/Membership" class="btn text-primary text-start">Membership</Link>
-                    <Link to="/Password" class="btn text-primary text-start">Password</Link>
-                    <Link to="/Payment" class="btn text-primary text-start">Payment & Financial</Link>
-                    <Link to="/AccountSecurity" class="btn text-primary text-start">Account Security</Link>
-                    <Link  to="/Trust" class="btn text-primary text-start">Trust & Verification</Link>
-                    <Link to="/Account" class="btn btn-outline-primary text-start active">Account</Link>
+        <div className="container">
+        <div className="row">
+        <div classNameName="show">
+        <aside id="asideleft" className="col-md-3">
+                <div className="btn-group-vertical w-100">
+                <Link to="/Profile" className="btn text-primary text-start">Profile</Link>
+                <Link to="/Email" className="btn text-primary text-start">Email & Notifications</Link>
+                    <Link to="/Membership" className="btn text-primary text-start">Membership</Link>
+                    <Link to="/Password" className="btn text-primary text-start">Password</Link>
+                    <Link to="/Payment" className="btn text-primary text-start">Payment & Financial</Link>
+                    <Link to="/AccountSecurity" className="btn text-primary text-start">Account Security</Link>
+                    <Link  to="/Trust" className="btn text-primary text-start">Trust & Verification</Link>
+                    <Link to="/Account" className="btn btn-outline-primary text-start active">Account</Link>
                 </div>
             </aside>
-            <aside id="asideright" class="col-md-9 shadow-lg p-3 mb-5 bg-body rounded">
-                <div class="container">
-                    <form class="row g-3 d-flex flex-column">
-                        <p class="fs-1"><b>Profile Details</b></p>
+            <aside id="asideright" className="col-md-9 shadow-lg p-3 mb-5 bg-body rounded">
+                <div className="container">
+                    <form className="row g-3 d-flex flex-column">
+                        <p className="fs-1"><b>Profile Details</b></p>
                        
                         <hr/>
-                        <p class="fs-5"><b>Name </b></p>
-                        <div class="row" style={{margin:"0px 0px 20px 0px"}} >
-                        <div class="col-md-6">
-                            <label for="text1" class="form-label"><b>First Name*</b></label>
-                            <input type="text" class="form-control" id="text1"/>
+                        <p className="fs-5"><b>Name </b></p>
+                        <div className="row" style={{margin:"0px 0px 20px 0px"}} >
+                        <div className="col-md-6">
+                            <label for="text1" className="form-label"><b>First Name*</b></label>
+                            <input type="text" className="form-control" id="text1"/>
                         </div>
-                        <div class="col-md-6">
-                            <label for="text2" class="form-label"><b>Last Name*</b></label>
-                            <input type="text" class="form-control" id="text2"/>
+                        <div className="col-md-6">
+                            <label for="text2" className="form-label"><b>Last Name*</b></label>
+                            <input type="text" className="form-control" id="text2"/>
                         </div>
                       </div>
                         <hr></hr>
 
 
 
-                        <p class="fs-5"><b>Address </b></p>
-                        <div class="row" >
-                        <div class="col-md-15">
-                            <label for="address" class="form-label"> <b>Address*</b></label>
-                            <input type="text" class="form-control" id="address"  style={{margin:"0px 0px 25px 0px"}}/>
-                            <input type="text" class="form-control" id="address"/>
+                        <p className="fs-5"><b>Address </b></p>
+                        <div className="row" >
+                        <div className="col-md-15">
+                            <label for="address" className="form-label"> <b>Address*</b></label>
+                            <input type="text" className="form-control" id="address"  style={{margin:"0px 0px 25px 0px"}}/>
+                            <input type="text" className="form-control" id="address"/>
                         </div>
 
 
-                        <div class="col-15" style={{margin:"15px 0px 0px 0px"}}>
-                        <label for="address" class="form-label"> <b>City*</b></label>
-                            <input type="text" class="form-control" id="address"  />
+                        <div className="col-15" style={{margin:"15px 0px 0px 0px"}}>
+                        <label for="address" className="form-label"> <b>City*</b></label>
+                            <input type="text" className="form-control" id="address"  />
                         </div>
 
 
-                        <div class="row" style={{margin:"15px 0px 0px 0px"}} >
-                        <div class="col-md-6">
-                            <label for="text1" class="form-label"><b>Zip/Post Code*</b></label>
-                            <input type="text" class="form-control" id="text1"/>
+                        <div className="row" style={{margin:"15px 0px 0px 0px"}} >
+                        <div className="col-md-6">
+                            <label for="text1" className="form-label"><b>Zip/Post Code*</b></label>
+                            <input type="text" className="form-control" id="text1"/>
                         </div>
-                        <div class="col-md-6">
+                        <div className="col-md-6">
                    
-                        <label for="text2" class="form-label">
+                        <label for="text2" className="form-label">
                             <b>State/Province*</b></label>
-<input type="text" class="form-control" id="text2"/>
+<input type="text" className="form-control" id="text2"/>
 </div>
                         </div>
               
@@ -75,10 +75,10 @@ export default function Profile(){
 
                       <form>
   <fieldset disabled>
-                     <label for="disabledTextInput" class="form-label"> <b>City*</b></label>    
-<div class="input-group flex-nowrap">
-<input type="text" class="form-control"id="disabledTextInput"/>
-  <span class="input-group-text" id="addon-wrapping">
+                     <label for="disabledTextInput" className="form-label"> <b>City*</b></label>    
+<div className="input-group flex-nowrap">
+<input type="text" className="form-control"id="disabledTextInput"/>
+  <span className="input-group-text" id="addon-wrapping">
 
   <svg xmlns="http://www.w3.org/2000/svg" 
 width="30px" height="25px"
@@ -97,25 +97,25 @@ style={{ fill:"#757575"}}>
 
 </fieldset>
 </form>
-<div class="col-15"style={{margin:"15px 0px 0px 0px"}}>
-                        <label for="address" class="form-label"> <b>Company</b></label>
-                            <input type="text" class="form-control" id="address"  />
+<div className="col-15"style={{margin:"15px 0px 0px 0px"}}>
+                        <label for="address" className="form-label"> <b>Company</b></label>
+                            <input type="text" className="form-control" id="address"  />
                        
                         </div>
 
 
-                        <div class="row" >
-                        <div class="row" style={{margin:"15px 0px 23px 0px"}} >
-                        <div class="col-md-6">
-                <label for="text1" class="form-label"><b>Time Zone</b></label>
-               < select class="form-select" id="inputGroupSelect02"> </select>
+                        <div className="row" >
+                        <div className="row" style={{margin:"15px 0px 23px 0px"}} >
+                        <div className="col-md-6">
+                <label for="text1" className="form-label"><b>Time Zone</b></label>
+               < select className="form-select" id="inputGroupSelect02"> </select>
                         </div>
 
-                        <div class=" col-6" >
+                        <div className=" col-6" >
                                              
-                        <label for="text2" class="form-label">
+                        <label for="text2" className="form-label">
                             <b>State/Province*</b></label>
-<input type="text" class="form-control" id="text2"/>
+<input type="text" className="form-control" id="text2"/>
 
 </div>
 
@@ -131,34 +131,34 @@ style={{ fill:"#757575"}}>
                         </div>
                         <hr></hr>
 
-                        <p class="fs-5"><b>Language Settings </b></p>
-                        <div class="col-md-6">
-                <label for="text1" class="form-label"><b>I want to browse the website in:</b></label>
-               < select class="form-select" id="inputGroupSelect02"> </select>
+                        <p className="fs-5"><b>Language Settings </b></p>
+                        <div className="col-md-6">
+                <label for="text1" className="form-label"><b>I want to browse the website in:</b></label>
+               < select className="form-select" id="inputGroupSelect02"> </select>
                         </div>
                         <div>
-                        <div class="col-md-6"  style={{margin:"0px 0px 25px 0px"}} >
-                <label for="text1" class="form-label"><b>
+                        <div className="col-md-6"  style={{margin:"0px 0px 25px 0px"}} >
+                <label for="text1" className="form-label"><b>
 I want to browse projects in the following languages:</b></label>
-               < select class="form-select" id="inputGroupSelect02"></select>
+               < select className="form-select" id="inputGroupSelect02"></select>
                         </div>
                         <hr></hr> 
                         {/* 800px change to 100 */}
           <div style={{ backgroundColor: "#f7f7f7", width: "100%", minHeight:"100px"}}>
                           
 <div >
-<button type="save" class="btn btn-primary" >Save Setting</button>
+<button type="save" className="btn btn-primary" >Save Setting</button>
 
     </div>
 </div>
 <hr></hr>
           </div>
-          <p class="fs-5"><b>Security Phone Number </b></p>
+          <p className="fs-5"><b>Security Phone Number </b></p>
 <p>Provide a phone number and country to use as </p>
     <p>verification of your account</p>
 
   <span>
-<button type="save"class=" col-3"style={{ backgroundColor: "#f7f7f7", Color:"black",fontWeight:"bold",fontSize:"13px",height:"30px", width:"200px"}} >Set Up Security Number</button>
+<button type="save"className=" col-3"style={{ backgroundColor: "#f7f7f7", Color:"black",fontWeight:"bold",fontSize:"13px",height:"30px", width:"200px"}} >Set Up Security Number</button>
       </span>  
 
 

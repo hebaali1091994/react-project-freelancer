@@ -4,49 +4,49 @@ import Navbar from './../../Components/Navbar'
 const Project_Contests = () => {
     return (
         <div>
-                <div class="Project-contests">
+                <div className="Project-contests">
                       <Header/>
           <Navbar/>
-      <div class="container">
-        <div class="d-flex justify-content-between">
-          <div class="mr-auto p-2">
-            <h1 class="mt-5">Project And Contests</h1>
+      <div className="container">
+        <div className="d-flex justify-content-between">
+          <div className="mr-auto p-2">
+            <h1 className="mt-5">Project And Contests</h1>
           </div>
-          <div class="ml-auto p-2 mt-5">
-            <button type="button" class="btn btn-primary">As a Client</button>
-            <button type="button" class="btn btn-secondary">
+          <div className="ml-auto p-2 mt-5">
+            <button type="button" className="btn btn-primary">As a Client</button>
+            <button type="button" className="btn btn-secondary">
               As A Freelancer
             </button>
           </div>
         </div>
       </div>
     </div>
-        <div class="status-project">
-      <div class="container">
-        <div class="row">
-          <div class="d-flex mt-5 Project-btn">
-            <button type="button" class="btn">Open Project</button>
-            <button type="button" class="btn">Work in Progress</button>
-            <button type="button" class="btn">Past Projects</button>
-            <button type="button" class="btn">Open Contects</button>
-            <button type="button" class="btn">Pending Prizes</button>
-            <button type="button" class="btn">Prizes Relesed</button>
+        <div className="status-project">
+      <div className="container">
+        <div className="row">
+          <div className="d-flex mt-5 Project-btn">
+            <button type="button" className="btn">Open Project</button>
+            <button type="button" className="btn">Work in Progress</button>
+            <button type="button" className="btn">Past Projects</button>
+            <button type="button" className="btn">Open Contects</button>
+            <button type="button" className="btn">Pending Prizes</button>
+            <button type="button" className="btn">Prizes Relesed</button>
           </div>
         </div>
       </div>
     </div>
-    <div class="search-box">
-      <form class="container">
-        <div class="row">
-          <div class="col-7">
-            <div class="input-group">
-              <span class="input-group-text" id="basic-addon1">
+    <div className="search-box">
+      <form className="container">
+        <div className="row">
+          <div className="col-7">
+            <div className="input-group">
+              <span className="input-group-text" id="basic-addon1">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
                   height="16"
                   fill="currentColor"
-                  class="bi bi-search"
+                  className="bi bi-search"
                   viewBox="0 0 16 16"
                 >
                   <path
@@ -56,18 +56,18 @@ const Project_Contests = () => {
               </span>
               <input
                 type="text"
-                class="form-control"
+                className="form-control"
                 placeholder="Search User & Project"
                 aria-label="Username"
                 aria-describedby="basic-addon1"
               />
             </div>
           </div>
-          <div class="col-2">
-            <div class="row">
-              <div class="d-flex align-items-center">
-                <p class="col-3">Show:</p>
-                <select class="col-6 form-select">
+          <div className="col-2">
+            <div className="row">
+              <div className="d-flex align-items-center">
+                <p className="col-3">Show:</p>
+                <select className="col-6 form-select">
                   <option selected>10</option>
                   <option value="1">20</option>
                   <option value="2">30</option>
@@ -76,11 +76,11 @@ const Project_Contests = () => {
               </div>
             </div>
           </div>
-          <div class="col-2 views">
-            <div class="row">
-              <div class="d-flex justify-content-start">
-                <p class="col-3">Views:</p>
-                <select class="col-6 form-select">
+          <div className="col-2 views">
+            <div className="row">
+              <div className="d-flex justify-content-start">
+                <p className="col-3">Views:</p>
+                <select className="col-6 form-select">
                   <option selected>10</option>
                   <option value="1">20</option>
                   <option value="2">30</option>
@@ -92,16 +92,16 @@ const Project_Contests = () => {
         </div>
       </form>
     </div>
-    <div class="create-new-project">
-      <div class="container">
-        <div class="bg-white mt-5">
-          <div class="project-box pt-5">
-            <p class="text-center">Create a New Project</p>
-            <p class="text-center">
+    <div className="create-new-project">
+      <div className="container">
+        <div className="bg-white mt-5">
+          <div className="project-box pt-5">
+            <p className="text-center">Create a New Project</p>
+            <p className="text-center">
               Millions of talented freelancers are ready to help you do amazing
               things
             </p>
-                <button type="button" class="d-block mx-auto btn btn-warning">
+                <button type="button" className="d-block mx-auto btn btn-warning">
                   Post A Project
                 </button>
             </div>
