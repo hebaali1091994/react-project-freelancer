@@ -86,4 +86,20 @@ router.delete("/deleteproject/:id", async (req, res) => {
   }
 });
 
+
+router.post("/filter", async (req, res) => {
+  try {
+
+    const allproject = await Project.find(
+      {
+        Minimum_Per_hour:req.body.filtername
+       
+      }
+    );
+    res.status(200).json(allproject);
+
+  } catch (error) {
+    res.status(401).json(error);
+  }
+});
 module.exports = router;
