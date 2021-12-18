@@ -20,7 +20,7 @@ try{
         Password : PasswordRef.current.value
       });
 dispatch({ type: "LOGIN_SUCCESS", payload: res.data });
-res.data && window.location.replace('/Dashbaord');
+res.data && window.location.replace('/');
 
 }catch(error){
     dispatch({type:"LOGIN_FAILURE"})
@@ -56,9 +56,11 @@ console.log(user);
         </div> 
       </div>
           <div className="card submit " >
-            <button type="submit" className="btn btn-lg btn-block"  >
+            <button type="submit" className="btn btn-lg btn-block loginButton" disabled={isFetching}  >
             Log In</button>
+
             </div>
+                    <small className='text-danger'>{isFetching ? "Sorry Your Data Is Wrong" : null}</small>
             <hr/>
             <div className="p">
             <p>Don't have an account? <Link to='/SignUp'>Sign Up</Link></p>

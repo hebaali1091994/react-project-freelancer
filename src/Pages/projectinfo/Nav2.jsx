@@ -83,7 +83,7 @@ return(
 
 </div>
 <div className='status my-5'>
-<span >Pending</span>
+<span >{Project.state ? Project.state : "Pending"} </span>
 </div>
 </div>
 )

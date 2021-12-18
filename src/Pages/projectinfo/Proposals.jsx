@@ -16,7 +16,7 @@ export default function Proposals(){
             <div className="col-md-8">
           
               <div className="row">
-                <div className="col-md-12 bg-white mt-2 dddd pl-4 py-4">
+                {/* <div className="col-md-12 bg-white mt-2 dddd pl-4 py-4">
                   <div className="alert  svgg">
                       <div className='d-flex'>
                     <svg
@@ -45,7 +45,7 @@ export default function Proposals(){
                       <Link to="#">Resend Email</Link>
                     </p>
                   </div>
-                </div>
+                </div> */}
 
                 <div className="col-md-12 bg-white mt-3 part2 d-flex justify-content-center align-items-center" style={{height:"400px"}}>
                     <div>

@@ -33,7 +33,7 @@ export default function Something() {
             <div class="topSection col-md-12 mt-5">
                 <p class="titleheder"><b>{t("Need something done?")}</b></p>
                 <div class="row">
-                    <div class="col-md-3">
+                    <div class="col-xl-3 col-md-6 col-sm-12">
                         <div class="row">
                             <div class="col-md-12 d-flex mb-4">
                                 <img src={postaproject}/>
@@ -44,7 +44,7 @@ export default function Something() {
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-xl-3 col-md-6 col-sm-12">
                         <div class="row">
                             <div class="col-md-12 d-flex mb-4">
                                 <img src={work}/>
@@ -56,7 +56,7 @@ export default function Something() {
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-xl-3 col-md-6 col-sm-12">
                         <div class="row">
                             <div class="col-md-12 d-flex mb-4">
                                 <img src={paysafely}/>
@@ -67,7 +67,7 @@ export default function Something() {
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-xl-3 col-md-6 col-sm-12">
                         <div class="row">
                             <div class="col-md-12 d-flex mb-4">
                                 <img src={aboutme}/>
@@ -86,7 +86,7 @@ export default function Something() {
                 <div class="row">
                     <p class="titleheder mt-5"><b>{t("What's great about it?")}</b></p>
                     <div class="row">
-                        <div class="col-md-3">
+                        <div class="col-xl-3 col-md-6 col-sm-12">
                             <div class="row">
                                 <div class="col-md-12 d-flex mb-4">
                                     <img src={browseportfolios}/>
@@ -97,7 +97,7 @@ export default function Something() {
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-xl-3 col-md-6 col-sm-12">
                             <div class="row">
                                 <div class="col-md-12 d-flex mb-4">
                                     <img src={bidsalt}/>
@@ -108,7 +108,7 @@ export default function Something() {
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-xl-3 col-md-6 col-sm-12">
                             <div class="row">
                                 <div class="col-md-12 d-flex mb-4">
                                     <img src={rankhigher}/>
@@ -119,7 +119,7 @@ export default function Something() {
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-xl-3 col-md-6 col-sm-12">
                             <div class="row">
                                 <div class="col-md-12 d-flex mb-4">
                                     <img src={trackprogress}/>

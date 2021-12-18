@@ -88,7 +88,7 @@ dispatch({ type: "LOGIN_SUCCESS", payload: res.data });
   return (
     <div className="container">
       <div className="row">
-    <div className="bg-signup">
+    <div className="bg-signup pt-5">
       <div className="fluid m-auto">
         <form
           className="login_form"
@@ -103,10 +103,7 @@ dispatch({ type: "LOGIN_SUCCESS", payload: res.data });
                 <img className="img-fluid " src={freelancelogo}  alt="" id="img"/>
               </div>
               <h5 className="card-text">Sign Up</h5>
-              <div className="card  btu">
-
-              </div>
-              <div className="divider ">OR</div>
+                            <div className="divider ">OR</div>
               <div className="login_form">
                 <div className="col inpute">
                   <input

@@ -32,15 +32,16 @@ import Tasks from './Pages/projectinfo/Tasks';
 import Details from './Pages/projectinfo/Details';
 import Files from './Pages/projectinfo/Files';
 import DetailsData from './Pages/projectinfo/DetailsData';
+import Account from './Pages/Account/Account';
 
 function App() {
   const [socket, setSocket] = useState(null);
 
   const { user } = useContext(Context);
 
-  useEffect(() => {
-    setSocket(io("http://localhost:5000"));
-  }, []);
+  // useEffect(() => {
+  //   setSocket(io("http://localhost:5000"));
+  // }, []);
   // useEffect(() => {
   //   socket.emit("newUser", user);
   // }, [socket, user]);
@@ -52,14 +53,13 @@ function App() {
     <Suspense fallback="Loading ...">
       
       <Routes>
+        <Route path="/Login" element={<Login />} />
         <Route path="/" exact="true" element={ user ? <Dashbaord/> : <Home />} />
         <Route path="/Post-project/" element={<Postproject />} />
-        <Route path="/Login" element={<Login />} />
         <Route path="/SignUp" element={<SignUp />} />
         <Route path='/paypal'  element={<Paypal  />}/>
-        <Route path='/Dashbaord'  element={<Dashbaord  />}/>
+        <Route path='/'  element={<Dashbaord  />}/>
         <Route path='/Massenger'  element={<Massenger />}/>
-        <Route path='/Dashbaord'  element={<Dashbaord  />}/>
         <Route path='/Massenger'  element={<Massenger />}/>
 
         <Route path='/Feedback'  element={<Feedback  />}/>
@@ -68,16 +68,14 @@ function App() {
         <Route path='/howwork'  element={<HowitWork/>}/>
         <Route path='/inbox'  element={<Inbox/>}/>
         <Route path='/DisplayPost'  element={<DisplayProject/>}/>
-       <Route path='/Dashbaord'  element={<Dashbaord  />}/>
-                <Route path='/Dashbaord'  element={<Dashbaord  />}/>
+       <Route path='/'  element={user ? <Dashbaord /> : <Route path="/Login" element={<Login />} />}/>
 <Route path='/DisplayProject'  element={<DisplayProject  />}/>
-        <Route path='/Dashbaord'  element={<Dashbaord  />}/>
-        <Route path='/DisplayProject/'  element={<DisplayProject  />}/>
             <Route path='/DisplayProject/Proposals/:id'  element={<Proposals  />}/>
             <Route path='/DisplayProject/Tasks/:id'  element={<Tasks  />}/>
             <Route path='/DisplayProject/Details/:id'  element={<DetailsData  />}/>
             <Route path='/DisplayProject/Files/:id'  element={<Files  />}/>
         <Route path='/Skills'  element={<Skills/>}/>
+        <Route path='/Setting'  element={<Account/>}/>
 
 
 

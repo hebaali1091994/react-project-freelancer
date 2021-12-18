@@ -59,7 +59,7 @@ const DetailsData = () => {
                                                 
                                             </p>
                                             <h5>Skills Required</h5>
-                                            <button className="btn btn-warning bg-transparent mt-2">
+                                            <button className="btn btn-warning bg-transparent mt-2">Submit Job
                                             </button>
                                         </div>
                                         <p
@@ -85,11 +85,11 @@ const DetailsData = () => {
                     <div className="row">
                         <div className="col-ms-5 col-md-12">
                             <div className="row">
-                                <div className="col-md-4">
-                                    <div class="form-check">
-                                        <label class="form-check-label" for="flexCheckDefault">
+                                <div className="col-md-4 d-flex align-items-center">
+                                    <div className="form-check">
+                                        <label className="form-check-label" for="flexCheckDefault">
                                             <input
-                                                class="form-check-input "
+                                                className="form-check-input "
                                                 type="checkbox"
                                                 id="GUARANTEED"
                                                 name="GUARANTEED"
@@ -100,7 +100,7 @@ const DetailsData = () => {
                                         </label>
                                     </div>
                                 </div>
-                                <div className="col-ms-12 col-md-4 mx-auto">
+                                <div className="col-ms-12 col-md-4 mx-auto d-flex align-items-center">
                                     <span
                                         class="badge bg-success px-3"
                                         style={{ width: '100%' }}
@@ -123,7 +123,7 @@ const DetailsData = () => {
 
                         <div className="col-md-12">
                             <div className="row">
-                                <div className="col-sm-12 col-md-4">
+                                <div className="col-sm-12 col-md-4 d-flex align-items-center">
                                     <div class="form-check">
                                         <label class="form-check-label" for="flexCheckDefault">
                                             <input
@@ -138,7 +138,7 @@ const DetailsData = () => {
                                         </label>
                                     </div>
                                 </div>
-                                <div className="col-sm-12 col-md-4 mx-auto">
+                                <div className="col-sm-12 col-md-4 mx-auto d-flex align-items-center">
                                     <span
                                         class="badge bg-danger px-4"
                                         style={{ width: '100%' }}
@@ -146,7 +146,7 @@ const DetailsData = () => {
                                         FEATURED
                                     </span>
                                 </div>
-                                <div className="col-sm-12 col-md-4">
+                                <div className="col-sm-12 col-md-4 d-flex align-items-center">
                                     <p>
                                         Attract more freelancers with a prominent placement in
                                         our 'Featured Jobs and Contests' page
@@ -158,7 +158,7 @@ const DetailsData = () => {
                         {/* --------------------------------------------------------3-------------------------------------------------*/}
                         <div className="col-md-12">
                             <div className="row">
-                                <div className="col-md-4">
+                                <div className="col-md-4 d-flex align-items-center">
                                     <div class="form-check">
                                         <label class="form-check-label" for="flexCheckDefault">
                                             <input
@@ -173,7 +173,7 @@ const DetailsData = () => {
                                         </label>
                                     </div>
                                 </div>
-                                <div className="col-sm-12 col-md-4 mx-auto">
+                                <div className="col-sm-12 col-md-4 mx-auto d-flex align-items-center">
                                     <span
                                         class="badge bg-secondary px-3"
                                         style={{ width: '100%' }}
@@ -193,7 +193,7 @@ const DetailsData = () => {
                         {/* --------------------------------------------------------4-------------------------------------------------*/}
                         <div className="col-md-12">
                             <div className="row">
-                                <div className="col-md-4">
+                                <div className="col-md-4 d-flex align-items-center">
                                     <div class="form-check">
                                         <label class="form-check-label" for="flexCheckDefault">
                                             <input
@@ -208,7 +208,7 @@ const DetailsData = () => {
                                         </label>
                                     </div>
                                 </div>
-                                <div className="col-md-4 mx-auto">
+                                <div className="col-md-4 mx-auto d-flex align-items-center">
                                     <span
                                         class="badge bg-info text-dark px-4"
                                         style={{ width: '100%' }}
@@ -228,7 +228,7 @@ const DetailsData = () => {
                         {/* --------------------------------------------------------5-------------------------------------------------*/}
                         <div className="col-md-12">
                             <div className="row">
-                                <div className="col-md-4">
+                                <div className="col-md-4 d-flex align-items-center">
                                     <div class="form-check">
                                         <label class="form-check-label" for="flexCheckDefault">
                                             <input
@@ -243,7 +243,7 @@ const DetailsData = () => {
                                         </label>
                                     </div>
                                 </div>
-                                <div className="col-md-4 mx-auto">
+                                <div className="col-md-4 mx-auto d-flex align-items-center">
                                     <span
                                         class="badge text-light px-4"
                                         style={{ backgroundColor: '#29b2fe', width: '100%' }}
@@ -262,7 +262,7 @@ const DetailsData = () => {
                         {/* --------------------------------------------------------6-------------------------------------------------*/}
                         <div className="col-md-12">
                             <div className="row">
-                                <div className="col-md-4">
+                                <div className="col-md-4 d-flex align-items-center">
                                     <div class="form-check">
                                         <label class="form-check-label" for="flexCheckDefault">
                                             <input
@@ -277,7 +277,7 @@ const DetailsData = () => {
                                         </label>
                                     </div>
                                 </div>
-                                <div className="col-md-4 mx-auto">
+                                <div className="col-md-4 mx-auto d-flex align-items-center">
                                     <span class="badge bg-primary" style={{ width: '100%' }}>
                                         NDA
                                     </span>
@@ -294,7 +294,7 @@ const DetailsData = () => {
                         {/* --------------------------------------------------------7-------------------------------------------------*/}
                         <div className=" col-md-12">
                             <div className="row">
-                                <div className="col-md-4">
+                                <div className="col-md-4 d-flex align-items-center">
                                     <div class="form-check">
                                         <label class="form-check-label" for="flexCheckDefault">
                                             <input
@@ -309,7 +309,7 @@ const DetailsData = () => {
                                         </label>
                                     </div>
                                 </div>
-                                <div className="col-md-4 mx-auto">
+                                <div className="col-md-4 mx-auto d-flex align-items-center">
                                     <span
                                         class="badge bg-warning text-dark"
                                         style={{ width: '100%' }}

@@ -125,11 +125,7 @@ input[type=email] {
   box-sizing: border-box;
 }
 
-/* This is our style for the invalid fields */
-input:invalid {
-  border-color: #900;
-  background-color: #FDD;
-}
+
 
 input:focus:invalid {
   outline: none;

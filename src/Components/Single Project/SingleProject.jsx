@@ -22,8 +22,8 @@ const SingleProject = ({project}) => {
                           <p className='postDesc'>{project.Tellus}</p>
                             <div class="card-text rating-person link ">
                                 <div class="row">
-                                <div class="fix-price col-md-4"><i class="fas fa-tv link"></i> Fix Price</div>
-                                <div class="fix-price col-md-4"><i class="fas fa-building link"></i> No Bird</div>
+                                <div class="fix-price col-md-4"><i class="fas fa-tv link"></i> {project.pay}</div>
+                                <div class="fix-price col-md-4"><i class="fas fa-building link"></i>{project.postproject}</div>
                                 <div class="col-md-4">
                                 <i class="fas fa-user"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></div>
                             </div>

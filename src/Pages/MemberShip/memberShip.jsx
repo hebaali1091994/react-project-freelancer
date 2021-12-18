@@ -3,7 +3,12 @@ import "./membership.css"
 import Header from '../../Components/header/Header'
 
 const membership = () => {
-    return (
+
+const paypal = ()=>{
+ window.location.replace('/paypal/');
+}
+
+  return (
         <div>
                 <div class="Project-contests">
                             <Header/>
@@ -44,7 +49,7 @@ const membership = () => {
             <div class="card mb-4 rounded-3 shadow-sm">
               <div class="card-header min-height-280  py-3">
                 <h4 class="my-0 fw-normal">
-                  <img src="image/monthly-level-two.svg" alt="level-two" />
+                  <img class="img-fluid" src="https://www.f-cdn.com/assets/main/en/assets/badges/membership/monthly-level-two.svg" alt="level-two" />
                   <p class="px-5">Basic</p>
 
                   <span class="pricing-currency text-dark">$</span>
@@ -55,7 +60,7 @@ const membership = () => {
                   <p>per month</p>
                 </h4>
               </div>
-              <button type="button" class="Button-plan btn btn-sm btn-primary">
+              <button type="button" class="Button-plan btn btn-sm btn-primary" onClick={()=>paypal()}>
                 Upgrade
               </button>
               <div class="card-body body-height">
@@ -79,7 +84,7 @@ const membership = () => {
             <div class="card mb-4 rounded-3 shadow-sm">
               <div class="card-header min-height-280 py-3">
                 <h4 class="my-0 fw-normal">
-                  <img src="image/monthly-level-three.svg" alt="level-two" />
+                  <img  class="img-fluid" src="https://www.f-cdn.com/assets/main/en/assets/badges/membership/monthly-level-three.svg" alt="level-two" />
                   <p class="px-5">Plus</p>
                   <div>
                     <p class="lead Offers-deal">FROM $9.95 USD TRY ONE MONTH</p>
@@ -90,7 +95,7 @@ const membership = () => {
                   <p>Or <a href="#">purchase now !</a></p>
                 </h4>
               </div>
-              <button type="button" class="Button-plan btn btn-sm btn-success">
+              <button type="button" class="Button-plan btn btn-sm btn-success"  onClick={()=>paypal()}>
                 Try Free Trial
               </button>
               <div class="card-body body-height">
@@ -119,7 +124,7 @@ const membership = () => {
             <div class="card mb-4 rounded-3 shadow-sm">
               <div class="card-header min-height-280 py-3">
                 <h4 class="my-0 fw-normal">
-                  <img src="image/monthly-level-four.svg" alt="level-two" />
+                  <img  class="img-fluid" src="https://www.f-cdn.com/assets/main/en/assets/badges/membership/monthly-level-four.svg" alt="level-two" />
                   <p class="px-5">Professional</p>
 
                   <span class="pricing-currency text-dark">$</span>
@@ -130,7 +135,7 @@ const membership = () => {
                   <p>per month</p>
                 </h4>
               </div>
-              <button type="button" class="Button-plan btn btn-sm btn-primary">
+              <button type="button" class="Button-plan btn btn-sm btn-primary" onClick={()=>paypal()}>
                 Upgrade
               </button>
               <div class="card-body body-height">
@@ -163,7 +168,7 @@ const membership = () => {
             <div class="card mb-4 rounded-3 shadow-sm">
               <div class="card-header min-height-280 py-3">
                 <h4 class="my-0 fw-normal">
-                  <img src="image/monthly-level-two.svg" alt="level-two" />
+                  <img src="https://www.f-cdn.com/assets/main/en/assets/badges/membership/monthly-level-five.svg" alt="level-two" />
                   <p class="px-5">Basic</p>
 
                   <span class="pricing-currency text-dark">$</span>
@@ -174,7 +179,7 @@ const membership = () => {
                   <p>per month</p>
                 </h4>
               </div>
-              <button type="button" class="Button-plan btn btn-sm btn-primary">
+              <button type="button" class="Button-plan btn btn-sm btn-primary" onClick={()=>paypal()} >
                 Upgrade
               </button>
               <div class="card-body body-height">
@@ -223,7 +228,7 @@ const membership = () => {
         <div class="row">
           <div class="pt-5"></div>
           <div class="col-lg-3 col-md-6 col-sm-12">
-            <img src="image/Bids.svg" class="w-50svg" alt="" />
+            <img class="img-fluid" src="https://www.f-cdn.com/assets/main/en/assets/badges/membership/monthly-level-five.svg" />
             <h3 class="text-left">Bids</h3>
             <p class="lead">
               Increase your chances of winning a project with more bids per
