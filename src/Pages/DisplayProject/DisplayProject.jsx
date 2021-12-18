@@ -18,8 +18,10 @@ console.log();
   const {user} = useContext(Context)
    const [users, setUser] = useState([]); 
    const [project, setProject] = useState([])
+   const [SearchDataProject, setSearchDataProject] = useState([])
+   const [ProjectName, setProjectName] = useState("")
 
-
+console.log(SearchDataProject)
   useEffect(() => {
     
     const fetchData = async ()=>{
@@ -36,10 +38,17 @@ console.log();
     const fetchProject = async ()=>{
       const res = await axios.get("/Project/all");
       setProject(res.data)
+      setSearchDataProject(res.data)
     }
     fetchProject();
   },[]);
     console.log(project)
+const handleSearch =()=>{
+  console.log(SearchDataProject);
+ const NewData = project.filter(x=> x.ProjectName == (ProjectName == '' ? x.ProjectName : ProjectName))
+  setSearchDataProject(NewData)
+console.log(NewData) 
+}
 
 
   return (
@@ -55,8 +64,8 @@ console.log();
             <div class="container ">
                 <h1>Browers</h1>
             <form class="d-flex ">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-              <button class="btn btn" type="submit">Save</button>
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"  onChange={(e)=>setProjectName(e.target.value)}/>
+              <button class="btn btn-primary" type="submit" onClick={()=>handleSearch()}>Save</button>
             </form>
 <nav>
     <div class="nav nav-tabs mt-3" id="nav-tab" role="tablist">
@@ -116,18 +125,8 @@ console.log();
               </svg></span>
             <input type="text" class="form-control" placeholder="Search Skills" aria-label="Username" aria-describedby="basic-addon1"/>
           </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
-            <label class="form-check-label" for="flexCheckDefault">
-                Website Design
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
-            <label class="form-check-label" for="flexCheckDefault">
-                Logo Design
-            </label>
-          </div>
+
+
           <div class="form-check">
             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
             <label class="form-check-label" for="flexCheckDefault">

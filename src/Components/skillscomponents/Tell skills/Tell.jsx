@@ -27,21 +27,21 @@ setH([...h,s])
 
     return (
         <div className="Tell">
-                <div class="container">
-        <div class="row">
-            <div class="sv">
+                <div className="container">
+        <div className="row">
+            <div className="sv">
                 <img src="./Skills.svg" alt="" />
             </div>
             <h2>Tell us your top skills</h2>
-            <div class="req">This helps us recommend jobs for you.</div>
-            <div class="search">
-                <span><i class="fas fa-search"></i></span>
-                <input type="search" placeholder="Search a skill" class="form-control" />
+            <div className="req">This helps us recommend jobs for you.</div>
+            <div className="search">
+                <span><i className="fas fa-search"></i></span>
+                <input type="search" placeholder="Search a skill" className="form-control" />
             </div>
             <hr/>
-            <div class="category">
-                <div class="category-item">
-                    <div class="item col">
+            <div className="category">
+                <div className="category-item">
+                    <div className="item col">
                         <h3>Select a category</h3>
                         <hr/>
      {Skills.map((c,index)=>(
@@ -50,7 +50,7 @@ setH([...h,s])
           </div>
             ))} 
                            </div>
-                    <div class="item col">
+                    <div className="item col">
                         <h3>
                              {Skills.map(c=>(
              
@@ -61,7 +61,7 @@ setH([...h,s])
                         </h3>
                         <hr/>
                     </div>
-                    <div class="item col">
+                    <div className="item col">
                         <h3>1 out of 20 skills selected</h3>
                         <h3>{h.map((k)=><li className='btn btn-success mb-3 d-block w-50'>{k}</li>)}</h3>
                         <hr/>
