@@ -40,7 +40,6 @@ console.log(SearchDataProject)
   },[]);
     console.log(project)
 const handleSearch =()=>{
-  console.log(SearchDataProject);
  const NewData = project.filter(x=> x.ProjectName == (ProjectName == '' ? x.ProjectName : ProjectName))
   setSearchDataProject(NewData)
 console.log(NewData) 
