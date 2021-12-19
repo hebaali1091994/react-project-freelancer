@@ -8,7 +8,7 @@ const router = require("express").Router();
 
 //create new project 
 // Must Send User Id
-router.post("/", async (req, res) => {
+router.post("/",async (req, res) => {
   
   const newproject = await new Project(req.body);
   try {
@@ -18,24 +18,41 @@ router.post("/", async (req, res) => {
     res.status(401).json(error);
   }
 });
+//id project
+//applay porposals
 
-router.post("/applay/:id",async(req,res)=>{
-  try{
-    const applayProject = await Project.findByIdAndUpdate
-    (
-      req.params.id,
-        {$push:{freelances:req.body }},
-         { new: true }
-        );
-        const nweproject = await applayProject.save();
-      res.status(200).json(nweproject);
+// router.post("/applay/:id",async(req,res)=>{
+//   jwt.verify(authHeader, process.env.JWT_SEC,async(error, user) => {
 
-      }catch(err){
-    res.status(401).json(error);
-  }
+//  if(user){
+//   try{
+//     const newporposal=
+//     {
+//       freelanceid: user.id,
+//         deccription:req.body.deccription,
+//         date:new Date()
+//       }
+      
+    
+//     const applayProject = await Project.findByIdAndUpdate
+//     (
+//       req.params.id,
+//         {$push:{freelances:newporposal }},
+//          { new: true }
+//         );
+//         const nweproject = await applayProject.save();
+//       res.status(200).json(nweproject);
+
+//       }catch(err){
+//         res.status(401).json(error);
+//       }
+      
+
+//  }
+
   
-  
-})
+// })
+// })
 
 //update project
 
@@ -64,6 +81,9 @@ router.get("/all", async (req, res) => {
     res.status(401).json(error);
   }
 });
+
+
+
 
 //one project
 

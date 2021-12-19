@@ -8,7 +8,7 @@ import './App.css';
 
 
 import { Routes, Route } from "react-router";
-import SignUp from "./Components/Sign up/SignUp";
+import SignUp from "./Pages/Sign up/SignUp";
 import Paypal from "./Components/Paypal/paypal";
 import { Suspense, useState, useContext, useEffect } from "react";
 import { io } from "socket.io-client";

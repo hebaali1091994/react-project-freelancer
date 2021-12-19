@@ -17,10 +17,30 @@ const DisplayProject = () => {
   const { user } = useContext(Context);
   const [users, setUser] = useState([]);
   const [project, setProject] = useState([]);
-  const [SearchDataProject, setSearchDataProject] = useState([]);
   const [ProjectName, setProjectName] = useState("");
+  // Search
+  const [APIData, setAPIData] = useState([]);
+  const [searchInput, setSearchInput] = useState("");
+  useEffect(() => {
+    axios.get(`http://localhost:5000/Project/all`).then((response) => {
+      setAPIData(response.data);
+      console.log(response.data);
+    });
+  }, []);
 
-  console.log(SearchDataProject);
+  const [filteredRes, setFilteredRes] = useState(APIData);
+  const searchItems = (searchValue) => {
+    setSearchInput(searchValue);
+  };
+
+  const filteredResults = APIData.filter((item) => {
+    return item.ChooseName.match(new RegExp(searchInput, "gi"));
+  });
+
+  //Filter
+  const [min_value, setMinValue] = useState();
+  const [max_value, setMaxValue] = useState();
+
   useEffect(() => {
     const fetchData = async () => {
       const res = await axios.get("/users/all");
@@ -28,22 +48,6 @@ const DisplayProject = () => {
     };
     fetchData();
   }, []);
-
-  useEffect(() => {
-    const fetchProject = async () => {
-      const res = await axios.get("/Project/all");
-      setProject(res.data);
-      setSearchDataProject(res.data);
-    };
-    fetchProject();
-  }, []);
-  console.log(project);
-  const handleSearch = () => {
-    console.log(SearchDataProject);
-    const NewData = project.filter((x) => x.ProjectName == (ProjectName == ""));
-    setSearchDataProject(NewData);
-    console.log(NewData);
-  };
 
   return (
     <div className="DisplayProject">
@@ -71,18 +75,15 @@ const DisplayProject = () => {
                     type="search"
                     placeholder="Search"
                     aria-label="Search"
-                    onChange={(e) => setProjectName(e.target.value)}
+                    onChange={(e) => searchItems(e.target.value)}
                   />
-                  <button
-                    className="btn btn-primary"
-                
-                    onClick={() => handleSearch()}
-                  >
-                    Save
-                  </button>
                 </form>
                 <nav>
-                  <div className="nav nav-tabs mt-3" id="nav-tab" role="tablist">
+                  <div
+                    className="nav nav-tabs mt-3"
+                    id="nav-tab"
+                    role="tablist"
+                  >
                     <button
                       className="nav-link col-2  active text-white"
                       id="nav-home-tab"
@@ -93,8 +94,7 @@ const DisplayProject = () => {
                       aria-controls="nav-home"
                       aria-selected="true"
                     >
-                      {" "}
-                      Freelancer{" "}
+                      Freelancer
                     </button>
 
                     <button
@@ -132,13 +132,7 @@ const DisplayProject = () => {
                 <label for="customRange2" className="form-label">
                   Hourly rate
                 </label>
-                <input
-                  type="range"
-                  className="form-range"
-                  min="0"
-                  max="100"
-                  id="customRange2"
-                />
+                <input type="range" className="form-range" id="customRange2" />
 
                 <div className="container">
                   <p> $0 – 80 USD+ </p>
@@ -263,7 +257,10 @@ const DisplayProject = () => {
                     type="checkbox"
                     id="flexSwitchCheckDefault"
                   />
-                  <label className="form-check-label" for="flexSwitchCheckDefault">
+                  <label
+                    className="form-check-label"
+                    for="flexSwitchCheckDefault"
+                  >
                     Default switch checkbox input
                   </label>
                 </div>
@@ -423,7 +420,10 @@ const DisplayProject = () => {
                         value=""
                         id="flexCheckDefault"
                       />
-                      <label className="form-check-label" for="flexCheckDefault">
+                      <label
+                        className="form-check-label"
+                        for="flexCheckDefault"
+                      >
                         Fixed Price
                       </label>
                     </div>
@@ -434,7 +434,10 @@ const DisplayProject = () => {
                         value=""
                         id="flexCheckDefault"
                       />
-                      <label className="form-check-label" for="flexCheckDefault">
+                      <label
+                        className="form-check-label"
+                        for="flexCheckDefault"
+                      >
                         Hourly Rate
                       </label>
                     </div>
@@ -444,6 +447,9 @@ const DisplayProject = () => {
                       <input
                         type="text"
                         className="form-control"
+                        value={min_value}
+                        type="text"
+                        onChange={(e) => setMinValue(e.target.value)}
                         aria-label="Amount (to the nearest dollar)"
                       />
                       <span className="input-group-text">USD</span>
@@ -452,7 +458,9 @@ const DisplayProject = () => {
                     <div className="input-group mb-3">
                       <span className="input-group-text">$</span>
                       <input
+                        value={max_value}
                         type="text"
+                        onChange={(e) => setMaxValue(e.target.value)}
                         className="form-control"
                         aria-label="Amount (to the nearest dollar)"
                       />
@@ -508,7 +516,10 @@ const DisplayProject = () => {
                         value=""
                         id="flexCheckDefault"
                       />
-                      <label className="form-check-label" for="flexCheckDefault">
+                      <label
+                        className="form-check-label"
+                        for="flexCheckDefault"
+                      >
                         Website Design
                       </label>
                     </div>
@@ -519,7 +530,10 @@ const DisplayProject = () => {
                         value=""
                         id="flexCheckDefault"
                       />
-                      <label className="form-check-label" for="flexCheckDefault">
+                      <label
+                        className="form-check-label"
+                        for="flexCheckDefault"
+                      >
                         Website Design
                       </label>
                     </div>
@@ -530,7 +544,10 @@ const DisplayProject = () => {
                         value=""
                         id="flexCheckDefault"
                       />
-                      <label className="form-check-label" for="flexCheckDefault">
+                      <label
+                        className="form-check-label"
+                        for="flexCheckDefault"
+                      >
                         Website Design
                       </label>
                     </div>
@@ -541,7 +558,10 @@ const DisplayProject = () => {
                         value=""
                         id="flexCheckDefault"
                       />
-                      <label className="form-check-label" for="flexCheckDefault">
+                      <label
+                        className="form-check-label"
+                        for="flexCheckDefault"
+                      >
                         Website Design
                       </label>
                     </div>
@@ -553,7 +573,10 @@ const DisplayProject = () => {
                         value=""
                         id="flexCheckDefault"
                       />
-                      <label className="form-check-label" for="flexCheckDefault">
+                      <label
+                        className="form-check-label"
+                        for="flexCheckDefault"
+                      >
                         Website Design
                       </label>
                     </div>{" "}
@@ -564,7 +587,10 @@ const DisplayProject = () => {
                         value=""
                         id="flexCheckDefault"
                       />
-                      <label className="form-check-label" for="flexCheckDefault">
+                      <label
+                        className="form-check-label"
+                        for="flexCheckDefault"
+                      >
                         Website Design
                       </label>
                     </div>{" "}
@@ -575,7 +601,10 @@ const DisplayProject = () => {
                         value=""
                         id="flexCheckDefault"
                       />
-                      <label className="form-check-label" for="flexCheckDefault">
+                      <label
+                        className="form-check-label"
+                        for="flexCheckDefault"
+                      >
                         Website Design
                       </label>
                     </div>{" "}
@@ -586,7 +615,10 @@ const DisplayProject = () => {
                         value=""
                         id="flexCheckDefault"
                       />
-                      <label className="form-check-label" for="flexCheckDefault">
+                      <label
+                        className="form-check-label"
+                        for="flexCheckDefault"
+                      >
                         Website Design
                       </label>
                     </div>
@@ -654,7 +686,10 @@ const DisplayProject = () => {
                         value=""
                         id="flexCheckDefault"
                       />
-                      <label className="form-check-label" for="flexCheckDefault">
+                      <label
+                        className="form-check-label"
+                        for="flexCheckDefault"
+                      >
                         English
                       </label>
                     </div>
@@ -666,11 +701,14 @@ const DisplayProject = () => {
                         <span>Showing 1-20 of 1989256 results</span>
                       </div>
                     </div>
-
-                    {project.map((project) => (
-                      <SingleProject project={project} />
-                    ))}
-
+                    {/* Searched Area */}
+                    {!Boolean(filteredResults.length) ? (
+                      <div>No results found</div>
+                    ) : (
+                      filteredResults.map((item, idx) => (
+                        <SingleProject key={idx} project={item} />
+                      ))
+                    )}
                     <Nav2 project={project} />
                   </div>
                 </div>
