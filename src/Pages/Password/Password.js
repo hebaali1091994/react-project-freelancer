@@ -3,15 +3,6 @@ import { Link } from "react-router-dom";
 
 export default function password() {
     return(
-<<<<<<< HEAD
-        <div class="container">
-        <div className="show">
-
-            <div id="divright" class="col-md-12 shadow-lg p-3 mb-5 bg-body rounded">
-                <div class="container">
-                    <form class="row g-3 d-flex flex-column">
-                        <p class="fs-1"><b>Password</b></p>
-=======
         <div className="container">
         <div className="row">
         <div classNameName="show">
@@ -31,7 +22,6 @@ export default function password() {
                 <div className="container">
                     <form className="row g-3 d-flex flex-column">
                         <p className="fs-1"><b>Password</b></p>
->>>>>>> 84cbf527dc98cddf16350f0ffc5cafe86cd8e418
                         <hr/>
                         <div className="col-md-6">
                             <p className="fs-5"><b>Change Password</b></p>
@@ -52,10 +42,11 @@ export default function password() {
                         </div>
                     </form>
                 </div>
-            </div>
+            </aside>
         </div>
         
         </div>
+    </div>
     )
     
 }

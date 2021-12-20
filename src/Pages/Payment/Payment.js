@@ -3,20 +3,9 @@ import { Link } from "react-router-dom";
 
 export default function Payment() {
     return(
-<<<<<<< HEAD
-        <div class="container">
-        <div class="row">
-            <div className="show">
-
-            
-            <aside id="asideright" class="col-md-12 shadow-lg p-3 mb-5 bg-body rounded">
-                <div class="container">
-                    <div class="row">
-                        <p class="fs-1"><b>Payment & Financials</b></p>
-=======
         <div className="container">
         <div className="row">
-            <div classNameName="show">
+            <div className="show">
             <aside id="asideleft" className="col-md-3">
                 <div className="btn-group-vertical w-100">
                 <Link to="/Profile" className="btn text-primary text-start">Profile</Link>
@@ -34,7 +23,6 @@ export default function Payment() {
                 <div className="container">
                     <div className="row">
                         <p className="fs-1"><b>Payment & Financials</b></p>
->>>>>>> 84cbf527dc98cddf16350f0ffc5cafe86cd8e418
                         <hr/>
                         <div className="mb-4">
                             <p className="fs-5"><b>Payment Methods</b></p>

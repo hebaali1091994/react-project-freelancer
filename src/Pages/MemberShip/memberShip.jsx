@@ -10,13 +10,13 @@ const paypal = ()=>{
 
   return (
         <div>
-                <div class="Project-contests">
+                <div className="Project-contests">
                             <Header/>
 
-      <div class="Member-ship bg-light">
-        <div class="container">
-          <h1 class="pt-5">Try Freelancer MemberShip</h1>
-          <p class="pb-5">
+      <div className="Member-ship bg-light">
+        <div className="container">
+          <h1 className="pt-5">Try Freelancer MemberShip</h1>
+          <p className="pb-5">
             Designed to Maximize your freelancer success and earing! save up to
             20% on annual plans
           </p>
@@ -24,16 +24,16 @@ const paypal = ()=>{
       </div>
     </div>
 
-    <div class="pricing my-5">
-      <div class="container">
-        <div class="plan d-flex justify-content-center">
-          <button type="button" class="btn btn-secondary btn-sm">
+    <div className="pricing my-5">
+      <div className="container">
+        <div className="plan d-flex justify-content-center">
+          <button type="button" className="btn btn-secondary btn-sm">
             monthly plan
           </button>
-          <button type="button" class="btn btn-secondary btn-sm">
+          <button type="button" className="btn btn-secondary btn-sm">
             Annuaul Plan, Paid Monthly
           </button>
-          <button type="button" class="btn btn-secondary btn-sm">
+          <button type="button" className="btn btn-secondary btn-sm">
             Annuaul Plan, Prepaid
           </button>
         </div>
@@ -42,30 +42,30 @@ const paypal = ()=>{
 
  
 
-    <div class="table">
-      <div class="container">
-        <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
-          <div class="col-lg-3  col-md-6 col-sm-12">
-            <div class="card mb-4 rounded-3 shadow-sm">
-              <div class="card-header min-height-280  py-3">
-                <h4 class="my-0 fw-normal">
-                  <img class="img-fluid" src="https://www.f-cdn.com/assets/main/en/assets/badges/membership/monthly-level-two.svg" alt="level-two" />
-                  <p class="px-5">Basic</p>
+    <div className="table">
+      <div className="container">
+        <div className="row row-cols-1 row-cols-md-3 mb-3 text-center">
+          <div className="col-lg-3  col-md-6 col-sm-12">
+            <div className="card mb-4 rounded-3 shadow-sm">
+              <div className="card-header min-height-280  py-3">
+                <h4 className="my-0 fw-normal">
+                  <img className="img-fluid" src="https://www.f-cdn.com/assets/main/en/assets/badges/membership/monthly-level-two.svg" alt="level-two" />
+                  <p className="px-5">Basic</p>
 
-                  <span class="pricing-currency text-dark">$</span>
-                  <span class="my-5 pricing-price text-dark"
-                    >4.<span class="pennies">95</span></span
+                  <span className="pricing-currency text-dark">$</span>
+                  <span className="my-5 pricing-price text-dark"
+                    >4.<span className="pennies">95</span></span
                   >
 
                   <p>per month</p>
                 </h4>
               </div>
-              <button type="button" class="Button-plan btn btn-sm btn-primary" onClick={()=>paypal()}>
+              <button type="button" className="Button-plan btn btn-sm btn-primary" onClick={()=>paypal()}>
                 Upgrade
               </button>
-              <div class="card-body body-height">
-                <ul class="list-unstyled mt-3 mb-4 text-left">
-                  <div class="container">
+              <div className="card-body body-height">
+                <ul className="list-unstyled mt-3 mb-4 text-left">
+                  <div className="container">
                     <li>50 Bids Per Month</li>
                     <li>50 Skills</li>
                     <li>Unlock rewards</li>
@@ -80,27 +80,27 @@ const paypal = ()=>{
               </div>
             </div>
           </div>
-          <div class="col-lg-3 col-md-6 col-sm-12">
-            <div class="card mb-4 rounded-3 shadow-sm">
-              <div class="card-header min-height-280 py-3">
-                <h4 class="my-0 fw-normal">
-                  <img  class="img-fluid" src="https://www.f-cdn.com/assets/main/en/assets/badges/membership/monthly-level-three.svg" alt="level-two" />
-                  <p class="px-5">Plus</p>
+          <div className="col-lg-3 col-md-6 col-sm-12">
+            <div className="card mb-4 rounded-3 shadow-sm">
+              <div className="card-header min-height-280 py-3">
+                <h4 className="my-0 fw-normal">
+                  <img  className="img-fluid" src="https://www.f-cdn.com/assets/main/en/assets/badges/membership/monthly-level-three.svg" alt="level-two" />
+                  <p className="px-5">Plus</p>
                   <div>
-                    <p class="lead Offers-deal">FROM $9.95 USD TRY ONE MONTH</p>
+                    <p className="lead Offers-deal">FROM $9.95 USD TRY ONE MONTH</p>
                   </div>
 
-                  <h2 class="my-3 pricing-price text-success">Free</h2>
+                  <h2 className="my-3 pricing-price text-success">Free</h2>
 
                   <p>Or <a href="#">purchase now !</a></p>
                 </h4>
               </div>
-              <button type="button" class="Button-plan btn btn-sm btn-success"  onClick={()=>paypal()}>
+              <button type="button" className="Button-plan btn btn-sm btn-success"  onClick={()=>paypal()}>
                 Try Free Trial
               </button>
-              <div class="card-body body-height">
-                <ul class="list-unstyled mt-3 mb-4 text-left">
-                  <div class="container">
+              <div className="card-body body-height">
+                <ul className="list-unstyled mt-3 mb-4 text-left">
+                  <div className="container">
                     <li>100 Bids Per Month</li>
                     <li>80 Skills</li>
                     <li>Client Engagement</li>
@@ -120,27 +120,27 @@ const paypal = ()=>{
               </div>
             </div>
           </div>
-          <div class="col-lg-3 col-md-6 col-sm-12">
-            <div class="card mb-4 rounded-3 shadow-sm">
-              <div class="card-header min-height-280 py-3">
-                <h4 class="my-0 fw-normal">
-                  <img  class="img-fluid" src="https://www.f-cdn.com/assets/main/en/assets/badges/membership/monthly-level-four.svg" alt="level-two" />
-                  <p class="px-5">Professional</p>
+          <div className="col-lg-3 col-md-6 col-sm-12">
+            <div className="card mb-4 rounded-3 shadow-sm">
+              <div className="card-header min-height-280 py-3">
+                <h4 className="my-0 fw-normal">
+                  <img  className="img-fluid" src="https://www.f-cdn.com/assets/main/en/assets/badges/membership/monthly-level-four.svg" alt="level-two" />
+                  <p className="px-5">Professional</p>
 
-                  <span class="pricing-currency text-dark">$</span>
-                  <span class="my-5 pricing-price text-dark"
-                    >29.<span class="pennies">95</span></span
+                  <span className="pricing-currency text-dark">$</span>
+                  <span className="my-5 pricing-price text-dark"
+                    >29.<span className="pennies">95</span></span
                   >
 
                   <p>per month</p>
                 </h4>
               </div>
-              <button type="button" class="Button-plan btn btn-sm btn-primary" onClick={()=>paypal()}>
+              <button type="button" className="Button-plan btn btn-sm btn-primary" onClick={()=>paypal()}>
                 Upgrade
               </button>
-              <div class="card-body body-height">
-                <ul class="list-unstyled mt-3 mb-4 text-left">
-                  <div class="container">
+              <div className="card-body body-height">
+                <ul className="list-unstyled mt-3 mb-4 text-left">
+                  <div className="container">
                     <li>300 Bids Per Month</li>
                     <li>100 Skills</li>
                     <li>Client Engagement</li>
@@ -164,27 +164,27 @@ const paypal = ()=>{
               </div>
             </div>
           </div>
-          <div class="col-lg-3 col-md-6 col-sm-12">
-            <div class="card mb-4 rounded-3 shadow-sm">
-              <div class="card-header min-height-280 py-3">
-                <h4 class="my-0 fw-normal">
+          <div className="col-lg-3 col-md-6 col-sm-12">
+            <div className="card mb-4 rounded-3 shadow-sm">
+              <div className="card-header min-height-280 py-3">
+                <h4 className="my-0 fw-normal">
                   <img src="https://www.f-cdn.com/assets/main/en/assets/badges/membership/monthly-level-five.svg" alt="level-two" />
-                  <p class="px-5">Basic</p>
+                  <p className="px-5">Basic</p>
 
-                  <span class="pricing-currency text-dark">$</span>
-                  <span class="my-5 pricing-price text-dark"
-                    >4.<span class="pennies">95</span></span
+                  <span className="pricing-currency text-dark">$</span>
+                  <span className="my-5 pricing-price text-dark"
+                    >4.<span className="pennies">95</span></span
                   >
 
                   <p>per month</p>
                 </h4>
               </div>
-              <button type="button" class="Button-plan btn btn-sm btn-primary" onClick={()=>paypal()} >
+              <button type="button" className="Button-plan btn btn-sm btn-primary" onClick={()=>paypal()} >
                 Upgrade
               </button>
-              <div class="card-body body-height">
-                <ul class="list-unstyled mt-3 mb-4 text-left">
-                  <div class="container">
+              <div className="card-body body-height">
+                <ul className="list-unstyled mt-3 mb-4 text-left">
+                  <div className="container">
                     <li>1500 Bids Per Month</li>
                     <li>400 Skills</li>
                     <li>Client Engagement</li>
@@ -212,81 +212,81 @@ const paypal = ()=>{
         </div>
       </div>
     </div>
-    <div class="container">
-      <p class="w-50">
+    <div className="container">
+      <p className="w-50">
         Prices displayed are in USD. Change plans anytime, conditions apply see
         <a href="#"> FAQ.</a> * Benefits require Membership plan and additional
         criteria for eligibility.
       </p>
     </div>
 
-    <div class="Membership-help bg-light bg-gradient">
-      <div class="container">
-        <h1 class="w-50 pt-5">
+    <div className="Membership-help bg-light bg-gradient">
+      <div className="container">
+        <h1 className="w-50 pt-5">
           Here's How Membership Helps You Grow Your Business
         </h1>
-        <div class="row">
-          <div class="pt-5"></div>
-          <div class="col-lg-3 col-md-6 col-sm-12">
-            <img class="img-fluid" src="https://www.f-cdn.com/assets/main/en/assets/badges/membership/monthly-level-five.svg" />
-            <h3 class="text-left">Bids</h3>
-            <p class="lead">
+        <div className="row">
+          <div className="pt-5"></div>
+          <div className="col-lg-3 col-md-6 col-sm-12">
+            <img className="img-fluid" src="https://www.f-cdn.com/assets/main/en/assets/badges/membership/monthly-level-five.svg" />
+            <h3 className="text-left">Bids</h3>
+            <p className="lead">
               Increase your chances of winning a project with more bids per
               month
             </p>
           </div>
-          <div class="col-lg-3 col-md-6 col-sm-12">
-            <img src="image/Skills.svg" class="w-50svg" alt="" />
-            <h3 class="text-left">Skills</h3>
-            <p class="lead">
+          <div className="col-lg-3 col-md-6 col-sm-12">
+            <img src="image/Skills.svg" className="w-50svg" alt="" />
+            <h3 className="text-left">Skills</h3>
+            <p className="lead">
               Find the right work to best use your expertise and maximise your
               earnings
             </p>
           </div>
-          <div class="col-lg-3 col-md-6 col-sm-12">
-            <img src="image/Custom cover photo.svg" class="w-50svg" alt="" />
-            <h3 class="text-left">Custom Cover Photo</h3>
-            <p class="lead">
+          <div className="col-lg-3 col-md-6 col-sm-12">
+            <img src="image/Custom cover photo.svg" className="w-50svg" alt="" />
+            <h3 className="text-left">Custom Cover Photo</h3>
+            <p className="lead">
               Make your profile stand out even more with your own custom cover
               photo
             </p>
           </div>
-          <div class="col-lg-3 col-md-6 col-sm-12">
-            <img src="image/High value bidding.svg" class="w-50svg" alt="" />
-            <h3 class="text-left">High Value Bidding</h3>
-            <p class="lead">
+          <div className="col-lg-3 col-md-6 col-sm-12">
+            <img src="image/High value bidding.svg" className="w-50svg" alt="" />
+            <h3 className="text-left">High Value Bidding</h3>
+            <p className="lead">
               Get serious about freelancing with the ability to bid on high
               value projects
             </p>
           </div>
-          <div class="col-lg-3 col-md-6 col-sm-12">
-            <img src="image/External invoicing.svg" class="w-50svg" alt="" />
-            <h3 class="text-left">External Invoicing</h3>
-            <p class="lead">
+          <div className="col-lg-3 col-md-6 col-sm-12">
+            <img src="image/External invoicing.svg" className="w-50svg" alt="" />
+            <h3 className="text-left">External Invoicing</h3>
+            <p className="lead">
               Create invoices for any client, even if they are not a Freelancer
               user
             </p>
           </div>
-          <div class="col-lg-3 col-md-6 col-sm-12">
-            <img src="image/Rewards.svg"  class="w-50svg" alt="" />
-            <h3 class="text-left">Rewards</h3>
-            <p class="lead">
+          <div className="col-lg-3 col-md-6 col-sm-12">
+            <img src="image/Rewards.svg"  className="w-50svg" alt="" />
+            <h3 className="text-left">Rewards</h3>
+            <p className="lead">
               Spend credits on items such as free project upgrades, extra bids
               and more
             </p>
           </div>
-          <div class="col-lg-3 col-md-6 col-sm-12">
-            <img src="image/Employer following.svg" class="w-50svg" alt="" />
-            <h3 class="text-left">Employer Following</h3>
-            <p class="lead">
+          <div className="col-lg-3 col-md-6 col-sm-12">
+            <img src="image/Employer following.svg" className="w-50svg" alt="" />
+            <h3 className="text-left">Employer Following</h3>
+            <p className="lead">
               We will send you notifications so you can be one of the first to
               bid
             </p>
           </div>
-          <div class="col-lg-3 col-md-6 col-sm-12">
-            <img src="image/Preferred freelancer.svg" class="w-50svg" alt="" />
-            <h3 class="text-left">Preferred Freelancer</h3>
-            <p class="lead">
+          <div className="col-lg-3 col-md-6 col-sm-12">
+            <img src="image/Preferred freelancer.svg" className="w-50svg" alt="" />
+            <h3 className="text-left">Preferred Freelancer</h3>
+            <p className="lead">
               Get access to unlisted projects, unlimited support and a badge for
               your profile
             </p>
@@ -296,17 +296,17 @@ const paypal = ()=>{
     </div>
 
 
-    <div class="faq">
-      <div class="container">
-        <div class="text-center py-5"><h1>Frequently Asked Questions</h1></div>
-        <div class="row">
-          <div class="col-lg-4 col-md-6"></div>
-          <div class="col-lg-4 col-md-6">
-            <div class="accordion" id="accordionPanelsStayOpenExample">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+    <div className="faq">
+      <div className="container">
+        <div className="text-center py-5"><h1>Frequently Asked Questions</h1></div>
+        <div className="row">
+          <div className="col-lg-4 col-md-6"></div>
+          <div className="col-lg-4 col-md-6">
+            <div className="accordion" id="accordionPanelsStayOpenExample">
+              <div className="accordion-item">
+                <h2 className="accordion-header" id="panelsStayOpen-headingOne">
                   <button
-                    class="accordion-button"
+                    className="accordion-button"
                     type="button"
                     data-bs-toggle="collapse"
                     data-bs-target="#panelsStayOpen-collapseOne"
@@ -318,20 +318,20 @@ const paypal = ()=>{
                 </h2>
                 <div
                   id="panelsStayOpen-collapseOne"
-                  class="accordion-collapse collapse show"
+                  className="accordion-collapse collapse show"
                   aria-labelledby="panelsStayOpen-headingOne"
                 >
-                  <div class="accordion-body">
+                  <div className="accordion-body">
                     <strong>You get more earning opportunities and better savings as a Basic, Plus, Professional or Premier member. Bid on more projects, add more skills, save on project listing upgrades and unlock special rewards!
                         </strong>
 
                   </div>
                 </div>
               </div>
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+              <div className="accordion-item">
+                <h2 className="accordion-header" id="panelsStayOpen-headingTwo">
                   <button
-                    class="accordion-button collapsed"
+                    className="accordion-button collapsed"
                     type="button"
                     data-bs-toggle="collapse"
                     data-bs-target="#panelsStayOpen-collapseTwo"
@@ -342,20 +342,20 @@ const paypal = ()=>{
                 </h2>
                 <div
                   id="panelsStayOpen-collapseTwo"
-                  class="accordion-collapse collapse"
+                  className="accordion-collapse collapse"
                   aria-labelledby="panelsStayOpen-headingTwo"
                 >
-                  <div class="accordion-body">
+                  <div className="accordion-body">
                     <strong>Of course! Upgrade your membership plan at anytime to get additional benefits immediately. Alternatively, you can downgrade your membership and continue to receive the benefits of your current membership until it expires, before switching to the lower membership tier.
                         </strong>
 
                   </div>
                 </div>
               </div>
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+              <div className="accordion-item">
+                <h2 className="accordion-header" id="panelsStayOpen-headingThree">
                   <button
-                    class="accordion-button collapsed"
+                    className="accordion-button collapsed"
                     type="button"
                     data-bs-toggle="collapse"
                     data-bs-target="#panelsStayOpen-collapseThree"
@@ -366,19 +366,19 @@ const paypal = ()=>{
                 </h2>
                 <div
                   id="panelsStayOpen-collapseThree"
-                  class="accordion-collapse collapse"
+                  className="accordion-collapse collapse"
                   aria-labelledby="panelsStayOpen-headingThree"
                 >
-                  <div class="accordion-body">
+                  <div className="accordion-body">
                     <strong>Get Exclusive Access to the Best Projects with the Preferred Freelancer Program. </strong>
                       <a href="#">Read more</a>
                   </div>
                 </div>
               </div>
-                <div class="accordion-item">
-                <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                <div className="accordion-item">
+                <h2 className="accordion-header" id="panelsStayOpen-headingThree">
                   <button
-                    class="accordion-button collapsed"
+                    className="accordion-button collapsed"
                     type="button"
                     data-bs-toggle="collapse"
                     data-bs-target="#panelsStayOpen-collapseThree"
@@ -389,10 +389,10 @@ const paypal = ()=>{
                 </h2>
                 <div
                   id="panelsStayOpen-collapseThree"
-                  class="accordion-collapse collapse"
+                  className="accordion-collapse collapse"
                   aria-labelledby="panelsStayOpen-headingThree"
                 >
-                  <div class="accordion-body">
+                  <div className="accordion-body">
                  Yes, you can cancel your membership at anytime with no additional charges.
 
                   </div>
@@ -401,8 +401,8 @@ const paypal = ()=>{
             </div>
           </div>
         </div>
-        <div class="d-grid gap-2 pt-5 col-6 mx-auto">
-        <button type="button" class="btn btn-outline-dark mb-5 mx-auto"> Need more help? </button>
+        <div className="d-grid gap-2 pt-5 col-6 mx-auto">
+        <button type="button" className="btn btn-outline-dark mb-5 mx-auto"> Need more help? </button>
 
 </div>
 

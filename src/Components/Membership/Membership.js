@@ -6,7 +6,23 @@ import { Link } from "react-router-dom";
         <div className="container">
         <div className="row">
         <div className="show">
+<<<<<<< HEAD
             <aside id="asideright" className="col-md-12 shadow-lg p-3 mb-5 bg-body rounded">
+=======
+        <aside id="asideleft" className="col-md-3">
+                <div className="btn-group-vertical w-100">
+                <Link to="/Profile" className="btn text-primary text-start">Profile</Link>
+                <Link to="/Email" className="btn text-primary text-start">Email & Notifications</Link>
+                    <Link to="/Membership" className="btn text-primary text-start">Membership</Link>
+                    <Link to="/Password" className="btn text-primary text-start">Password</Link>
+                    <Link to="/Payment" className="btn text-primary text-start">Payment & Financial</Link>
+                    <Link to="/AccountSecurity" className="btn text-primary text-start">Account Security</Link>
+                    <Link  to="/Trust" className="btn text-primary text-start">Trust & Verification</Link>
+                    <Link to="/Account" className="btn btn-outline-primary text-start active">Account</Link>
+                </div>
+            </aside>
+            <aside id="asideright" className="col-md-9 shadow-lg p-3 mb-5 bg-body rounded">
+>>>>>>> 84cbf527dc98cddf16350f0ffc5cafe86cd8e418
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12">

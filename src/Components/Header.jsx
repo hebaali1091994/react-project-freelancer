@@ -21,13 +21,13 @@ export default function Header() {
     console.log("option.target.value", option.target.value);
   }
   return (
-    <div class="body">
-      <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-light">
-          <div class="container-fluid p-0">
-            <img src={Freelancerlogo} alt="" class="image-w" />
+    <div className="body">
+      <div className="container">
+        <nav className="navbar navbar-expand-lg navbar-light">
+          <div className="container-fluid p-0">
+            <img src={Freelancerlogo} alt="" className="image-w" />
             <button
-              class="navbar-toggler"
+              className="navbar-toggler"
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#navbarSupportedContent"
@@ -35,18 +35,18 @@ export default function Header() {
               aria-expanded="false"
               aria-label="Toggle navigation"
             >
-              <span class="navbar-toggler-icon"></span>
+              <span className="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                  <Link class="nav-link text-dark" aria-current="page" to="/howwork">
+            <div className="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                <li className="nav-item">
+                  <Link className="nav-link text-dark" aria-current="page" to="/howwork">
                     {" "}
                   {t("How It Works")}{" "}
                   </Link>
                 </li>
-                <li class="nav-item">
-                  <Link class="nav-link text-dark" to="">
+                <li className="nav-item">
+                  <Link className="nav-link text-dark" to="">
                     {" "}
                     {t("Browse Jobs")}{" "}
                   </Link>
@@ -61,11 +61,11 @@ export default function Header() {
                   </select>
                 </div>
               
-              <div class="d-flex">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
+              <div className="d-flex">
+                <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li className="nav-item">
                     <Link
-                      class="nav-link text-dark m-1"
+                      className="nav-link text-dark m-1"
                       aria-current="page"
                       exact="true"
                       to="/Login"
@@ -74,9 +74,9 @@ export default function Header() {
                       {t("Log In")}{" "}
                     </Link>
                   </li>
-                  <li class="nav-item">
+                  <li className="nav-item">
                     <Link
-                      class="nav-link text-dark m-1"
+                      className="nav-link text-dark m-1"
                       exact="true"
                       to="/SignUp"
                     >
@@ -86,7 +86,7 @@ export default function Header() {
                   </li>
                 </ul>
                 <Link
-                  class="btn postproject m-1"
+                  className="btn postproject m-1"
                   exact="true"
                   to="/Post-project"
                 >

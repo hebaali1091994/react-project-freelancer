@@ -27,6 +27,7 @@ app.use(express.json());
 app.get("/api/test", () => {
   console.log("Test Is Succefual");
 });
+<<<<<<< HEAD
 
 let onlineusers = []
 
@@ -51,6 +52,28 @@ const getUser = (username) => {
 
 //     addNewUser(username,Socket.id)
 // })
+=======
+  
+ 
+
+// io.on("connection", (Socket) => 
+  
+// {
+//   socket.on("getDoc", docId => {
+//     safeJoin(docId);
+//     socket.emit("document", documents[docId]);
+//   });
+//   socket.on("addDoc", doc => {
+//     documents[doc.id] = doc;
+//     safeJoin(doc.id);
+//     io.emit("documents", Object.keys(documents));
+//     socket.emit("document", doc);
+//   });
+//   socket.on("editDoc", doc => {
+//     documents[doc.id] = doc;
+//     socket.to(doc.id).emit("document", doc);
+//   });
+>>>>>>> 84cbf527dc98cddf16350f0ffc5cafe86cd8e418
 
 //   Socket.on("disconnecter", () => {
 //     removeuser(Socket.id)

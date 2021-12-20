@@ -31,14 +31,7 @@ export default function Email(){
     return(
         <div className="container">
         <div className="row">
-        <div className="show">
-<<<<<<< HEAD
-
-            <div id="" class="col-md-12 shadow-lg p-3 mb-5 bg-body rounded">
-                <div class="container">
-                    <form class="row g-3 d-flex flex-column">
-                        <p class="fs-1"><b>Email & Notifications</b></p>
-=======
+        <div classNameName="show">
         <aside id="asideleft" className="col-md-3">
                 <div className="btn-group-vertical w-100">
                 <Link to="/Profile" className="btn text-primary text-start">Profile</Link>
@@ -55,7 +48,6 @@ export default function Email(){
                 <div className="container">
                     <form className="row g-3 d-flex flex-column">
                         <p className="fs-1"><b>Email & Notifications</b></p>
->>>>>>> 84cbf527dc98cddf16350f0ffc5cafe86cd8e418
                         <hr/>
                         <p className="fs-5"><b>Email </b></p>
                         <div className="row" id="email">
@@ -324,7 +316,7 @@ When you are mentioned in a new comment</label>
 
                     </form>
                 </div>
-            </div>
+            </aside>
         </div>
         
         </div>
