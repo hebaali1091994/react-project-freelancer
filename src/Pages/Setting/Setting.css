@@ -1,0 +1,17 @@
+.w-200{
+        min-width: calc(100% - 200px);
+}
+.Setting{
+    min-height: 1000px;
+}
+.setting-title{
+    width:200px;
+    color: #007fed !important;
+    text-align: left;
+}
+.setting-title:hover{
+    color:#2c3e50 !important;
+}
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link{
+    color:#fff !important
+}

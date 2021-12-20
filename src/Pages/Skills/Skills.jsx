@@ -29,7 +29,7 @@ const Skills = () => {
   const completeFormstep = () => {
     setFormStep((cur) => cur + 1);
 if (formStep===5){
-  window.location.replace('/Dashbaord');
+  window.location.replace('/');
 
 }  }
   const FormStepBack = () => {

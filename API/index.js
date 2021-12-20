@@ -15,7 +15,10 @@ const Category = require("./router/Category");
 const conversion = require("./router/conversion");
 const message = require("./router/message");
 const database = require("./database");
-const cors=require("cors")
+const multer = require("multer");
+const path = require('path');
+
+const cors = require("cors")
 // server = require('http').Server(app),
 // io = require('socket.io')(server);
 // const { Socket } = require("socket.io");
@@ -24,25 +27,26 @@ app.use(express.json());
 app.get("/api/test", () => {
   console.log("Test Is Succefual");
 });
-  let onlineusers=[]
 
-  const addNewUser=(username,SocketId)=>{
+let onlineusers = []
 
-    !onlineusers.some((user)=>user.username===username)&&onlineusers.push({username,SocketId})
-  }
-  const removeuser=(SocketId)=>{
+const addNewUser = (username, SocketId) => {
 
-    onlineusers=onlineusers.filter((user)=>user.SocketId !=SocketId)
-  }
-  const getUser=(username)=>{
-return onlineusers.find((user)=>user.username===username)
+  !onlineusers.some((user) => user.username === username) && onlineusers.push({ username, SocketId })
+}
+const removeuser = (SocketId) => {
 
-  }
+  onlineusers = onlineusers.filter((user) => user.SocketId != SocketId)
+}
+const getUser = (username) => {
+  return onlineusers.find((user) => user.username === username)
 
- 
+}
+
+
 
 // io.on("connection", (Socket) => {
-  
+
 // Socket.on("newUser",(username)=>{
 
 //     addNewUser(username,Socket.id)
@@ -52,6 +56,29 @@ return onlineusers.find((user)=>user.username===username)
 //     removeuser(Socket.id)
 //   });
 // });
+
+
+
+app.use("/images", express.static(path.join(__dirname, "/images")))
+
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, "images");
+  },
+  filename: (req, file, cb) => {
+    cb(null, file.originalname);
+  },
+});
+const upload = multer({ storage: storage });
+app.post("/api/upload", upload.single("file"), (req, res) => {
+  res.status(200).json("File Has Been Uploaded");
+});
+
+
+
+
+
+
 app.use("/users", users);
 app.use("/auth", auth);
 app.use("/Products", Product);

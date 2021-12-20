@@ -32,7 +32,10 @@ import Tasks from './Pages/projectinfo/Tasks';
 import Details from './Pages/projectinfo/Details';
 import Files from './Pages/projectinfo/Files';
 import DetailsData from './Pages/projectinfo/DetailsData';
-import Account from './Pages/Account/Account';
+import Setting from './Pages/Setting/Setting';
+import SingleFreelancer from "./Components/Single Freelancer/SingleFreelancer";
+// import Details from './Pages/Test/Details';
+import Freelancerpage from './Pages/FreelancerPage/Freelancerpage';
 
 function App() {
   const [socket, setSocket] = useState(null);
@@ -50,37 +53,39 @@ function App() {
   document.documentElement.language = lang;
   return (
     <Suspense fallback="Loading ...">
-      
-    <div className="App">
-      <Routes>
-        <Route path="/Login" element={<Login />} />
-        <Route path="/" exact="true" element={ user ? <Dashbaord/> : <Home />} />
-        <Route path="/Post-project/" element={<Postproject />} />
-        <Route path="/SignUp" element={<SignUp />} />
-        <Route path='/paypal'  element={<Paypal  />}/>
-        <Route path='/'  element={<Dashbaord  />}/>
-        <Route path='/Massenger'  element={<Massenger />}/>
-        <Route path='/Massenger'  element={<Massenger />}/>
 
-        <Route path='/Feedback'  element={<Feedback  />}/>
-        <Route path='/Projects'  element={<Project_Contests/>}/>
-        <Route path='/MemberShip'  element={<MemberShip  />}/>
-        <Route path='/howwork'  element={<HowitWork/>}/>
-        <Route path='/inbox'  element={<Inbox/>}/>
-        <Route path='/DisplayPost'  element={<DisplayProject/>}/>
-       <Route path='/'  element={user ? <Dashbaord /> : <Route path="/Login" element={<Login />} />}/>
-<Route path='/DisplayProject'  element={<DisplayProject  />}/>
-            <Route path='/DisplayProject/Proposals/:id'  element={<Proposals  />}/>
-            <Route path='/DisplayProject/Tasks/:id'  element={<Tasks  />}/>
-            <Route path='/DisplayProject/Details/:id'  element={<DetailsData  />}/>
-            <Route path='/DisplayProject/Files/:id'  element={<Files  />}/>
-        <Route path='/Skills'  element={<Skills/>}/>
-        <Route path='/Setting'  element={<Account/>}/>
+      <div className="App">
+        <Routes>
+          <Route path="/Login" element={<Login />} />
+          <Route path="/" exact="true" element={user ? <Dashbaord /> : <Home />} />
+          <Route path="/Post-project/" element={<Postproject />} />
+          <Route path="/SignUp" element={<SignUp />} />
+          <Route path='/paypal' element={<Paypal />} />
+          <Route path='/' element={<Dashbaord />} />
+          <Route path='/Massenger' element={<Massenger />} />
+          <Route path='/Massenger' element={<Massenger />} />
+
+          <Route path='/Feedback' element={<Feedback />} />
+          <Route path='/Projects' element={<Project_Contests />} />
+          <Route path='/MemberShip' element={<MemberShip />} />
+          <Route path='/howwork' element={<HowitWork />} />
+          <Route path='/inbox' element={<Inbox />} />
+          <Route path='/DisplayPost' element={<DisplayProject />} />
+          <Route path='/' element={user ? <Dashbaord /> : <Route path="/Login" element={<Login />} />} />
+          <Route path='/DisplayProject' element={<DisplayProject />} />
+          <Route path='/DisplayProject/Proposals/:id' element={<Proposals />} />
+          <Route path='/DisplayProject/Freelancer/:id' element={<SingleFreelancer />} />
+          <Route path='/DisplayProject/Tasks/:id' element={<Tasks />} />
+          <Route path='/DisplayProject/Details/:id' element={<DetailsData />} />
+          <Route path='/DisplayProject/Files/:id' element={<Files />} />
+          <Route path='/Skills' element={<Skills />} />
+          <Route path='/Setting' element={<Setting />} />
+          <Route path='/test' element={<Freelancerpage />} />
 
 
 
-      </Routes>
-    </div>
+        </Routes>
+      </div>
     </Suspense>
   );
 }

@@ -32,7 +32,7 @@ export default function Header() {
       {user ?
       <ul className="navbar-nav me-auto mb-2 mb-lg-0 align-items-center ">
         <li className="nav-item">
-          <Link to="/Dashbaord" className="link"> Dashboard</Link>
+          <Link to="/" className="link"> Dashboard</Link>
         </li>
         <li className="nav-item">
           <a className="nav-link text-white" aria-current="page" href="#">   My Lists   </a>

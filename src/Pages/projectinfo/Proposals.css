@@ -1,5 +1,5 @@
 .parent{
-    height: 1500px;
+    height: 2500px;
     background-color: rgb(240,240,240) ;
     margin: 0;
     
@@ -18,10 +18,16 @@
     {
     padding:0;
     }
+    .Deatils h5{
+        margin-bottom: 0px;
+    }
     .part2{
     margin-top: 15px;
     text-align: center;
     
+    }
+    .Detail h5{
+        margin-bottom: 0px;
     }
    
     .dddd{

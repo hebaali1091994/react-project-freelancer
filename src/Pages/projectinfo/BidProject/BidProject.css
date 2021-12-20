@@ -1,0 +1,11 @@
+.BidProject{
+    margin-top: 10px    ;
+}
+.BidProject p{
+    font-size: 14px;
+    line-height: 1.4;
+}
+.BidProject textarea{
+    width: 200px;
+    height: 200px;
+}
