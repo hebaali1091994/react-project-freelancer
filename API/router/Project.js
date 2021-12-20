@@ -8,9 +8,33 @@ const router = require("express").Router();
 
 //create new project 
 // Must Send User Id
-router.post("/",async (req, res) => {
-  
-  const newproject = await new Project(req.body);
+router.post("/create/:id", verifyToken, async (req, res) => {
+
+  const newproject = await new Project({
+    ChooseName: req.body.ChooseName,
+    Tellus: req.body.Tellus,
+    uploadimg: req.body.uploadimg,
+    pay: req.body.pay,
+    budget: req.body.budget,
+    CurrencyCode: req.body.CurrencyCode,
+    CurrencySymbol: req.body.CurrencySymbol,
+    step_Four_Currency_code: req.body.step_Four_Currency_code,
+    Minimum_Per_hour: req.body.Minimum_Per_hour,
+    Maximum_Per_hour: req.body.Maximum_Per_hour,
+    Maximum_fix_price: req.body.Maximum_fix_price,
+    Minimum_fix_price: req.body.Minimum_fix_price,
+    Day: req.body.Day,
+    type_of_project: req.body.type_of_project,
+    GUARANTEED: req.body.GUARANTEED,
+    FEATURED: req.body.FEATURED,
+    TOP_CONTEST: req.body.TOP_CONTEST,
+    HIGHLIGHT: req.body.HIGHLIGHT,
+    SEALED: req.body.SEALED,
+    NDA: req.body.NDA,
+    state: req.body.state,
+    PRIVATE: req.body.PRIVATE,
+    StepFiveLongContest: req.body.StepFiveLongContest,
+  });
   try {
     const saveproject = await newproject.save();
     res.status(200).json(saveproject);
@@ -21,38 +45,31 @@ router.post("/",async (req, res) => {
 //id project
 //applay porposals
 
-// router.post("/applay/:id",async(req,res)=>{
-//   jwt.verify(authHeader, process.env.JWT_SEC,async(error, user) => {
+router.post("/applay/:id", async (req, res) => {
 
-//  if(user){
-//   try{
-//     const newporposal=
-//     {
-//       freelanceid: user.id,
-//         deccription:req.body.deccription,
-//         date:new Date()
-//       }
-      
-    
-//     const applayProject = await Project.findByIdAndUpdate
-//     (
-//       req.params.id,
-//         {$push:{freelances:newporposal }},
-//          { new: true }
-//         );
-//         const nweproject = await applayProject.save();
-//       res.status(200).json(nweproject);
+  try {
+    const newporposal =
+    {
+      freelanceid: req.body.freelanceid,
+      deccription: req.body.deccription,
+    }
 
-//       }catch(err){
-//         res.status(401).json(error);
-//       }
-      
 
-//  }
+    const applayProject = await Project.findByIdAndUpdate
+      (
+        req.params.id,
+        { $push: { freelances: newporposal } },
+        { new: true }
+      );
+    const nweproject = await applayProject.save();
+    res.status(200).json(nweproject);
 
-  
-// })
-// })
+  } catch (err) {
+    res.status(401).json(err);
+  }
+
+
+})
 
 //update project
 
@@ -112,8 +129,8 @@ router.post("/filter", async (req, res) => {
 
     const allproject = await Project.find(
       {
-        Minimum_Per_hour:req.body.filtername
-       
+        Minimum_Per_hour: req.body.filtername
+
       }
     );
     res.status(200).json(allproject);

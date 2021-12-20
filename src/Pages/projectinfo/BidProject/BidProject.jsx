@@ -68,8 +68,7 @@ const BidProject = () => {
                                         type="number"
                                         value="2800"
                                         style={{
-                                            width: "80%",
-                                            height: "5vh",
+                                            height: "10vh",
                                             border: "0",
                                         }}
                                         className="form-control"

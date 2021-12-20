@@ -27,37 +27,11 @@ app.use(express.json());
 app.get("/api/test", () => {
   console.log("Test Is Succefual");
 });
-<<<<<<< HEAD
-
-let onlineusers = []
-
-const addNewUser = (username, SocketId) => {
-
-  !onlineusers.some((user) => user.username === username) && onlineusers.push({ username, SocketId })
-}
-const removeuser = (SocketId) => {
-
-  onlineusers = onlineusers.filter((user) => user.SocketId != SocketId)
-}
-const getUser = (username) => {
-  return onlineusers.find((user) => user.username === username)
-
-}
 
 
-
-// io.on("connection", (Socket) => {
-
-// Socket.on("newUser",(username)=>{
-
-//     addNewUser(username,Socket.id)
-// })
-=======
-  
- 
 
 // io.on("connection", (Socket) => 
-  
+
 // {
 //   socket.on("getDoc", docId => {
 //     safeJoin(docId);
@@ -73,7 +47,6 @@ const getUser = (username) => {
 //     documents[doc.id] = doc;
 //     socket.to(doc.id).emit("document", doc);
 //   });
->>>>>>> 84cbf527dc98cddf16350f0ffc5cafe86cd8e418
 
 //   Socket.on("disconnecter", () => {
 //     removeuser(Socket.id)
@@ -92,6 +65,8 @@ const storage = multer.diskStorage({
     cb(null, file.originalname);
   },
 });
+// MONGO_URL = mongoose.connect("mongodb+srv://freelance:12345@freelance.mhgq8.mongodb.net/freelance?retryWrites=true&w=majority")"
+
 const upload = multer({ storage: storage });
 app.post("/api/upload", upload.single("file"), (req, res) => {
   res.status(200).json("File Has Been Uploaded");

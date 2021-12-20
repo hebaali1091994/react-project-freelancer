@@ -49,14 +49,12 @@ function App() {
   //   socket.emit("newUser", user);
   // }, [socket, user]);
 
-  let lang = localStorage.getItem("lang") || "en" ;
-    document.documentElement.language = lang;
+  let lang = localStorage.getItem("lang") || "en";
+  document.documentElement.language = lang;
   return (
-    <div className="App" dir={lang === "ar" ? "rtl" : "ltr"}  lang={lang==="ar"?"ar":"en"}>
-    <Suspense fallback="Loading ...">
-<<<<<<< HEAD
+    <div className="App" dir={lang === "ar" ? "rtl" : "ltr"} lang={lang === "ar" ? "ar" : "en"}>
+      <Suspense fallback="Loading ...">
 
-      <div className="App">
         <Routes>
           <Route path="/Login" element={<Login />} />
           <Route path="/" exact="true" element={user ? <Dashbaord /> : <Home />} />
@@ -64,7 +62,6 @@ function App() {
           <Route path="/SignUp" element={<SignUp />} />
           <Route path='/paypal' element={<Paypal />} />
           <Route path='/' element={<Dashbaord />} />
-          <Route path='/Massenger' element={<Massenger />} />
           <Route path='/Massenger' element={<Massenger />} />
 
           <Route path='/Feedback' element={<Feedback />} />
@@ -76,50 +73,15 @@ function App() {
           <Route path='/' element={user ? <Dashbaord /> : <Route path="/Login" element={<Login />} />} />
           <Route path='/DisplayProject' element={<DisplayProject />} />
           <Route path='/DisplayProject/Proposals/:id' element={<Proposals />} />
-          <Route path='/DisplayProject/Freelancer/:id' element={<SingleFreelancer />} />
           <Route path='/DisplayProject/Tasks/:id' element={<Tasks />} />
           <Route path='/DisplayProject/Details/:id' element={<DetailsData />} />
           <Route path='/DisplayProject/Files/:id' element={<Files />} />
           <Route path='/Skills' element={<Skills />} />
-          <Route path='/Setting' element={<Setting />} />
-          <Route path='/test' element={<Freelancerpage />} />
 
 
 
         </Routes>
-      </div>
-=======
-      
-      <Routes>
-        <Route path="/Login" element={<Login />} />
-        <Route path="/" exact="true" element={ user ? <Dashbaord/> : <Home />} />
-        <Route path="/Post-project/" element={<Postproject />} />
-        <Route path="/SignUp" element={<SignUp />} />
-        <Route path='/paypal'  element={<Paypal  />}/>
-        <Route path='/'  element={<Dashbaord  />}/>
-        <Route path='/Massenger'  element={<Massenger />}/>
-        <Route path='/Massenger'  element={<Massenger />}/>
-
-        <Route path='/Feedback'  element={<Feedback  />}/>
-        <Route path='/Projects'  element={<Project_Contests/>}/>
-        <Route path='/MemberShip'  element={<MemberShip  />}/>
-        <Route path='/howwork'  element={<HowitWork/>}/>
-        <Route path='/inbox'  element={<Inbox/>}/>
-        <Route path='/DisplayPost'  element={<DisplayProject/>}/>
-       <Route path='/'  element={user ? <Dashbaord /> : <Route path="/Login" element={<Login />} />}/>
-<Route path='/DisplayProject'  element={<DisplayProject  />}/>
-            <Route path='/DisplayProject/Proposals/:id'  element={<Proposals  />}/>
-            <Route path='/DisplayProject/Tasks/:id'  element={<Tasks  />}/>
-            <Route path='/DisplayProject/Details/:id'  element={<DetailsData  />}/>
-            <Route path='/DisplayProject/Files/:id'  element={<Files  />}/>
-        <Route path='/Skills'  element={<Skills/>}/>
-        <Route path='/Setting'  element={<Account/>}/>
-
-
-
-      </Routes>
->>>>>>> 84cbf527dc98cddf16350f0ffc5cafe86cd8e418
-    </Suspense>
+      </Suspense>
     </div>
   );
 }

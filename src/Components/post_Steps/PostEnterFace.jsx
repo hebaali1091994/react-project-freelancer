@@ -11,10 +11,11 @@ import { useContext } from 'react';
 import axios from "axios";
 
 const PostEnterFace = () => {
-  const {user} = useContext(Context)
-   const [file, setFile] = useState(null);
+  const { user } = useContext(Context)
+  const [file, setFile] = useState(null);
 
-    const [Data, setData] = useState({
+  const [Data, setData] = useState({
+    userid: user._id,
     ChooseName: "",
     Tellus: "",
     uploadimg: "",
@@ -36,100 +37,102 @@ const PostEnterFace = () => {
     HIGHLIGHT: "",
     SEALED: "",
     NDA: "",
-    state:"",
+    state: "",
     PRIVATE: "",
     StepFiveLongContest: "",
   });
   const [formStep, setFormStep] = React.useState(0);
   const completeFormstep = () => {
-      if(formStep===0){
-      if(Data.ChooseName!=="" &&Data.Tellus!==""&&Data.skills!==""){
+    if (formStep === 0) {
+      if (Data.ChooseName !== "" && Data.Tellus !== "" && Data.skills !== "") {
         setFormStep((cur) => cur + 1);
       }
-    }else if (formStep===1){
-        if(Data.postproject!==""){
-            setFormStep((cur) => cur + 1);
-          }
-    }else if (formStep===2){
-        if(Data.pay!==""||Data.budget!==""){
-            setFormStep((cur) => cur + 1);
-          }
-    }else if (formStep===3){
-        if(Data.Minimum_Per_hour!=="" && Data.Maximum_Per_hour!==""){
-            setFormStep((cur) => cur + 1);
-          }else if(Data.Maximum_fix_price!=="" && Data.Minimum_fix_price!==""){
-            setFormStep((cur) => cur + 1);
-          }else if(Data.Day!==""){
-            setFormStep((cur) => cur + 1);
-          }
+    } else if (formStep === 1) {
+      if (Data.postproject !== "") {
+        setFormStep((cur) => cur + 1);
+      }
+    } else if (formStep === 2) {
+      if (Data.pay !== "" || Data.budget !== "") {
+        setFormStep((cur) => cur + 1);
+      }
+    } else if (formStep === 3) {
+      if (Data.Minimum_Per_hour !== "" && Data.Maximum_Per_hour !== "") {
+        setFormStep((cur) => cur + 1);
+      } else if (Data.Maximum_fix_price !== "" && Data.Minimum_fix_price !== "") {
+        setFormStep((cur) => cur + 1);
+      } else if (Data.Day !== "") {
+        setFormStep((cur) => cur + 1);
+      }
     }
-    else if (formStep===4){
-        if(Data.type_of_project!==""){
-            setFormStep((cur) => cur + 1);
-          }else if(Data.Day!=="") {
-            if(Data.Day==="manyDay")
-           {
-              if(Data.StepFiveLongContest!=="")
-            {
-                setFormStep((cur) => cur + 1);
-            }
-           }
-          else if(Data.Day==="Day"){
+    else if (formStep === 4) {
+      if (Data.type_of_project !== "") {
+        setFormStep((cur) => cur + 1);
+      } else if (Data.Day !== "") {
+        if (Data.Day === "manyDay") {
+          if (Data.StepFiveLongContest !== "") {
             setFormStep((cur) => cur + 1);
           }
         }
-        
-  }
-    else if (formStep===5){
-        const handleSubmit = async () =>{
-            const newPost = {
-    userid : user._id,
-    ChooseName:Data.ChooseName,
-    Tellus:Data.Tellus,
-    skills:Data.skills,
-    postproject:Data.postproject,
-    pay:Data.pay,
-    budget:Data.budget,
-    CurrencyCode:Data.CurrencyCode,
-    CurrencySymbol:Data.CurrencySymbol,
-    step_Four_Currency_code:Data.step_Four_Currency_code,
-    Minimum_Per_hour:Data.Minimum_Per_hour,
-    Maximum_Per_hour:Data.Maximum_Per_hour,
-    Maximum_fix_price:Data.Maximum_fix_price,
-    Minimum_fix_price:Data.Minimum_fix_price,
-    Day:Data.Day,
-    type_of_project:Data.type_of_project,
-    FEATURED:Data.FEATURED,
-    TOP_CONTEST:Data.TOP_CONTEST,
-    HIGHLIGHT:Data.HIGHLIGHT,
-    SEALED:Data.SEALED,
-    NDA:Data.NDA,
-    state:Data.state,
+        else if (Data.Day === "Day") {
+          setFormStep((cur) => cur + 1);
+        }
+      }
 
-    PRIVATE:Data.PRIVATE,
-    StepFiveLongContest:Data.StepFiveLongContest    
-  };
-//   if(file){
-//     const data = new FormData();
-//     const fileName = Date.now() + file.name;
-//     data.append("name", fileName);
-//     data.append("file", file)
-//     Data.uploadimg  = fileName;
-//     try{
-//       await axios.post("/upload",Data);
-//         }catch(error){
-// console.log("Sorry No Image Upload");
-//         }
-//   }
-try{
-  const res = await axios.post(`/Project/`, newPost)
-      res.data && window.location.replace('/DisplayProject/');
+    }
+    else if (formStep === 5) {
+      const handleSubmit = async () => {
+        const newPost = {
+          userid: user._id,
+          ChooseName: Data.ChooseName,
+          Tellus: Data.Tellus,
+          skills: Data.skills,
+          postproject: Data.postproject,
+          pay: Data.pay,
+          budget: Data.budget,
+          CurrencyCode: Data.CurrencyCode,
+          CurrencySymbol: Data.CurrencySymbol,
+          step_Four_Currency_code: Data.step_Four_Currency_code,
+          Minimum_Per_hour: Data.Minimum_Per_hour,
+          Maximum_Per_hour: Data.Maximum_Per_hour,
+          Maximum_fix_price: Data.Maximum_fix_price,
+          Minimum_fix_price: Data.Minimum_fix_price,
+          Day: Data.Day,
+          type_of_project: Data.type_of_project,
+          FEATURED: Data.FEATURED,
+          TOP_CONTEST: Data.TOP_CONTEST,
+          HIGHLIGHT: Data.HIGHLIGHT,
+          SEALED: Data.SEALED,
+          NDA: Data.NDA,
+          state: Data.state,
 
-}catch(error){
-}
-}
-handleSubmit()
-console.log(Data);
+          PRIVATE: Data.PRIVATE,
+          StepFiveLongContest: Data.StepFiveLongContest
+        };
+        //   if(file){
+        //     const data = new FormData();
+        //     const fileName = Date.now() + file.name;
+        //     data.append("name", fileName);
+        //     data.append("file", file)
+        //     Data.uploadimg  = fileName;
+        //     try{
+        //       await axios.post("/upload",Data);
+        //         }catch(error){
+        // console.log("Sorry No Image Upload");
+        //         }
+        //   }
+        try {
+          const res = await axios.post(`/Project/create/${user._id}`, newPost, {
+            headers: {
+              token: user.accesToken
+            }
+          })
+          res.data && window.location.replace('/DisplayProject/');
+
+        } catch (error) {
+        }
+      }
+      handleSubmit()
+      console.log(Data);
     }
   };
   const FormStepBack = () => {
@@ -143,16 +146,17 @@ console.log(Data);
   //     }
   //     fetchData()
   //   }, []) ;
-  
-   // useEffect(() => {
-    //   axios.post(`http://localhost:3000/`).then((response) => {
-    //       console.log("response", response);
-    //       const newPosts = response.data;
-    //       setPosts(newPosts);
-    //     });
-    // }, []);
+
+  // useEffect(() => {
+  //   axios.post(`http://localhost:3000/`).then((response) => {
+  //       console.log("response", response);
+  //       const newPosts = response.data;
+  //       setPosts(newPosts);
+  //     });
+  // }, []);
 
 
+  console.log(Data);
 
 
   const renderButton = () => {
@@ -166,8 +170,8 @@ console.log(Data);
     } else {
       return (
         <>
-          <button  type="button"className="btn btn-secondary" onClick={FormStepBack}>Back</button>
-          <button  type="button"className="btn btn-primary"onClick={completeFormstep}>Next Step</button>
+          <button type="button" className="btn btn-secondary" onClick={FormStepBack}>Back</button>
+          <button type="button" className="btn btn-primary" onClick={completeFormstep}>Next Step</button>
         </>
       );
     }
@@ -181,11 +185,11 @@ console.log(Data);
           <p>
             <b>Step {formStep + 1} of 7</b>
           </p>
-          <progress max="7" value={formStep + 1} style={{ width: "100%", height: "5vh" }}/>
+          <progress max="7" value={formStep + 1} style={{ width: "100%", height: "5vh" }} />
         </div>
         <form className="col-sm-12 col-md-12">
-          {formStep === 0 && (<Firstform Data={Data} setData={setData}/>)}
-          {formStep === 1 && <Secondform Data={Data} setData={setData}/>}
+          {formStep === 0 && (<Firstform Data={Data} setData={setData} />)}
+          {formStep === 1 && <Secondform Data={Data} setData={setData} />}
           {formStep === 2 && <Stepthree Data={Data} setData={setData} />}
           {formStep === 3 && <Stepfour Data={Data} setData={setData} />}
           {formStep === 4 && <Stepfive Data={Data} setData={setData} />}
