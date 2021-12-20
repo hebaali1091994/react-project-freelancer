@@ -12,10 +12,20 @@ const ProjectSchema = mongoose.Schema(
     pay: { type: String, default: null },
     freelances: [
       {
-        freelanceid: { type: String, default: " " },
-        deccription: { type: String, default: " " },
-      },
-      { timestamps: true }
+        freelanceid: { type: String, default: null },
+        deccription: { type: String, default: null },
+        date: { type: Date },
+        BidAmount: { type: String },
+        numberofDay: { type: String },
+      }
+    ],
+    millstobepayment: [
+      {
+        paymentmilestone: { type: String },
+        datemileStone: { type: String },
+        date: { type: Date },
+
+      }
     ],
     budget: { type: String, default: null },
     CurrencyCode: { type: String, default: null },

@@ -1,6 +1,42 @@
 import "./BidProject.css"
+import { useState, useRef } from 'react';
+import axios from 'axios';
+import { useNavigate, useLocation } from 'react-router-dom';
+import { useContext } from 'react';
+import { Context } from "../../../context/Context";
 
 const BidProject = () => {
+    const { user } = useContext(Context);
+    const [submitWork, setSubmitWork] = useState(false);
+    const bidamount = useRef("");
+    const NumberOfDay = useRef();
+    const Desc = useRef("");
+    const Projectmilestone = useRef("");
+    const AmountMileStone = useRef(null);
+
+    const location = useLocation();
+    const path = location.pathname.split('/')[3];
+    const SubmitPropser = async (e) => {
+        e.preventDefault();
+
+        try {
+            const res = await axios.post(`/Project/apply/${path}`, {
+                freelanceid: user._id,
+                BidAmount: bidamount.current.value,
+                numberofDay: NumberOfDay.current.value,
+                deccription: Desc.current.value,
+                paymentmilestone: Projectmilestone.current.value,
+                datemileStone: AmountMileStone.current.value,
+            }, {
+                headers: {
+                    token: user.accesToken
+                }
+            });
+            res.data && window.location.replace('/DisplayProject/Proposals/:id');
+        } catch (error) {
+        }
+    }
+
     return (
         <div className="BidProject bg-white">
             <div className="container">
@@ -13,18 +49,19 @@ const BidProject = () => {
                     </p>
 
                 </div>
-                <form>
+                <form onSubmit={SubmitPropser}>
                     <div class="row">
                         <div class="col-md-4 mb-3">
                             <label for="validationTooltip01 ">Bid Amount
                             </label>
-                            <input type="text" class="form-control" id="validationTooltip01" placeholder="First name" required />
+                            <input type="text" class="form-control" id="validationTooltip01" placeholder="Enter bid amount" ref={bidamount} />
                             <div class="valid-tooltip">
                             </div>
                         </div>
                         <div class="col-md-4 mb-3">
-                            <label for="validationTooltip02">Last name</label>
-                            <input type="text" class="form-control" id="validationTooltip02" placeholder="Last name" required />
+                            <label for="validationTooltip02">This project will be delivered in
+                            </label>
+                            <input type="text" class="form-control" id="validationTooltip02" placeholder="Enter number of days" ref={NumberOfDay} />
                             <div class="valid-tooltip">
                                 Looks good!
                             </div>
@@ -38,8 +75,10 @@ const BidProject = () => {
                         <textarea
                             className="  justify-content-center"
                             id="w3review"
+                            ref={Desc}
                             rows="10"
                             cols="95"
+                            placeholder="What makes you the best candidate for this project?"
                             style={{
                                 marginTop: "0px",
                                 marginLeft: "17px",
@@ -50,44 +89,40 @@ const BidProject = () => {
                         <h6>Suggest a milestone payment</h6>
                         <p>Define the tasks that you will complete for this</p>
                         <div className="row">
-                            <div className="col-7">
+                            <div className="col-6">
                                 <div className="border d-flex flex-row">
                                     <input
                                         type="text"
                                         placeholder="Project milestone"
                                         className="form-control"
+                                        ref={Projectmilestone}
                                     />
                                 </div>
                             </div>
-                            <div className="col-4">
-                                <div className="border d-flex flex-row">
-                                    <p id="symbol2" className="m-auto">
-                                        <b>$</b>
-                                    </p>
-                                    <input
-                                        type="number"
-                                        value="2800"
-                                        style={{
-                                            height: "10vh",
-                                            border: "0",
-                                        }}
-                                        className="form-control"
-                                    />
+                            <div className="col-6">
+
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">$</span>
+                                    </div>
+                                    <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" ref={AmountMileStone} />
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">.00</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <button
-                        type="button"
+                        type="submit"
                         class="btn"
-                        style={{ background: "#999", marginTop: "10px" }}
-                    >
+                        style={{ background: "#999", marginTop: "10px" }}>
                         Add another milestone payment
                     </button>
                     <hr></hr>
                 </form>
             </div>
-        </div>
+        </div >
     )
 }
 

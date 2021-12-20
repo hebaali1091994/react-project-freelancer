@@ -11,6 +11,7 @@ const router = require("express").Router();
 router.post("/create/:id", verifyToken, async (req, res) => {
 
   const newproject = await new Project({
+    userid: req.params.id,
     ChooseName: req.body.ChooseName,
     Tellus: req.body.Tellus,
     uploadimg: req.body.uploadimg,
@@ -45,28 +46,41 @@ router.post("/create/:id", verifyToken, async (req, res) => {
 //id project
 //applay porposals
 
-router.post("/applay/:id", async (req, res) => {
-
+router.post("/apply/:id", verifyToken, async (req, res) => {
   try {
-    const newporposal =
+    const porposal =
     {
       freelanceid: req.body.freelanceid,
       deccription: req.body.deccription,
+      date: new Date(),
+      BidAmount: req.body.BidAmount,
+      numberofDay: req.body.numberofDay,
+
+    }
+    const mileStone =
+    {
+      Suggestmilestone: req.body.Suggestmilestone,
+      paymentmilestone: req.body.paymentmilestone,
+      datemileStone: req.body.datemileStone
     }
 
 
     const applayProject = await Project.findByIdAndUpdate
       (
         req.params.id,
-        { $push: { freelances: newporposal } },
+        { $push: { freelances: porposal, millstobepayment: mileStone } },
         { new: true }
       );
-    const nweproject = await applayProject.save();
-    res.status(200).json(nweproject);
+    const newporposal = await applayProject.save();
+    res.status(200).json(newporposal);
 
   } catch (err) {
     res.status(401).json(err);
   }
+
+
+
+
 
 
 })
@@ -88,7 +102,7 @@ router.put("/:id", async (req, res) => {
   } catch (err) {
     res.status(500).json(err);
   }
-});
+})
 //all projects
 router.get("/all", async (req, res) => {
   try {

@@ -24,7 +24,6 @@ const DisplayProject = () => {
   useEffect(() => {
     axios.get(`http://localhost:5000/Project/all`).then((response) => {
       setAPIData(response.data);
-      console.log(response.data);
     });
   }, []);
 

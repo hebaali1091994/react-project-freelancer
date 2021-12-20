@@ -34,3 +34,17 @@
         border-left: 4px red solid;
     }
 
+.deatils-pro .left{
+    flex:1
+}
+.deatils-pro .center{
+    flex:2;
+    text-align: left;
+}
+.deatils-pro .right{
+    flex:1
+}
+.Desciption-freelancer{
+
+    color:#000;
+}

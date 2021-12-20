@@ -41,8 +41,8 @@ router.put("/:id", verifyTokenAndAdmin, async (req, res) => {
 router.delete("/:id", verifyTokenAndAdmin, async (req, res) => {
   try {
     const deleteCategory = await Category.findByIdAndDelete(req.params.id);
-    const deleteproject = await Project.deleteMany({category: req.params.id})
-     res.status(200).json("Category Is Deleted  ");
+    const deleteproject = await Project.deleteMany({ category: req.params.id })
+    res.status(200).json("Category Is Deleted  ");
   } catch (error) {
     res.status(500).json(error);
   }
