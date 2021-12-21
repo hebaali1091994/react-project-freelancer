@@ -21,7 +21,7 @@ const verifyToken = (req, res, next) => {
 
 const verifyTokenAndAuthorization = (req, res, next) => {
   verifyToken(req, res, () => {
-    if (req.user.id === req.params.id || req.user.typeUser === "admin") {
+    if (req.user._id === req.params._id || req.user.typeUser === "admin") {
       next();
     } else {
       res.status(403).json("Your Are Now Allow to make that !");

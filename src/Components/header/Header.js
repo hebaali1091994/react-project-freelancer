@@ -37,7 +37,7 @@ export default function Header() {
        <div className="container">
         <nav className="navbar navbar-expand-lg navbar-light">
           <div className="container-fluid p-0">
-            <Link to="/Dashbaord"><img src={Freelancerlogo}  className="image-w" /></Link>
+            <Link to="/"><img src={Freelancerlogo}  className="image-w" /></Link>
             <button
               className="navbar-toggler"
               type="button"
@@ -99,6 +99,7 @@ export default function Header() {
   <ul class="dropdown-menu " aria-labelledby="dropdownMenu2">
     <li><button class="dropdown-item" type="button">Action</button></li>
     <li><button class="dropdown-item" type="button"><Link className="link" to="/MemberShip">MemberShip</Link></button></li>
+    <li><button class="dropdown-item" type="button"><Link className="link" to="/Setting">Setting</Link></button></li>
     <Link  to="" className="link ms-3" onClick={LogoutHandle}>Logout</Link>
   </ul>
 </div>
@@ -116,7 +117,7 @@ export default function Header() {
       <div className="container">
         <nav className="navbar navbar-expand-lg navbar-light">
           <div className="container-fluid p-0">
-            <Link to="/Dashbaord"><img src={Freelancerlogo} alt="" className="image-w" /></Link>
+            <Link to="/"><img src={Freelancerlogo} alt="" className="image-w" /></Link>
             <button
               className="navbar-toggler"
               type="button"

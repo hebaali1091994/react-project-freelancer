@@ -10,7 +10,12 @@
 .tab-content > .active {
   padding: 0 !important;
 }
+@media(min-width:1200px){
+.nav-tabs{
+      margin-top: -65px;
+}
 
+}
 p {
   font-size: 20px;
   line-height: 1.4;

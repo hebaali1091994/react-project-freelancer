@@ -1,5 +1,13 @@
 const mongoose = require("mongoose");
 const skills = require("./Skill");
+const notification = mongoose.Schema({
+
+  body: { type: String },
+  link: { type: String },
+  date: { type: Date },
+  sj: { type: Boolean, default: false }
+
+})
 const UserSchema = mongoose.Schema({
   userName: { type: String, unique: true },
   Email: { type: String, required: true, unique: true },
@@ -15,7 +23,7 @@ const UserSchema = mongoose.Schema({
   Language: { type: String, default: null },
   dateOfBirth: { type: Date, default: null },
   linkAcount: { type: String, default: null },
-  acountType:{type:String,default:null},
+  acountType: { type: String, default: null },
   Address: { type: String },
   City: { type: String },
   State: { type: String },
@@ -23,5 +31,11 @@ const UserSchema = mongoose.Schema({
   Country: { type: String },
   projectid: [{ type: mongoose.Schema.Types.ObjectId }],
   skills: [{ type: mongoose.Schema.Types.ObjectId }],
+  noti: [
+    notification
+  ],
+  bids: { type: Number, default: 100 }
 });
+
+
 module.exports = mongoose.model("users", UserSchema);

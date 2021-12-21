@@ -5,7 +5,7 @@
 .bg-login{
 
   width: 100%;
-    height: 100vh;
+    height: 1000px;
     background-color:#f0f0f0 ;
     display: flex;
     justify-content: center;
@@ -125,11 +125,6 @@ input[type=email] {
   box-sizing: border-box;
 }
 
-/* This is our style for the invalid fields */
-input:invalid {
-  border-color: #900;
-  background-color: #FDD;
-}
 
 input:focus:invalid {
   outline: none;
@@ -174,3 +169,37 @@ width: 55%;
 #check {
   margin-left: 30px;
 }/*# sourceMappingURL=log.css.map */
+
+input:focus:invalid {
+  outline: none;
+}
+
+/* This is the style of our error messages */
+.error {
+  width: 100%;
+  padding: 0;
+ 
+  color: white;
+  background-color: #900;
+  border-radius: 0 0 5px 5px;
+  box-sizing: border-box;
+}
+.loginButton:disabled{
+  cursor: not-allowed;
+  background-color: red;
+  transition: 100% 2s ease-in-out;
+}
+
+.login_form #email_error,
+.login_form #pass_error {
+  margin-top: 5px;
+  width: 345px;
+  
+  color: #C62828;
+  background: rgba(255, 0, 0, 0.1);
+  text-align: center;
+ 
+  border-radius: 1px;
+  border: 1px solid #EF9A9A;
+  display: none;
+}

@@ -57,23 +57,23 @@ export default function Tracks() {
             <div className="Tsectiontwo col-md-12 mb-5 mt-5"><b>Get work done in over 1800 different categories</b></div>
            <div className="col-md-12">
                <div className="row">
-               <div className="col d-flex">
+               <div className="col-md-3 col-6 d-flex">
                    <img className="svIcon" src={hirewebsitedesignv2}/>
                    <a  href="#" className="titleIcon ms-2 text-decoration-none text-dark">Website Design</a>
                </div>   
-               <div className="col d-flex">
+               <div className="col-md-3 col-6 d-flex">
                    <img className="svIcon" src={hiretranslation}/>
                    <a  href="#" className="titleIcon ms-2 text-decoration-none text-dark">Translation</a>
                </div>   
-               <div className="col d-flex">
+               <div className="col-md-3 col-6 d-flex">
                    <img className="svIcon" src={hirepython}/>
                    <a  href="#" className="titleIcon ms-2 text-decoration-none text-dark">Python</a>
                </div>   
-               <div className="col d-flex">
+               <div className="col-md-3 col-6 d-flex">
                    <img className="svIcon" src={hireexcel}/>
                    <a  href="#" className="titleIcon ms-2 text-decoration-none text-dark">Excel</a>
                </div>   
-               <div className="col d-flex"><img className="svIcon" src={hirephotoshopv2}/>
+               <div className="col-md-3 col-6 d-flex"><img className="svIcon" src={hirephotoshopv2}/>
                    <a  href="#" className="titleIcon ms-2 text-decoration-none text-dark">Photoshop</a>
                </div>   
                </div>
@@ -81,23 +81,23 @@ export default function Tracks() {
            {/* <!-- _________________________________________2_____________________________________ --> */}
            <div className="col-md-12 mt-4">
                <div className="row">
-               <div className="col d-flex">
+               <div className="col-md-3 col-6 d-flex">
                    <img className="svIcon" src={hire3dmodellingv2}/>
                    <a  href="#" className="titleIcon ms-2 text-decoration-none text-dark">Mobile Apps</a>
                </div>   
-               <div className="col d-flex">
+               <div className="col-md-3 col-6 d-flex">
                    <img className="svIcon" src={hireresearch}/>
                    <a  href="#" className="titleIcon ms-2 text-decoration-none text-dark">Research</a>
                </div>   
-               <div className="col d-flex">
+               <div className="col-md-3 col-6 d-flex">
                    <img className="svIcon" src={hirewordpress}/>
                    <a  href="#" className="titleIcon ms-2 text-decoration-none text-dark">Wordpress</a>
                </div>   
-               <div className="col d-flex">
+               <div className="col-md-3 col-6 d-flex">
                    <img className="svIcon" src={hireghostwritingv2}/>
                    <a  href="#" className="titleIcon ms-2 text-decoration-none text-dark">Ghostwriting</a>
                </div>   
-               <div className="col d-flex"><img className="svIcon" src={hiretechnicalwritingv2}/>
+               <div className="col-md-3 col-6 d-flex"><img className="svIcon" src={hiretechnicalwritingv2}/>
                    <a  href="#" className="titleIcon ms-2 text-decoration-none text-dark">Technical Writing</a>
                </div>   
                </div>
@@ -105,23 +105,23 @@ export default function Tracks() {
            {/* <!-- ____________________________________________3______________________________________ --> */}
            <div className="col-md-12 mt-4">
                <div className="row">
-               <div className="col d-flex">
+               <div className="col-md-3 col-6 d-flex">
                    <img className="svIcon" src={hireandroidv2}/>
                    <a  href="#" className="titleIcon ms-2 text-decoration-none text-dark">Android Apps</a>
                </div>   
-               <div className="col d-flex">
+               <div className="col-md-3 col-6 d-flex">
                    <img className="svIcon" src={hireresearchwriting}/>
                    <a  href="#" className="titleIcon ms-2 text-decoration-none text-dark">Research Writing</a>
                </div>   
-               <div className="col d-flex">
+               <div className="col-md-3 col-6 d-flex">
                    <img className="svIcon" src={hireresearch}/>
                    <a  href="#" className="titleIcon ms-2 text-decoration-none text-dark">Web Search</a>
                </div>   
-               <div className="col d-flex">
+               <div className="col-md-3 col-6 d-flex">
                    <img className="svIcon" src={hirecopywritingv2}/>
                    <a  href="#" className="titleIcon ms-2 text-decoration-none text-dark">Copywriting</a>
                </div>   
-               <div className="col d-flex"><img className="svIcon" src={hireblogging}/>
+               <div className="col-md-3 col-6 d-flex"><img className="svIcon" src={hireblogging}/>
                    <a  href="#" className="titleIcon ms-2 text-decoration-none text-dark">Blogging</a>
                </div>   
                </div>
@@ -129,23 +129,23 @@ export default function Tracks() {
            {/* <!-- ______________________________________________4__________________________________________ --> */}
            <div className="col-md-12 mt-4">
                <div className="row">
-               <div className="col d-flex">
+               <div className="col-md-3 col-6 d-flex">
                    <img className="svIcon" src={hireiphoneappsv2}/>
                    <a  href="#" className="titleIcon ms-2 text-decoration-none text-dark">iPhone Apps</a>
                </div>   
-               <div className="col d-flex">
+               <div className="col-md-3 col-6 d-flex">
                    <img className="svIcon" src={hirearticlewritingv2}/>
                    <a  href="#" className="titleIcon ms-2 text-decoration-none text-dark">Article Writing</a>
                </div>   
-               <div className="col d-flex">
+               <div className="col-md-3 col-6 d-flex">
                    <img className="svIcon" src={hirefinancev2}/>
                    <a  href="#" className="titleIcon ms-2 text-decoration-none text-dark">Finance</a>
                </div>   
-               <div className="col d-flex">
+               <div className="col-md-3 col-6 d-flex">
                    <img className="svIcon" src={hireaccountingv2}/>
                    <a  href="#" className="titleIcon ms-2 text-decoration-none text-dark">Accounting</a>
                </div>   
-               <div className="col d-flex"><img className="svIcon" src={hireinternetmarketingv2}/>
+               <div className="col-md-3 col-6 d-flex"><img className="svIcon" src={hireinternetmarketingv2}/>
                    <a  href="#" className="titleIcon ms-2 text-decoration-none text-dark">Internet Marketing</a>
                </div>   
                </div>
@@ -153,23 +153,23 @@ export default function Tracks() {
             {/* _____________________________________________5__________________________________________/  */}
            <div className="col-md-12 mt-4">
                <div className="row">
-               <div className="col d-flex">
+               <div className="col-md-3 col-6 d-flex">
                    <img className="svIcon" src={hiresoftwarearchitecture}/>
                    <a  href="#" className="titleIcon ms-2 text-decoration-none text-dark">Software Architecture</a>
                </div>   
-               <div className="col d-flex">
+               <div className="col-md-3 col-6 d-flex">
                    <img className="svIcon" src={hirewebscraping}/>
                    <a  href="#" className="titleIcon ms-2 text-decoration-none text-dark">Web Scraping</a>
                </div>   
-               <div className="col d-flex">
+               <div className="col-md-3 col-6 d-flex">
                    <img className="svIcon" src={hirelegalv2}/>
                    <a  href="#" className="titleIcon ms-2 text-decoration-none text-dark">Legal</a>
                </div>   
-               <div className="col d-flex">
+               <div className="col-md-3 col-6 d-flex">
                    <img className="svIcon" src={hiremysql}/>
                    <a  href="#" className="titleIcon ms-2 text-decoration-none text-dark">MySQL</a>
                </div>   
-               <div className="col d-flex"><img className="svIcon" src={hireecommerce}/>
+               <div className="col-md-3 col-6 d-flex"><img className="svIcon" src={hireecommerce}/>
                    <a  href="#" className="titleIcon ms-2 text-decoration-none text-dark">eCommerce</a>
                </div>   
                </div>
@@ -177,23 +177,23 @@ export default function Tracks() {
            {/* <!-- _____________________________________________6_________________________________________ --> */}
            <div className="col-md-12 mt-4">
                <div className="row">
-               <div className="col d-flex">
+               <div className="col-md-3 col-6 d-flex">
                    <img className="svIcon" src={hiregraphicdesignv2}/>
                    <a  href="#" className="titleIcon ms-2 text-decoration-none text-dark">Graphic Design</a>
                </div>   
-               <div className="col d-flex">
+               <div className="col-md-3 col-6 d-flex">
                    <img className="svIcon" src={hirehtml}/>
                    <a  href="#" className="titleIcon ms-2 text-decoration-none text-dark">HTML</a>
                </div>   
-               <div className="col d-flex">
+               <div className="col-md-3 col-6 d-flex">
                    <img className="svIcon" src={hirelinuxv2}/>
                    <a  href="#" className="titleIcon ms-2 text-decoration-none text-dark">Linux</a>
                </div>   
-               <div className="col d-flex">
+               <div className="col-md-3 col-6 d-flex">
                    <img className="svIcon" src={hirebannerdesignv2}/>
                    <a  href="#" className="titleIcon ms-2 text-decoration-none text-dark">Banner Design</a>
                </div>   
-               <div className="col d-flex"><img className="svIcon" src={hiredataentryv2}/>
+               <div className="col-md-3 col-6 d-flex"><img className="svIcon" src={hiredataentryv2}/>
                    <a  href="#" className="titleIcon ms-2 text-decoration-none text-dark">Data Entry</a>
                </div>   
                </div>
@@ -201,23 +201,23 @@ export default function Tracks() {
            {/* <!-- _____________________________________________7_____________________________________ --> */}
            <div className="col-md-12 mt-4">
                <div className="row">
-                   <div className="col d-flex">
+                   <div className="col-md-3 col-6 d-flex">
                        <img className="svIcon" src={hirelogodesignv2}/>
                        <a  href="#" className="titleIcon ms-2 text-decoration-none text-dark">Logo Design</a>
                    </div>   
-                   <div className="col d-flex">
+                   <div className="col-md-3 col-6 d-flex">
                        <img className="svIcon" src={hirecss}/>
                        <a  href="#" className="titleIcon ms-2 text-decoration-none text-dark">CSS</a>
                    </div>   
-                   <div className="col d-flex">
+                   <div className="col-md-3 col-6 d-flex">
                        <img className="svIcon" src={hiremanufacturingv2}/>
                        <a  href="#" className="titleIcon ms-2 text-decoration-none text-dark">Manufacturing</a>
                    </div>   
-                   <div className="col d-flex">
+                   <div className="col-md-3 col-6 d-flex">
                        <img className="svIcon" src={hireillustration}/>
                        <a  href="#" className="titleIcon ms-2 text-decoration-none text-dark">Illustration</a>
                    </div>   
-                   <div className="col d-flex"><img className="svIcon" src={hirelinkbuilding}/>
+                   <div className="col-md-3 col-6 d-flex"><img className="svIcon" src={hirelinkbuilding}/>
                        <a  href="#" className="titleIcon ms-2 text-decoration-none text-dark">Link Building</a>
                    </div>   
                    </div>
@@ -225,23 +225,23 @@ export default function Tracks() {
                {/* <!-- _____________________________________________8_______________________________________ --> */}
                <div className="col-md-12 mt-4">
                    <div className="row">
-                   <div className="col d-flex">
+                   <div className="col-md-3 col-6 d-flex">
                        <img className="svIcon" src={hirepr}/>
                        <a  href="#" className="titleIcon ms-2 text-decoration-none text-dark">public Relations</a>
                    </div>   
-                   <div className="col d-flex">
+                   <div className="col-md-3 col-6 d-flex">
                        <img className="svIcon" src={hirehtml5}/>
                        <a  href="#" className="titleIcon ms-2 text-decoration-none text-dark">HTML 5</a>
                    </div>   
-                   <div className="col d-flex">
+                   <div className="col-md-3 col-6 d-flex">
                        <img className="svIcon" src={hireawsv2}/>
                        <a  href="#" className="titleIcon ms-2 text-decoration-none text-dark">Amazon Web Services</a>
                    </div>   
-                   <div className="col d-flex">
+                   <div className="col-md-3 col-6 d-flex">
                        <img className="svIcon" src={hiresoftwaredevv2}/>
                        <a  href="#" className="titleIcon ms-2 text-decoration-none text-dark">Software Development</a>
                    </div>   
-                   <div className="col d-flex"><img className="svIcon" src={hirecplusplus}/>
+                   <div className="col-md-3 col-6 d-flex"><img className="svIcon" src={hirecplusplus}/>
                        <a  href="#" className="titleIcon ms-2 text-decoration-none text-dark">C++ Programming</a>
                    </div>   
                    </div>
@@ -249,23 +249,23 @@ export default function Tracks() {
                {/* <!-- ______________________________________________9_______________________________________ --> */}
                <div className="col-md-12 mt-4">
                    <div className="row">
-                   <div className="col d-flex">
+                   <div className="col-md-3 col-6 d-flex">
                        <img className="svIcon" src={hirelogisticsv2}/>
                        <a  href="#" className="titleIcon ms-2 text-decoration-none text-dark">Logistics</a>
                    </div>   
-                   <div className="col d-flex">
+                   <div className="col-md-3 col-6 d-flex">
                        <img className="svIcon" src={hirejavascript}/>
                        <a  href="#" className="titleIcon ms-2 text-decoration-none text-dark">Javascript</a>
                    </div>   
-                   <div className="col d-flex">
+                   <div className="col-md-3 col-6 d-flex">
                        <img className="svIcon" src={hirecontentwriting}/>
                        <a  href="#" className="titleIcon ms-2 text-decoration-none text-dark">Content Writing</a>
                    </div>   
-                   <div className="col d-flex">
+                   <div className="col-md-3 col-6 d-flex">
                        <img className="svIcon" src={hirephpv2}/>
                        <a  href="#" className="titleIcon ms-2 text-decoration-none text-dark">PHP</a>
                    </div>   
-                   <div className="col d-flex"><img className="svIcon" src={hirecsharp}/>
+                   <div className="col-md-3 col-6 d-flex"><img className="svIcon" src={hirecsharp}/>
                        <a  href="#" className="titleIcon ms-2 text-decoration-none text-dark">C# Programming</a>
                    </div>   
                    </div>
@@ -273,23 +273,23 @@ export default function Tracks() {
                {/* <!-- ____________________________________________10_________________________________________ --> */}
                <div className="col-md-12 mt-4">
                    <div className="row">
-                   <div className="col d-flex">
+                   <div className="col-md-3 col-6 d-flex">
                        <img className="svIcon" src={hireproofreading}/>
                        <a  href="#" className="titleIcon ms-2 text-decoration-none text-dark">Proofreading</a>
                    </div>   
-                   <div className="col d-flex">
+                   <div className="col-md-3 col-6 d-flex">
                        <img className="svIcon" src={hiredataentryv2}/>
                        <a  href="#" className="titleIcon ms-2 text-decoration-none text-dark">Data Processing</a>
                    </div>   
-                   <div className="col d-flex">
+                   <div className="col-md-3 col-6 d-flex">
                        <img className="svIcon" src={hiremarketing}/>
                        <a  href="#" className="titleIcon ms-2 text-decoration-none text-dark">Marketing</a>
                    </div>   
-                   <div className="col d-flex">
+                   <div className="col-md-3 col-6 d-flex">
                        <img className="svIcon" src={hire3dmodellingv2}/>
                        <a  href="#" className="titleIcon ms-2 text-decoration-none text-dark">3D Modelling</a>
                    </div>   
-                   <div className="col d-flex"><img className="svIcon" src={seeall}/>
+                   <div className="col-md-3 col-6 d-flex"><img className="svIcon" src={seeall}/>
                        <a  href="#" className="titleIcon ms-2 text-decoration-none text-dark">See All</a>
                    </div>   
                    </div>

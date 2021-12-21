@@ -5,6 +5,8 @@ export default function Paypal() {
     return (
         
         <div>
+          <div className="container">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="" />
 <input type="number" value={state}  onChange={e=>{setstate(e.target.value)}}/>
 
             <PayPalButton
@@ -28,6 +30,7 @@ export default function Paypal() {
               });
             }}
           />
+          </div>
         </div>
     )
 }

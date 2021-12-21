@@ -8,7 +8,7 @@ import './App.css';
 
 
 import { Routes, Route } from "react-router";
-import SignUp from "./Components/Sign up/SignUp";
+import SignUp from "./Pages/Sign up/SignUp";
 import Paypal from "./Components/Paypal/paypal";
 import { Suspense, useState, useContext, useEffect } from "react";
 import { io } from "socket.io-client";
@@ -32,22 +32,27 @@ import Tasks from './Pages/projectinfo/Tasks';
 import Details from './Pages/projectinfo/Details';
 import Files from './Pages/projectinfo/Files';
 import DetailsData from './Pages/projectinfo/DetailsData';
+import Setting from './Pages/Setting/Setting';
+import SingleFreelancer from "./Components/Single Freelancer/SingleFreelancer";
+// import Details from './Pages/Test/Details';
+import Freelancerpage from './Pages/FreelancerPage/Freelancerpage';
 
 function App() {
   const [socket, setSocket] = useState(null);
 
   const { user } = useContext(Context);
 
-  useEffect(() => {
-    setSocket(io("http://localhost:5000"));
-  }, []);
+  // useEffect(() => {
+  //   setSocket(io("http://localhost:5000"));
+  // }, []);
   // useEffect(() => {
   //   socket.emit("newUser", user);
   // }, [socket, user]);
 
-  const lang = localStorage.getItem("lang") || "en";
+  let lang = localStorage.getItem("lang") || "en";
   document.documentElement.language = lang;
   return (
+<<<<<<< HEAD
     <Suspense fallback="Loading ...">
       
     <div className="App">
@@ -84,8 +89,39 @@ function App() {
 
 
       </Routes>
+=======
+    <div className="App" dir={lang === "ar" ? "rtl" : "ltr"} lang={lang === "ar" ? "ar" : "en"}>
+      <Suspense fallback="Loading ...">
+
+        <Routes>
+          <Route path="/Login" element={<Login />} />
+          <Route path="/" exact="true" element={user ? <Dashbaord /> : <Home />} />
+          <Route path="/Post-project/" element={<Postproject />} />
+          <Route path="/SignUp" element={<SignUp />} />
+          <Route path='/paypal' element={<Paypal />} />
+          <Route path='/' element={<Dashbaord />} />
+          <Route path='/Massenger' element={<Massenger />} />
+
+          <Route path='/Feedback' element={<Feedback />} />
+          <Route path='/Projects' element={<Project_Contests />} />
+          <Route path='/MemberShip' element={<MemberShip />} />
+          <Route path='/howwork' element={<HowitWork />} />
+          <Route path='/inbox' element={<Inbox />} />
+          <Route path='/DisplayPost' element={<DisplayProject />} />
+          <Route path='/' element={user ? <Dashbaord /> : <Route path="/Login" element={<Login />} />} />
+          <Route path='/DisplayProject' element={<DisplayProject />} />
+          <Route path='/DisplayProject/Proposals/:id' element={<Proposals />} />
+          <Route path='/DisplayProject/Tasks/:id' element={<Tasks />} />
+          <Route path='/DisplayProject/Details/:id' element={<DetailsData />} />
+          <Route path='/DisplayProject/Files/:id' element={<Files />} />
+          <Route path='/Skills' element={<Skills />} />
+
+
+
+        </Routes>
+      </Suspense>
+>>>>>>> ee13e0c6834bc3f686264a31a6543485965257b5
     </div>
-    </Suspense>
   );
 }
 

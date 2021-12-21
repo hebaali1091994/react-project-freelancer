@@ -16,7 +16,7 @@ ReactDOM.render(
   <BrowserRouter>
   <ContextProvider>
 
-    <div>
+    <div >
         <App />
       
         </div>
