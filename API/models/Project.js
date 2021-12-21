@@ -12,12 +12,6 @@ const ProjectSchema = mongoose.Schema(
     pay: { type: String, default: null },
     freelances: [
       {
-<<<<<<< HEAD
-        freelanceid: { type: String},
-        deccription:{type:String},
-        date:{type:Date}
-      },
-=======
         freelanceid: { type: String, default: null },
         deccription: { type: String, default: null },
         date: { type: Date },
@@ -32,7 +26,6 @@ const ProjectSchema = mongoose.Schema(
         date: { type: Date },
 
       }
->>>>>>> 5ea59dcb5e1950c483c8a6241670ac085827a2d3
     ],
     budget: { type: String, default: null },
     CurrencyCode: { type: String, default: null },

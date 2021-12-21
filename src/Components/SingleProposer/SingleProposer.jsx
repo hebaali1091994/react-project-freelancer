@@ -60,6 +60,11 @@ const SingleProposer = ({ f, Freelancer }) => {
                     </div>
                 </div>
             </div>
+            <div className="d-flex justify-content-end mb-3">
+                <button type="button" class="btn btn-primary mr-3">Hire</button>
+                <button type="button" class="btn btn-success">Chat</button>
+
+            </div>
         </div>
     )
 }
