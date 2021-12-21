@@ -1,8 +1,7 @@
 .projectDetails{
     padding: 0% 8% ;
     
-    background-color: rgb(14,23,36);
-
+    background: #0069C7;
     
     color:#fff
     }
@@ -17,13 +16,11 @@
     .nav-link{
     font-size: 15px;
     font-weight: 600;
-    color: #999 !important;
     margin:6px 8px ;
     
     }
     .nav-link:hover{
-    color: #fff !important;
-    
+border-bottom:1px solid #000;    
     }
     .dooted{
     background-color: rgb(14,23,36) !important;

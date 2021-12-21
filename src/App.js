@@ -52,6 +52,44 @@ function App() {
   let lang = localStorage.getItem("lang") || "en";
   document.documentElement.language = lang;
   return (
+<<<<<<< HEAD
+    <Suspense fallback="Loading ...">
+      
+    <div className="App">
+      <Routes>
+        <Route path="/" exact="true" element={ user ? <Dashbaord/> : <Home />} />
+        <Route path="/Post-project/" element={<Postproject />} />
+        <Route path="/Login" element={<Login />} />
+        <Route path="/SignUp" element={<SignUp />} />
+        <Route path='/paypal'  element={<Paypal  />}/>
+        <Route path='/Dashbaord'  element={<Dashbaord  />}/>
+        <Route path='/Massenger'  element={<Massenger />}/>
+        <Route path='/Dashbaord'  element={<Dashbaord  />}/>
+        <Route path='/Massenger'  element={<Massenger />}/>
+         {/* {!user ? <Reducer to="/"/> : <Massenger/> }
+        </Route> */}
+
+        <Route path='/Feedback'  element={<Feedback  />}/>
+        <Route path='/Projects'  element={<Project_Contests/>}/>
+        <Route path='/MemberShip'  element={<MemberShip  />}/>
+        <Route path='/howwork'  element={<HowitWork/>}/>
+        <Route path='/inbox'  element={<Inbox/>}/>
+        <Route path='/DisplayPost'  element={<DisplayProject/>}/>
+       <Route path='/Dashbaord'  element={<Dashbaord  />}/>
+                <Route path='/Dashbaord'  element={<Dashbaord  />}/>
+<Route path='/DisplayProject'  element={<DisplayProject  />}/>
+        <Route path='/Dashbaord'  element={<Dashbaord  />}/>
+        <Route path='/DisplayProject/'  element={<DisplayProject  />}/>
+            <Route path='/DisplayProject/Proposals/:id'  element={<Proposals  />}/>
+            <Route path='/DisplayProject/Tasks/:id'  element={<Tasks  />}/>
+            <Route path='/DisplayProject/Details/:id'  element={<DetailsData  />}/>
+            <Route path='/DisplayProject/Files/:id'  element={<Files  />}/>
+        <Route path='/Skills'  element={<Skills/>}/>
+
+
+
+      </Routes>
+=======
     <div className="App" dir={lang === "ar" ? "rtl" : "ltr"} lang={lang === "ar" ? "ar" : "en"}>
       <Suspense fallback="Loading ...">
 
@@ -82,6 +120,7 @@ function App() {
 
         </Routes>
       </Suspense>
+>>>>>>> ee13e0c6834bc3f686264a31a6543485965257b5
     </div>
   );
 }

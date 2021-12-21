@@ -4,12 +4,11 @@ import '../i18n'
 import { useTranslation } from 'react-i18next'
 function Footer() {
   const { t, i18n } = useTranslation();
-  let lang=localStorage.getItem('lang')||'en'
- const change= (option)=> 
-  {
+  let lang = localStorage.getItem('lang') || 'en'
+  const change = (option) => {
 
-    localStorage.setItem('lang',option.target.value)
-     lang=localStorage.getItem('lang')||'en'
+    localStorage.setItem('lang', option.target.value)
+    lang = localStorage.getItem('lang') || 'en'
     i18next.changeLanguage(lang)
     // window.location.reload()
     console.log("lang", lang);
@@ -86,7 +85,7 @@ function Footer() {
             <h5>{t("About")}</h5>
             <ul className="list-unstyled">
               <li>
-                <Link  to="#">{t("About us")}</Link>
+                <Link to="#">{t("About us")}</Link>
               </li>
               <li>
                 <Link to="#">{t("How it Works")}</Link>
@@ -136,7 +135,7 @@ function Footer() {
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 135 40"
               >
-                
+
                 <path
                   className="st0"
                   d="M130.2 0H4.7C2.1 0 0 2.1 0 4.7v30.5C0 37.9 2.1 40 4.7 40h125.5c2.6 0 4.7-2.1 4.7-4.7V4.7c0-2.6-2.1-4.7-4.7-4.7zm0 39.1H4.7c-2.1 0-3.8-1.7-3.8-3.8V4.7C.9 2.6 2.6.9 4.7.9h125.5c2.1 0 3.8 1.7 3.8 3.8v30.5c0 2.2-1.7 3.9-3.8 3.9z"
@@ -151,7 +150,7 @@ function Footer() {
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 135.7 40"
               >
-               
+
                 <path
                   id="path16"
                   className="st0"
@@ -331,10 +330,10 @@ function Footer() {
           </div>
           <div className="footer-s col-6">
             <p>{t("Freelancer ® is a registered Trademark of Freelancer Technology Pty Limited (ACN 142 189 759)")}
-              
+
             </p>
             <p>
-            {t("Copyright © 2021 Freelancer Technology Pty Limited (ACN 142 189759)")}
+              {t("Copyright © 2021 Freelancer Technology Pty Limited (ACN 142 189759)")}
             </p>
           </div>
         </div>
