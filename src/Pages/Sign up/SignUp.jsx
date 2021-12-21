@@ -6,15 +6,17 @@ import work from "../../../src/public/work.svg";
 import hire from "../../../src/public/hire.svg";
 import axios from "axios";
 import { Context } from "../../context/Context";
+import { useEffect } from "react";
 const SignUp = () => {
   const { user, dispatch, isFetching } = useContext(Context);
 
   const EmailRef = useRef();
   const PasswordRef = useRef();
-  const [eEmail, setEEmail] = useState(false);
-  const [eUsername, setEUsername] = useState(false);
+  const [eEmail, setEmail] = useState(false);
+  const [eUsername, setUsername] = useState(false);
   const [formStep, setFormStep] = React.useState(0);
   const { watch, register } = useForm();
+
   const completeFormstep = () => {
     setFormStep((cur) => cur + 1);
   };
@@ -24,8 +26,7 @@ const SignUp = () => {
       return undefined;
     } else if (formStep === 3) {
       return <p>Please wait while we redirect you.........</p>;
-    } else {
-    }
+    } 
   };
   const [Sign, setData] = useState({
     Email: "",
@@ -33,12 +34,21 @@ const SignUp = () => {
     userName: "",
     acountType: "",
   });
+
+  useEffect(() => {
+    axios.get(`/auth/email?Email=${Sign.Email}`).then((res) => {
+      setEmail(res.data ? true : false);
+    });
+    axios.get(`/auth/username?userName=${Sign.userName}`).then((res) => {
+      setUsername(res.data ? true : false);
+    });
+  }, [Sign]);
   console.log(Sign);
   const submit = (e) => {
     if (e === 0) {
       const handleSubmit = async (e) => {
         try {
-          await axios.post("/auth/", Sign);
+          await axios.post("/auth/register", Sign);
           const res = await axios.post("/auth/login", {
             Email: Sign.Email,
             Password: Sign.Password,
@@ -56,9 +66,9 @@ const SignUp = () => {
     } else if (e === 1) {
       const handleHire = async (e) => {
         try {
-          const regRes = await axios.post("/auth/register", Sign);
+          const regRes = await axios.post("/auth/register/", Sign);
           console.log(regRes);
-          const res = await axios.post("/auth/login", {
+          const res = await axios.post("/auth/login/", {
             Email: Sign.Email,
             Password: Sign.Password,
           });
@@ -84,6 +94,7 @@ const SignUp = () => {
               action=""
               method="post"
               name="form"
+              
               onsubmit="return validated()"
             >
               {formStep === 0 && (
@@ -110,11 +121,6 @@ const SignUp = () => {
                         value={Sign.Email}
                         onChange={(event) => {
                           setData({ ...Sign, Email: event.target.value });
-                          axios
-                            .get(`/auth/email?Email=${Sign.Email}`)
-                            .then((res) => {
-                              setEEmail(res.data ? true : false);
-                            });
                         }}
                       />
                     </div>
@@ -168,7 +174,13 @@ const SignUp = () => {
                     <button
                       type="submit"
                       className="btn  btn-lg btn-block"
-                      onClick={completeFormstep}
+                      onClick={(e) => {
+                        e.preventDefault()
+                        if (!eEmail) {
+
+                          completeFormstep();
+                        }
+                      }}
                     >
                       Join Freelancer
                     </button>
@@ -213,9 +225,9 @@ const SignUp = () => {
                       style={{ height: "4vh" }}
                       name="userName"
                       value={Sign.userName}
-                      onChange={(event) =>
-                        setData({ ...Sign, userName: event.target.value })
-                      }
+                      onChange={(event) => {
+                        setData({ ...Sign, userName: event.target.value });
+                      }}
                       style={{ height: "30px" }}
                     />
                   </div>
@@ -224,10 +236,17 @@ const SignUp = () => {
                     <button
                       type="submit"
                       className="btn  btn-lg btn-block"
-                      onClick={completeFormstep}
+                      onClick={() => {
+                        if(!eUsername) {
+                          completeFormstep()
+                        }
+                      }}
+
                     >
+                    
                       <a href="#">Next</a>
                     </button>
+                    {eUsername && "username is already exist"}
                   </div>
                 </section>
               )}
@@ -306,6 +325,8 @@ const SignUp = () => {
                     />
                   </div>
                   <h3>Sign Up Success</h3>
+                  {renderForm()}
+
                 </section>
               )}
             </form>

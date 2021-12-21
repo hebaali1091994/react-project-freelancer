@@ -61,11 +61,7 @@ router.get("/email", async (req, res) => {
 });
 
 router.post("/register", async (req, res) => {
-  const nameregister = await User.findOne({ userName: req.body.userName });
-  nameregister && res.status(401).json("user name is already exist");
-  const emailregister = await User.findOne({ Email: req.body.Email });
-  emailregister &&
-    res.status(401).json("user email is already exist pleaze login");
+ 
   var work = "work";
   const newUser = new User({
     userName: req.body.userName,

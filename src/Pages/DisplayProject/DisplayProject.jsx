@@ -39,14 +39,17 @@ const DisplayProject = () => {
   //Filter
   const [min_value, setMinValue] = useState();
   const [max_value, setMaxValue] = useState();
+  const [typeProject,settypeProject]=useState([])
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const res = await axios.get("/users/all");
-      setUser(res.data);
-    };
-    fetchData();
-  }, []);
+useEffect(()=>{
+const fetchData=async()=>{
+const res =await axios.get("http://localhost:5000/Project/hour");
+settypeProject(res,typeProject)
+}
+
+},[])
+
+
 
   return (
     <div className="DisplayProject">
@@ -432,6 +435,9 @@ const DisplayProject = () => {
                         type="checkbox"
                         value=""
                         id="flexCheckDefault"
+                        onChange={(e)=>{
+                          
+                        }}
                       />
                       <label
                         className="form-check-label"

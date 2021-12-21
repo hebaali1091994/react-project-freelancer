@@ -15,6 +15,12 @@ const Category = require("./router/Category");
 const conversion = require("./router/conversion");
 const message = require("./router/message");
 const database = require("./database");
+<<<<<<< HEAD
+const cors=require("cors")
+server = require('http').Server(app),
+io = require('socket.io')(server);
+const { Socket } = require("socket.io");
+=======
 const multer = require("multer");
 const path = require('path');
 
@@ -22,6 +28,7 @@ const cors = require("cors")
 // server = require('http').Server(app),
 // io = require('socket.io')(server);
 // const { Socket } = require("socket.io");
+>>>>>>> 5ea59dcb5e1950c483c8a6241670ac085827a2d3
 app.use(cors({}))
 app.use(express.json());
 app.get("/api/test", () => {
@@ -33,20 +40,17 @@ app.get("/api/test", () => {
 // io.on("connection", (Socket) => 
 
 // {
-//   socket.on("getDoc", docId => {
+//   Socket.on("getDoc", docId => {
 //     safeJoin(docId);
-//     socket.emit("document", documents[docId]);
+//     Socket.emit("document", documents[docId]);
 //   });
-//   socket.on("addDoc", doc => {
+//   Socket.on("addDoc", doc => {
 //     documents[doc.id] = doc;
 //     safeJoin(doc.id);
 //     io.emit("documents", Object.keys(documents));
-//     socket.emit("document", doc);
+//     Socket.emit("document", doc);
 //   });
-//   socket.on("editDoc", doc => {
-//     documents[doc.id] = doc;
-//     socket.to(doc.id).emit("document", doc);
-//   });
+  
 
 //   Socket.on("disconnecter", () => {
 //     removeuser(Socket.id)
@@ -87,7 +91,7 @@ app.use("/Category", Category);
 app.use("/conversion", conversion);
 app.use("/message", message);
 // MONGO_URL = mongoose.connect("mongodb+srv://freelance:12345@freelance.mhgq8.mongodb.net/freelace?retryWrites=true&w=majority");
-
+//MONGO_URL ="MONGO_URL = mongoose.connect("mongodb+srv://freelance:12345@freelance.mhgq8.mongodb.net/freelance?retryWrites=true&w=majority")"
 
 app.listen(5000, () => {
   console.log("BackEnd Server Is Running Work In Port : 5000");
