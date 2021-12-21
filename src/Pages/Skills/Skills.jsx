@@ -10,18 +10,18 @@ import Verification from "../../Components/skillscomponents/verification/Verific
 import axios from 'axios';
 
 const Skills = () => {
-   const [Skills, setSkills] = useState([])
+  //  const [Skills, setSkills] = useState([])
 
 
-  useEffect(() => {
+  // useEffect(() => {
     
-    const fetchSkills = async ()=>{
-      const res = await axios.get("/Category/");
-      setSkills(res.data)
-    }
-    fetchSkills();
-  },[]);
-  console.log(Skills);
+  //   const fetchSkills = async ()=>{
+  //     const res = await axios.get("/Category/");
+  //     setSkills(res.data)
+  //   }
+  //   fetchSkills();
+  // },[]);
+  // console.log(Skills);
 
 
   const [formStep, setFormStep] = React.useState(0);
@@ -50,8 +50,16 @@ const Skills = () => {
     }
   };
   const [skill, setData] = useState({
-
+    img:"",
+    first:"",
+    Last:"",
+    description:"",
+    DescribeU:"",
+    DataS:"",
+    birht:"",
+    Address:"",
   })
+  console.log(skill);
     return (
         <>
         <div classNameName="container-fluid mt-3">
@@ -59,44 +67,9 @@ const Skills = () => {
             <div className="col-md-12 d-flex">
                 <img class="freelancer-logo" src={freelancelogo}  alt=""/>
                 <p className="m-auto fs-4"><b>Profile details</b></p>
-<<<<<<< HEAD
-
-
-        <div className='Skills'>
-                <div class="container">
-        <div class="row">
-            <div class="sv">
-                <img src="./Skills.svg" alt="" />
-            </div>
-            <h2>Tell us your top skills</h2>
-            <div class="req">This helps us recommend jobs for you.</div>
-            <div class="search">
-                <span><i class="fas fa-search"></i></span>
-                <input type="search" placeholder="Search a skill" class="form-control" />
-            </div>
-            <hr/>
-            <div class="category">
-                <div class="category-item">
-                    <div class="item col">
-                        <h3>Select a category</h3>
-                        <hr/>
-                    </div>
-                    <div class="item col">
-                        <h3>No category selected</h3>
-                        <hr/>
-                    </div>
-                    <div class="item col">
-                        <h3>1 out of 20 skills selected</h3>
-                        <hr/>
-                    </div>
-                </div>
-                <button>Next</button>
-
-=======
         
->>>>>>> cfb4b069ca92085a4d8d6eb4a74980f3dae183ac
             </div>
-            <div className="progress col-md-12">
+            <div className="col-md-12">
             <progress max="7" value={formStep + 1} style={{ width: "100%", height: "5vh" }}/>
         </div>
    
@@ -104,12 +77,12 @@ const Skills = () => {
         <div class="row">
             <div classname="col-md-12">
             <form className="col-sm-12 col-md-12">
-          {formStep === 0 && (<Tell   Data={skill} setData={setData}/>)}
-          {formStep === 1 && <Profile Data={skill} setData={setData}/>}
-          {formStep === 2 && <About Profile Data={skill} setData={setData} />}
-          {formStep === 3 && <Whatlang Data={skill} setData={setData} />}
-          {formStep === 4 && (<Located Data={skill} setData={setData} />)}
-          {formStep === 5 && <Verification Data={skill} setData={setData} />}
+          {formStep === 0 && (<Tell   skill={skill} setData={setData}/>)}
+          {formStep === 1 && <Profile skill={skill} setData={setData}/>}
+          {formStep === 2 && <About  skill={skill} setData={setData} />}
+          {formStep === 3 && <Whatlang skill={skill} setData={setData} />}
+          {formStep === 4 && (<Located skill={skill} setData={setData} />)}
+          {formStep === 5 && <Verification skill={skill} setData={setData} />}
           <div className="d-flex justify-content-between mt-5">
             {renderButton()}
           </div>

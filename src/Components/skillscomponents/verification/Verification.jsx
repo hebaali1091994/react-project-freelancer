@@ -1,6 +1,6 @@
 import React from 'react'
 import checkemail from '../../../public/checkemail.svg'
-const Verification = () => {
+const Verification = ({skill,setData}) => {
     return (
         <div class="row">
         <div class="col-md-6 m-auto d-flex flex-column">

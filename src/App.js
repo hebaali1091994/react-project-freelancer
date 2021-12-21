@@ -61,6 +61,8 @@ function App() {
         <Route path='/Massenger'  element={<Massenger />}/>
         <Route path='/Dashbaord'  element={<Dashbaord  />}/>
         <Route path='/Massenger'  element={<Massenger />}/>
+         {/* {!user ? <Reducer to="/"/> : <Massenger/> }
+        </Route> */}
 
         <Route path='/Feedback'  element={<Feedback  />}/>
         <Route path='/Projects'  element={<Project_Contests/>}/>

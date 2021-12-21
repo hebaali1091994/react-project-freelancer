@@ -39,6 +39,7 @@ const PostEnterFace = () => {
     state:"",
     PRIVATE: "",
     StepFiveLongContest: "",
+    state:"Pending",
   });
   const [formStep, setFormStep] = React.useState(0);
   const completeFormstep = () => {

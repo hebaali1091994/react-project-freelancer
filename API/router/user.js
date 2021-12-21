@@ -41,7 +41,7 @@ try{
 }
 })
 //get one user
-router.get('/one/:id',verifyTokenAndAdmin, async (req,res)=>{
+router.get('/one/:id', async (req,res)=>{
  try{
     const Admin = await User.findById(req.params.id);
 
