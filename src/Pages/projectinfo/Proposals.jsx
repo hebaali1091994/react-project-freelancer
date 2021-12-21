@@ -38,8 +38,9 @@ export default function Proposals() {
             <div className="col-md-8 mt-5">
 
               <div className="row">
+                
                 {freelancerdata.map((f) => (
-                  <SingleProposer key={f.id} f={f} Freelancer={Freelancer} />
+                  <SingleProposer  key={f.id} f={f} Freelancer={Freelancer} />
                 ))}
 
 

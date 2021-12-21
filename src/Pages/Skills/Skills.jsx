@@ -22,7 +22,6 @@ const Skills = () => {
   //   fetchSkills();
   // },[]);
   // console.log(Skills);
- 
 
   const [formStep, setFormStep] = React.useState(0);
 
@@ -80,12 +79,12 @@ if (formStep===5){
         <div class="row">
             <div classname="col-md-12">
             <form className="col-sm-12 col-md-12">
-          {formStep === 0 && (<Tell Skills={Skills}  Data={skill} setData={setData}/>)}
-          {formStep === 1 && <Profile Data={skill} setData={setData}/>}
-          {formStep === 2 && <About Profile Data={skill} setData={setData} />}
-          {formStep === 3 && <Whatlang Data={skill} setData={setData} />}
-          {formStep === 4 && (<Located Data={skill} setData={setData} />)}
-          {formStep === 5 && <Verification Data={skill} setData={setData} />}
+          {formStep === 0 && (<Tell   skill={skill} setData={setData}/>)}
+          {formStep === 1 && <Profile skill={skill} setData={setData}/>}
+          {formStep === 2 && <About  skill={skill} setData={setData} />}
+          {formStep === 3 && <Whatlang skill={skill} setData={setData} />}
+          {formStep === 4 && (<Located skill={skill} setData={setData} />)}
+          {formStep === 5 && <Verification skill={skill} setData={setData} />}
           <div className="d-flex justify-content-between mt-5">
             {renderButton()}
           </div>
