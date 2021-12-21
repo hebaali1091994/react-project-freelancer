@@ -22,18 +22,11 @@ const SingleProject = ({ project }) => {
                             <p className='postDesc'>{project.Tellus}</p>
                             <div class="card-text rating-person link ">
                                 <div class="row">
-<<<<<<< HEAD
-                                <div class="fix-price col-md-4"><i class="fas fa-tv link"></i>{project.pay}</div>
-                                <div class="fix-price col-md-4"><i class="fas fa-building link"></i> No Bird</div>
-                                <div class="col-md-4">
-                                <i class="fas fa-user"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></div>
-=======
                                     <div class="fix-price col-md-4"><i class="fas fa-tv link"></i> {project.pay}</div>
                                     <div class="fix-price col-md-4"><i class="fas fa-building link"></i>{project.postproject}</div>
                                     <div class="col-md-4">
                                         <i class="fas fa-user"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></div>
                                 </div>
->>>>>>> ee13e0c6834bc3f686264a31a6543485965257b5
                             </div>
                         </div>
                         <div class="col-md-1"></div>

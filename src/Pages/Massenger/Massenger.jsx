@@ -1,12 +1,12 @@
 import { useContext, useEffect, useRef, useState } from "react";
 import Conversations from "../../Components/conversations/Conversations";
-import Header from "../../Components/Header";
 import Message from "../../Components/message/Message";
 import "./messenger.css";
 import { Context } from "../../context/Context";
 import axios from "axios";
 import livechat from "../../public/livechat.svg";
 import { io } from "socket.io-client";
+import Header from "../../Components/header/Header";
 
 const Massenger = () => {
   const [conversations, setConversations] = useState([]);
@@ -89,7 +89,7 @@ const Massenger = () => {
     socket.current.emit("sendMessage", {
       senderId: user._id,
       receiverId,
-      Text: newMessage,
+      text: newMessage,
     });
 
     try {
@@ -112,6 +112,7 @@ const Massenger = () => {
         <div className="row">
           <div className="massgNav col-md-12">
             <Header />
+            
           </div>
           {/* ---------------------------------------------------start-chatMenu------------------------------------------------------ */}
           <div className="chatMenu col-md-3 d-flex flex-column mt-3">

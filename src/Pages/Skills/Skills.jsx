@@ -15,7 +15,6 @@ const Skills = () => {
 
   // useEffect(() => {
     
-<<<<<<< HEAD
   //   const fetchSkills = async ()=>{
   //     const res = await axios.get("/Category/");
   //     setSkills(res.data)
@@ -24,16 +23,6 @@ const Skills = () => {
   // },[]);
   // console.log(Skills);
 
-=======
-    const fetchSkills = async ()=>{
-      const res = await axios.get("/Category/");
-      setSkills(res.data)
-    }
-    fetchSkills();
-  },[]);
-  console.log(Skills);
- 
->>>>>>> ee13e0c6834bc3f686264a31a6543485965257b5
 
   const [formStep, setFormStep] = React.useState(0);
 
@@ -91,21 +80,12 @@ if (formStep===5){
         <div class="row">
             <div classname="col-md-12">
             <form className="col-sm-12 col-md-12">
-<<<<<<< HEAD
           {formStep === 0 && (<Tell   skill={skill} setData={setData}/>)}
           {formStep === 1 && <Profile skill={skill} setData={setData}/>}
           {formStep === 2 && <About  skill={skill} setData={setData} />}
           {formStep === 3 && <Whatlang skill={skill} setData={setData} />}
           {formStep === 4 && (<Located skill={skill} setData={setData} />)}
           {formStep === 5 && <Verification skill={skill} setData={setData} />}
-=======
-          {formStep === 0 && (<Tell Skills={Skills}  Data={skill} setData={setData}/>)}
-          {formStep === 1 && <Profile Data={skill} setData={setData}/>}
-          {formStep === 2 && <About Profile Data={skill} setData={setData} />}
-          {formStep === 3 && <Whatlang Data={skill} setData={setData} />}
-          {formStep === 4 && (<Located Data={skill} setData={setData} />)}
-          {formStep === 5 && <Verification Data={skill} setData={setData} />}
->>>>>>> ee13e0c6834bc3f686264a31a6543485965257b5
           <div className="d-flex justify-content-between mt-5">
             {renderButton()}
           </div>
