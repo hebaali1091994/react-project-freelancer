@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useContext, useState } from 'react';
 import { Context } from "../../context/Context";
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 
 const SingleProposer = ({ f, Freelancer }) => {
@@ -23,6 +23,8 @@ const SingleProposer = ({ f, Freelancer }) => {
         });
         setProject(userdata.data)
     }
+    // getDataProject();
+    console.log(Project);
     const getUserData = async () => {
         const userdata = await axios.get(`/users/one/${f.freelanceid}`, {
             headers: {
@@ -32,6 +34,21 @@ const SingleProposer = ({ f, Freelancer }) => {
         setUserdata(userdata.data)
     }
     getUserData();
+
+const handlechat=async ()=>{
+    const start = {
+     senderId:"61b9dc948241174bd6f310c2",
+    reciverId:"61c06f86dd92c8b10ca12316"
+    };
+    try {
+     await axios.post("/conversion/", start);
+
+      } catch (err) {
+        console.log(err);
+      };
+<Link className="btn postproject m-1" exact="true" to="/Massenger"></Link>
+}
+
     return (
 
         <div className='singlePro bg-white mb-3'>
@@ -62,8 +79,8 @@ const SingleProposer = ({ f, Freelancer }) => {
             </div>
             <div className="d-flex justify-content-end mb-3">
                 <button type="button" class="btn btn-primary mr-3">Hire</button>
-                <button type="button" class="btn btn-success">Chat</button>
-
+               <Link to="/Massenger"> <button type="button" class="btn btn-success"  onClick={handlechat}>Chat</button>
+               </Link>
             </div>
         </div>
     )
