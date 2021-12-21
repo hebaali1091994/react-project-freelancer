@@ -12,19 +12,19 @@ const ProjectSchema = mongoose.Schema(
     pay: { type: String, default: null },
     freelances:[
       {
-        freelanceid: { type: String },
+        freelanceid: { type: String},
         deccription:{type:String},
         date:{type:Date}
-      }
+      },
     ],
     budget: { type: String, default: null },
     CurrencyCode: { type: String, default: null },
     CurrencySymbol: { type: String, default: null },
     step_Four_Currency_code: { type: String, default: null },
-    Minimum_Per_hour: { type: String, default: null },
-    Maximum_Per_hour: { type: String, default: null },
-    Maximum_fix_price: { type: String, default: null },
-    Minimum_fix_price: { type: String, default: null },
+    Minimum_Per_hour: { type: Number, default: null },
+    Maximum_Per_hour: { type: Number, default: null },
+    Maximum_fix_price: { type: Number, default: null },
+    Minimum_fix_price: { type: Number, default: null },
     Day: { type: String, default: null },
     type_of_project: { type: String, default: null },
     GUARANTEED: { type: String, default: null },
