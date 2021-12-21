@@ -5,6 +5,9 @@
 	 height: 100vh;
 	 font-family: Montserrat;
 }
+.bg-data{
+	background-color: #f0f0f0;
+}
  .wrap {
 	 position: absolute;
 	 top: 50%;
@@ -19,4 +22,5 @@
  .bounceball {
 	 position: relative;
 }
+
  

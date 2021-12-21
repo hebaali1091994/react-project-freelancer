@@ -707,7 +707,7 @@ const DisplayProject = () => {
                         <SingleProject key={idx} project={item} />
                       ))
                     )}
-                    <Nav2 project={project} />
+                    <Nav2 className="Nav-project" project={project} />
                   </div>
                 </div>
               </div>

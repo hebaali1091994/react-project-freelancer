@@ -6,7 +6,6 @@ import { useNavigate, useLocation } from 'react-router-dom';
 
 const SingleProject = ({ project }) => {
     const history = useNavigate();
-    console.log(project);
 
     return (
 
@@ -16,7 +15,7 @@ const SingleProject = ({ project }) => {
                 <Link className="link" to={`/DisplayProject/Details/${project._id}`}>
                     <div class="row">
 
-                        <div class="col-md-8">
+                        <div class="col-md-8 mt-5">
                             <h5 class="card-title text-dark text-none link postTitle">{project.ChooseName}   </h5>
 
                             <p className='postDesc'>{project.Tellus}</p>
