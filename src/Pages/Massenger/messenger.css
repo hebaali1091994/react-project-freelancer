@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.messenger{
+    height:calc(100vh-70px);
+    background-color:#f0f0f0;
+}
+.chatMenu{
+    border-right: 3px solid black;
+    height: 85vh;
+    overflow-y: scroll;
+}
+.chatBoxBottom {
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .chatBoxWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .chatBoxTop {
+    height: 70vh;
+    overflow-y: scroll;
+    padding-right: 10px;
+  }
+  
+  .chatMessageInput {
+    width: 80%;
+    height: 90px;
+    padding: 10px;
+  }
+  .chatSubmitButton {
+    width: 70px;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #2fb4fe;
+    color: white;
+  }
+  .chatWelMassage{
+    margin-top: 15%;
+  }

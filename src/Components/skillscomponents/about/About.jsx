@@ -1,6 +1,6 @@
 import React from 'react'
 import aboutme from '../../../public/aboutme.svg'
-const About = () => {
+const About = ({skill,setData}) => {
     return (
         <div class="row">
             <div class="col-md-6 m-auto d-flex flex-column">
@@ -15,13 +15,21 @@ const About = () => {
                 {/* <!---------------------------input--------------------------------------> */}
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label w-100">write a one line description about yourself.
-                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="e.g Data scientist"/>
+                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="e.g Data scientist"
+                              name="description"
+                              value={skill.description}
+                              onChange={(event)=>setData({...skill,description:event.target.value})}
+                        />
                     </label>
                       </div>
                 {/* <!---------------------------textarea --------------------------------------> */}
                     <div class="mb-3">
                         <label for="exampleFormControlTextarea1" class="form-label fs-3 w-100"><b>Describe yourself</b>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Describe your top skills, strengths,and experience,provide more detail on the service you offer, things you're interested in working on, and what you like to do "></textarea>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Describe your top skills, strengths,and experience,provide more detail on the service you offer, things you're interested in working on, and what you like to do "
+                         name="DescribeU"
+                         value={skill.DescribeU}
+                         onChange={(event)=>setData({...skill,DescribeU:event.target.value})}
+                        ></textarea>
                     </label>
                       </div>
                 </div>

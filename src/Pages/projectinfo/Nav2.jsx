@@ -84,6 +84,14 @@ export default function Nav2({ project }) {
             </div>
           </nav>
 
+<<<<<<< HEAD
+</div>
+<div className='status my-5'>
+<span >{Project.state}</span>
+</div>
+</div>
+)
+=======
         </div>
 
         <div className='status my-5'>
@@ -92,4 +100,5 @@ export default function Nav2({ project }) {
       </div>
     </div>
   )
+>>>>>>> ee13e0c6834bc3f686264a31a6543485965257b5
 }

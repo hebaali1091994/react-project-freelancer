@@ -1,0 +1,11 @@
+.conversation{
+    cursor: pointer;
+}
+.conversation:hover{
+    background-color:gainsboro
+}
+.conversationImg{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
