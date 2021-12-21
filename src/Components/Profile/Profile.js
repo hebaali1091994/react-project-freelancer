@@ -5,19 +5,8 @@ export default function Profile(){
         <div class="container">
         <div class="row">
         <div className="show">
-        <aside id="asideleft" class="col-md-3">
-                <div class="btn-group-vertical w-100">
-                <Link to="/Profile" class="btn text-primary text-start">Profile</Link>
-                <Link to="/Email" class="btn text-primary text-start">Email & Notifications</Link>
-                    <Link to="/Membership" class="btn text-primary text-start">Membership</Link>
-                    <Link to="/Password" class="btn text-primary text-start">Password</Link>
-                    <Link to="/Payment" class="btn text-primary text-start">Payment & Financial</Link>
-                    <Link to="/AccountSecurity" class="btn text-primary text-start">Account Security</Link>
-                    <Link  to="/Trust" class="btn text-primary text-start">Trust & Verification</Link>
-                    <Link to="/Account" class="btn btn-outline-primary text-start active">Account</Link>
-                </div>
-            </aside>
-            <aside id="asideright" class="col-md-9 shadow-lg p-3 mb-5 bg-body rounded">
+
+            <aside id="asideright" class="col-md-12 shadow-lg p-3 mb-5 bg-body rounded">
                 <div class="container">
                     <form class="row g-3 d-flex flex-column">
                         <p class="fs-1"><b>Profile Details</b></p>

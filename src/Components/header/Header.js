@@ -37,7 +37,7 @@ export default function Header() {
        <div className="container">
         <nav className="navbar navbar-expand-lg navbar-light">
           <div className="container-fluid p-0">
-            <Link to="/Dashbaord"><img src={Freelancerlogo}  className="image-w" /></Link>
+            <Link to="/"><img src={Freelancerlogo}  className="image-w" /></Link>
             <button
               className="navbar-toggler"
               type="button"

@@ -24,7 +24,6 @@ const DisplayProject = () => {
   useEffect(() => {
     axios.get(`http://localhost:5000/Project/all`).then((response) => {
       setAPIData(response.data);
-      console.log(response.data);
     });
   }, []);
 
@@ -401,7 +400,7 @@ settypeProject(res,typeProject)
               </div>
             </div>
           </div>
-        </div>
+        </div >
 
         <div
           className="tab-pane fade p-3"
@@ -454,7 +453,6 @@ settypeProject(res,typeProject)
                         type="text"
                         className="form-control"
                         value={min_value}
-                        type="text"
                         onChange={(e) => setMinValue(e.target.value)}
                         aria-label="Amount (to the nearest dollar)"
                       />
@@ -722,11 +720,11 @@ settypeProject(res,typeProject)
             </div>
           </div>
         </div>
-      </div>
+      </div >
       <div className="mt-3">
         <Footer />
       </div>
-    </div>
+    </div >
   );
 };
 

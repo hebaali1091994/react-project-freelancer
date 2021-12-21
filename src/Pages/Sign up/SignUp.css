@@ -1,6 +1,9 @@
 *, :after, :before {
   box-sizing: border-box;
 }
+.sign-up-logo{
+  min-width: 270px;
+}
 /* .bg-signup{
 
     width: 100%;

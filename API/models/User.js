@@ -1,11 +1,11 @@
 const mongoose = require("mongoose");
 const skills = require("./Skill");
 const notification = mongoose.Schema({
-  
+
   body: { type: String },
   link: { type: String },
   date: { type: Date },
-  sj:{type:Boolean, default:false}
+  sj: { type: Boolean, default: false }
 
 })
 const UserSchema = mongoose.Schema({
@@ -33,7 +33,8 @@ const UserSchema = mongoose.Schema({
   skills: [{ type: mongoose.Schema.Types.ObjectId }],
   noti: [
     notification
-  ]
+  ],
+  bids: { type: Number, default: 100 }
 });
 
 

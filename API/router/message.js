@@ -17,9 +17,9 @@ router.post("/", async (req, res) => {
 router.get("/:conversionId", async (req, res) => {
   try {
 
-    const message=await Message.find({
+    const message = await Message.find({
 
-        conversionId:req.params.conversionId
+      conversionId: req.params.conversionId
     })
     res.status(200).json(message)
   } catch (err) {

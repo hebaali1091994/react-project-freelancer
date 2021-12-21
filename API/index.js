@@ -15,20 +15,30 @@ const Category = require("./router/Category");
 const conversion = require("./router/conversion");
 const message = require("./router/message");
 const database = require("./database");
+<<<<<<< HEAD
 const cors=require("cors")
 server = require('http').Server(app),
 io = require('socket.io')(server);
 const { Socket } = require("socket.io");
+=======
+const multer = require("multer");
+const path = require('path');
+
+const cors = require("cors")
+// server = require('http').Server(app),
+// io = require('socket.io')(server);
+// const { Socket } = require("socket.io");
+>>>>>>> 5ea59dcb5e1950c483c8a6241670ac085827a2d3
 app.use(cors({}))
 app.use(express.json());
 app.get("/api/test", () => {
   console.log("Test Is Succefual");
 });
-  
- 
+
+
 
 // io.on("connection", (Socket) => 
-  
+
 // {
 //   Socket.on("getDoc", docId => {
 //     safeJoin(docId);
@@ -46,6 +56,31 @@ app.get("/api/test", () => {
 //     removeuser(Socket.id)
 //   });
 // });
+
+
+
+app.use("/images", express.static(path.join(__dirname, "/images")))
+
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, "images");
+  },
+  filename: (req, file, cb) => {
+    cb(null, file.originalname);
+  },
+});
+// MONGO_URL = mongoose.connect("mongodb+srv://freelance:12345@freelance.mhgq8.mongodb.net/freelance?retryWrites=true&w=majority")"
+
+const upload = multer({ storage: storage });
+app.post("/api/upload", upload.single("file"), (req, res) => {
+  res.status(200).json("File Has Been Uploaded");
+});
+
+
+
+
+
+
 app.use("/users", users);
 app.use("/auth", auth);
 app.use("/Products", Product);

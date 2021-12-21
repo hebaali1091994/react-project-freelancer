@@ -2,20 +2,37 @@ const mongoose = require("mongoose");
 const User = require("./User");
 const ProjectSchema = mongoose.Schema(
   {
-  
-    ChooseName: {type: String, minLength: 10 },
-    userid: { type: mongoose.Schema.Types.ObjectId,ref:'User'},
+
+    ChooseName: { type: String, minLength: 10 },
+    userid: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
     Tellus: { type: String },
     state: { type: String, default: "pending" },
     uploadimg: { type: String },
     postproject: { type: String },
     pay: { type: String, default: null },
-    freelances:[
+    freelances: [
       {
+<<<<<<< HEAD
         freelanceid: { type: String},
         deccription:{type:String},
         date:{type:Date}
       },
+=======
+        freelanceid: { type: String, default: null },
+        deccription: { type: String, default: null },
+        date: { type: Date },
+        BidAmount: { type: String },
+        numberofDay: { type: String },
+      }
+    ],
+    millstobepayment: [
+      {
+        paymentmilestone: { type: String },
+        datemileStone: { type: String },
+        date: { type: Date },
+
+      }
+>>>>>>> 5ea59dcb5e1950c483c8a6241670ac085827a2d3
     ],
     budget: { type: String, default: null },
     CurrencyCode: { type: String, default: null },
