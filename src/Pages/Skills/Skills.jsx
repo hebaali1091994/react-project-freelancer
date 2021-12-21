@@ -23,7 +23,6 @@ const Skills = () => {
   // },[]);
   // console.log(Skills);
 
-
   const [formStep, setFormStep] = React.useState(0);
 
   const completeFormstep = () => {
@@ -97,6 +96,6 @@ if (formStep===5){
         </div>
         </>
     )
-}
 
+    }
 export default Skills

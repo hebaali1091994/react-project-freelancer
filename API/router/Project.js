@@ -47,25 +47,6 @@ router.post("/create/:id", verifyToken, async (req, res) => {
 
 router.post("/apply/:id", verifyToken, async (req, res) => {
   try {
-<<<<<<< HEAD
-    const porposal = {
-      freelanceid: req.body.freelanceid,
-      deccription: req.body.deccription,
-      date: new Date(),
-    };
-
-    const applayProject = await Project.findByIdAndUpdate(
-      req.params.id,
-      { $push: { freelances: porposal } },
-      { new: true }
-    );
-    const newporposal = await applayProject.save();
-    res.status(200).json(newporposal);
-  } catch (err) {
-    res.status(401).json(err);
-  }
-});
-=======
     const porposal =
     {
       freelanceid: req.body.freelanceid,
@@ -102,7 +83,6 @@ router.post("/apply/:id", verifyToken, async (req, res) => {
 
 
 })
->>>>>>> aecd7b5ac346dec0b92aaf479e9138dd8f63e4e8
 
 //update project
 
@@ -155,11 +135,6 @@ router.delete("/deleteproject/:id", async (req, res) => {
 
 router.post("/filter", async (req, res) => {
   try {
-<<<<<<< HEAD
-    const allproject = await Project.find({
-      Minimum_Per_hour: req.body.filtername,
-    });
-=======
 
     const allproject = await Project.find(
       {
@@ -167,7 +142,6 @@ router.post("/filter", async (req, res) => {
 
       }
     );
->>>>>>> aecd7b5ac346dec0b92aaf479e9138dd8f63e4e8
     res.status(200).json(allproject);
   } catch (error) {
     res.status(401).json(error);
