@@ -1,0 +1,17 @@
+.Project-btn .btn {
+  font-size: 18px;
+}
+
+.Project-btn .btn:hover {
+  border-bottom: 1px solid blue;
+  color: blue;
+}
+
+.views {
+  margin-left: 40px;
+}
+
+.project-box {
+  min-height: 300px;
+}
+/*# sourceMappingURL=Project&Contests.css.map */

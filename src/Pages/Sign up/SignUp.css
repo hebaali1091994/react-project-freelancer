@@ -1,0 +1,200 @@
+*, :after, :before {
+  box-sizing: border-box;
+}
+.sign-up-logo{
+  min-width: 270px;
+}
+/* .bg-signup{
+
+    width: 100%;
+    height: 100vh;
+    background-color:#f0f0f0 ;
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+}
+ */
+
+.fluid 
+{
+    justify-content: center;
+    text-align: center;
+    width: 400px;
+    height: 640px;
+    background-color: white;
+    box-shadow: 0 0 4px 0 #00000014, 0 2px 4px 0 #0000001f;
+    display:flex;
+}
+
+#img {
+  padding: 32px 32px 0;
+}
+
+h5 {
+  margin-bottom: 40px;
+ 
+}
+
+.btu, .submit {
+  margin: 0 20px 24px 20px;
+  background-color: #4267B2;
+  border: 1px solid;
+  border-radius: 0;
+}
+.btu i, .submit i {
+  color: #fdf7f7;
+  width: 30px;
+}
+.btu .btn, .submit .btn {
+  color: white;
+}
+.btu .btn a, .submit .btn a {
+  text-decoration: none;
+  color: white;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  
+  margin: 0 20px 24px 20px;
+}
+
+/* To show the lines on right 
+and left sides of the text */
+.divider::after,
+.divider::before {
+  content: "";
+  border: 1px solid #dedede;
+  flex: 1 1 auto;
+}
+
+/* Space on left and right sides of text */
+.divider:not(:empty)::before {
+  margin-right: 0.25em;
+}
+
+.divider:not(:empty)::after {
+  margin-left: 0.25em;
+}
+
+.inpute {
+  margin: 0 20px 24px 20px;
+  border: 1px ridge;
+}
+
+.form-checksignup {
+  display: flex;
+  width: 80%;
+  margin: 0 10%;
+}
+
+
+
+
+
+#flexCheckDefault {
+  border: 1px solid;
+  border-radius: 0;
+}
+
+.submit {
+  margin: 0 20px 24px 20px;
+  margin-bottom: 16px;
+  margin-top: 16px;
+  color: white;
+}
+.form-check-label{
+
+    font-size: 13px;
+    line-height: 1.4;
+    font-weight: 400;
+    text-align: left;
+    margin-left: 10px;
+}
+.p {
+  margin-bottom: 12px;
+  font-size: 13px;
+  line-height: 1.4;
+  font-weight: 400;
+  text-align: center;
+  margin-left: 10px;
+
+}
+
+input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  width: 100%;
+  border: 1px solid ;
+  margin: 0;
+ line-height: 2.4vh;
+  box-sizing: border-box;
+  
+}
+
+
+
+input:focus:invalid {
+  outline: none;
+}
+
+/* This is the style of our error messages */
+.error {
+  width: 100%;
+  padding: 0;
+ 
+  color: white;
+  background-color: #900;
+  border-radius: 0 0 5px 5px;
+  box-sizing: border-box;
+}
+
+.login_form #email_error,
+.login_form #pass_error {
+  margin-top: 5px;
+  width: 345px;
+ 
+  color: #C62828;
+  background: rgba(255, 0, 0, 0.1);
+  text-align: center;
+  padding: 5px 8px;
+  border-radius: 3px;
+  border: 1px solid #EF9A9A;
+  display: none;
+}/*# sourceMappingURL=style.css.map */
+
+
+.work, .hire {
+    border: outset;
+    text-align: justify;
+    margin-left: 30px;
+    width: 340px;
+    margin: 20px 40px 15px 40px;
+    height: 90px;
+    padding-left: 40px;
+    padding-top: 20px;
+    display: flex;
+  }
+  .work i, .hire i {
+    margin: 10px;
+    padding-top: 13px;
+    padding-left: 20px;
+    font-size: x-large;
+    color: #000;
+  }
+  
+  .hire {
+    margin-top: 15px;
+  }
+  
+  .account {
+    margin-top: 20px;
+    font-weight: bold;
+  }
+  
+  .work:hover, .hire:hover {
+    box-shadow: 5px 10px #888888;
+  }/*# sourceMappingURL=account.css.map */

@@ -1,0 +1,17 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.first-section {
+  background-image: -webkit-gradient(linear, left top, right top, from(#0f53a5), to(#0375dd));
+  background-image: linear-gradient(to right, #0f53a5, #0375dd);
+  height: 72vh;
+}
+
+.first-section .svgg {
+  display: none;
+}
+/*# sourceMappingURL=Postoroject.css.map */

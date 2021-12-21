@@ -1,0 +1,60 @@
+.parent{
+    height: 1500px;
+    background-color: rgb(240,240,240)  !important;
+    margin: 0;
+ }
+.hhrr{
+    height: .7px;
+}
+.brower{
+    width: 100%;
+    height: 300px;
+}
+.btnn{
+    width: 100%;
+    height: 95%;
+    margin: auto;
+    border: 1px dashed #bec0c2;
+}
+.broower{
+    border: none;
+    
+}
+input[type="file"] {
+    display: none;
+}
+.custom-file-upload {
+    border: none;
+    display: inline-block;
+    cursor: pointer;
+    color: rgb(107,135,240);
+}
+.inner{
+    margin-bottom: 10px;
+}
+.footer-list-item-icon{
+    color: rgb(190,192,194);
+    padding: 6px;
+    margin-right: 4px;
+
+}
+.footer-list-item span{
+    line-height: 17px;
+    color: #666;
+    text-align: right;
+}
+
+.inner button{
+  
+    border: transparent !important;
+    border-bottom: .3px solid #ccc !important;
+    padding: 6px;
+}
+.filter{
+    border-bottom:1px solid #ccc ;
+}
+.hhhh{
+   
+    outline: transparent !important;
+}
+

@@ -1,0 +1,40 @@
+.Refer-friend {
+    background: url("https://i.ibb.co/R4VZrpX/svgexport-1.png");
+    background-position: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    max-height: 255px;
+  }
+
+
+  .button-style {
+    font-size: 14px;
+    line-height: 1.43;
+    padding: 6px 13px;
+    min-width: 200px;
+  }
+  
+  .dark-blue {
+    background: #164188;
+    width: 100%;
+    height: 150px;
+    color: #f4f4f4;
+  }
+  
+  .gray-bk {
+    background: #f0f0f0;
+  }
+  
+  .Quesion-style {
+    font-weight: 800;
+    font-size: 22px;
+  }
+  
+  .polls-info {
+    min-height: 280px;
+  }
+  .pro{
+                
+  }
+  /*# sourceMappingURL=Dashborad.css.map */

@@ -1,0 +1,71 @@
+.left-ser {
+  border-right: 1px solid rgba(128, 128, 128, 0.63);
+  height: 800px;
+}
+
+.search-input {
+  padding-right: 70px;
+}
+
+form input {
+  padding-right: 70px;
+}
+
+.menu {
+  border-bottom: 1px solid rgba(128, 128, 128, 0.486);
+}
+
+.menu ul {
+  list-style-type: none;
+}
+
+.menu ul a {
+  text-decoration: none;
+}
+
+.menu ul a li {
+  display: inline;
+  font-size: 13px;
+  font-weight: 400;
+  color: #139ff0;
+  line-height: 15.6px;
+  padding-right: 10px;
+}
+
+.menu ul a:hover {
+  border-bottom: 1px solid #139ff0;
+}
+
+.text-search {
+  text-align: center;
+}
+
+.right-ser {
+  height: 100%;
+  position: relative;
+}
+
+.right-ser .content {
+  margin-top: 276px;
+  margin-left: 102px;
+}
+
+.right-ser .content svg {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+}
+
+.right-ser .content h5 {
+  text-align: center;
+}
+
+.right-ser .content p {
+  text-align: center;
+}
+
+.right-ser .content p a {
+  color: #139ff0;
+  text-decoration: none;
+}
+/*# sourceMappingURL=style.css.map */

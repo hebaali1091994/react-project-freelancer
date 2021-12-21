@@ -1,0 +1,125 @@
+*{
+    box-sizing: border-box;
+ 
+ 
+}
+@media(min-width:1200px){
+    .nav-tabs{
+          margin-top: -65px;
+    }
+}
+p {
+    font-size: 20px;
+    line-height: 1.4;
+  }
+.abc{
+    border: 1px solid #fff;
+    color: #fff;
+    border-width: 2px;
+    padding: 12px 21px;
+    cursor: pointer;
+    text-decoration: none;
+   
+    margin-left: 20px;
+}
+
+.img-size {
+    width: 85%;
+  }
+  
+  .active {
+    z-index: 999;
+  }
+  
+  .imgbig {
+    background-image: url('https://developers.freelancer.com/img/API_LANDING_HERO_BG.jpg');
+    background-size: cover;
+    height: 600px;
+  }
+  
+  .imgbig{
+    font-weight: 700;
+    color: #f7f7f7;
+  }
+  
+  .imgbig .header-title {
+    font-size: 48px;
+    line-height: 1.17;
+    margin-top: 23%;
+    text-align: left;
+  }
+  
+  .imgbig .header-paragraph {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.4;
+  }
+  .img2{
+      
+    vertical-align: baseline;
+    text-align: left;
+ 
+    width: 488px;
+    margin-top: 40%;;
+  }
+.sec21{
+    margin: 25px 15px 0px 15px;  
+}
+.sec3{
+    margin-top: 30px;
+    text-align: center;
+}
+h6{
+    text-align: center;
+}
+.imgsec3{
+    width: 90%;
+}
+.sec4{
+    background: url('https://developers.freelancer.com/img/API_LANDING_SINGULARITY_BG.jpg') top no-repeat;
+    background-size: cover;
+    color: #fff;
+     border-bottom: 1px solid #dedede;
+    padding: 72px 0
+}
+.img4{
+    width: 80%;
+}
+.p4{
+    margin-right: 48px;
+}
+.sec5{
+    justify-content: center;
+    margin-top: 40px;
+}
+.part1-sec5{
+
+    margin-left: 70px;
+}
+.imgsec5{
+    width: 17%;
+}
+.h6sec5{
+    margin-left: -10px;
+    margin-top: -20px;
+}
+ul.demo li{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+.part2-2{
+    margin-right: 40px
+}
+.sec7 {
+    background-image: url('https://developers.freelancer.com/img/API_LANDING_CASESTUDY_BG.jpg');
+    background-size: cover;
+    height: 500px;
+
+  }
+  .imgsec7{
+    vertical-align: baseline;
+    text-align: left;
+    width: 488px;
+  
+  }
