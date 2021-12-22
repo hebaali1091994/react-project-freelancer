@@ -36,15 +36,12 @@ import Setting from './Pages/Setting/Setting';
 import SingleFreelancer from "./Components/Single Freelancer/SingleFreelancer";
 // import Details from './Pages/Test/Details';
 import Freelancerpage from './Pages/FreelancerPage/Freelancerpage';
-<<<<<<< HEAD
-import MyProfile from "./Pages/proflle/MyProfile";
-=======
 import NoFoundpage from './Pages/NoFoundPage/NoFoundpage';
 import Contract from './Pages/Contract/Contract';
 import Contactus from './Pages/Contactus/Contactus'
 import Enterprise from './Pages/enterprise/Enterprise';
 import Documentation from './Pages/Documentation/Documentation'
->>>>>>> 860a5f097337c5fef03246446ba8041a7b6c1ddd
+import MyProfile from "./Pages/proflle/MyProfile";
 
 function App() {
   const [socket, setSocket] = useState(null);
@@ -94,16 +91,12 @@ function App() {
           <Route path='/DisplayProject/Details/:id' element={<DetailsData />} />
           <Route path='/DisplayProject/Files/:id' element={<Files />} />
           <Route path='/Skills' element={<Skills />} />
-<<<<<<< HEAD
-          <Route path='/MyProfile' element={< MyProfile />} />
-
-         
-=======
           <Route path='/Contactus' element={<Contactus />} />
           <Route path='/Enterprise' element={<Enterprise />} />
           <Route path='/Documentation' element={<Documentation />} />
+          <Route path='/MyProfile' element={<MyProfile/>} />
+      
           <Route path='**' element={<NoFoundpage />} />
->>>>>>> 860a5f097337c5fef03246446ba8041a7b6c1ddd
 
 
         </Routes>

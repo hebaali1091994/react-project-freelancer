@@ -49,17 +49,10 @@ export default function Proposals() {
             <div className="col-md-8 mt-5">
 
               <div className="row">
-<<<<<<< HEAD
-                
-                {/* {freelancerdata.map((f) => (
-                  <SingleProposer  key={f.id} f={f} Freelancer={Freelancer} />
-                ))} */}
-=======
                 {/* <Propser Freelancer={Freelancer} /> */}
                 {Freelancer.freelances ? Freelancer.freelances.map((f, Freelancer) => (
                   <SingleProposer f={f} Freelancer={Freelancer} />
                 )) : <p>Wait For Data</p>}
->>>>>>> 860a5f097337c5fef03246446ba8041a7b6c1ddd
 
 
 
