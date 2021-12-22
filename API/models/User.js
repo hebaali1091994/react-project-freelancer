@@ -30,7 +30,18 @@ const UserSchema = mongoose.Schema({
   zipCode: { type: String },
   Country: { type: String },
   projectid: [{ type: mongoose.Schema.Types.ObjectId }],
-  skills: [{ type: mongoose.Schema.Types.ObjectId }],
+  skills: [
+    {
+      img:{type:String},
+    first:{type:String},
+    Last: {type:String},
+    description:{type:String},
+    DescribeU: {type:String},
+    DataS: {type:String},
+    birht: {type:Date},
+    Address: {type:String}
+
+    }],
   noti: [
     notification
   ],

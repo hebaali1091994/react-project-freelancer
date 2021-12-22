@@ -53,6 +53,45 @@ router.get('/one/:id', verifyTokenAndAuthorization, async (req, res) => {
   }
 })
 
+//add skills using id of user
+router.post("/addSkills/:id", verifyToken, async (req, res) => {
+  try {
+    const skill =
+    {
+      img:req.body.img,
+      first:req.body.first,
+      Last: req.body.Last,
+      description:req.body.description,
+      DescribeU: req.body.DescribeU,
+      DataS: req.body.DataS,
+      birht: new Date(),
+      Address: req.body.Address
+  
+
+    }
+
+    const addSkills = await User.findByIdAndUpdate
+      (
+        req.params.id,
+        { $push: { skills: skill } },
+        { new: true }
+      );
+    const newSkills = await addSkills.save();
+    res.status(200).json(newSkills);
+
+  } catch (err) {
+    res.status(401).json(err);
+  }
+})
+
+//edite skills
+
+
+
+//delte skills
+
+
+
 
 //get all users
 router.get('/', verifyTokenAndAdmin, async (req, res) => {
