@@ -8,7 +8,8 @@ const SingleProposer = ({ f, Freelancer }) => {
 
     const [DataOfProject, setDataOfProject] = useState({})
     const [Userdata, setUserdata] = useState({})
-    const [ProjectMaster, setProjectMaster] = useState({})
+    const [FreelancerData, setFreelancerData] = useState({})
+    const [ContarctData, setContarctData] = useState({})
 
     const location = useLocation();
 
@@ -24,36 +25,24 @@ const SingleProposer = ({ f, Freelancer }) => {
             setDataOfProject(userdata.data)
         }
         const getUserData = async () => {
-            const userdata = await axios.get(`/users/one/${DataOfProject.userid}`, {
+            const userdata = await axios.get(`/users/one/${f.freelanceid}`, {
                 headers: {
                     token: user.accesToken
                 }
             });
-            setProjectMaster(userdata.data)
+            setFreelancerData(userdata.data)
         }
+
+
         getDataProject()
-        getUserData();
-    }, [path, DataOfProject]);
+        getUserData()
+    }, [path]);
 
 
-    console.log("Freelancer", f._id);
-    console.log(ProjectMaster);
+
 
     console.log(DataOfProject);
-
-    // useEffect(() => {
-    //     const getUserData = async () => {
-    //         const userdata = await axios.get(`/users/one/${ProjectMaster.freelanceid}`, {
-    //             headers: {
-    //                 token: user.accesToken
-    //             }
-    //         });
-    //         setUserdata(userdata.data)
-    //     }
-    //     getUserData();
-
-    // }, [])
-    // console.log(Userdata);
+    console.log(f);
 
     const handlechat = async () => {
         const start = {
@@ -69,6 +58,34 @@ const SingleProposer = ({ f, Freelancer }) => {
         <Link className="btn postproject m-1" exact="true" to="/Massenger"></Link>
     }
 
+    const HandleHire = async (e) => {
+        e.preventDefault()
+        try {
+            const res = await axios.post(`/Project/apply/${path}`, {
+                ContractName: user.ChooseName,
+                description: user.Tellus,
+                budget: f.BidAmount,
+                freelanceId: f.freelanceid,
+                cilentId: user._id,
+                projectId: DataOfProject._id,
+                feedbackfreelancer: "No Feedback Received",
+                feedbackcilent: "No Feedback Received",
+                reviewfreelancer: "No Review Received",
+                reviewclient: "No Review Received",
+                state: "Hired"
+            }, {
+                headers: {
+                    token: user.accesToken
+                }
+            });
+
+
+            res.data && window.location.replace(`/Contract/${path}`);
+        } catch (error) {
+        }
+    }
+
+
     return (
 
         <div className='singlePro bg-white mb-3'>
@@ -78,7 +95,7 @@ const SingleProposer = ({ f, Freelancer }) => {
                         <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" class="img-fluid" alt="Responsive image" />
                     </div>
                     <div className="center">
-                        <p>{Userdata.userName}</p>
+                        <p>{FreelancerData.userName}</p>
 
                     </div>
                     <div className="right">
@@ -98,14 +115,12 @@ const SingleProposer = ({ f, Freelancer }) => {
                 </div>
             </div>
 
-            <p> userid = {DataOfProject.userid}</p>
-            <p>id = {ProjectMaster._id}</p>
             <div className="d-flex justify-content-end mb-3">
-                {ProjectMaster._id === DataOfProject.userid && ProjectMaster.acountType === "hire" ?
+                {DataOfProject.userid === user._id ?
                     <div>
-                        <Link to="" class="btn btn-primary mr-3">Hire</Link>
+                        <Link to="" class="btn btn-primary mr-3" onClick={(e) => HandleHire(e)}>Hire</Link>
                         <Link to="/Massenger"> <button type="button" class="btn btn-success" onClick={handlechat}>Chat</button>
-                        </Link> </div> : "Wait For Data"
+                        </Link> </div> : ""
                 }
             </div>
         </div>

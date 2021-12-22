@@ -1,33 +1,33 @@
 const {
-    verifyToken,
-    verifyTokenAndAuthorization,
-    verifyTokenAndAdmin,
-  } = require("./verifyToken");
-  const Project = require("../models/Project");
-  const frelancerId=require("../models/User")
-  const cilentId=require("../models/User")
-  const Contract=require("../models/contract")
-  const router = require("express").Router();
+  verifyToken,
+  verifyTokenAndAuthorization,
+  verifyTokenAndAdmin,
+} = require("./verifyToken");
+const Project = require("../models/Project");
+const frelancerId = require("../models/User")
+const cilentId = require("../models/User")
+const Contract = require("../models/contract")
+const router = require("express").Router();
 
 
 
-  //create 
-router.post("/create",verifyToken,async(req,res)=>{
+//create 
+router.post("/create", verifyToken, async (req, res) => {
 
-const newcontract=await new Contract({
-    ContractName:req.body.ContractName,
-    description:req.body.description,
+  const newcontract = await new Contract({
+    ContractName: req.body.ContractName,
+    description: req.body.description,
     budget: req.body.budget,
-   freelanceId:req.body.freelanceId,
-   cilentId:req.body.cilentId,
-   projectId:req.body.projectId,
-   feedbackfreelancer:req.body.feedbackfreelancer,
-   feedbackcilent:req.body.feedbackcilent
+    freelanceId: req.body.freelanceId,
+    cilentId: req.body.cilentId,
+    projectId: req.body.projectId,
+    feedbackfreelancer: req.body.feedbackfreelancer,
+    feedbackcilent: req.body.feedbackcilent,
+    reviewfreelancer: req.body.reviewfreelancer,
+    reviewclient: req.body.reviewclient
+  })
 
-
-})
-
-try {
+  try {
     const savecontract = await newcontract.save();
     res.status(200).json(savecontract);
   } catch (err) {
@@ -39,61 +39,76 @@ try {
 
 
 //update
-
-
 router.put("/update/:id", async (req, res) => {
-    try {
-      const updatedcontract = await Contract.findByIdAndUpdate(
-        req.params.id,
-        {
-          $set: req.body,
-        },
-  
-        { new: true }
-      );
-      const savecontract = await updatedcontract.save();
-      res.status(200).json(saveproject);
-    } catch (err) {
-      res.status(500).json(err);
-    }
-  })
+  try {
+    const updatedcontract = await Contract.findByIdAndUpdate(
+      req.params.id,
+      {
+        $set: req.body,
+      },
 
-  //all contract
+      { new: true }
+    );
+    const savecontract = await updatedcontract.save();
+    res.status(200).json(savecontract);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+})
 
-  router.get("/all", async (req, res) => {
-    try {
-      const allcontract = await Contract.find();
-      res.status(200).json(allcontract);
-    } catch (error) {
-      res.status(401).json(error);
-    }
-  });
+//all contract
 
-
-  //one contract
+router.get("/all", async (req, res) => {
+  try {
+    const allcontract = await Contract.find();
+    res.status(200).json(allcontract);
+  } catch (error) {
+    res.status(401).json(error);
+  }
+});
 
 
-
-  router.get("/oneproject/:id", async (req, res) => {
-    try {
-      const onecontract = await Contract.findById(req.params.id);
-      res.status(200).json(onecontract);
-    } catch (error) {
-      res.status(401).json(error);
-    }
-  });
+//one contract
 
 
 
-  //delete
+router.get("/oneproject/:id", async (req, res) => {
+  try {
+    const onecontract = await Contract.findById(req.params.id);
+    res.status(200).json(onecontract);
+  } catch (error) {
+    res.status(401).json(error);
+  }
+});
 
-  router.delete("/deletecontract/:id", async (req, res) => {
-    try {
-      const onecontract = await Contract.findByIdAndDelete(req.params.id);
-      res.status(200).json("contract Is Deleted");
-    } catch (error) {
-      res.status(401).json(error);
-    }
-  });
-  
-  module.exports = router;
+router.get("/projectId", async (req, res) => {
+  try {
+    const onecontract = await Contract.find({ projectId: req.body.projectId });
+    res.send(onecontract);
+  } catch (error) {
+    res.status(401).json(error);
+  }
+});
+router.get("/freelancer", async (req, res) => {
+  try {
+    const onecontract = await Contract.find({ freelancer: req.body.freelancer });
+    res.send(onecontract);
+  } catch (error) {
+    res.status(401).json(error);
+  }
+});
+
+
+
+//delete
+
+router.delete("/deletecontract/:id", async (req, res) => {
+  try {
+    const onecontract = await Contract.findByIdAndDelete(req.params.id);
+    res.status(200).json("contract Is Deleted");
+  } catch (error) {
+    res.status(401).json(error);
+  }
+});
+
+module.exports = router;

@@ -1,0 +1,7 @@
+.Contract{
+    min-height: 1000px;
+        background: #f0f0f0;
+}
+.Contract .tabs{
+    min-height: 150px;
+}

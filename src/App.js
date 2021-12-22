@@ -83,16 +83,15 @@ function App() {
           <Route path='/DisplayProject/Details/:id' element={user ? <DetailsData /> : <Navigate to="/Login" />} />
           <Route path='/DisplayProject/Files/:id' element={user ? <Files /> : <Navigate to="/Login" />} />
           <Route path='/Skills' element={user ? <Skills /> : <Navigate to="/Login" />} />
-          <Route path='/Contract' element={user ? <Contract /> : <Navigate to="/Login" />} />
-          <Route path='/DisplayProject' element={<DisplayProject />} />
-          <Route path='/DisplayProject/Proposals/:id' element={<Proposals />} />
-          <Route path='/DisplayProject/Tasks/:id' element={<Tasks />} />
-          <Route path='/DisplayProject/Details/:id' element={<DetailsData />} />
-          <Route path='/DisplayProject/Files/:id' element={<Files />} />
-          <Route path='/Skills' element={<Skills />} />
-          <Route path='/Contactus' element={<Contactus />} />
-          <Route path='/Enterprise' element={<Enterprise />} />
-          <Route path='/Documentation' element={<Documentation />} />
+          <Route path='/Contract/:id' element={user ? <Contract /> : <Navigate to="/Login" />} />
+          <Route path='/DisplayProject' element={user ? <DisplayProject /> : <Navigate to="/Login" />} />
+          <Route path='/DisplayProject/Proposals/:id' element={user ? <Proposals /> : <Navigate to="/Login" />} />
+          <Route path='/DisplayProject/Tasks/:id' element={user ? <Tasks /> : <Navigate to="/Login" />} />
+          <Route path='/DisplayProject/Details/:id' element={user ? <DetailsData /> : <Navigate to="/Login" />} />
+          <Route path='/DisplayProject/Files/:id' element={user ? <Files /> : <Navigate to="/Login" />} />
+          <Route path='/Contactus' element={user ? <Contactus /> : <Navigate to="/Login" />} />
+          <Route path='/Enterprise' element={user ? <Enterprise /> : <Navigate to="/Login" />} />
+          <Route path='/Documentation' element={user ? <Documentation /> : <Navigate to="/Login" />} />
           <Route path='**' element={<NoFoundpage />} />
 
 
