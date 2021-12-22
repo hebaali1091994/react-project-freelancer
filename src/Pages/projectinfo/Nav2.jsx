@@ -9,9 +9,13 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Header from '../../Components/header/Header';
 import Navbar from './../../Components/Navbar'
+import { Context } from "../../context/Context";
+import { useContext } from 'react';
 
 
 export default function Nav2({ project }) {
+  const { user } = useContext(Context)
+
   const location = useLocation();
 
   const path = location.pathname.split('/')[3];
@@ -19,13 +23,16 @@ export default function Nav2({ project }) {
   const [Project, setProject] = useState({})
   useEffect(() => {
     const getProject = async () => {
-      const res = await axios.get('/Project/oneproject/' + path);
+      const res = await axios.get('/Project/oneproject/' + path, {
+        headers: {
+          token: user.accesToken
+        }
+      });
       setProject(res.data);
 
     }
     getProject();
   }, [path]);
-
 
 
 
@@ -84,14 +91,6 @@ export default function Nav2({ project }) {
             </div>
           </nav>
 
-<<<<<<< HEAD
-</div>
-<div className='status my-5'>
-<span >{Project.state}</span>
-</div>
-</div>
-)
-=======
         </div>
 
         <div className='status my-5'>
@@ -100,5 +99,4 @@ export default function Nav2({ project }) {
       </div>
     </div>
   )
->>>>>>> ee13e0c6834bc3f686264a31a6543485965257b5
 }

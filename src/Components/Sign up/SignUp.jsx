@@ -1,124 +1,90 @@
 import React, { useState, useRef, useContext } from "react";
-import { useForm } from 'react-hook-form'
+import { useForm } from "react-hook-form";
 import "./SignUp.css";
-import freelancelogo from '../../../src/public/freelancelogo.svg'
-import work from '../../../src/public/work.svg'
-import hire from '../../../src/public/hire.svg'
-import axios from "axios"
-import { Context } from '../../context/Context';
-import { Link } from 'react-router-dom';
+import freelancelogo from "../../../src/public/freelancelogo.svg";
+import work from "../../../src/public/work.svg";
+import hire from "../../../src/public/hire.svg";
+import axios from "axios";
+import { Context } from "../../context/Context";
+import { useEffect } from "react";
 const SignUp = () => {
   const { user, dispatch, isFetching } = useContext(Context);
 
   const EmailRef = useRef();
   const PasswordRef = useRef();
+  const [eEmail, setEmail] = useState(false);
+  const [eUsername, setUsername] = useState(false);
   const [formStep, setFormStep] = React.useState(0);
-  const { watch, register } = useForm()
-
-  const [error, setError] = useState(false)
-
-
-
-
-  // setError(false)
-  // useEffect(() => {
-  //   const handleSubmit = async () => {
-  //     const emailExists = await axios.get('/auth/one/email/');
-  //     if (emailExists) {
-  //       setError(true)
-  //     }
-  //   }
-  //   handleSubmit();
-  // }, [])
-
-
+  const { watch, register } = useForm();
 
   const completeFormstep = () => {
+    setFormStep((cur) => cur + 1);
+  };
 
-    setFormStep(cur => cur + 1)
-  }
   const renderForm = () => {
-
     if (formStep > 4) {
-      return undefined
+      return undefined;
+    } else if (formStep === 3) {
+      return <p>Please wait while we redirect you.........</p>;
+    } else {
     }
-    else if (formStep === 3) {
-      return (
-
-        <p>Please wait while we redirect you.........</p>
-
-      )
-
-    } else if (formStep === 0) {
-      alert(0);
-    }
-    else {
-
-
-    }
-  }
-
+  };
   const [Sign, setData] = useState({
-
     Email: "",
     Password: "",
     userName: "",
     acountType: "",
-  })
+  });
 
-
-  const emailHere = () => {
-
-    alert("Hello");
-  }
-
+  useEffect(() => {
+    axios.get(`/auth/email?Email=${Sign.Email}`).then((res) => {
+      setEmail(res.data ? true : false);
+    });
+    axios.get(`/auth/username?userName=${Sign.userName}`).then((res) => {
+      setUsername(res.data ? true : false);
+    });
+  }, [Sign]);
+  console.log(Sign);
   const submit = (e) => {
     if (e === 0) {
-
-
       const handleSubmit = async (e) => {
-
-
         try {
-          const resgister = await axios.post('/auth/', Sign);
-          const res = await axios.post('/auth/login', {
+          await axios.post("/auth/register", Sign);
+          const res = await axios.post("/auth/login", {
             Email: Sign.Email,
-            Password: Sign.Password
+            Password: Sign.Password,
           });
           dispatch({ type: "LOGIN_SUCCESS", payload: res.data });
-          res.data && window.location.replace('/Skills');
+          res.data && window.location.replace("/Skills");
         } catch (error) {
-          console.log(error.response)
+          console.log(error.response);
         }
-      }
-      setData({ ...Sign, acountType: "0" })
+      };
+      setData({ ...Sign, acountType: "0" });
       document.getElementById("work").style.border = "thick solid #139ff0 ";
       document.getElementById("hire").style.border = "";
       handleSubmit();
     } else if (e === 1) {
       const handleHire = async (e) => {
         try {
-          await axios.post('/auth/', Sign);
-          const res = await axios.post('/auth/login', {
+          const regRes = await axios.post("/auth/register/", Sign);
+          console.log(regRes);
+          const res = await axios.post("/auth/login/", {
             Email: Sign.Email,
-            Password: Sign.Password
+            Password: Sign.Password,
           });
           dispatch({ type: "LOGIN_SUCCESS", payload: res.data });
-          res.data && window.location.replace('/Post-project');
+          res.data && window.location.replace("/Post-project");
         } catch (error) {
-          console.log(error.response)
+          console.log(error.response);
         }
-
-      }
-      setData({ ...Sign, acountType: "1" })
+      };
+      setData({ ...Sign, acountType: "1" });
       document.getElementById("hire").style.border = "thick solid #139ff0 ";
       document.getElementById("work").style.border = "";
-      handleHire()
+      handleHire();
     }
-
-
-
-  }
+  };
   return (
     <div className="container">
       <div className="row">
@@ -129,14 +95,18 @@ const SignUp = () => {
               action=""
               method="post"
               name="form"
+
               onsubmit="return validated()"
             >
               {formStep === 0 && (
                 <section>
-                  <div className="Sign-up">
-                    <Link to="/">
-                      <img className="img-fluid sign-up-logo mb-3" src={freelancelogo} alt="" id="img" />
-                    </Link>
+                  <div className="">
+                    <img
+                      className="img-fluid "
+                      src={freelancelogo}
+                      alt=""
+                      id="img"
+                    />
                   </div>
                   <h5 className="card-text">Sign Up</h5>
                   <div className="divider ">OR</div>
@@ -149,16 +119,19 @@ const SignUp = () => {
                         placeholder="Email"
                         ref={EmailRef}
                         name="Email"
-                        value={Sign.Email === error ? error = true : ""}
-                        onChange={(event) => setData({ ...Sign, Email: event.target.value })}
-                        onTouchEnd={emailHere}
-
+                        value={Sign.Email}
+                        onChange={(event) => {
+                          setData({ ...Sign, Email: event.target.value });
+                        }}
                       />
-                      <small>{error ? "Sorry Your Data Is Wrong" : null}</small>
-
                     </div>
                     <div id="email_error">
-                      <img src="warning.JPG" className="img-fluid" id="img" alt="" />
+                      <img
+                        src="warning.JPG"
+                        className="img-fluid"
+                        id="img"
+                        alt=""
+                      />
                       Please enter an email address.
                     </div>
                     <div className="col inpute">
@@ -170,11 +143,18 @@ const SignUp = () => {
                         name="Password"
                         value={Sign.Password}
                         ref={PasswordRef}
-                        onChange={(event) => setData({ ...Sign, Password: event.target.value })}
+                        onChange={(event) =>
+                          setData({ ...Sign, Password: event.target.value })
+                        }
                       />
                     </div>
                     <div id="pass_error">
-                      <img src="warning.JPG" className="img-fluid" id="img" alt="" />
+                      <img
+                        src="warning.JPG"
+                        className="img-fluid"
+                        id="img"
+                        alt=""
+                      />
                       Please enter a password.
                     </div>
                   </div>
@@ -192,7 +172,15 @@ const SignUp = () => {
                     </label>
                   </div>
                   <div className="card submit ">
-                    <button type="submit" className="btn  btn-lg btn-block" onClick={completeFormstep}>
+                    <button
+                      type="submit"
+                      className="btn  btn-lg btn-block"
+                      onClick={(e) => {
+                        if (!eEmail) {
+                          completeFormstep();
+                        }
+                      }}
+                    >
                       Join Freelancer
                     </button>
                   </div>
@@ -200,6 +188,8 @@ const SignUp = () => {
 
                   <div className="p">
                     <p>
+                      {eEmail ? "Email is already exist" : null}
+                      <br />
                       Already have an account? <a href="/Login">Log in</a>
                     </p>
                   </div>
@@ -213,10 +203,17 @@ const SignUp = () => {
                       {" "}
                       <i className="bi bi-chevron-left"></i>
                     </a>
-                    <img src={freelancelogo} className="img-fluid" id="img" alt="" />
+                    <img
+                      src={freelancelogo}
+                      className="img-fluid"
+                      id="img"
+                      alt=""
+                    />
                   </div>
                   <h5 className="card-text">Choose a username</h5>
-                  <p>Please note that a username cannot be changed once chosen.</p>
+                  <p>
+                    Please note that a username cannot be changed once chosen.
+                  </p>
                   <div className="col inpute">
                     <input
                       type="text"
@@ -224,17 +221,31 @@ const SignUp = () => {
                       id="inputAddress"
                       placeholder="Username"
                       onclick="myFunction()"
+                      style={{ height: "4vh" }}
                       name="userName"
                       value={Sign.userName}
-                      onChange={(event) => setData({ ...Sign, userName: event.target.value })}
-                      style={{ height: "30px" }}
+                      onChange={(event) => {
+                        setData({ ...Sign, userName: event.target.value });
+                      }}
+                    // style={{ height: "30px" }}
                     />
                   </div>
                   <p id="suggest">Suggestions:</p>
                   <div className=" submit ">
-                    <button type="submit" className="btn  btn-lg btn-block" onClick={completeFormstep}>
+                    <button
+                      type="submit"
+                      className="btn  btn-lg btn-block"
+                      onClick={() => {
+                        if (!eUsername) {
+                          completeFormstep()
+                        }
+                      }}
+
+                    >
+
                       <a href="#">Next</a>
                     </button>
+                    {eUsername && "username is already exist"}
                   </div>
                 </section>
               )}
@@ -244,19 +255,32 @@ const SignUp = () => {
                   <section className="row">
                     <div className="coll-md-12">
                       <a href="username.html">
-                        <b><i className="bi bi-chevron-left fs-4 text-dark"></i></b>
+                        <b>
+                          <i className="bi bi-chevron-left fs-4 text-dark"></i>
+                        </b>
                       </a>
-                      <img src={freelancelogo} className="img-fluid img" id="img" alt="" />
+                      <img
+                        src={freelancelogo}
+                        className="img-fluid img"
+                        id="img"
+                        alt=""
+                      />
                     </div>
                     <h5>Select account type</h5>
                     <p>Don't worry, this can be changed later.</p>
-                    <div className="workclint col-md-12  shadow bg-body rounded " onClick={() => submit(0)} id="work">
+                    <div
+                      className="workclint col-md-12  shadow bg-body rounded "
+                      onClick={() => submit(0)}
+                      id="work"
+                    >
                       <div className="row d-flex flex-row">
                         <div className="col-md-5  align-self-center">
                           <img src={work} className="img-fluid" alt="" />
                         </div>
                         <div className="col-md-5 text-center align-self-center">
-                          <p className=" account" onClick={completeFormstep}>I want to work</p>
+                          <p className=" account" onClick={completeFormstep}>
+                            I want to work
+                          </p>
                         </div>
                         <div className="col-md-2  align-self-center">
                           <i className="bi bi-arrow-right"></i>
@@ -264,13 +288,21 @@ const SignUp = () => {
                       </div>
                     </div>
 
-                    <div className="hireclint col-md-12  shadow bg-body rounded mt-5" id="hire">
-                      <div className="row d-flex flex-row" onClick={() => submit(1)}>
+                    <div
+                      className="hireclint col-md-12  shadow bg-body rounded mt-5"
+                      id="hire"
+                    >
+                      <div
+                        className="row d-flex flex-row"
+                        onClick={() => submit(1)}
+                      >
                         <div className="col-md-5  align-self-center">
                           <img src={hire} className="img-fluid" alt="" />
                         </div>
                         <div className="col-md-5 text-center align-self-center">
-                          <p className=" account" onClick={completeFormstep}>I want to hire</p>
+                          <p className=" account" onClick={completeFormstep}>
+                            I want to hire
+                          </p>
                         </div>
                         <div className="col-md-2  align-self-center">
                           <i className="bi bi-arrow-right"></i>
@@ -284,9 +316,15 @@ const SignUp = () => {
               {formStep === 3 && (
                 <section>
                   <div className="">
-                    <img src={freelancelogo} className="img-fluid" id="img" alt="" />
+                    <img
+                      src={freelancelogo}
+                      className="img-fluid"
+                      id="img"
+                      alt=""
+                    />
                   </div>
                   <h3>Sign Up Success</h3>
+                  {renderForm()}
 
                 </section>
               )}

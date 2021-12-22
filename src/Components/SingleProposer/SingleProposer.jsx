@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { useContext, useState } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { Context } from "../../context/Context";
 import { useLocation } from 'react-router-dom';
 
@@ -12,26 +12,20 @@ const SingleProposer = ({ f, Freelancer }) => {
     const location = useLocation();
 
     const path = location.pathname.split('/')[3];
-    console.log(path);
     const { user } = useContext(Context)
+    useEffect(() => {
+        const getDataProject = async () => {
+            const userdata = await axios.get(`/Project/oneproject/${path}`, {
+                headers: {
+                    token: user.accesToken
+                }
+            });
+            setProject(userdata.data)
+        }
+        getDataProject()
+    }, []);
+    console.log(Project.freelances);
 
-    const getDataProject = async () => {
-        const userdata = await axios.get(`/Project/oneproject/${path}`, {
-            headers: {
-                token: user.accesToken
-            }
-        });
-        setProject(userdata.data)
-    }
-    const getUserData = async () => {
-        const userdata = await axios.get(`/users/one/${f.freelanceid}`, {
-            headers: {
-                token: user.accesToken
-            }
-        });
-        setUserdata(userdata.data)
-    }
-    getUserData();
     return (
 
         <div className='singlePro bg-white mb-3'>
@@ -41,7 +35,7 @@ const SingleProposer = ({ f, Freelancer }) => {
                         <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" class="img-fluid" alt="Responsive image" />
                     </div>
                     <div className="center">
-                        <p>{Userdata.userName}</p>
+                        <p>{Freelancer.userName}</p>
 
                     </div>
                     <div className="right">

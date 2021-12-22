@@ -10,23 +10,34 @@ import { useNavigate, useLocation } from 'react-router-dom';
 
 import axios from 'axios';
 import SingleProposer from '../../Components/SingleProposer/SingleProposer';
+import Propser from './../../Components/Propser/Propser';
 export default function Proposals() {
   const [state, setstate] = useState(0);
   const { user } = useContext(Context)
   const location = useLocation();
   const path = location.pathname.split('/')[3];
-  const [Freelancer, setFreelancer] = useState([])
-  useEffect(() => {
-    const getProjects = async () => {
+  const [Freelancer, setFreelancer] = useState({})
 
-      const res = await axios.get('/Project/oneproject/' + path);
-      setFreelancer(res.data);
+  // const [Freelancer, setFreelancer = useState({})
+
+  useEffect(() => {
+    const getDataProject = async () => {
+      const userdata = await axios.get(`/Project/oneproject/${path}`, {
+        headers: {
+          token: user.accesToken
+        }
+      });
+      setFreelancer(userdata.data)
     }
-    getProjects();
+    getDataProject()
+
+
   }, [path]);
 
-  let freelancerdata = Freelancer.freelances;
 
+
+  console.log(Freelancer);
+  let freelancerdata = Freelancer.freelances;
   return (
     <div className="parent ">
       <Nav2 />
@@ -38,46 +49,14 @@ export default function Proposals() {
             <div className="col-md-8 mt-5">
 
               <div className="row">
-<<<<<<< HEAD
-                {/* <div className="col-md-12 bg-white mt-2 dddd pl-4 py-4">
-                  <div className="alert  svgg">
-                      <div className='d-flex'>
-                    <svg
-                      width="4%"
-                      height="17%"
-                      fill="red"
-                      viewBox="0 0 24 24"
-                      version="1.1"
-                      xmlns="http://www.w3.org/2000/svg"
-                      xmlnsXlink="http://www.w3.org/1999/xlink"
-                      fit=""
-                      preserveAspectRatio="xMidYMid meet"
-                      focusable="false"
-                    >
-                      <path
-                        d="M12,2 C6.48,2 2,6.48 2,12 C2,17.52 6.48,22 12,22 C17.52,22 22,17.52 22,12 C22,6.48 17.52,2 12,2 Z M13,17 L11,17 L11,15 L13,15 L13,17 Z M13,13 L11,13 L11,7 L13,7 L13,13 Z"
-                        fill-rule="nonzero"
-                      ></path>
-                    </svg>
-                    <h6>Email verification required</h6>
-                    </div>
-                    <p style={{marginLeft:"35px"}}>
-                      We noticed that you have not verified your email yet.
-                      Please check the email we sent to dsda@gmail. com to
-                      activate your account and continue posting your project.
-                      <Link to="#">Resend Email</Link>
-                    </p>
-                  </div>
-                </div> */}
-=======
-                {freelancerdata.map((f) => (
-                  <SingleProposer key={f.id} f={f} Freelancer={Freelancer} />
-                ))}
+                {/* <Propser Freelancer={Freelancer} /> */}
+                {Freelancer.freelances ? Freelancer.freelances.map((f, Freelancer) => (
+                  <SingleProposer f={f} Freelancer={Freelancer} />
+                )) : <p>Wait For Data</p>}
 
 
->>>>>>> ee13e0c6834bc3f686264a31a6543485965257b5
 
-              </div>
+              </div >
               <div className="col-md-12 bg-white mt-3 part2 d-flex justify-content-center align-items-center"
                 style={{ height: "400px" }}>
                 <div>
@@ -122,7 +101,7 @@ export default function Proposals() {
 
 
 
-            </div>
+            </div >
 
             <div className="col-4  ml-8 mt-2">
               <div className='row'>
@@ -180,10 +159,10 @@ export default function Proposals() {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
+          </div >
+        </div >
+      </div >
       <Footer />
-    </div>
+    </div >
   )
 }

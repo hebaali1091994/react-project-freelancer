@@ -40,7 +40,7 @@ const PostEnterFace = () => {
     state: "",
     PRIVATE: "",
     StepFiveLongContest: "",
-    state:"Pending",
+    state: "",
   });
   const [formStep, setFormStep] = React.useState(0);
   const completeFormstep = () => {
@@ -64,25 +64,6 @@ const PostEnterFace = () => {
       } else if (Data.Day !== "") {
         setFormStep((cur) => cur + 1);
       }
-<<<<<<< HEAD
-    }else if (formStep===1){
-        if(Data.postproject!==""){
-            setFormStep((cur) => cur + 1);
-          }
-    }else if (formStep===2){ 
-        if(Data.pay!==""||Data.budget!==""){
-            setFormStep((cur) => cur + 1);
-          }
-    }else if (formStep===3){
-        if(Data.Minimum_Per_hour!=="" && Data.Maximum_Per_hour!==""){
-            setFormStep((cur) => cur + 1);
-          }else if(Data.Maximum_fix_price!=="" && Data.Minimum_fix_price!==""){
-            setFormStep((cur) => cur + 1);
-          }else if(Data.Day!==""){
-            setFormStep((cur) => cur + 1);
-          }
-=======
->>>>>>> ee13e0c6834bc3f686264a31a6543485965257b5
     }
     else if (formStep === 4) {
       if (Data.type_of_project !== "") {
@@ -187,7 +168,7 @@ const PostEnterFace = () => {
           <button type="button" className="btn btn-primary" onClick={completeFormstep}> Next Step</button>
         </>
       );
-    } else if (formStep <=4) {
+    } else if (formStep <= 4) {
       return (
         <>
           <button type="button" className="btn btn-secondary" onClick={FormStepBack}>Back</button>
@@ -195,11 +176,11 @@ const PostEnterFace = () => {
         </>
       );
     }
-    else if (formStep ===5) {
+    else if (formStep === 5) {
       return (
         <>
-          <button  type="button"className="btn btn-secondary" onClick={FormStepBack}>Back</button>
-          <button  type="button"className="btn btn-primary"onClick={completeFormstep}>Submet</button>
+          <button type="button" className="btn btn-secondary" onClick={FormStepBack}>Back</button>
+          <button type="button" className="btn btn-primary" onClick={completeFormstep}>Submet</button>
         </>
       );
     }
@@ -213,11 +194,7 @@ const PostEnterFace = () => {
           <p>
             <b>Step {formStep + 1} of 6</b>
           </p>
-<<<<<<< HEAD
-          <progress max="6" value={formStep + 1} style={{ width: "100%", height: "5vh" }}/>
-=======
-          <progress max="7" value={formStep + 1} style={{ width: "100%", height: "5vh" }} />
->>>>>>> ee13e0c6834bc3f686264a31a6543485965257b5
+          <progress max="6" value={formStep + 1} style={{ width: "100%", height: "5vh" }} />
         </div>
         <form className="col-sm-12 col-md-12">
           {formStep === 0 && (<Firstform Data={Data} setData={setData} />)}

@@ -3,12 +3,15 @@ import Footer from '../../Components/Footer'
 import Nav2 from "./Nav2";
 import { Link } from 'react-router-dom';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import axios from 'axios';
 import BidProject from './BidProject/BidProject';
 import "./DetailsData.css"
+import { Context } from "../../context/Context";
+
 const DetailsData = () => {
     const location = useLocation();
+    const { user } = useContext(Context)
 
     const path = location.pathname.split('/')[3];
     console.log(path);
@@ -16,7 +19,11 @@ const DetailsData = () => {
     const [Project, setProject] = useState({})
     useEffect(() => {
         const getProject = async () => {
-            const res = await axios.get('/Project/oneproject/' + path);
+            const res = await axios.get(`/Project/oneproject/${path}`, {
+                headers: {
+                    token: user.accesToken
+                }
+            })
             setProject(res.data);
             console.log(res.data);
 
