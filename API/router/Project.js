@@ -64,14 +64,24 @@ router.post("/apply/:id", verifyToken, async (req, res) => {
     }
 
 
+
     const applayProject = await Project.findByIdAndUpdate
       (
         req.params.id,
         { $push: { freelances: porposal, millstobepayment: mileStone } },
         { new: true }
-      );
+      )
+    const updatedProject = await Project.findByIdAndUpdate(
+      req.params.id,
+      {
+        $set: req.body,
+      },
+
+      { new: true }
+    );
+
     const newporposal = await applayProject.save();
-    res.status(200).json(newporposal);
+    res.status(200).json({ newporposal, updatedProject });
 
   } catch (err) {
     res.status(401).json(err);

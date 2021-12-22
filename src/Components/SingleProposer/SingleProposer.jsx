@@ -1,52 +1,97 @@
 import axios from 'axios';
-import { useContext, useState } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { Context } from "../../context/Context";
 import { Link, useLocation } from 'react-router-dom';
 
 
 const SingleProposer = ({ f, Freelancer }) => {
 
-    const [Project, setProject] = useState({})
+    const [DataOfProject, setDataOfProject] = useState({})
     const [Userdata, setUserdata] = useState({})
+    const [FreelancerData, setFreelancerData] = useState({})
+    const [ContarctData, setContarctData] = useState({})
 
     const location = useLocation();
 
     const path = location.pathname.split('/')[3];
-    console.log(path);
     const { user } = useContext(Context)
+    useEffect(() => {
+        const getDataProject = async () => {
+            const userdata = await axios.get(`/Project/oneproject/${path}`, {
+                headers: {
+                    token: user.accesToken
+                }
+            });
+            setDataOfProject(userdata.data)
+        }
+        const getUserData = async () => {
+            const userdata = await axios.get(`/users/one/${f.freelanceid}`, {
+                headers: {
+                    token: user.accesToken
+                }
+            });
+            setFreelancerData(userdata.data)
+        }
 
-    const getDataProject = async () => {
-        const userdata = await axios.get(`/Project/oneproject/${path}`, {
-            headers: {
-                token: user.accesToken
-            }
-        });
-        setProject(userdata.data)
+
+        getDataProject()
+        getUserData()
+    }, [path]);
+
+
+
+
+    console.log(DataOfProject);
+    console.log(f);
+
+    const handlechat = async () => {
+        const start = {
+            senderId: "61b9dc948241174bd6f310c2",
+            reciverId: "61c06f86dd92c8b10ca12316"
+        };
+        try {
+            await axios.post("/conversion/", start);
+
+        } catch (err) {
+            console.log(err);
+        };
+        <Link className="btn postproject m-1" exact="true" to="/Massenger"></Link>
     }
-    // getDataProject();
-    console.log(Project);
-    const getUserData = async () => {
-        const userdata = await axios.get(`/users/one/${f.freelanceid}`, {
-            headers: {
-                token: user.accesToken
+
+    const HandleHire = async (e) => {
+        e.preventDefault()
+        try {
+            const res = await axios.post(`/Project/apply/${path}`, {
+                ContractName: user.ChooseName,
+                description: user.Tellus,
+                budget: f.BidAmount,
+                freelanceId: f.freelanceid,
+                cilentId: user._id,
+                projectId: DataOfProject._id,
+                feedbackfreelancer: "No Feedback Received",
+                feedbackcilent: "No Feedback Received",
+                reviewfreelancer: "No Review Received",
+                reviewclient: "No Review Received",
+                state: "Hired"
+            }, {
+                headers: {
+                    token: user.accesToken
+                }
+            });
+
+            const getDataContract = async () => {
+                const getContract = await axios.get("/contract/oneproject/", {
+                    projectId: path
+                }
+                )
             }
-        });
-        setUserdata(userdata.data)
+            getDataContract();
+
+            res.data && window.location.replace(`/Contract/${path}`);
+        } catch (error) {
+        }
     }
-    getUserData();
 
-const handlechat=async ()=>{
-    const start = {
-     senderId:"61c21c496c61dbd8d80958e5",
-    reciverId:"61c1e0eb513c0ccc569d1962"
-    };
-    try {
-     await axios.post("/conversion/", start);
-
-      } catch (err) {
-        console.log(err);
-      };
-}
 
     return (
 
@@ -57,7 +102,7 @@ const handlechat=async ()=>{
                         <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" class="img-fluid" alt="Responsive image" />
                     </div>
                     <div className="center">
-                        <p>{Userdata.userName}</p>
+                        <p>{FreelancerData.userName}</p>
 
                     </div>
                     <div className="right">
@@ -76,10 +121,14 @@ const handlechat=async ()=>{
                     </div>
                 </div>
             </div>
+
             <div className="d-flex justify-content-end mb-3">
-                <button type="button" class="btn btn-primary mr-3">Hire</button>
-               <Link to="/Massenger"> <button type="button" class="btn btn-success"  onClick={handlechat}>Chat</button>
-               </Link>
+                {DataOfProject.userid === user._id ?
+                    <div>
+                        <Link to="" class="btn btn-primary mr-3" onClick={(e) => HandleHire(e)}>Hire</Link>
+                        <Link to="/Massenger"> <button type="button" class="btn btn-success" onClick={handlechat}>Chat</button>
+                        </Link> </div> : ""
+                }
             </div>
         </div>
     )
