@@ -1,0 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.my-profile-info {
+    min-height: 1000px;
+}
+.imgaccont{
+    background-image: url(../../public/coverroduct.jpg);
+    background-size: cover;
+    height: 600px;
+    background-repeat: no-repeat;
+}
+.MyAccounStyle{
+    padding-top: 22%;
+}
