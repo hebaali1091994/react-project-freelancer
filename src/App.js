@@ -41,7 +41,8 @@ import Contract from './Pages/Contract/Contract';
 import Contactus from './Pages/Contactus/Contactus'
 import Enterprise from './Pages/enterprise/Enterprise';
 import Documentation from './Pages/Documentation/Documentation'
-import MyProfile from "./Pages/proflle/MyProfile";
+import MyProfile from "./Pages/proflleEdit/MyProfile";
+import Browse_Jobs from "./Pages/BrowseJobs/Browse_Jobs";
 
 function App() {
   const [socket, setSocket] = useState(null);
@@ -95,7 +96,7 @@ function App() {
           <Route path='/Enterprise' element={<Enterprise />} />
           <Route path='/Documentation' element={<Documentation />} />
           <Route path='/MyProfile' element={<MyProfile/>} />
-      
+          <Route path='/Browse_Jobs' element={<Browse_Jobs/>} />
           <Route path='**' element={<NoFoundpage />} />
 
 
