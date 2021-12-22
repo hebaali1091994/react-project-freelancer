@@ -13,7 +13,7 @@ router.post('/', async (req, res) => {
   });
   try {
     const saveUser = await newUser.save()
-    res.send(saveUser);
+    res.status(500).json(saveUser);
   } catch (error) {
     res.status(500).json(error)
   }
@@ -61,7 +61,7 @@ router.get("/email", async (req, res) => {
 });
 
 router.post("/register", async (req, res) => {
- 
+
   var work = "work";
   const newUser = new User({
     userName: req.body.userName,

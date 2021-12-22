@@ -114,7 +114,7 @@ router.get("/all", async (req, res) => {
 
 //one project
 
-router.get("/oneproject/:id", async (req, res) => {
+router.get("/oneproject/:id", verifyTokenAndAuthorization, async (req, res) => {
   try {
     const oneproject = await Project.findById(req.params.id);
     res.status(200).json(oneproject);

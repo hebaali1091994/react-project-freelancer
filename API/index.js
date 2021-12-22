@@ -14,7 +14,7 @@ const Order = require("./router/Order");
 const Category = require("./router/Category");
 const conversion = require("./router/conversion");
 const message = require("./router/message");
-const contract=require("./router/contract")
+const contract = require("./router/contract")
 const database = require("./database");
 const multer = require("multer");
 const path = require('path');
@@ -69,12 +69,6 @@ const upload = multer({ storage: storage });
 app.post("/api/upload", upload.single("file"), (req, res) => {
   res.status(200).json("File Has Been Uploaded");
 });
-
-
-
-
-
-
 app.use("/users", users);
 app.use("/auth", auth);
 app.use("/Products", Product);
@@ -84,7 +78,7 @@ app.use("/Project", Project);
 app.use("/Category", Category);
 app.use("/conversion", conversion);
 app.use("/message", message);
-app.use("/contract",contract);
+app.use("/contract", contract);
 
 app.listen(5000, () => {
   console.log("BackEnd Server Is Running Work In Port : 5000");

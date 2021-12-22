@@ -19,8 +19,8 @@ router.post("/", async (req, res) => {
 router.get("/:usrtId", async (req, res) => {
   try {
 
-    const conversion=await Conversion.find({
-        membars:{$in:[req.params.usrtId]} 
+    const conversion = await Conversion.find({
+      membars: { $in: [req.params.usrtId] }
     })
     res.status(200).json(conversion)
   } catch (err) {

@@ -7,7 +7,7 @@ import Login from "./Pages/Login/Login";
 import './App.css';
 
 
-import { Routes, Route } from "react-router";
+import { Routes, Route, Navigate } from "react-router";
 import SignUp from "./Pages/Sign up/SignUp";
 import Paypal from "./Components/Paypal/paypal";
 import { Suspense, useState, useContext, useEffect } from "react";
@@ -36,6 +36,11 @@ import Setting from './Pages/Setting/Setting';
 import SingleFreelancer from "./Components/Single Freelancer/SingleFreelancer";
 // import Details from './Pages/Test/Details';
 import Freelancerpage from './Pages/FreelancerPage/Freelancerpage';
+import NoFoundpage from './Pages/NoFoundPage/NoFoundpage';
+import Contract from './Pages/Contract/Contract';
+import Contactus from './Pages/Contactus/Contactus'
+import Enterprise from './Pages/enterprise/Enterprise';
+import Documentation from './Pages/Documentation/Documentation'
 
 function App() {
   const [socket, setSocket] = useState(null);
@@ -58,27 +63,38 @@ function App() {
 
         <Routes>
           <Route path="/Login" element={<Login />} />
+          <Route path="/Setting" element={<Setting />} />
           <Route path="/" exact="true" element={user ? <Dashbaord /> : <Home />} />
-          <Route path="/Post-project/" element={<Postproject />} />
+          <Route path="/Post-project/" element={user ? <Postproject /> : <Navigate to="/Login" />} />
           <Route path="/SignUp" element={<SignUp />} />
-          <Route path='/paypal' element={<Paypal />} />
+          <Route path='/paypal' element={user ? <Paypal /> : <Navigate to="/Login" />} />
           <Route path='/' element={<Dashbaord />} />
-          <Route path='/Massenger' element={<Massenger />} />
+          <Route path='/Massenger' element={user ? <Massenger /> : <Navigate to="/Login" />} />
 
-          <Route path='/Feedback' element={<Feedback />} />
-          <Route path='/Projects' element={<Project_Contests />} />
-          <Route path='/MemberShip' element={<MemberShip />} />
-          <Route path='/howwork' element={<HowitWork />} />
-          <Route path='/inbox' element={<Inbox />} />
-          <Route path='/DisplayPost' element={<DisplayProject />} />
+          <Route path='/Feedback' element={user ? <Feedback /> : <Navigate to="/Login" />} />
+          <Route path='/Projects' element={user ? <Project_Contests /> : <Navigate to="/Login" />} />
+          <Route path='/MemberShip' element={user ? <MemberShip /> : <Navigate to="/Login" />} />
+          <Route path='/howwork' element={user ? <HowitWork /> : <Navigate to="/Login" />} />
+          <Route path='/inbox' element={user ? <Inbox /> : <Navigate to="/Login" />} />
+          <Route path='/DisplayPost' element={user ? <DisplayProject /> : <Navigate to="/Login" />} />
           <Route path='/' element={user ? <Dashbaord /> : <Route path="/Login" element={<Login />} />} />
+          <Route path='/DisplayProject' element={user ? <DisplayProject /> : <Navigate to="/Login" />} />
+          <Route path='/DisplayProject/Proposals/:id' element={user ? <Proposals /> : <Navigate to="/Login" />} />
+          <Route path='/DisplayProject/Tasks/:id' element={user ? <Tasks /> : <Navigate to="/Login" />} />
+          <Route path='/DisplayProject/Details/:id' element={user ? <DetailsData /> : <Navigate to="/Login" />} />
+          <Route path='/DisplayProject/Files/:id' element={user ? <Files /> : <Navigate to="/Login" />} />
+          <Route path='/Skills' element={user ? <Skills /> : <Navigate to="/Login" />} />
+          <Route path='/Contract' element={user ? <Contract /> : <Navigate to="/Login" />} />
           <Route path='/DisplayProject' element={<DisplayProject />} />
           <Route path='/DisplayProject/Proposals/:id' element={<Proposals />} />
           <Route path='/DisplayProject/Tasks/:id' element={<Tasks />} />
           <Route path='/DisplayProject/Details/:id' element={<DetailsData />} />
           <Route path='/DisplayProject/Files/:id' element={<Files />} />
           <Route path='/Skills' element={<Skills />} />
-
+          <Route path='/Contactus' element={<Contactus />} />
+          <Route path='/Enterprise' element={<Enterprise />} />
+          <Route path='/Documentation' element={<Documentation />} />
+          <Route path='**' element={<NoFoundpage />} />
 
 
         </Routes>
