@@ -14,7 +14,11 @@ const Skills = () => {
 
 
   // useEffect(() => {
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 871728cd8e214daa825297911325a5577eb9e7d9
   //   const fetchSkills = async ()=>{
   //     const res = await axios.get("/Category/");
   //     setSkills(res.data)
@@ -23,7 +27,10 @@ const Skills = () => {
   // },[]);
   // console.log(Skills);
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 871728cd8e214daa825297911325a5577eb9e7d9
   const [formStep, setFormStep] = React.useState(0);
 
   const completeFormstep = () => {
@@ -68,10 +75,34 @@ const Skills = () => {
     <>
       <div className="container-fluid mt-3">
         <div className="row">
+<<<<<<< HEAD
           <div className="col-md-12 d-flex">
             <img class="freelancer-logo" src={freelancelogo} alt="" />
             <p className="m-auto fs-4"><b>Profile details</b></p>
 
+=======
+            <div className="col-md-12 d-flex">
+                <img class="freelancer-logo" src={freelancelogo}  alt=""/>
+                <p className="m-auto fs-4"><b>Profile details</b></p>
+        
+            </div>
+            <div className="col-md-12">
+            <progress max="7" value={formStep + 1} style={{ width: "100%", height: "5vh" }}/>
+        </div>
+   
+    <div class="container">
+        <div class="row">
+            <div classname="col-md-12">
+            <form className="col-sm-12 col-md-12">
+          {formStep === 0 && (<Tell   skill={skill} setData={setData}/>)}
+          {formStep === 1 && <Profile skill={skill} setData={setData}/>}
+          {formStep === 2 && <About  skill={skill} setData={setData} />}
+          {formStep === 3 && <Whatlang skill={skill} setData={setData} />}
+          {formStep === 4 && (<Located skill={skill} setData={setData} />)}
+          {formStep === 5 && <Verification skill={skill} setData={setData} />}
+          <div className="d-flex justify-content-between mt-5">
+            {renderButton()}
+>>>>>>> 871728cd8e214daa825297911325a5577eb9e7d9
           </div>
           <div className="col-md-12">
             <progress max="7" value={formStep + 1} style={{ width: "100%", height: "5vh" }} />
@@ -95,9 +126,18 @@ const Skills = () => {
             </div>
           </div>
         </div>
+<<<<<<< HEAD
       </div>
     </>
   )
 }
+=======
+        </div>
+        </div>
+        </div>
+        </>
+    )
+>>>>>>> 871728cd8e214daa825297911325a5577eb9e7d9
 
+    }
 export default Skills

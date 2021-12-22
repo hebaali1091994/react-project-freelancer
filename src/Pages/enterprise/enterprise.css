@@ -1,0 +1,18 @@
+.imgbig1 {
+    background-image: url("https://www.f-cdn.com/assets/main/en/landing-page-hero-mobile.662b6ebf23363325645b.jpg");
+    height:100vh;
+    background-size: 100% 100%;
+    color: #f7f7f7;
+    }
+    
+    .imgbig6{
+    background-image: url('https://www.f-cdn.com/assets/main/en/assets/enterprise/landing-page/nasa-casestudy-background.jpg');
+    background-size: cover;
+    }
+    .imgbig9{
+        width: 100%;
+    }
+    a{
+        text-decoration: none;
+        
+    }

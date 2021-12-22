@@ -95,7 +95,11 @@ const SignUp = () => {
               action=""
               method="post"
               name="form"
+<<<<<<< HEAD
 
+=======
+              
+>>>>>>> 871728cd8e214daa825297911325a5577eb9e7d9
               onsubmit="return validated()"
             >
               {formStep === 0 && (
@@ -227,7 +231,11 @@ const SignUp = () => {
                       onChange={(event) => {
                         setData({ ...Sign, userName: event.target.value });
                       }}
+<<<<<<< HEAD
                     // style={{ height: "30px" }}
+=======
+                      style={{ height: "30px" }}
+>>>>>>> 871728cd8e214daa825297911325a5577eb9e7d9
                     />
                   </div>
                   <p id="suggest">Suggestions:</p>
@@ -236,13 +244,21 @@ const SignUp = () => {
                       type="submit"
                       className="btn  btn-lg btn-block"
                       onClick={() => {
+<<<<<<< HEAD
                         if (!eUsername) {
+=======
+                        if(!eUsername) {
+>>>>>>> 871728cd8e214daa825297911325a5577eb9e7d9
                           completeFormstep()
                         }
                       }}
 
                     >
+<<<<<<< HEAD
 
+=======
+                    
+>>>>>>> 871728cd8e214daa825297911325a5577eb9e7d9
                       <a href="#">Next</a>
                     </button>
                     {eUsername && "username is already exist"}

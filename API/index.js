@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const http = require("http").createServer(app);
+// const http = require("http").createServer(app);
 //const io = require("socket.io")(http);
 const dotenv = require("dotenv");
 const middleware = require("i18next-http-middleware");
@@ -14,11 +14,12 @@ const Order = require("./router/Order");
 const Category = require("./router/Category");
 const conversion = require("./router/conversion");
 const message = require("./router/message");
+const contract=require("./router/contract")
 const database = require("./database");
 const multer = require("multer");
 const path = require('path');
-
 const cors = require("cors")
+
 // server = require('http').Server(app),
 // io = require('socket.io')(server);
 // const { Socket } = require("socket.io");
@@ -77,8 +78,7 @@ app.use("/Project", Project);
 app.use("/Category", Category);
 app.use("/conversion", conversion);
 app.use("/message", message);
-// MONGO_URL = mongoose.connect("mongodb+srv://freelance:12345@freelance.mhgq8.mongodb.net/freelace?retryWrites=true&w=majority");
-//MONGO_URL ="MONGO_URL = mongoose.connect("mongodb+srv://freelance:12345@freelance.mhgq8.mongodb.net/freelance?retryWrites=true&w=majority")"
+app.use("/contract",contract);
 
 app.listen(5000, () => {
   console.log("BackEnd Server Is Running Work In Port : 5000");
