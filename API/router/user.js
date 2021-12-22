@@ -41,11 +41,7 @@ router.delete('/:id', verifyTokenAndAuthorization, async (req, res) => {
   }
 })
 //get one user
-<<<<<<< HEAD
 router.get('/one/:id', verifyTokenAndAuthorization, async (req, res) => {
-=======
-router.get('/one/:id', async (req, res) => {
->>>>>>> 871728cd8e214daa825297911325a5577eb9e7d9
   try {
     const Admin = await User.findById(req.params.id);
 

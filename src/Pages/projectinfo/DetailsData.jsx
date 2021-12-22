@@ -59,7 +59,7 @@ const DetailsData = () => {
                                             <div className="col-md-12 bg-white mt-2 ">
                                                 <div className="content m-2 w-100 p-relative">
                                                     <div className=" d-flex justify-content-between deailtsProejct ">
-                                                        <h5>Project Details</h5>
+                                                        <h5 className="ProjectTitle">Project Details</h5>
                                                         <div className="ProjectTime pe-3">
                                                             <h6>{Project.Minimum_Per_hour} - {Project.Maximum_Per_hour} {Project.step_Four_Currency_code}</h6>
                                                             <span style={{ fontSize: '12px', fontWeight: '600' }}>
@@ -67,7 +67,6 @@ const DetailsData = () => {
                                                             </span>
                                                         </div>
                                                     </div>
-                                                    <hr className="bar" />
                                                     <div className="">
                                                         <div
                                                             className=" d-flex justify-content-start  "

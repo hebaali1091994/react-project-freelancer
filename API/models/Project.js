@@ -4,9 +4,9 @@ const ProjectSchema = mongoose.Schema(
   {
 
     ChooseName: { type: String, minLength: 10 },
-    userid: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+    userid: { type: String },
     Tellus: { type: String },
-    state: { type: String, default: "pending" },
+    state: { type: String, default: "Pending" },
     uploadimg: { type: String },
     postproject: { type: String },
     pay: { type: String, default: null },

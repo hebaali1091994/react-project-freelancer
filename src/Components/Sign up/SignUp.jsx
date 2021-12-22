@@ -86,7 +86,7 @@ const SignUp = () => {
     }
   };
   return (
-    <div className="container">
+    <div className="container Signup">
       <div className="row">
         <div className="bg-signup pt-5">
           <div className="fluid m-auto">
@@ -95,11 +95,6 @@ const SignUp = () => {
               action=""
               method="post"
               name="form"
-<<<<<<< HEAD
-
-=======
-              
->>>>>>> 871728cd8e214daa825297911325a5577eb9e7d9
               onsubmit="return validated()"
             >
               {formStep === 0 && (
@@ -231,11 +226,6 @@ const SignUp = () => {
                       onChange={(event) => {
                         setData({ ...Sign, userName: event.target.value });
                       }}
-<<<<<<< HEAD
-                    // style={{ height: "30px" }}
-=======
-                      style={{ height: "30px" }}
->>>>>>> 871728cd8e214daa825297911325a5577eb9e7d9
                     />
                   </div>
                   <p id="suggest">Suggestions:</p>
@@ -244,111 +234,106 @@ const SignUp = () => {
                       type="submit"
                       className="btn  btn-lg btn-block"
                       onClick={() => {
-<<<<<<< HEAD
                         if (!eUsername) {
-=======
-                        if(!eUsername) {
->>>>>>> 871728cd8e214daa825297911325a5577eb9e7d9
                           completeFormstep()
                         }
                       }}
 
                     >
-<<<<<<< HEAD
-
-=======
-                    
->>>>>>> 871728cd8e214daa825297911325a5577eb9e7d9
                       <a href="#">Next</a>
-                    </button>
+                    </button >
                     {eUsername && "username is already exist"}
-                  </div>
-                </section>
+                  </div >
+                </section >
               )}
 
-              {formStep == 2 && (
-                <div className="container">
-                  <section className="row">
-                    <div className="coll-md-12">
-                      <a href="username.html">
-                        <b>
-                          <i className="bi bi-chevron-left fs-4 text-dark"></i>
-                        </b>
-                      </a>
+              {
+                formStep == 2 && (
+                  <div className="container">
+                    <section className="row">
+                      <div className="coll-md-12">
+                        <a href="username.html">
+                          <b>
+                            <i className="bi bi-chevron-left fs-4 text-dark"></i>
+                          </b>
+                        </a>
+                        <img
+                          src={freelancelogo}
+                          className="img-fluid img"
+                          id="img"
+                          alt=""
+                        />
+                      </div>
+                      <h5>Select account type</h5>
+                      <p>Don't worry, this can be changed later.</p>
+                      <div
+                        className="workclint col-md-12  shadow bg-body rounded "
+                        onClick={() => submit(0)}
+                        id="work"
+                      >
+                        <div className="row d-flex flex-row">
+                          <div className="col-md-5  align-self-center">
+                            <img src={work} className="img-fluid" alt="" />
+                          </div>
+                          <div className="col-md-5 text-center align-self-center">
+                            <p className=" account" onClick={completeFormstep}>
+                              I want to work
+                            </p>
+                          </div>
+                          <div className="col-md-2  align-self-center">
+                            <i className="bi bi-arrow-right"></i>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div
+                        className="hireclint col-md-12  shadow bg-body rounded mt-5"
+                        id="hire"
+                      >
+                        <div
+                          className="row d-flex flex-row"
+                          onClick={() => submit(1)}
+                        >
+                          <div className="col-md-5  align-self-center">
+                            <img src={hire} className="img-fluid" alt="" />
+                          </div>
+                          <div className="col-md-5 text-center align-self-center">
+                            <p className=" account" onClick={completeFormstep}>
+                              I want to hire
+                            </p>
+                          </div>
+                          <div className="col-md-2  align-self-center">
+                            <i className="bi bi-arrow-right"></i>
+                          </div>
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                )
+              }
+
+              {
+                formStep === 3 && (
+                  <section>
+                    <div className="">
                       <img
                         src={freelancelogo}
-                        className="img-fluid img"
+                        className="img-fluid"
                         id="img"
                         alt=""
                       />
                     </div>
-                    <h5>Select account type</h5>
-                    <p>Don't worry, this can be changed later.</p>
-                    <div
-                      className="workclint col-md-12  shadow bg-body rounded "
-                      onClick={() => submit(0)}
-                      id="work"
-                    >
-                      <div className="row d-flex flex-row">
-                        <div className="col-md-5  align-self-center">
-                          <img src={work} className="img-fluid" alt="" />
-                        </div>
-                        <div className="col-md-5 text-center align-self-center">
-                          <p className=" account" onClick={completeFormstep}>
-                            I want to work
-                          </p>
-                        </div>
-                        <div className="col-md-2  align-self-center">
-                          <i className="bi bi-arrow-right"></i>
-                        </div>
-                      </div>
-                    </div>
+                    <h3>Sign Up Success</h3>
+                    {renderForm()}
 
-                    <div
-                      className="hireclint col-md-12  shadow bg-body rounded mt-5"
-                      id="hire"
-                    >
-                      <div
-                        className="row d-flex flex-row"
-                        onClick={() => submit(1)}
-                      >
-                        <div className="col-md-5  align-self-center">
-                          <img src={hire} className="img-fluid" alt="" />
-                        </div>
-                        <div className="col-md-5 text-center align-self-center">
-                          <p className=" account" onClick={completeFormstep}>
-                            I want to hire
-                          </p>
-                        </div>
-                        <div className="col-md-2  align-self-center">
-                          <i className="bi bi-arrow-right"></i>
-                        </div>
-                      </div>
-                    </div>
                   </section>
-                </div>
-              )}
-
-              {formStep === 3 && (
-                <section>
-                  <div className="">
-                    <img
-                      src={freelancelogo}
-                      className="img-fluid"
-                      id="img"
-                      alt=""
-                    />
-                  </div>
-                  <h3>Sign Up Success</h3>
-                  {renderForm()}
-
-                </section>
-              )}
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
+                )
+              }
+            </form >
+          </div >
+        </div >
+      </div >
+    </div >
   );
 };
 

@@ -170,8 +170,7 @@ export default function Details() {
                     class="btn"
                     style={{ background: "#999", marginTop: "10px" }}
                   >
-                    Add another milestone payment
-                  </button>
+                    Submit Your Proposal                  </button>
                   <hr></hr>
 
                   <div className="row">

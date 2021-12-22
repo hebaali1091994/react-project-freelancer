@@ -26,7 +26,7 @@ const SignUp = () => {
       return undefined;
     } else if (formStep === 3) {
       return <p>Please wait while we redirect you.........</p>;
-    } 
+    }
   };
   const [Sign, setData] = useState({
     Email: "",
@@ -85,251 +85,251 @@ const SignUp = () => {
     }
   };
   return (
-    <div className="container">
-      <div className="row">
-        <div className="bg-signup pt-5">
-          <div className="fluid m-auto">
-            <form
-              className="login_form"
-              action=""
-              method="post"
-              name="form"
-              
-              onsubmit="return validated()"
-            >
-              {formStep === 0 && (
-                <section>
-                  <div className="">
-                    <img
-                      className="img-fluid "
-                      src={freelancelogo}
-                      alt=""
-                      id="img"
-                    />
-                  </div>
-                  <h5 className="card-text">Sign Up</h5>
-                  <div className="divider ">OR</div>
-                  <div className="login_form">
-                    <div className="col inpute">
+    <div className=" signup">
+      <div className="containers">
+        <div className="row">
+          <div className="bg-signup pt-5">
+            <div className="fluid m-auto">
+              <form
+                className="login_form"
+                action=""
+                method="post"
+                name="form"
+
+                onsubmit="return validated()"
+              >
+                {formStep === 0 && (
+                  <section>
+                    <div className="">
+                      <img
+                        className="img-fluid logo "
+                        src={freelancelogo}
+                        alt=""
+                        id="img"
+                      />
+                    </div>
+                    <h5 className="card-text">Sign Up</h5>
+                    <div className="divider ">OR</div>
+                    <div className="login_form">
+                      <div className="col inpute">
+                        <input
+                          type="email"
+                          className="form-control email"
+                          id="inputAddress"
+                          placeholder="Email"
+                          ref={EmailRef}
+                          name="Email"
+                          value={Sign.Email}
+                          onChange={(event) => {
+                            setData({ ...Sign, Email: event.target.value });
+                          }}
+                        />
+                      </div>
+                      <div id="email_error">
+                        <img
+                          src="warning.JPG"
+                          className="img-fluid logo"
+                          id="img"
+                          alt=""
+                        />
+                        Please enter an email address.
+                      </div>
+                      <div className="col inpute">
+                        <input
+                          type="password"
+                          className="form-control"
+                          id="inputAddress"
+                          placeholder="Password"
+                          name="Password"
+                          value={Sign.Password}
+                          ref={PasswordRef}
+                          onChange={(event) =>
+                            setData({ ...Sign, Password: event.target.value })
+                          }
+                        />
+                      </div>
+                      <div id="pass_error">
+                        <img
+                          src="warning.JPG"
+                          className="img-fluid logo"
+                          id="img"
+                          alt=""
+                        />
+                        Please enter a password.
+                      </div>
+                    </div>
+                    <div className="form-checksignup">
                       <input
-                        type="email"
-                        className="form-control email"
-                        id="inputAddress"
-                        placeholder="Email"
-                        ref={EmailRef}
-                        name="Email"
-                        value={Sign.Email}
-                        onChange={(event) => {
-                          setData({ ...Sign, Email: event.target.value });
+                        className="form-check-input "
+                        type="checkbox"
+                        value=""
+                        id="flexCheckDefault"
+                      />
+                      <label className="form-check-label" for="flexCheckDefault">
+                        I agree to Freelancer{" "}
+                        <a href="useragreement.html">User Agreement </a> and{" "}
+                        <a href="privacy.html">Privacy Policy</a>
+                      </label>
+                    </div>
+                    <div className="card submit ">
+                      <button
+                        type="submit"
+                        className="btn  btn-lg btn-block"
+                        onClick={(e) => {
+                          e.preventDefault()
+                          if (!eEmail) {
+
+                            completeFormstep();
+                          }
                         }}
-                      />
+                      >
+                        Join Freelancer
+                      </button>
                     </div>
-                    <div id="email_error">
-                      <img
-                        src="warning.JPG"
-                        className="img-fluid"
-                        id="img"
-                        alt=""
-                      />
-                      Please enter an email address.
+                    <hr />
+
+                    <div className="p">
+                      <p>
+                        {eEmail ? "Email is already exist" : null}
+                        <br />
+                        Already have an account? <a href="/Login">Log in</a>
+                      </p>
                     </div>
-                    <div className="col inpute">
-                      <input
-                        type="password"
-                        className="form-control"
-                        id="inputAddress"
-                        placeholder="Password"
-                        name="Password"
-                        value={Sign.Password}
-                        ref={PasswordRef}
-                        onChange={(event) =>
-                          setData({ ...Sign, Password: event.target.value })
-                        }
-                      />
-                    </div>
-                    <div id="pass_error">
-                      <img
-                        src="warning.JPG"
-                        className="img-fluid"
-                        id="img"
-                        alt=""
-                      />
-                      Please enter a password.
-                    </div>
-                  </div>
-                  <div className="form-checksignup">
-                    <input
-                      className="form-check-input "
-                      type="checkbox"
-                      value=""
-                      id="flexCheckDefault"
-                    />
-                    <label className="form-check-label" for="flexCheckDefault">
-                      I agree to Freelancer{" "}
-                      <a href="useragreement.html">User Agreement </a> and{" "}
-                      <a href="privacy.html">Privacy Policy</a>
-                    </label>
-                  </div>
-                  <div className="card submit ">
-                    <button
-                      type="submit"
-                      className="btn  btn-lg btn-block"
-                      onClick={(e) => {
-                        e.preventDefault()
-                        if (!eEmail) {
+                  </section>
+                )}
 
-                          completeFormstep();
-                        }
-                      }}
-                    >
-                      Join Freelancer
-                    </button>
-                  </div>
-                  <hr />
-
-                  <div className="p">
-                    <p>
-                      {eEmail ? "Email is already exist" : null}
-                      <br />
-                      Already have an account? <a href="/Login">Log in</a>
-                    </p>
-                  </div>
-                </section>
-              )}
-
-              {formStep === 1 && (
-                <section>
-                  <div className="">
-                    <a href="#">
-                      {" "}
-                      <i className="bi bi-chevron-left"></i>
-                    </a>
-                    <img
-                      src={freelancelogo}
-                      className="img-fluid"
-                      id="img"
-                      alt=""
-                    />
-                  </div>
-                  <h5 className="card-text">Choose a username</h5>
-                  <p>
-                    Please note that a username cannot be changed once chosen.
-                  </p>
-                  <div className="col inpute">
-                    <input
-                      type="text"
-                      className="form-control1 user"
-                      id="inputAddress"
-                      placeholder="Username"
-                      onclick="myFunction()"
-                      style={{ height: "4vh" }}
-                      name="userName"
-                      value={Sign.userName}
-                      onChange={(event) => {
-                        setData({ ...Sign, userName: event.target.value });
-                      }}
-                      style={{ height: "30px" }}
-                    />
-                  </div>
-                  <p id="suggest">Suggestions:</p>
-                  <div className=" submit ">
-                    <button
-                      type="submit"
-                      className="btn  btn-lg btn-block"
-                      onClick={() => {
-                        if(!eUsername) {
-                          completeFormstep()
-                        }
-                      }}
-
-                    >
-                    
-                      <a href="#">Next</a>
-                    </button>
-                    {eUsername && "username is already exist"}
-                  </div>
-                </section>
-              )}
-
-              {formStep == 2 && (
-                <div className="container">
-                  <section className="row">
-                    <div className="coll-md-12">
-                      <a href="username.html">
-                        <b>
-                          <i className="bi bi-chevron-left fs-4 text-dark"></i>
-                        </b>
+                {formStep === 1 && (
+                  <section>
+                    <div className="">
+                      <a href="#">
+                        {" "}
+                        <i className="bi bi-chevron-left"></i>
                       </a>
                       <img
                         src={freelancelogo}
-                        className="img-fluid img"
+                        className="img-fluid logo"
                         id="img"
                         alt=""
                       />
                     </div>
-                    <h5>Select account type</h5>
-                    <p>Don't worry, this can be changed later.</p>
-                    <div
-                      className="workclint col-md-12  shadow bg-body rounded "
-                      onClick={() => submit(0)}
-                      id="work"
-                    >
-                      <div className="row d-flex flex-row">
-                        <div className="col-md-5  align-self-center">
-                          <img src={work} className="img-fluid" alt="" />
-                        </div>
-                        <div className="col-md-5 text-center align-self-center">
-                          <p className=" account" onClick={completeFormstep}>
-                            I want to work
-                          </p>
-                        </div>
-                        <div className="col-md-2  align-self-center">
-                          <i className="bi bi-arrow-right"></i>
-                        </div>
-                      </div>
+                    <h5 className="card-text">Choose a username</h5>
+                    <p>
+                      Please note that a username cannot be changed once chosen.
+                    </p>
+                    <div className="col inpute">
+                      <input
+                        type="text"
+                        className="form-control1 user"
+                        id="inputAddress"
+                        placeholder="Username"
+                        onClick="myFunction()"
+                        name="userName"
+                        value={Sign.userName}
+                        onChange={(event) => {
+                          setData({ ...Sign, userName: event.target.value });
+                        }}
+                      />
                     </div>
+                    <p id="suggest">Suggestions:</p>
+                    <div className=" submit ">
+                      <button
+                        type="submit"
+                        className="btn  btn-lg btn-block"
+                        onClick={() => {
+                          if (!eUsername) {
+                            completeFormstep()
+                          }
+                        }}
 
-                    <div
-                      className="hireclint col-md-12  shadow bg-body rounded mt-5"
-                      id="hire"
-                    >
-                      <div
-                        className="row d-flex flex-row"
-                        onClick={() => submit(1)}
                       >
-                        <div className="col-md-5  align-self-center">
-                          <img src={hire} className="img-fluid" alt="" />
-                        </div>
-                        <div className="col-md-5 text-center align-self-center">
-                          <p className=" account" onClick={completeFormstep}>
-                            I want to hire
-                          </p>
-                        </div>
-                        <div className="col-md-2  align-self-center">
-                          <i className="bi bi-arrow-right"></i>
-                        </div>
-                      </div>
+
+                        <a href="#">Next</a>
+                      </button>
+                      {eUsername && "username is already exist"}
                     </div>
                   </section>
-                </div>
-              )}
+                )}
 
-              {formStep === 3 && (
-                <section>
-                  <div className="">
-                    <img
-                      src={freelancelogo}
-                      className="img-fluid"
-                      id="img"
-                      alt=""
-                    />
+                {formStep == 2 && (
+                  <div className="container">
+                    <section className="row">
+                      <div className="coll-md-12">
+                        <a href="username.html">
+                          <b>
+                            <i className="bi bi-chevron-left fs-4 text-dark"></i>
+                          </b>
+                        </a>
+                        <img
+                          src={freelancelogo}
+                          className="img-fluid img logo"
+                          id="img"
+                          alt=""
+                        />
+                      </div>
+                      <h5>Select account type</h5>
+                      <p>Don't worry, this can be changed later.</p>
+                      <div
+                        className="workclint col-md-12  shadow bg-body rounded "
+                        onClick={() => submit(0)}
+                        id="work"
+                      >
+                        <div className="row d-flex flex-row">
+                          <div className="col-md-5  align-self-center">
+                            <img src={work} className="img-fluid" alt="" />
+                          </div>
+                          <div className="col-md-5 text-center align-self-center">
+                            <p className=" account" onClick={completeFormstep}>
+                              I want to work
+                            </p>
+                          </div>
+                          <div className="col-md-2  align-self-center">
+                            <i className="bi bi-arrow-right"></i>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div
+                        className="hireclint col-md-12  shadow bg-body rounded mt-5"
+                        id="hire"
+                      >
+                        <div
+                          className="row d-flex flex-row"
+                          onClick={() => submit(1)}
+                        >
+                          <div className="col-md-5  align-self-center">
+                            <img src={hire} className="img-fluid" alt="" />
+                          </div>
+                          <div className="col-md-5 text-center align-self-center">
+                            <p className=" account" onClick={completeFormstep}>
+                              I want to hire
+                            </p>
+                          </div>
+                          <div className="col-md-2  align-self-center">
+                            <i className="bi bi-arrow-right"></i>
+                          </div>
+                        </div>
+                      </div>
+                    </section>
                   </div>
-                  <h3>Sign Up Success</h3>
-                  {renderForm()}
+                )}
 
-                </section>
-              )}
-            </form>
+                {formStep === 3 && (
+                  <section>
+                    <div className="">
+                      <img
+                        src={freelancelogo}
+                        className="img-fluid"
+                        id="img"
+                        alt=""
+                      />
+                    </div>
+                    <h3>Sign Up Success</h3>
+                    {renderForm()}
+
+                  </section>
+                )}
+              </form>
+            </div>
           </div>
         </div>
       </div>

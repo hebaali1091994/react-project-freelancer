@@ -36,14 +36,11 @@ import Setting from './Pages/Setting/Setting';
 import SingleFreelancer from "./Components/Single Freelancer/SingleFreelancer";
 // import Details from './Pages/Test/Details';
 import Freelancerpage from './Pages/FreelancerPage/Freelancerpage';
-<<<<<<< HEAD
 import NoFoundpage from './Pages/NoFoundPage/NoFoundpage';
 import Contract from './Pages/Contract/Contract';
-=======
 import Contactus from './Pages/Contactus/Contactus'
 import Enterprise from './Pages/enterprise/Enterprise';
 import Documentation from './Pages/Documentation/Documentation'
->>>>>>> 871728cd8e214daa825297911325a5577eb9e7d9
 
 function App() {
   const [socket, setSocket] = useState(null);
@@ -80,7 +77,6 @@ function App() {
           <Route path='/inbox' element={user ? <Inbox /> : <Navigate to="/Login" />} />
           <Route path='/DisplayPost' element={user ? <DisplayProject /> : <Navigate to="/Login" />} />
           <Route path='/' element={user ? <Dashbaord /> : <Route path="/Login" element={<Login />} />} />
-<<<<<<< HEAD
           <Route path='/DisplayProject' element={user ? <DisplayProject /> : <Navigate to="/Login" />} />
           <Route path='/DisplayProject/Proposals/:id' element={user ? <Proposals /> : <Navigate to="/Login" />} />
           <Route path='/DisplayProject/Tasks/:id' element={user ? <Tasks /> : <Navigate to="/Login" />} />
@@ -88,19 +84,16 @@ function App() {
           <Route path='/DisplayProject/Files/:id' element={user ? <Files /> : <Navigate to="/Login" />} />
           <Route path='/Skills' element={user ? <Skills /> : <Navigate to="/Login" />} />
           <Route path='/Contract' element={user ? <Contract /> : <Navigate to="/Login" />} />
-          <Route path='**' element={<NoFoundpage />} />
-
-=======
           <Route path='/DisplayProject' element={<DisplayProject />} />
           <Route path='/DisplayProject/Proposals/:id' element={<Proposals />} />
           <Route path='/DisplayProject/Tasks/:id' element={<Tasks />} />
           <Route path='/DisplayProject/Details/:id' element={<DetailsData />} />
           <Route path='/DisplayProject/Files/:id' element={<Files />} />
           <Route path='/Skills' element={<Skills />} />
-          <Route path='/Contactus'  element={<Contactus/>}/>
-        <Route path='/Enterprise'  element={<Enterprise/>}/>
-        <Route path='/Documentation'  element={<Documentation/>}/>
->>>>>>> 871728cd8e214daa825297911325a5577eb9e7d9
+          <Route path='/Contactus' element={<Contactus />} />
+          <Route path='/Enterprise' element={<Enterprise />} />
+          <Route path='/Documentation' element={<Documentation />} />
+          <Route path='**' element={<NoFoundpage />} />
 
 
         </Routes>
