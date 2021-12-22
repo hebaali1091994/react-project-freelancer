@@ -39,9 +39,9 @@ export default function Proposals() {
 
               <div className="row">
                 
-                {freelancerdata.map((f) => (
+                {/* {freelancerdata.map((f) => (
                   <SingleProposer  key={f.id} f={f} Freelancer={Freelancer} />
-                ))}
+                ))} */}
 
 
 

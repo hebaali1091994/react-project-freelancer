@@ -36,6 +36,7 @@ import Setting from './Pages/Setting/Setting';
 import SingleFreelancer from "./Components/Single Freelancer/SingleFreelancer";
 // import Details from './Pages/Test/Details';
 import Freelancerpage from './Pages/FreelancerPage/Freelancerpage';
+import MyProfile from "./Pages/proflle/MyProfile";
 
 function App() {
   const [socket, setSocket] = useState(null);
@@ -77,7 +78,9 @@ function App() {
           <Route path='/DisplayProject/Details/:id' element={<DetailsData />} />
           <Route path='/DisplayProject/Files/:id' element={<Files />} />
           <Route path='/Skills' element={<Skills />} />
+          <Route path='/MyProfile' element={< MyProfile />} />
 
+         
 
 
         </Routes>

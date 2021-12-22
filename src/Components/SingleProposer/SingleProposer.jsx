@@ -37,8 +37,8 @@ const SingleProposer = ({ f, Freelancer }) => {
 
 const handlechat=async ()=>{
     const start = {
-     senderId:"61b9dc948241174bd6f310c2",
-    reciverId:"61c06f86dd92c8b10ca12316"
+     senderId:"61c21c496c61dbd8d80958e5",
+    reciverId:"61c1e0eb513c0ccc569d1962"
     };
     try {
      await axios.post("/conversion/", start);
@@ -46,7 +46,7 @@ const handlechat=async ()=>{
       } catch (err) {
         console.log(err);
       };
-<Link className="btn postproject m-1" exact="true" to="/Massenger"></Link>
+{/* <Link className="btn postproject m-1" exact="true" to="/Massenger"></Link> */}
 }
 
     return (
