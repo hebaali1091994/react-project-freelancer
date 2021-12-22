@@ -50,9 +50,7 @@ const BidProject = () => {
                 freelanceid: user._id,
                 BidAmount: bidamount.current.value,
                 numberofDay: NumberOfDay.current.value,
-                deccription: Desc.current.value,
-                paymentmilestone: Projectmilestone.current.value,
-                datemileStone: AmountMileStone.current.value,
+                deccription: Desc.current.value
             }, {
                 headers: {
                     token: user.accesToken
@@ -117,9 +115,9 @@ const BidProject = () => {
                             ></textarea>
                             <div class="valid-tooltip">
                             </div>
-                            <h6>Suggest a milestone payment</h6>
-                            <p>Define the tasks that you will complete for this</p>
-                            <div className="row">
+                            {/* <h6>Suggest a milestone payment</h6> */}
+                            {/* <p>Define the tasks that you will complete for this</p> */}
+                            {/* <div className="row">
                                 <div className="col-6">
                                     <div className="border d-flex flex-row">
                                         <input
@@ -142,14 +140,13 @@ const BidProject = () => {
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
                         <button
                             type="submit"
                             class="btn"
                             style={{ background: "#999", marginTop: "10px" }}>
-                            Add another milestone payment
-                        </button>
+                            Submit Your Proposal                        </button>
                         <hr></hr>
                     </form>
                 </div>

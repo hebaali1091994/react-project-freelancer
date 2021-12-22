@@ -14,7 +14,6 @@ const Skills = () => {
 
 
   // useEffect(() => {
-    
   //   const fetchSkills = async ()=>{
   //     const res = await axios.get("/Category/");
   //     setSkills(res.data)
@@ -27,10 +26,11 @@ const Skills = () => {
 
   const completeFormstep = () => {
     setFormStep((cur) => cur + 1);
-if (formStep===5){
-  window.location.replace('/');
+    if (formStep === 5) {
+      window.location.replace('/');
 
-}  }
+    }
+  }
   const FormStepBack = () => {
     setFormStep((cur) => cur - 1);
   };
@@ -45,57 +45,58 @@ if (formStep===5){
     } else {
       return (
         <>
-          <button  type="button"className="btn btn-secondary" onClick={FormStepBack}>Back</button>
-          <button  type="button"className="btn btn-primary"onClick={completeFormstep}>Next Step</button>
+          <button type="button" className="btn btn-secondary" onClick={FormStepBack}>Back</button>
+          <button type="button" className="btn btn-primary" onClick={completeFormstep}>Next Step</button>
         </>
       );
     }
   };
   const [skill, setData] = useState({
-    img:"",
-    first:"",
-    Last:"",
-    description:"",
-    DescribeU:"",
-    DataS:"",
-    birht:"",
-    Address:"",
+    img: "",
+    first: "",
+    Last: "",
+    description: "",
+    DescribeU: "",
+    DataS: "",
+    birht: "",
+    Address: "",
   })
   console.log(skill);
-    return (
-        <>
-        <div className="container-fluid mt-3">
+  return (
+    <>
+      <div className="container-fluid mt-3">
         <div className="row">
-            <div className="col-md-12 d-flex">
-                <img class="freelancer-logo" src={freelancelogo}  alt=""/>
-                <p className="m-auto fs-4"><b>Profile details</b></p>
-        
-            </div>
-            <div className="col-md-12">
-            <progress max="7" value={formStep + 1} style={{ width: "100%", height: "5vh" }}/>
-        </div>
-   
-    <div class="container">
-        <div class="row">
-            <div classname="col-md-12">
-            <form className="col-sm-12 col-md-12">
-          {formStep === 0 && (<Tell   skill={skill} setData={setData}/>)}
-          {formStep === 1 && <Profile skill={skill} setData={setData}/>}
-          {formStep === 2 && <About  skill={skill} setData={setData} />}
-          {formStep === 3 && <Whatlang skill={skill} setData={setData} />}
-          {formStep === 4 && (<Located skill={skill} setData={setData} />)}
-          {formStep === 5 && <Verification skill={skill} setData={setData} />}
-          <div className="d-flex justify-content-between mt-5">
-            {renderButton()}
-          </div>
-        </form>
-            </div>
-        </div>
-        </div>
-        </div>
-        </div>
-        </>
-    )
+          <div className="col-md-12 d-flex">
+            <img class="freelancer-logo" src={freelancelogo} alt="" />
+            <p className="m-auto fs-4"><b>Profile details</b></p>
 
-    }
+          </div>
+          <div className="col-md-12">
+            <progress max="7" value={formStep + 1} style={{ width: "100%", height: "5vh" }} />
+          </div>
+
+          <div class="container">
+            <div class="row">
+              <div classname="col-md-12">
+                <form className="col-sm-12 col-md-12">
+                  {formStep === 0 && (<Tell Skills={Skills} Data={skill} setData={setData} />)}
+                  {formStep === 1 && <Profile Data={skill} setData={setData} />}
+                  {formStep === 2 && <About Profile Data={skill} setData={setData} />}
+                  {formStep === 3 && <Whatlang Data={skill} setData={setData} />}
+                  {formStep === 4 && (<Located Data={skill} setData={setData} />)}
+                  {formStep === 5 && <Verification Data={skill} setData={setData} />}
+                  <div className="d-flex justify-content-between mt-5">
+                    {renderButton()}
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div >
+    </>
+  )
+
+
+}
 export default Skills

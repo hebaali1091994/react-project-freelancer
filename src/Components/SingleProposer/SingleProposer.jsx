@@ -1,38 +1,74 @@
 import axios from 'axios';
-import { useContext, useState } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { Context } from "../../context/Context";
 import { Link, useLocation } from 'react-router-dom';
 
 
 const SingleProposer = ({ f, Freelancer }) => {
 
-    const [Project, setProject] = useState({})
+    const [DataOfProject, setDataOfProject] = useState({})
     const [Userdata, setUserdata] = useState({})
+    const [ProjectMaster, setProjectMaster] = useState({})
 
     const location = useLocation();
 
     const path = location.pathname.split('/')[3];
-    console.log(path);
     const { user } = useContext(Context)
+    useEffect(() => {
+        const getDataProject = async () => {
+            const userdata = await axios.get(`/Project/oneproject/${path}`, {
+                headers: {
+                    token: user.accesToken
+                }
+            });
+            setDataOfProject(userdata.data)
+        }
+        const getUserData = async () => {
+            const userdata = await axios.get(`/users/one/${DataOfProject.userid}`, {
+                headers: {
+                    token: user.accesToken
+                }
+            });
+            setProjectMaster(userdata.data)
+        }
+        getDataProject()
+        getUserData();
+    }, [path, DataOfProject]);
 
-    const getDataProject = async () => {
-        const userdata = await axios.get(`/Project/oneproject/${path}`, {
-            headers: {
-                token: user.accesToken
-            }
-        });
-        setProject(userdata.data)
+
+    console.log("Freelancer", f._id);
+    console.log(ProjectMaster);
+
+    console.log(DataOfProject);
+
+    // useEffect(() => {
+    //     const getUserData = async () => {
+    //         const userdata = await axios.get(`/users/one/${ProjectMaster.freelanceid}`, {
+    //             headers: {
+    //                 token: user.accesToken
+    //             }
+    //         });
+    //         setUserdata(userdata.data)
+    //     }
+    //     getUserData();
+
+    // }, [])
+    // console.log(Userdata);
+
+    const handlechat = async () => {
+        const start = {
+            senderId: "61b9dc948241174bd6f310c2",
+            reciverId: "61c06f86dd92c8b10ca12316"
+        };
+        try {
+            await axios.post("/conversion/", start);
+
+        } catch (err) {
+            console.log(err);
+        };
+        <Link className="btn postproject m-1" exact="true" to="/Massenger"></Link>
     }
-    // getDataProject();
-    console.log(Project);
-    const getUserData = async () => {
-        const userdata = await axios.get(`/users/one/${f.freelanceid}`, {
-            headers: {
-                token: user.accesToken
-            }
-        });
-        setUserdata(userdata.data)
-    }
+<<<<<<< HEAD
     getUserData();
 
 const handlechat=async ()=>{
@@ -48,6 +84,8 @@ const handlechat=async ()=>{
       };
 {/* <Link className="btn postproject m-1" exact="true" to="/Massenger"></Link> */}
 }
+=======
+>>>>>>> 860a5f097337c5fef03246446ba8041a7b6c1ddd
 
     return (
 
@@ -77,10 +115,16 @@ const handlechat=async ()=>{
                     </div>
                 </div>
             </div>
+
+            <p> userid = {DataOfProject.userid}</p>
+            <p>id = {ProjectMaster._id}</p>
             <div className="d-flex justify-content-end mb-3">
-                <button type="button" class="btn btn-primary mr-3">Hire</button>
-               <Link to="/Massenger"> <button type="button" class="btn btn-success"  onClick={handlechat}>Chat</button>
-               </Link>
+                {ProjectMaster._id === DataOfProject.userid && ProjectMaster.acountType === "hire" ?
+                    <div>
+                        <Link to="" class="btn btn-primary mr-3">Hire</Link>
+                        <Link to="/Massenger"> <button type="button" class="btn btn-success" onClick={handlechat}>Chat</button>
+                        </Link> </div> : "Wait For Data"
+                }
             </div>
         </div>
     )

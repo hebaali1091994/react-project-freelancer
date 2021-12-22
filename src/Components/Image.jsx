@@ -1,5 +1,6 @@
 import React from 'react'
 import './Images.css'
+import { Link } from 'react-router-dom';
 import i18next from "i18next";
 import '../i18n'
 import { useTranslation } from 'react-i18next';
@@ -26,7 +27,7 @@ const   Image=()=> {
                         <h2>{t("Freelancer API.")}</h2>
                         <h3>{t("50 million professionals on demand")}</h3>
                         <p>{t("Why hire people when you can simply integrate our talented cloud workforce instead?")}</p>
-                        <button className="px-4 py-2">{t("View Documentation")}</button>
+                        <Link to="/Documentation"   role="button" className=" btnnimg px-4 py-2">{t("View Documentation")}</Link>
                     </div>
                 </div>
                 <div className="free-right col">
@@ -34,8 +35,8 @@ const   Image=()=> {
                         <h2>{t("Freelancer Enterprise.")}</h2>
                         <h3>{t("Company budget? Get more done for less")}</h3>
                         <p>{t("Use our workforce of 50 million to help your integrate our business achieve more instead?")}</p>
-                        <button className="px-4 py-2">{t("Contact Us")}</button>
-                    </div>
+     
+                    </div>  <Link to="/Enterprise"   role="button" className=" btnnimg px-4 py-2">{t(" Contact Us")}</Link>
 
                 </div>
             </div>

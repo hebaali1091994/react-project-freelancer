@@ -10,23 +10,34 @@ import { useNavigate, useLocation } from 'react-router-dom';
 
 import axios from 'axios';
 import SingleProposer from '../../Components/SingleProposer/SingleProposer';
+import Propser from './../../Components/Propser/Propser';
 export default function Proposals() {
   const [state, setstate] = useState(0);
   const { user } = useContext(Context)
   const location = useLocation();
   const path = location.pathname.split('/')[3];
-  const [Freelancer, setFreelancer] = useState([])
-  useEffect(() => {
-    const getProjects = async () => {
+  const [Freelancer, setFreelancer] = useState({})
 
-      const res = await axios.get('/Project/oneproject/' + path);
-      setFreelancer(res.data);
+  // const [Freelancer, setFreelancer = useState({})
+
+  useEffect(() => {
+    const getDataProject = async () => {
+      const userdata = await axios.get(`/Project/oneproject/${path}`, {
+        headers: {
+          token: user.accesToken
+        }
+      });
+      setFreelancer(userdata.data)
     }
-    getProjects();
+    getDataProject()
+
+
   }, [path]);
 
-  let freelancerdata = Freelancer.freelances;
 
+
+  console.log(Freelancer);
+  let freelancerdata = Freelancer.freelances;
   return (
     <div className="parent ">
       <Nav2 />
@@ -38,14 +49,21 @@ export default function Proposals() {
             <div className="col-md-8 mt-5">
 
               <div className="row">
+<<<<<<< HEAD
                 
                 {/* {freelancerdata.map((f) => (
                   <SingleProposer  key={f.id} f={f} Freelancer={Freelancer} />
                 ))} */}
+=======
+                {/* <Propser Freelancer={Freelancer} /> */}
+                {Freelancer.freelances ? Freelancer.freelances.map((f, Freelancer) => (
+                  <SingleProposer f={f} Freelancer={Freelancer} />
+                )) : <p>Wait For Data</p>}
+>>>>>>> 860a5f097337c5fef03246446ba8041a7b6c1ddd
 
 
 
-              </div>
+              </div >
               <div className="col-md-12 bg-white mt-3 part2 d-flex justify-content-center align-items-center"
                 style={{ height: "400px" }}>
                 <div>
@@ -90,7 +108,7 @@ export default function Proposals() {
 
 
 
-            </div>
+            </div >
 
             <div className="col-4  ml-8 mt-2">
               <div className='row'>
@@ -148,10 +166,10 @@ export default function Proposals() {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
+          </div >
+        </div >
+      </div >
       <Footer />
-    </div>
+    </div >
   )
 }

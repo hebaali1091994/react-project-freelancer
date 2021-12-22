@@ -90,3 +90,11 @@
   background-color: #eb4081;
 }
 /*# sourceMappingURL=style.css.map */
+.btnnimg {
+  background-color: #e40b5e;
+  color: #f7f7f7;
+  border: 0;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  text-decoration: none;
+}
