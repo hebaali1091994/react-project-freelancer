@@ -23,7 +23,7 @@ const Massenger = () => {
     socket.current.on("getMessage", (data) => {
       setArrivalMessage({
         Sender: data.senderId,
-        Text: data.Text,
+        Text: data.text,
         createdAt: Date.now(),
       });
       console.log(data)

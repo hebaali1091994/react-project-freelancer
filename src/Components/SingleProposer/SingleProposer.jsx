@@ -79,6 +79,13 @@ const SingleProposer = ({ f, Freelancer }) => {
                 }
             });
 
+            const getDataContract = async () => {
+                const getContract = await axios.get("/contract/oneproject/", {
+                    projectId: path
+                }
+                )
+            }
+            getDataContract();
 
             res.data && window.location.replace(`/Contract/${path}`);
         } catch (error) {
