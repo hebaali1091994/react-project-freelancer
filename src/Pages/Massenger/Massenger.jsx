@@ -71,7 +71,6 @@ const Massenger = () => {
     };
     getMessages();
   }, [currentChat]);
-  console.log(messages.length)
   // -------------------------------------------------------End get Messages ------------------------------------------------//
 
   const handleSubmit = async (e) => {

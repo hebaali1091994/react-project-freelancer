@@ -46,8 +46,13 @@ const SingleProposer = ({ f, Freelancer }) => {
 
     const handlechat = async () => {
         const start = {
+<<<<<<< HEAD
             senderId: f.freelanceid,
             reciverId: user._id,
+=======
+            senderId:f.freelanceid,
+            reciverId:user._id,
+>>>>>>> 07b51c942c5e927bd60ab3a5beac9fa8dac4dd65
         };
         try {
             await axios.post("/conversion/", start);
