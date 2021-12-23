@@ -34,7 +34,8 @@ export default function Header() {
                   <Link to="/" className="link"> Dashboard</Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link text-white" aria-current="page" href="#"> {t("My Lists")}     </a>
+                  
+                  <Link to="/Mylist"  className="nav-link text-white" aria-current="page" href="#"> {t("My Lists")}     </Link>
                 </li>
                 <li className="nav-item">
                   <Link to="/Projects" className="link" >{t("My Projects")} </Link>

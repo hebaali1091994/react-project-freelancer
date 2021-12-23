@@ -1,11 +1,9 @@
-
 import "./App.css";
 import Home from "./Pages/Home";
 import Postproject from "./Pages/post-project/Postproject.jsx";
 import Login from "./Pages/Login/Login";
 
-import './App.css';
-
+import "./App.css";
 
 import { Routes, Route, Navigate } from "react-router";
 import SignUp from "./Pages/Sign up/SignUp";
@@ -14,36 +12,35 @@ import { Suspense, useState, useContext, useEffect } from "react";
 import { io } from "socket.io-client";
 import "../src/i18n";
 
-import { Context } from './context/Context';
-import Dashbaord from './Pages/Dashbaord/Dashbaord';
+import { Context } from "./context/Context";
+import Dashbaord from "./Pages/Dashbaord/Dashbaord";
 
-import Massenger from './Pages/Massenger/Massenger.jsx';
+import Massenger from "./Pages/Massenger/Massenger.jsx";
 
-
-import Feedback from './Pages/Feedback/feedback';
-import Project_Contests from './Pages/Projects/Project_Contests';
-import MemberShip from './Pages/MemberShip/memberShip';
-import HowitWork from './Pages/HowItWork/howitWork';
-import Inbox from './Pages/inbox/Inbox';
-import DisplayProject from './Pages/DisplayProject/DisplayProject';
-import Skills from './Pages/Skills/Skills';
-import Proposals from './Pages/projectinfo/Proposals';
-import Tasks from './Pages/projectinfo/Tasks';
-import Details from './Pages/projectinfo/Details';
-import Files from './Pages/projectinfo/Files';
-import DetailsData from './Pages/projectinfo/DetailsData';
-import Setting from './Pages/Setting/Setting';
+import Feedback from "./Pages/Feedback/feedback";
+import Project_Contests from "./Pages/Projects/Project_Contests";
+import MemberShip from "./Pages/MemberShip/memberShip";
+import HowitWork from "./Pages/HowItWork/howitWork";
+import Inbox from "./Pages/inbox/Inbox";
+import DisplayProject from "./Pages/DisplayProject/DisplayProject";
+import Skills from "./Pages/Skills/Skills";
+import Proposals from "./Pages/projectinfo/Proposals";
+import Tasks from "./Pages/projectinfo/Tasks";
+import Details from "./Pages/projectinfo/Details";
+import Files from "./Pages/projectinfo/Files";
+import DetailsData from "./Pages/projectinfo/DetailsData";
+import Setting from "./Pages/Setting/Setting";
 import SingleFreelancer from "./Components/Single Freelancer/SingleFreelancer";
 // import Details from './Pages/Test/Details';
-import Freelancerpage from './Pages/FreelancerPage/Freelancerpage';
-import NoFoundpage from './Pages/NoFoundPage/NoFoundpage';
-import Contract from './Pages/Contract/Contract';
-import Contactus from './Pages/Contactus/Contactus'
-import Enterprise from './Pages/enterprise/Enterprise';
-import Documentation from './Pages/Documentation/Documentation'
+import Freelancerpage from "./Pages/FreelancerPage/Freelancerpage";
+import NoFoundpage from "./Pages/NoFoundPage/NoFoundpage";
+import Contract from "./Pages/Contract/Contract";
+import Contactus from "./Pages/Contactus/Contactus";
+import Enterprise from "./Pages/enterprise/Enterprise";
+import Documentation from "./Pages/Documentation/Documentation";
 import MyProfile from "./Pages/proflleEdit/MyProfile";
 import Browse_Jobs from "./Pages/BrowseJobs/Browse_Jobs";
-
+import Mylist from "./Pages/Mylist/Mylist";
 function App() {
   const [socket, setSocket] = useState(null);
 
@@ -60,14 +57,24 @@ function App() {
   document.documentElement.language = lang;
 
   return (
-    <div className="App" dir={lang === "ar" ? "rtl" : "ltr"} lang={lang === "ar" ? "ar" : "en"}>
+    <div
+      className="App"
+      dir={lang === "ar" ? "rtl" : "ltr"}
+      lang={lang === "ar" ? "ar" : "en"}
+    >
       <Suspense fallback="Loading ...">
-
         <Routes>
           <Route path="/Login" element={<Login />} />
           <Route path="/Setting" element={<Setting />} />
-          <Route path="/" exact="true" element={user ? <Dashbaord /> : <Home />} />
-          <Route path="/Post-project/" element={user ? <Postproject /> : <Navigate to="/Login" />} />
+          <Route
+            path="/"
+            exact="true"
+            element={user ? <Dashbaord /> : <Home />}
+          />
+          <Route
+            path="/Post-project/"
+            element={user ? <Postproject /> : <Navigate to="/Login" />}
+          />
           <Route path="/SignUp" element={<SignUp />} />
           <Route path='/paypal' element={user ? <Paypal /> : <Navigate to="/Login" />} />
           <Route path='/' element={<Dashbaord />} />

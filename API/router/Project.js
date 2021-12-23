@@ -112,6 +112,16 @@ router.get("/all", async (req, res) => {
   }
 });
 
+router.get("/allopened", async (req, res) => {
+  try {
+    const allproject = await Project.find({ state: "opened" });
+    res.status(200).json(allproject);
+  } catch (error) {
+    res.status(401).json(error);
+  }
+});
+
+
 //one project
 
 router.get("/oneproject/:id", verifyTokenAndAuthorization, async (req, res) => {

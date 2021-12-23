@@ -131,3 +131,8 @@ const Browse_Jobs = () => {
 };
 
 export default Browse_Jobs;
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 815f43b6753904028adb717373fec050635123fd

@@ -3,9 +3,11 @@ import Header from "../../Components/header/Header";
 import SingleFreelancer from "./../../Components/Single Freelancer/SingleFreelancer";
 import SingleProject from "./../../Components/Single Project/SingleProject";
 import SingleContests from "./../../Components/SingleContests/SingleContests";
+
 import "./DisplayProject.css";
 import { Context } from "../../context/Context";
 import { useContext } from "react";
+import { TreeGridComponent,Inject, Page, Filter } from '@syncfusion/ej2-react-treegrid';
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Nav2 from "./../projectinfo/Nav2";
@@ -115,7 +117,7 @@ const DisplayProject = () => {
                     </button>
 
                     <button
-                      className="nav-link col-2   text-white"
+                       className="nav-link col-2   text-white"
                       id="nav-profile-tab"
                       data-bs-toggle="tab"
                       data-bs-target="#nav-profile"
@@ -437,6 +439,7 @@ const DisplayProject = () => {
                         type="checkbox"
                         value=""
                         id="flexCheckDefault"
+                        name="checkbox"
                       />
                       <label
                         className="form-check-label"

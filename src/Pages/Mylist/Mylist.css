@@ -1,0 +1,192 @@
+
+  ::-moz-selection {
+    background: #6d50e2;
+  }
+  
+  ::selection {
+    background: #6d50e2;
+  }
+  
+  .container {
+    max-width: 950px;
+    width: 100%;
+  }
+  
+  .container .topic {
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+  
+  .content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  
+  .content .list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 20%;
+    margin-right: 50px;
+    position: relative;
+  }
+  
+  .content .list label {
+    height: 60px;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 60px;
+    cursor: pointer;
+    padding-left: 25px;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    color: #333;
+    z-index: 12;
+  }
+  
+  .content .list label:hover {
+    color: #6d50e2;
+  }
+  
+  .content .slider {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 60px;
+    width: 100%;
+    border-radius: 12px;
+    background: #1074cba2;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+  }
+  
+  #home:checked ~ .list .slider {
+    top: 0;
+  }
+  
+  #blog:checked ~ .list .slider {
+    top: 60px;
+  }
+  
+  #help:checked ~ .list .slider {
+    top: 120px;
+  }
+  
+  #code:checked ~ .list .slider {
+    top: 180px;
+  }
+  
+  #about:checked ~ .list .slider {
+    top: 240px;
+  }
+  
+  .content .text-content {
+    width: 80%;
+    height: 100%;
+  }
+  
+  .content .text {
+    display: none;
+  }
+  
+  .content .text .title {
+    font-size: 25px;
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+  
+  .content .text p {
+    text-align: justify;
+  }
+  
+  .content .text-content .home {
+    display: block;
+  }
+  
+  #home:checked ~ .text-content .home,
+  #blog:checked ~ .text-content .blog,
+  #help:checked ~ .text-content .help,
+  #code:checked ~ .text-content .code,
+  #about:checked ~ .text-content .about {
+    display: block;
+  }
+  
+  #blog:checked ~ .text-content .home,
+  #help:checked ~ .text-content .home,
+  #code:checked ~ .text-content .home,
+  #about:checked ~ .text-content .home {
+    display: none;
+  }
+  
+  .content input {
+    display: none;
+  }
+  
+  .btn-bro {
+    background-color: #007fed;
+    color: #f7f7f7;
+    border: 0;
+    padding: 8px 16px;
+    font-size: 15px;
+    font-weight: 500;
+    margin-left: 27rem;
+  }
+  
+  .fav-card img {
+    margin-left: 27rem;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  
+  .fav-card h3 {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  
+  .fav-card p {
+    font-weight: 400;
+    font-size: 17px;
+  }
+  
+  .fav-card button {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  
+  .hir-card img {
+    margin-left: 27rem;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  
+  .hir-card h3 {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  
+  .hir-card p {
+    font-weight: 400;
+    font-size: 17px;
+  }
+  
+  .hir-card button {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  
+  .list {
+    margin-bottom: 18rem;
+  }
+  /*# sourceMappingURL=style.css.map */
