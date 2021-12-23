@@ -2,68 +2,15 @@ import React from "react";
 // import "./contact.css";
 import { Link } from "react-router-dom";
 import Footer from "../../Components/Footer";
+import Header from '../../Components/header/Header'
+import Navbar from './../../Components/Navbar'
 const Contactus = () => {
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-dark  " style={{ backgroundColor:"rgb(22,30,44)" }}>
-        <div className="container " style={{ width: "100%",backgroundColor:"rgb(22,30,44)" }}>
-          <a className="navbar-brand ">
-            <img
-              src="	https://www.f-cdn.com/assets/main/en/assets/freelancer-enterprise-logo-dark-mobile.svg
-          "
-              style={{ width: "170px" }}
-            />
-          </a>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div
-            className="collapse navbar-collapse d-flex justify-content-between align-items-center"
-            id="navbarSupportedContent"
-          >
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0"></ul>
-            <ul
-              className="navbar-nav me-auto mb-2 mb-lg-0"
-              style={{
-                listStyle: "none",
-                display: "flex",
-                justifyContent: "space-between",
-              }}
-            >
-              <li>
-                <Link
-                  className="text-black p-2"
-                  to="/Login"
-                  style={{ color: "white" }}
-                >
-                  {" "}
-                  Iog In
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="text-black p-4"
-                  to="/SignUp"
-                  style={{ color: "white", marginRight: "40px" }}
-                >
-                  {" "}
-                  Sign Up
-                </Link>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+      <Header />
+      <Navbar />
       <div className="container">
-        <div>
+        <div className="mt-5">
           <h1>Freelancer Enterprise Enquiries</h1>
           <p>
             One of our team members will get back to you right away about your
@@ -486,9 +433,9 @@ const Contactus = () => {
               </select>
             </form>
           </div>
-    
+
         </div>
-     
+
       </div>
       <Footer />
     </div>

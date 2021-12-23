@@ -10,17 +10,17 @@ import Verification from "../../Components/skillscomponents/verification/Verific
 import axios from 'axios';
 
 const Skills = () => {
-  //  const [Skills, setSkills] = useState([])
+  const [Skills, setSkills] = useState([])
 
 
-  // useEffect(() => {
-  //   const fetchSkills = async ()=>{
-  //     const res = await axios.get("/Category/");
-  //     setSkills(res.data)
-  //   }
-  //   fetchSkills();
-  // },[]);
-  // console.log(Skills);
+  useEffect(() => {
+    const fetchSkills = async () => {
+      const res = await axios.get("/Category/");
+      setSkills(res.data)
+    }
+    fetchSkills();
+  }, []);
+  console.log(Skills);
 
   const [formStep, setFormStep] = React.useState(0);
 

@@ -12,6 +12,8 @@ import { Context } from "../../context/Context";
 const DetailsData = () => {
     const location = useLocation();
     const { user } = useContext(Context)
+    const [cats, setCats] = useState([]);
+
 
     const path = location.pathname.split('/')[3];
     console.log(path);
@@ -82,8 +84,12 @@ const DetailsData = () => {
                                                                     {Project.Tellus}
 
                                                                 </p>
-                                                                <h5>Skills Requiredsss</h5>
+                                                                <h5>Skills Required</h5>
 
+                                                                {/* {Project.skills ? Project.skills.map((c) => (
+                                                                    { c }
+
+                                                                )) : ""} */}
                                                             </div>
 
                                                         </div>

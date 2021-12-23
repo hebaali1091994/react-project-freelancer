@@ -58,7 +58,7 @@ function App() {
 
   let lang = localStorage.getItem("lang") || "en";
   document.documentElement.language = lang;
-  
+
   return (
     <div className="App" dir={lang === "ar" ? "rtl" : "ltr"} lang={lang === "ar" ? "ar" : "en"}>
       <Suspense fallback="Loading ...">

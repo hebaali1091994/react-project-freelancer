@@ -24,7 +24,7 @@ const SingleFreelancer = ({ users }) => {
                             <h5 class="card-title text-dark text-none">  { }</h5>
 
                             <h3>{users.userName} </h3>
-                            <p>{users.Description && users.Description} Sorry No Description Added</p>
+                            <p>{users.Description ? users.Description : "Sorry No Description Added"}</p>
                             <div class="skill-person">PHP - JAVASCRIPT - WEB </div>
                             <p class="card-text rating-person"><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></p>
                         </div>

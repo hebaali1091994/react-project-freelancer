@@ -81,11 +81,6 @@ router.post("/apply/:id", verifyToken, async (req, res) => {
     res.status(401).json(err);
   }
 
-
-
-
-
-
 })
 
 //update project
@@ -121,6 +116,14 @@ router.get("/all", async (req, res) => {
 router.get("/oneproject/:id", verifyTokenAndAuthorization, async (req, res) => {
   try {
     const oneproject = await Project.findById(req.params.id);
+    res.status(200).json(oneproject);
+  } catch (error) {
+    res.status(401).json(error);
+  }
+});
+router.get("/oneproject/", async (req, res) => {
+  try {
+    const oneproject = await Project.find({ freelanceId: req.body.freelanceId });
     res.status(200).json(oneproject);
   } catch (error) {
     res.status(401).json(error);
