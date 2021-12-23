@@ -13,7 +13,7 @@ router.post("/create/:id", async (req, res) => {
     userid: req.params.id,
     ChooseName: req.body.ChooseName,
     Tellus: req.body.Tellus,
-    skills:req.body.skills,
+    skills: req.body.skills,
     uploadimg: req.body.uploadimg,
     pay: req.body.pay,
     budget: req.body.budget,

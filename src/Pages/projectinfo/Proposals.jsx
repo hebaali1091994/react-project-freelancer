@@ -57,7 +57,7 @@ export default function Proposals() {
 
 
               </div >
-              <div className="col-md-12 bg-white mt-3 part2 d-flex justify-content-center align-items-center"
+              {/*    <div className="col-md-12 bg-white mt-3 part2 d-flex justify-content-center align-items-center"
                 style={{ height: "400px" }}>
                 <div>
                   <input type="number" value={state} onChange={e => { setstate(e.target.value) }} />
@@ -88,7 +88,7 @@ export default function Proposals() {
 
 
 
-              </div>
+              </div> */}
 
 
 

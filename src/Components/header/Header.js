@@ -9,13 +9,16 @@ import { useTranslation } from 'react-i18next';
 import { Link } from "react-router-dom";
 import { Context } from '../../context/Context';
 // import Home from '../Pages/Home';
-export default function Header({messages}) {
+export default function Header({ messages }) {
   const { user, dispatch } = useContext(Context);
   const LogoutHandle = () => {
     dispatch({ type: "LOGOUT" })
     window.location.replace('/');
 
   }
+
+
+
 
   const { t, i18n } = useTranslation();
   let lang = localStorage.getItem('lang') || 'en'
@@ -28,6 +31,7 @@ export default function Header({messages}) {
     console.log("lang", lang);
     console.log("option.target.value", option.target.value);
   }
+  const PF = "http://localhost:5000/images/"
 
   return (
     <div className="bg-white">
@@ -82,24 +86,25 @@ export default function Header({messages}) {
                       <div className="counter">2</div>
                     </div>
                     <Link to="/Massenger"> <ChatBubbleOutlineOutlined ></ChatBubbleOutlineOutlined></Link>
-                    <span className="px-1">{messages?messages.length:""}</span>
+                    <span className="px-1">{messages ? messages.length : ""}</span>
                     <Link className="link btn postproject m-1" to="/Post-project/" > Post a Project </Link>
                     <div class="dropdown ">
                       <button class="btn dropdown-toggle d-flex" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img
-                          className="headerImg"
-                          src="https://images.pexels.com/photos/1167355/pexels-photo-1167355.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                          alt=""
-                        />
+                        {user.img ? <img className="header-img" src={PF + user.img} alt="" /> :
+                          <img
+                            className="headerImg"
+                            src="https://images.pexels.com/photos/1167355/pexels-photo-1167355.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                            alt=""
+                          />
+                        }
                         <div className="d-flex flex-column">
                           <small>{user.userName}</small>
                           <small>0.00 USD</small>
                         </div>
                       </button>
                       <ul class="dropdown-menu " aria-labelledby="dropdownMenu2">
-                        <li><button class="dropdown-item" type="button">Action</button></li>
+                        <li><button class="dropdown-item" type="button"><Link className="link" to={"/ProfileUser/" + user._id}>Edit Profile</Link></button></li>
                         <li><button class="dropdown-item" type="button"><Link className="link" to="/MemberShip">MemberShip</Link></button></li>
-                        <li><button class="dropdown-item" type="button"><Link className="link" to="/Setting">Setting</Link></button></li>
                         <Link to="" className="link ms-3" onClick={LogoutHandle}>Logout</Link>
                       </ul>
                     </div>
@@ -112,8 +117,8 @@ export default function Header({messages}) {
               </div>
             </div>
           </nav>
-        </div>
-      </div> :
+        </div >
+      </div > :
         <div className="container">
           <nav className="navbar navbar-expand-lg navbar-light">
             <div className="container-fluid p-0">
@@ -190,6 +195,6 @@ export default function Header({messages}) {
           </nav>
         </div>
       }
-    </div>
+    </div >
   );
 }

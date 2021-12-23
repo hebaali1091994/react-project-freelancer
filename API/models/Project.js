@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const User = require("./User");
 const ProjectSchema = mongoose.Schema(
   {
-    skills:{type:Array},
+    skills: { type: Array },
     ChooseName: { type: String, minLength: 10 },
     userid: { type: String },
     Tellus: { type: String },

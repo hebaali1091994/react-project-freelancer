@@ -32,7 +32,7 @@ const DetailsData = () => {
         }
         getProject();
     }, [path]);
-    console.log(Project)
+    console.log(Project.skills)
 
     return (
         <div>
@@ -85,7 +85,7 @@ const DetailsData = () => {
 
                                                                 </p>
                                                                 <h5>Skills Required</h5>
-
+                                                                {Project.skills}
                                                                 {/* {Project.skills ? Project.skills.map((c) => (
                                                                     { c }
 

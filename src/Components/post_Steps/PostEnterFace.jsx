@@ -19,7 +19,7 @@ const PostEnterFace = () => {
     ChooseName: "",
     Tellus: "",
     uploadimg: "",
-    skills:"",
+    skills: "",
     postproject: "",
     pay: "",
     budget: "",
@@ -41,7 +41,7 @@ const PostEnterFace = () => {
     state: "",
     PRIVATE: "",
     StepFiveLongContest: "",
-    state: "",
+    state: "Pending",
   });
   const [formStep, setFormStep] = React.useState(0);
   const completeFormstep = () => {

@@ -46,7 +46,8 @@ const ContractSingle = ({ DataOfProject }) => {
                 </div>
             </div>
             <div className="col-md-6 border-left ms-5">
-                <h4 className="text-left">  {DataOfProject.ChooseName}</h4>                <p>
+                <h4 className="text-left ">  {DataOfProject.ChooseName}</h4>
+                <p className="description-title">
                     {DataOfProject.Tellus}
                 </p>
             </div>

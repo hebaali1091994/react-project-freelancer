@@ -19,6 +19,7 @@ const Contract = () => {
     const [UserFreelancer, setUserFreelancer] = useState({})
 
     const [DataOfProject, setDataOfProject] = useState({})
+    const [EditProject, setEditProject] = useState({})
 
     useEffect(() => {
         const getDataProject = async () => {
@@ -34,9 +35,28 @@ const Contract = () => {
 
         getDataProject()
     }, [path]);
-    console.log(DataOfProject);
 
     console.log(DataOfProject);
+    console.log(EditProject);
+
+
+    const HandleEndContract = () => {
+
+        const ChangeState = {
+            state: "Paid"
+        }
+        const getDataProject = async () => {
+            await axios.put(`/Project/${path}`, ChangeState, {
+                headers: {
+                    token: user.accesToken
+                }
+            });
+        }
+        getDataProject()
+        window.location.replace('/paypal');
+
+
+    }
 
     return (
         <div className="Contract">
@@ -50,21 +70,18 @@ const Contract = () => {
                         <li class="nav-item" role="presentation">
                             <button class="nav-link active" id="pills-Contract-tab" data-bs-toggle="pill" data-bs-target="#pills-Contract" type="button" role="tab" aria-controls="pills-Contract" aria-selected="true">Contract</button>
                         </li>
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="pills-Files-tab" data-bs-toggle="pill" data-bs-target="#pills-Files" type="button" role="tab" aria-controls="pills-Files" aria-selected="false">Messages & Files</button>
-                        </li>
+
 
                         <li class="nav-item" role="presentation">
                             <button class="nav-link" id="pills-Feedback-tab" data-bs-toggle="pill" data-bs-target="#pills-Feedback" type="button" role="tab" aria-controls="pills-Feedback" aria-selected="false">Feedback </button>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <Link class="nav-link" id="pills-Feedback-tab" data-bs-toggle="pill" data-bs-target="#pills-Feedback" to="" role="tab" aria-controls="pills-Feedback" aria-selected="false">End Contract </Link>
+                            <button onClick={HandleEndContract} class="nav-link">End Contract </button>
                         </li>
                     </ul>
                     <div class="tab-content" id="pills-tabContent">
                         <div className="container">
                             <div class="tab-pane fade show active" id="pills-Contract" role="tabpanel" aria-labelledby="pills-Contract-tab"><ContractSingle DataOfProject={DataOfProject} /></div>
-                            <div class="tab-pane fade" id="pills-Files" role="tabpanel" aria-labelledby="pills-Files-tab">Home1 </div>
 
                             <div class="tab-pane fade" id="pills-Feedback" role="tabpanel" aria-labelledby="pills-Feedback-tab"><Fredback DataOfProject={DataOfProject} /></div>
                         </div>

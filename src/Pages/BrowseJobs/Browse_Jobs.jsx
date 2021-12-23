@@ -131,7 +131,4 @@ const Browse_Jobs = () => {
 };
 
 export default Browse_Jobs;
-<<<<<<< HEAD
-=======
- 
->>>>>>> d0db7b4dd4096d725795ddcb6f4b6afff5a97cac
+
