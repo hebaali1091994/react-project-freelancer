@@ -81,7 +81,7 @@ export default function Header() {
         </NotificationsOutlined>
         <div  className="counter">2</div>
         </div>
-        <ChatBubbleOutlineOutlined ></ChatBubbleOutlineOutlined>
+      <Link to="/Massenger"> <ChatBubbleOutlineOutlined ></ChatBubbleOutlineOutlined></Link>
         <span className="px-1">1</span>
         <Link className="link btn postproject m-1" to="/Post-project/" > Post a Project </Link>
         <div class="dropdown ">
