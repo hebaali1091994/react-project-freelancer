@@ -15,3 +15,8 @@
 .MyAccounStyle{
     padding-top: 22%;
 }
+.Topcontainer{
+    overflow: hidden;
+    min-height: 1500px;
+    padding: 0;
+}

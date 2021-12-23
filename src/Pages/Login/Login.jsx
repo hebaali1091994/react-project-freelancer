@@ -63,11 +63,11 @@ const Login = () => {
             </div>
           </div>
           <div className="card submit " >
-            <button type="submit" className="btn btn-lg btn-block loginButton" disabled={isFetching}  >
+            <button type="submit" className="btn btn-lg btn-block loginButton"  >
               Log In</button>
 
           </div>
-          <small className='text-danger'>{isFetching ? "Sorry Your Data Is Wrong" : null}</small>
+
           <hr />
           <div className="p">
             <p>Don't have an account? <a href="index.html">Sign Up</a></p>

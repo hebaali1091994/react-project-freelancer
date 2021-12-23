@@ -61,31 +61,21 @@ const SingleProposer = ({ f, Freelancer }) => {
     const HandleHire = async (e) => {
         e.preventDefault()
         try {
-            const res = await axios.post(`/Project/apply/${path}`, {
-                ContractName: user.ChooseName,
-                description: user.Tellus,
-                budget: f.BidAmount,
+            const res = await axios.put(`/Project/${path}`, {
                 freelanceId: f.freelanceid,
-                cilentId: user._id,
-                projectId: DataOfProject._id,
                 feedbackfreelancer: "No Feedback Received",
                 feedbackcilent: "No Feedback Received",
                 reviewfreelancer: "No Review Received",
                 reviewclient: "No Review Received",
-                state: "Hired"
+                NewBudget: f.BidAmount,
+                Newdate: Date,
+                state: "Hired",
             }, {
                 headers: {
                     token: user.accesToken
                 }
             });
 
-            const getDataContract = async () => {
-                const getContract = await axios.get("/contract/oneproject/", {
-                    projectId: path
-                }
-                )
-            }
-            getDataContract();
 
             res.data && window.location.replace(`/Contract/${path}`);
         } catch (error) {

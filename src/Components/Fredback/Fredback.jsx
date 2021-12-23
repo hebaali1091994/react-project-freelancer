@@ -2,7 +2,7 @@
 import { containerClasses } from "@mui/material"
 import "./Fredback.css"
 
-const Fredback = () => {
+const Fredback = ({ DataOfProject }) => {
     return (
         <div className="Fredback">
             <div className="container">
@@ -11,13 +11,13 @@ const Fredback = () => {
                         <h3>Client's Feedback to You
                         </h3>
                         <p>
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus adipisci expedita, ratione voluptatum iure, commodi, quas doloremque odio illum nostrum quasi? Quibusdam necessitatibus minus eius accusamus est tenetur illo deleniti?</p>
+                            {DataOfProject.reviewclient}</p>
                     </div>
                     <div className="col-md-6">
                         <h3>Your Feedback to Client
                         </h3>
                         <p>
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus adipisci expedita, ratione voluptatum iure, commodi, quas doloremque odio illum nostrum quasi? Quibusdam necessitatibus minus eius accusamus est tenetur illo deleniti?</p>
+                            {DataOfProject.reviewfreelancer}</p>
                     </div>
                 </div>
             </div>

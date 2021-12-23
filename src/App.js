@@ -94,6 +94,8 @@ function App() {
           <Route path='/Contactus' element={user ? <Contactus /> : <Navigate to="/Login" />} />
           <Route path='/Enterprise' element={user ? <Enterprise /> : <Navigate to="/Login" />} />
           <Route path='/Documentation' element={user ? <Documentation /> : <Navigate to="/Login" />} />
+          <Route path='/ProfileUser/:id' element={user ? <MyProfile /> : <Navigate to="/Login" />} />
+          <Route path='/Browse_Jobs' element={user ? <Browse_Jobs /> : <Navigate to="/Login" />} />
           <Route path='**' element={<NoFoundpage />} />
 
 

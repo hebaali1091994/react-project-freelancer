@@ -27,12 +27,8 @@ const ProjectSchema = mongoose.Schema(
 
       }
     ],
-    ContractName: { type: String },
-    description: { type: String },
-    budget: { type: String, default: null },
+
     freelanceId: { type: String },
-    cilentId: { type: String },
-    projectId: { type: String },
     feedbackfreelancer: { type: String },
     feedbackcilent: { type: String },
     reviewfreelancer: { type: String },
@@ -55,6 +51,9 @@ const ProjectSchema = mongoose.Schema(
     NDA: { type: String, default: null },
     PRIVATE: { type: String, default: null },
     StepFiveLongContest: { type: String, default: null },
+    NewBudget: { type: String, default: null },
+    Newdate: { type: Date },
+
   },
   { timestamps: true }
 );

@@ -22,16 +22,18 @@ const SingleProject = ({ project }) => {
                             <p className='postDesc'>{project.Tellus}</p>
                             <div class="card-text rating-person link ">
                                 <div class="row">
-                                    <div class="fix-price col-md-4"><i class="fas fa-tv link"></i> {project.pay}</div>
-                                    <div class="fix-price col-md-4"><i class="fas fa-building link"></i>{project.postproject}</div>
-                                    <div class="col-md-4">
-                                        <i class="fas fa-user"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></div>
+                                    <div class="fix-price col-md-6"><i class="fas fa-tv link"></i> {project.pay}</div>
+                                    <div class="fix-price col-md-6"><i class="fas fa-building link">{ }</i>{project.type_of_project}</div>
+
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-1"></div>
-                        <div class="col-md-3">
-                            <h4>{project.Minimum_Per_hour} - {project.Maximum_Per_hour} {project.step_Four_Currency_code}</h4>
+                        <div class="col-md-3 d-flex justify-content-center align-items-center flex-column">
+                            <h6>  {project.Minimum_Per_hour === null & project.Maximum_Per_hour === null & project.Maximum_fix_price === null & project.Minimum_fix_price === null ? "SORRY No Price Added" : ""}</h6>
+                            <h4>
+
+                                {project.Minimum_Per_hour && project.Minimum_Per_hour + " - "} {project.Maximum_Per_hour && project.Maximum_Per_hour + " - "} {project.Minimum_fix_price && project.Minimum_fix_price + " - "}{project.Maximum_fix_price && project.Maximum_fix_price}{project.step_Four_Currency_code && project.step_Four_Currency_code}</h4>
                             <p class="text-center postDate">{new Date(project.createdAt).toDateString()} </p>
 
 

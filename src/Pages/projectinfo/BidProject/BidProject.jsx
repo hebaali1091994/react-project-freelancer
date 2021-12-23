@@ -9,6 +9,7 @@ const BidProject = () => {
     const { user } = useContext(Context);
     const [submitWork, setSubmitWork] = useState(false);
     const [getProject, setgetProject] = useState({});
+    const [getFreelancerSendOffer, setgetFreelancerSendOffer] = useState({});
     const [Userdata, setUserdata] = useState({});
     const bidamount = useRef("");
     const NumberOfDay = useRef();
@@ -38,7 +39,7 @@ const BidProject = () => {
         setUserdata(userdata.data)
     }
     // getUserData()
-    // console.log(Userdata)
+
 
 
 
@@ -61,11 +62,8 @@ const BidProject = () => {
         } catch (error) {
         }
     }
-
-
     return (
         < div className="BidProject bg-white" >
-
             {user._id === getProject.userid ?
                 <div className="text-center border p-5 rounder">You Can't Make Bid Because Your Master For This Job</div> :
                 <div className="container">
@@ -115,32 +113,7 @@ const BidProject = () => {
                             ></textarea>
                             <div class="valid-tooltip">
                             </div>
-                            {/* <h6>Suggest a milestone payment</h6> */}
-                            {/* <p>Define the tasks that you will complete for this</p> */}
-                            {/* <div className="row">
-                                <div className="col-6">
-                                    <div className="border d-flex flex-row">
-                                        <input
-                                            type="text"
-                                            placeholder="Project milestone"
-                                            className="form-control"
-                                            ref={Projectmilestone}
-                                        />
-                                    </div>
-                                </div>
-                                <div className="col-6">
 
-                                    <div class="input-group mb-3">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text">$</span>
-                                        </div>
-                                        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" ref={AmountMileStone} />
-                                        <div class="input-group-append">
-                                            <span class="input-group-text">.00</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> */}
                         </div>
                         <button
                             type="submit"

@@ -34,8 +34,9 @@ const UserSchema = mongoose.Schema({
   noti: [
     notification
   ],
-  bids: { type: Number, default: 100 }
-});
+  bids: { type: Number, default: 100 },
+  Country: { type: String }
+}, { timestamps: true });
 
 
 module.exports = mongoose.model("users", UserSchema);

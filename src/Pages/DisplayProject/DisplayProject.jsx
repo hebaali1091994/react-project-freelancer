@@ -16,6 +16,7 @@ const DisplayProject = () => {
   const history = useParams();
   const { user } = useContext(Context);
   const [users, setUser] = useState([]);
+  const [userData, setUserData] = useState([]);
   const [project, setProject] = useState([]);
   const [ProjectName, setProjectName] = useState("");
   // Search
@@ -39,15 +40,29 @@ const DisplayProject = () => {
   //Filter
   const [min_value, setMinValue] = useState();
   const [max_value, setMaxValue] = useState();
-  const [typeProject,settypeProject]=useState([])
+  const [typeProject, settypeProject] = useState([])
 
-useEffect(()=>{
-const fetchData=async()=>{
-const res =await axios.get("http://localhost:5000/Project/hour");
-settypeProject(res,typeProject)
-}
+  useEffect(() => {
+    const fetchData = async () => {
+      const res = await axios.get("http://localhost:5000/Project/hour");
+      settypeProject(res, typeProject)
+      setUser(res.data)
+    }
 
-},[])
+  }, [])
+
+
+  useEffect(() => {
+    const fetchUsers = async () => {
+      const res = await axios.get("/users/all");
+      setUserData(res.data)
+    }
+    fetchUsers()
+  }, [])
+
+
+
+  console.log(userData);
 
 
 
@@ -393,8 +408,9 @@ settypeProject(res,typeProject)
                     Top results
                     <span>Showing 1-20 of 1989256 results</span>
                   </div>
-                  {users.map((users) => (
+                  {userData.map((users) => (
                     <SingleFreelancer users={users} />
+
                   ))}
                 </div>
               </div>
@@ -435,8 +451,8 @@ settypeProject(res,typeProject)
                         type="checkbox"
                         value=""
                         id="flexCheckDefault"
-                        onChange={(e)=>{
-                          
+                        onChange={(e) => {
+
                         }}
                       />
                       <label
