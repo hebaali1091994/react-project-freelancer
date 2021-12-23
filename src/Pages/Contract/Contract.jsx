@@ -18,35 +18,25 @@ const Contract = () => {
     const [FreelancerData, setFreelancerData] = useState({})
     const [UserFreelancer, setUserFreelancer] = useState({})
 
+    const [DataOfProject, setDataOfProject] = useState({})
 
-    // useEffect(() => {
-    //     const getDataContract = async () => {
-    //         const getContract = await axios.get("/contract/projectId", {
-    //             projectId: path
-    //         })
-    //         setFreelancerData(getContract);
-    //     }
-    //     getDataContract();
-    // }, [path])
-    // useEffect(() => {
-    //     const getDataContract = async () => {
-    //         const getContract = await axios.get("/contract/freelancer", {
-    //             freelancer: user._id
-    //         }
-    //         )
-    //         setUserFreelancer(getContract);
-    //     }
-    //     getDataContract();
-    // }, [path])
     useEffect(() => {
-        axios.get("/contract/projectId", {
-            projectId: path
-        }).then((response) => {
-            setUserFreelancer(response);
-        });
+        const getDataProject = async () => {
+            const userdata = await axios.get(`/Project/oneproject/${path}`, {
+                headers: {
+                    token: user.accesToken
+                }
+            });
+            setDataOfProject(userdata.data)
+        }
 
-    }, []);
-    console.log(UserFreelancer);
+
+
+        getDataProject()
+    }, [path]);
+    console.log(DataOfProject);
+
+    console.log(DataOfProject);
 
     return (
         <div className="Contract">
@@ -73,10 +63,10 @@ const Contract = () => {
                     </ul>
                     <div class="tab-content" id="pills-tabContent">
                         <div className="container">
-                            <div class="tab-pane fade show active" id="pills-Contract" role="tabpanel" aria-labelledby="pills-Contract-tab"><ContractSingle /></div>
+                            <div class="tab-pane fade show active" id="pills-Contract" role="tabpanel" aria-labelledby="pills-Contract-tab"><ContractSingle DataOfProject={DataOfProject} /></div>
                             <div class="tab-pane fade" id="pills-Files" role="tabpanel" aria-labelledby="pills-Files-tab">Home1 </div>
 
-                            <div class="tab-pane fade" id="pills-Feedback" role="tabpanel" aria-labelledby="pills-Feedback-tab"><Fredback /></div>
+                            <div class="tab-pane fade" id="pills-Feedback" role="tabpanel" aria-labelledby="pills-Feedback-tab"><Fredback DataOfProject={DataOfProject} /></div>
                         </div>
                     </div>
                 </div>

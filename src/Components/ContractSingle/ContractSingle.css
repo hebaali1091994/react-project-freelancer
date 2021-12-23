@@ -2,3 +2,6 @@
     display: flex;
     justify-content: flex-start;
 }
+.icon-delete{
+    list-style: none;
+}

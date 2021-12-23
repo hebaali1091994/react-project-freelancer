@@ -34,6 +34,7 @@ router.post("/create/:id", verifyToken, async (req, res) => {
     state: req.body.state,
     PRIVATE: req.body.PRIVATE,
     StepFiveLongContest: req.body.StepFiveLongContest,
+
   });
   try {
     const saveproject = await newproject.save();
@@ -71,17 +72,10 @@ router.post("/apply/:id", verifyToken, async (req, res) => {
         { $push: { freelances: porposal, millstobepayment: mileStone } },
         { new: true }
       )
-    const updatedProject = await Project.findByIdAndUpdate(
-      req.params.id,
-      {
-        $set: req.body,
-      },
 
-      { new: true }
-    );
 
     const newporposal = await applayProject.save();
-    res.status(200).json({ newporposal, updatedProject });
+    res.status(200).json(newporposal);
 
   } catch (err) {
     res.status(401).json(err);
@@ -96,7 +90,7 @@ router.post("/apply/:id", verifyToken, async (req, res) => {
 
 //update project
 
-router.put("/:id", async (req, res) => {
+router.put("/:id", verifyTokenAndAuthorization, async (req, res) => {
   try {
     const updatedProject = await Project.findByIdAndUpdate(
       req.params.id,

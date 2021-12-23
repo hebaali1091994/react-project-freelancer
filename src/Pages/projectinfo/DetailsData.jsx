@@ -35,14 +35,17 @@ const DetailsData = () => {
     return (
         <div>
             <div className="parent DetailsData ">
-                <div className="bg-data pb-5">
+                <div className="bg-data pb-5 min-height-page">
                     <Nav2 />
                     <div className="container">
                         {Project.state === "Pending" ?
                             <div class="wrap">
                                 <div className="row">
-                                    <div className="col-md-9">
-                                        <div class="text">Please Wait For Accepted</div>
+                                    <h3>Please Wait For Accept Your Job</h3>
+                                    <div className="col-md-12 ">
+                                        <div className="details-loader-margin">
+                                            <div class="loader"></div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -61,7 +64,9 @@ const DetailsData = () => {
                                                     <div className=" d-flex justify-content-between deailtsProejct ">
                                                         <h5 className="ProjectTitle">Project Details</h5>
                                                         <div className="ProjectTime pe-3">
-                                                            <h6>{Project.Minimum_Per_hour} - {Project.Maximum_Per_hour} {Project.step_Four_Currency_code}</h6>
+                                                            <h4>
+
+                                                                {Project.Minimum_Per_hour && Project.Minimum_Per_hour + " - "} {Project.Maximum_Per_hour && Project.Maximum_Per_hour + " - "} {Project.Minimum_fix_price && Project.Minimum_fix_price + " - "}{Project.Maximum_fix_price && Project.Maximum_fix_price}{Project.step_Four_Currency_code && Project.step_Four_Currency_code}</h4>
                                                             <span style={{ fontSize: '12px', fontWeight: '600' }}>
                                                                 {new Date(Project.createdAt).toDateString()}
                                                             </span>

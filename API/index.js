@@ -63,7 +63,6 @@ const storage = multer.diskStorage({
     cb(null, file.originalname);
   },
 });
-// MONGO_URL = mongoose.connect("mongodb+srv://freelance:12345@freelance.mhgq8.mongodb.net/freelance?retryWrites=true&w=majority")"
 
 const upload = multer({ storage: storage });
 app.post("/api/upload", upload.single("file"), (req, res) => {

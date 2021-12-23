@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .DisplayProject .container-fluid{
     padding: 0;
     margin: 0;
@@ -65,3 +66,12 @@
   .DisplayProject .Nav {
       display: none !important;
   }
+=======
+.rowse_Jobs .Nav{
+    display: none;
+}
+.rowse_Jobs .container-fluid{
+    padding: 0;
+    margin: 0;
+}
+>>>>>>> 97d360bd5e85166cf0f039dd08d19bfeeab627bc
