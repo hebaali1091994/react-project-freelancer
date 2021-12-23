@@ -76,117 +76,39 @@ function App() {
             element={user ? <Postproject /> : <Navigate to="/Login" />}
           />
           <Route path="/SignUp" element={<SignUp />} />
-          <Route
-            path="/paypal"
-            element={user ? <Paypal /> : <Navigate to="/Login" />}
-          />
-          <Route path="/" element={<Dashbaord />} />
-          <Route
-            path="/Massenger"
-            element={user ? <Massenger /> : <Navigate to="/Login" />}
-          />
-          <Route path="/Mylist" element={<Mylist />} />
-          <Route
-            path="/Feedback"
-            element={user ? <Feedback /> : <Navigate to="/Login" />}
-          />
-          <Route
-            path="/Projects"
-            element={user ? <Project_Contests /> : <Navigate to="/Login" />}
-          />
-          <Route
-            path="/MemberShip"
-            element={user ? <MemberShip /> : <Navigate to="/Login" />}
-          />
-          <Route
-            path="/howwork"
-            element={user ? <HowitWork /> : <Navigate to="/Login" />}
-          />
-          <Route
-            path="/inbox"
-            element={user ? <Inbox /> : <Navigate to="/Login" />}
-          />
-          <Route
-            path="/DisplayPost"
-            element={user ? <DisplayProject /> : <Navigate to="/Login" />}
-          />
-          <Route
-            path="/"
-            element={
-              user ? <Dashbaord /> : <Route path="/Login" element={<Login />} />
-            }
-          />
-          <Route
-            path="/DisplayProject"
-            element={user ? <DisplayProject /> : <Navigate to="/Login" />}
-          />
-          <Route
-            path="/DisplayProject/Proposals/:id"
-            element={user ? <Proposals /> : <Navigate to="/Login" />}
-          />
-          <Route
-            path="/DisplayProject/Tasks/:id"
-            element={user ? <Tasks /> : <Navigate to="/Login" />}
-          />
-          <Route
-            path="/DisplayProject/Details/:id"
-            element={user ? <DetailsData /> : <Navigate to="/Login" />}
-          />
-          <Route
-            path="/DisplayProject/Files/:id"
-            element={user ? <Files /> : <Navigate to="/Login" />}
-          />
-          <Route
-            path="/Skills"
-            element={user ? <Skills /> : <Navigate to="/Login" />}
-          />
-          <Route
-            path="/Contract/:id"
-            element={user ? <Contract /> : <Navigate to="/Login" />}
-          />
-          <Route
-            path="/DisplayProject"
-            element={user ? <DisplayProject /> : <Navigate to="/Login" />}
-          />
-          <Route
-            path="/DisplayProject/Proposals/:id"
-            element={user ? <Proposals /> : <Navigate to="/Login" />}
-          />
-          <Route
-            path="/DisplayProject/Tasks/:id"
-            element={user ? <Tasks /> : <Navigate to="/Login" />}
-          />
-          <Route
-            path="/DisplayProject/Details/:id"
-            element={user ? <DetailsData /> : <Navigate to="/Login" />}
-          />
-          <Route
-            path="/DisplayProject/Files/:id"
-            element={user ? <Files /> : <Navigate to="/Login" />}
-          />
-          <Route
-            path="/Contactus"
-            element={user ? <Contactus /> : <Navigate to="/Login" />}
-          />
-          <Route
-            path="/Enterprise"
-            element={user ? <Enterprise /> : <Navigate to="/Login" />}
-          />
-          <Route
-            path="/Documentation"
-            element={user ? <Documentation /> : <Navigate to="/Login" />}
-          />
-          <Route
-            path="/ProfileUser/:id"
-            element={user ? <MyProfile /> : <Navigate to="/Login" />}
-          />
-          <Route
-            path="/Browse_Jobs"
-            element={user ? <Browse_Jobs /> : <Navigate to="/Login" />}
-          />
-          <Route path="**" element={<NoFoundpage />} />
+          <Route path='/paypal' element={user ? <Paypal /> : <Navigate to="/Login" />} />
+          <Route path='/' element={<Dashbaord />} />
+          <Route path='/Massenger' element={user ? <Massenger /> : <Navigate to="/Login" />} />
 
-          <Route path="**" element={<NoFoundpage />} />
+          <Route path='/Feedback' element={user ? <Feedback /> : <Navigate to="/Login" />} />
+          <Route path='/Projects' element={user ? <Project_Contests /> : <Navigate to="/Login" />} />
+          <Route path='/MemberShip' element={user ? <MemberShip /> : <Navigate to="/Login" />} />
+          <Route path='/howwork' element={user ? <HowitWork /> : <Navigate to="/Login" />} />
+          <Route path='/inbox' element={user ? <Inbox /> : <Navigate to="/Login" />} />
+          <Route path='/DisplayPost' element={user ? <DisplayProject /> : <Navigate to="/Login" />} />
+          <Route path='/' element={user ? <Dashbaord /> : <Route path="/Login" element={<Login />} />} />
+          <Route path='/DisplayProject' element={user ? <DisplayProject /> : <Navigate to="/Login" />} />
+          <Route path='/DisplayProject/Proposals/:id' element={user ? <Proposals /> : <Navigate to="/Login" />} />
+          <Route path='/DisplayProject/Tasks/:id' element={user ? <Tasks /> : <Navigate to="/Login" />} />
+          <Route path='/DisplayProject/Details/:id' element={user ? <DetailsData /> : <Navigate to="/Login" />} />
+          <Route path='/DisplayProject/Files/:id' element={user ? <Files /> : <Navigate to="/Login" />} />
+          <Route path='/Skills' element={user ? <Skills /> : <Navigate to="/Login" />} />
+          <Route path='/Contract/:id' element={user ? <Contract /> : <Navigate to="/Login" />} />
+          <Route path='/DisplayProject' element={user ? <DisplayProject /> : <Navigate to="/Login" />} />
+          <Route path='/DisplayProject/Proposals/:id' element={user ? <Proposals /> : <Navigate to="/Login" />} />
+          <Route path='/DisplayProject/Tasks/:id' element={user ? <Tasks /> : <Navigate to="/Login" />} />
+          <Route path='/DisplayProject/Details/:id' element={user ? <DetailsData /> : <Navigate to="/Login" />} />
+          <Route path='/DisplayProject/Files/:id' element={user ? <Files /> : <Navigate to="/Login" />} />
+          <Route path='/Contactus' element={user ? <Contactus /> : <Navigate to="/Login" />} />
+          <Route path='/Enterprise' element={user ? <Enterprise /> : <Navigate to="/Login" />} />
+          <Route path='/Documentation' element={user ? <Documentation /> : <Navigate to="/Login" />} />
+          <Route path='/ProfileUser/:id' element={user ? <MyProfile /> : <Navigate to="/Login" />} />
+          <Route path='/Browse_Jobs' element={user ? <Browse_Jobs /> : <Navigate to="/Login" />} />
+          <Route path='**' element={<NoFoundpage />} />
+
+
+          <Route path='**' element={<NoFoundpage />} />
+          
         </Routes>
       </Suspense>
     </div>

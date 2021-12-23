@@ -8,11 +8,12 @@ const router = require("express").Router();
 
 //create new project
 // Must Send User Id
-router.post("/create/:id", verifyToken, async (req, res) => {
+router.post("/create/:id", async (req, res) => {
   const newproject = await new Project({
     userid: req.params.id,
     ChooseName: req.body.ChooseName,
     Tellus: req.body.Tellus,
+    skills:req.body.skills,
     uploadimg: req.body.uploadimg,
     pay: req.body.pay,
     budget: req.body.budget,
@@ -81,11 +82,6 @@ router.post("/apply/:id", verifyToken, async (req, res) => {
     res.status(401).json(err);
   }
 
-
-
-
-
-
 })
 
 //update project
@@ -116,11 +112,29 @@ router.get("/all", async (req, res) => {
   }
 });
 
+router.get("/allopened", async (req, res) => {
+  try {
+    const allproject = await Project.find({ state: "opened" });
+    res.status(200).json(allproject);
+  } catch (error) {
+    res.status(401).json(error);
+  }
+});
+
+
 //one project
 
 router.get("/oneproject/:id", verifyTokenAndAuthorization, async (req, res) => {
   try {
     const oneproject = await Project.findById(req.params.id);
+    res.status(200).json(oneproject);
+  } catch (error) {
+    res.status(401).json(error);
+  }
+});
+router.get("/oneproject/", async (req, res) => {
+  try {
+    const oneproject = await Project.find({ freelanceId: req.body.freelanceId });
     res.status(200).json(oneproject);
   } catch (error) {
     res.status(401).json(error);

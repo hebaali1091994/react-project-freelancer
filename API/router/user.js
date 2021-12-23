@@ -41,7 +41,7 @@ router.delete('/:id', verifyTokenAndAuthorization, async (req, res) => {
   }
 })
 //get one user
-router.get('/one/:id', verifyTokenAndAuthorization, async (req, res) => {
+router.get('/one/:id', async (req, res) => {
   try {
     const Admin = await User.findById(req.params.id);
 
@@ -58,15 +58,15 @@ router.post("/addSkills/:id", verifyToken, async (req, res) => {
   try {
     const skill =
     {
-      img:req.body.img,
-      first:req.body.first,
+      img: req.body.img,
+      first: req.body.first,
       Last: req.body.Last,
-      description:req.body.description,
+      description: req.body.description,
       DescribeU: req.body.DescribeU,
       DataS: req.body.DataS,
       birht: new Date(),
       Address: req.body.Address
-  
+
 
     }
 

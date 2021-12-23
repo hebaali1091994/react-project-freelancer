@@ -25,7 +25,7 @@ const Login = () => {
       res.data && window.location.replace('/');
 
     } catch (error) {
-      dispatch({ type: "LOGIN_FAILURE" })
+      dispatch({ type: "LOGIN_FAILURE" ,type:"error"})
     }
   }
   console.log(user);
@@ -59,15 +59,15 @@ const Login = () => {
                 <label id=" rem" className="  form-check-label" htmlFor="flexCheckDefault">Remember me</label>
               </div >
 
-              <a id="pass" href="#"> Forgot Password?</a>
+            
             </div>
           </div>
           <div className="card submit " >
-            <button type="submit" className="btn btn-lg btn-block loginButton"  >
+            <button type="submit" className="btn btn-lg btn-block loginButton" disabled={isFetching} >
               Log In</button>
 
           </div>
-
+<small>{isFetching && "your Email  is not  exist "}</small>
           <hr />
           <div className="p">
             <p>Don't have an account? <a href="index.html">Sign Up</a></p>

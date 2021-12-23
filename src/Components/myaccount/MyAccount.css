@@ -1,3 +1,6 @@
 .RightContainer{
     height: 50vh;
 }
+.descriptionEdittext{
+    min-width: 500px;
+}

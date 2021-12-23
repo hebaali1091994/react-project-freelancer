@@ -39,15 +39,15 @@ const Browse_Jobs = () => {
   //Filter
   const [min_value, setMinValue] = useState();
   const [max_value, setMaxValue] = useState();
-  const [typeProject,settypeProject]=useState([])
+  const [typeProject, settypeProject] = useState([])
 
-useEffect(()=>{
-const fetchData=async()=>{
-const res =await axios.get("http://localhost:5000/Project/hour");
-settypeProject(res,typeProject)
-}
+  useEffect(() => {
+    const fetchData = async () => {
+      const res = await axios.get("http://localhost:5000/Project/hour");
+      settypeProject(res, typeProject)
+    }
 
-},[])
+  }, [])
 
 
 
@@ -131,4 +131,5 @@ settypeProject(res,typeProject)
 };
 
 export default Browse_Jobs;
- 
+
+

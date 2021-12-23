@@ -32,21 +32,24 @@ const UserSchema = mongoose.Schema({
   projectid: [{ type: mongoose.Schema.Types.ObjectId }],
   skills: [
     {
-      img:{type:String},
-    first:{type:String},
-    Last: {type:String},
-    description:{type:String},
-    DescribeU: {type:String},
-    DataS: {type:String},
-    birht: {type:Date},
-    Address: {type:String}
+      img: { type: String },
+      first: { type: String },
+      Last: { type: String },
+      description: { type: String },
+      DescribeU: { type: String },
+      DataS: { type: String },
+      birht: { type: Date },
+      Address: { type: String }
 
     }],
   noti: [
     notification
   ],
   bids: { type: Number, default: 100 },
-  Country: { type: String }
+  Country: { type: String },
+  img: {
+    type: String
+  }
 }, { timestamps: true });
 
 

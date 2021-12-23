@@ -41,7 +41,7 @@ export default function Header() {
                   <Link to="/Projects" className="link" >{t("My Projects")} </Link>
                 </li>
                 <li className="nav-item">
-                  <Link to="/inbox" className="link" > {t("Inbox")}    </Link>
+                  <Link to="/Massenger" className="link" > {t("Inbox")}    </Link>
                 </li>
                 <li className="nav-item">
                   <Link to="/Feedback " className="link"> {t("Feedback")}     </Link>

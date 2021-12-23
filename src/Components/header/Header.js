@@ -9,7 +9,7 @@ import { useTranslation } from 'react-i18next';
 import { Link } from "react-router-dom";
 import { Context } from '../../context/Context';
 // import Home from '../Pages/Home';
-export default function Header() {
+export default function Header({messages}) {
   const { user, dispatch } = useContext(Context);
   const LogoutHandle = () => {
     dispatch({ type: "LOGOUT" })
@@ -82,7 +82,7 @@ export default function Header() {
                       <div className="counter">2</div>
                     </div>
                     <Link to="/Massenger"> <ChatBubbleOutlineOutlined ></ChatBubbleOutlineOutlined></Link>
-                    <span className="px-1">1</span>
+                    <span className="px-1">{messages?messages.length:""}</span>
                     <Link className="link btn postproject m-1" to="/Post-project/" > Post a Project </Link>
                     <div class="dropdown ">
                       <button class="btn dropdown-toggle d-flex" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
