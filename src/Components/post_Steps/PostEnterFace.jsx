@@ -19,6 +19,7 @@ const PostEnterFace = () => {
     ChooseName: "",
     Tellus: "",
     uploadimg: "",
+    skills:"",
     postproject: "",
     pay: "",
     budget: "",

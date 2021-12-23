@@ -8,11 +8,12 @@ const router = require("express").Router();
 
 //create new project
 // Must Send User Id
-router.post("/create/:id", verifyToken, async (req, res) => {
+router.post("/create/:id", async (req, res) => {
   const newproject = await new Project({
     userid: req.params.id,
     ChooseName: req.body.ChooseName,
     Tellus: req.body.Tellus,
+    skills:req.body.skills,
     uploadimg: req.body.uploadimg,
     pay: req.body.pay,
     budget: req.body.budget,
