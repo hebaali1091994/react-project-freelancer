@@ -7,6 +7,7 @@ import hire from "../../../src/public/hire.svg";
 import axios from "axios";
 import { Context } from "../../context/Context";
 import { useEffect } from "react";
+
 const SignUp = () => {
   const { user, dispatch, isFetching } = useContext(Context);
 
@@ -177,8 +178,7 @@ const SignUp = () => {
                         className="btn  btn-lg btn-block"
                         onClick={(e) => {
                           e.preventDefault()
-                          if (!eEmail) {
-
+                          if (!eEmail||null) {
                             completeFormstep();
                           }
                         }}
@@ -190,7 +190,7 @@ const SignUp = () => {
 
                     <div className="p">
                       <p>
-                        {eEmail ? "Email is already exist" : null}
+                      {eEmail ?  <p className="text-danger"> Email is already exist</p> : null}
                         <br />
                         Already have an account? <a href="/Login">Log in</a>
                       </p>
@@ -230,12 +230,13 @@ const SignUp = () => {
                         }}
                       />
                     </div>
-                    <p id="suggest">Suggestions:</p>
+                 
                     <div className=" submit ">
                       <button
                         type="submit"
                         className="btn  btn-lg btn-block"
-                        onClick={() => {
+                        onClick={(e) => {
+                          e.preventDefault()
                           if (!eUsername) {
                             completeFormstep()
                           }
@@ -243,15 +244,15 @@ const SignUp = () => {
 
                       >
 
-                        <a href="#">Next</a>
-                      </button>
-                      {eUsername && "username is already exist"}
-                    </div>
+                        Next
+                      </button></div>
+                      {eUsername ? <p className="text-danger">username is already exist</p>:null}
+                    
                   </section>
                 )}
 
                 {formStep == 2 && (
-                  <div className="container">
+                  <div className="container"> 
                     <section className="row">
                       <div className="coll-md-12">
                         <a href="username.html">

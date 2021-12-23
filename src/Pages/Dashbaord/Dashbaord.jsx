@@ -5,7 +5,7 @@ import './Dashbaord.css'
 import { Context } from '../../context/Context';
 import { useContext } from 'react';
 import Footer from '../../Components/Footer';
-
+import { Link } from "react-router-dom";
 
 export default function Dashbaord() {
 
@@ -139,15 +139,15 @@ export default function Dashbaord() {
                       get started.
                     </p>
                     <p className="lead font-weight-bold">5 days age</p>
-                    <button type="button" className="btn btn-outline-secondary mx-3">
+                    <Link to="Post-project" className="btn btn-outline-secondary mx-3">
                       Post a Project
-                    </button>
-                    <button type="button" className="btn btn-outline-secondary mx-3">
+                    </Link>
+                    <Link to="/DisplayProject"  className="btn btn-outline-secondary mx-3">
                       Browse Projects
-                    </button>
-                    <button type="button" className="btn btn-outline-secondary mx-3">
+                    </Link>
+                    <Link  to="/" className="btn btn-outline-secondary mx-3">
                       Set up account details
-                    </button>
+                    </Link>
                   </div>
                 </div>
               </div>
