@@ -1,9 +1,23 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import projectIcon from '../../../public/imgPostproject/projectIcon.svg';
 import Alert from '@mui/material/Alert';
 import Stack from '@mui/material/Stack';
 
 const StepsixOne = ({ Data, setData }) => {
+    // var x=Data.skills;
+    // console.log(Data.skills[1])
+    // useEffect(() => {
+    //     const add=()=>{
+    //         for(var i=0;i<=x.length;i++){
+    //             document.getElementById("v").innerHTML=`${Data.skills[i]}`
+    //             }
+         
+    //     }
+    // add()
+    // }, [Data.skills])
+    
+
+
     if(Data.pay==="Pay by the hour"){
         if(Data.type_of_project==="Standard project"){
             return (
@@ -21,6 +35,7 @@ const StepsixOne = ({ Data, setData }) => {
                          <p>{Data.ChooseName}</p>
                          <p>{Data.Tellus}</p>
                          <p>{Data.skills}</p>
+                         {/* <div id="v"></div> */}
                      </div>
                  </div>
                 </>

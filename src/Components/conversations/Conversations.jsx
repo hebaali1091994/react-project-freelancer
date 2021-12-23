@@ -10,7 +10,9 @@ const Conversations = ({conversation,currentUser}) => {
         const friendId = conversation.membars.find((m) => m !== currentUser._id);
         const getUser = async () => {
             try {
-            const  res = await axios("/users/one/"+friendId);
+            const  res = await axios("/users/one/"+friendId,{
+              
+            });
               console.log(res.data);
               setUser(res.data);
             } catch (err) {

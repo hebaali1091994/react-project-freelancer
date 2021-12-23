@@ -9,7 +9,7 @@ import { useTranslation } from 'react-i18next';
 import { Link } from "react-router-dom";
 import { Context } from '../../context/Context';
 // import Home from '../Pages/Home';
-export default function Header() {
+export default function Header({messages}) {
   const { user, dispatch } = useContext(Context);
   const LogoutHandle = () => {
     dispatch({ type: "LOGOUT" })
@@ -52,82 +52,8 @@ export default function Header() {
                 <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                   <li className="nav-item">
 
-<<<<<<< HEAD
                     <Link className='link ms-4' to="/DisplayProject">   <ExploreOutlined></ExploreOutlined> Browse </Link>
                   </li>
-=======
-        </NotificationsOutlined>
-        <div  className="counter">2</div>
-        </div>
-      <Link to="/Massenger"> <ChatBubbleOutlineOutlined ></ChatBubbleOutlineOutlined></Link>
-        <span className="px-1">1</span>
-        <Link className="link btn postproject m-1" to="/Post-project/" > Post a Project </Link>
-        <div class="dropdown ">
-  <button class="btn dropdown-toggle d-flex" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
-  <img
-        className="headerImg"
-        src="https://images.pexels.com/photos/1167355/pexels-photo-1167355.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-        alt=""
-      />
-      <div className="d-flex flex-column">
-      <small>{user.userName}</small>
-      <small>0.00 USD</small>
-      </div>
-  </button>
-  <ul class="dropdown-menu " aria-labelledby="dropdownMenu2">
-    <li><button class="dropdown-item" type="button">Action</button></li>
-    <li><button class="dropdown-item" type="button"><Link className="link" to="/MemberShip">MemberShip</Link></button></li>
-    <li><button class="dropdown-item" type="button"><Link className="link" to="/Setting">Setting</Link></button></li>
-    <Link  to="" className="link ms-3" onClick={LogoutHandle}>Logout</Link>
-  </ul>
-</div>
-        </ul>
-        </div>
-              
-             
-              
-            
-            </div>
-          </div>
-        </nav>
-      </div>
-         </div>:
-      <div className="container">
-        <nav className="navbar navbar-expand-lg navbar-light">
-          <div className="container-fluid p-0">
-            <Link to="/"><img src={Freelancerlogo} alt="" className="image-w" /></Link>
-            <button
-              className="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarSupportedContentheader"
-              aria-controls="navbarSupportedContentheader"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span className="navbar-toggler-icon"></span>
-            </button>
-            <div className="collapse navbar-collapse" id="navbarSupportedContentheader">
-              <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                <li className="nav-item">
-                  <Link className="nav-link text-dark" aria-current="page" to="">
-                    {" "}
-                  {t("How It Works")}{" "}
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link text-dark" to="">
-                    {" "}
-                    {t("Browse Jobs")}{" "}
-                  </Link>
-                </li>
-              </ul>
-              
-                <div className="row mb-2 mx-3">
-                  <select className="custom-select Pull-right" onChange={change} value={lang}>
-                    <option value="ar">عربي</option>
-                    <option value="en">English</option>
->>>>>>> 9edd97f0dedc008b298dd85dd6298771a60c303f
 
                   <li className="nav-item">
                     <Link className='link ms-4' to="/Browse_Jobs"> <PeopleOutlined></PeopleOutlined> Browse Jobs </Link>
@@ -155,8 +81,8 @@ export default function Header() {
                       </NotificationsOutlined>
                       <div className="counter">2</div>
                     </div>
-                    <ChatBubbleOutlineOutlined ></ChatBubbleOutlineOutlined>
-                    <span className="px-1"></span>
+                    <Link to="/Massenger"> <ChatBubbleOutlineOutlined ></ChatBubbleOutlineOutlined></Link>
+                    <span className="px-1">{messages?messages.length:""}</span>
                     <Link className="link btn postproject m-1" to="/Post-project/" > Post a Project </Link>
                     <div class="dropdown ">
                       <button class="btn dropdown-toggle d-flex" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">

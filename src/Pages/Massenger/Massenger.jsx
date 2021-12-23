@@ -71,7 +71,7 @@ const Massenger = () => {
     };
     getMessages();
   }, [currentChat]);
-  console.log(currentChat)
+  console.log(messages.length)
   // -------------------------------------------------------End get Messages ------------------------------------------------//
 
   const handleSubmit = async (e) => {
@@ -110,17 +110,12 @@ const Massenger = () => {
       {/* --------------------------------------------------------------------------------------------------------------------- */}
       <div className="messenger container-fluid">
         <div className="row">
-          <div className="massgNav col-md-12">
-            <Header />
+          <div className="massgNav col-md-12" style={{backgroundColor:"#ffffff"}}>
+            <Header messages={messages} />
             
           </div>
           {/* ---------------------------------------------------start-chatMenu------------------------------------------------------ */}
           <div className="chatMenu col-md-3 d-flex flex-column mt-3">
-            <input
-              placeholder="Search for friends"
-              className="chatMenuInput w-100 mb-5 form-control"
-            />
-
             {conversations.map((c) => (
               <div onClick={() => setCurrentChat(c)}>
                 <Conversations conversation={c} currentUser={user} />

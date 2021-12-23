@@ -1,7 +1,76 @@
-import React from 'react';
-import Form from 'react-bootstrap/Form'
+import  axios  from 'axios';
+import React,{useState,useEffect} from 'react';
+import Form from 'react-bootstrap/Form';
+import Select from 'react-select';
 export const Firstform = ({Data,setData,register}) => {  
-  
+// const [datta,setSkills] = useState([])
+//   useEffect(() => {
+//     const fetchSkills = async () => {
+//         const res = await axios.get("/Category/");
+//         setSkills(res.data)
+//     }
+//     fetchSkills();
+// }, []);
+// console.log(datta.categoryName);
+
+  const datta = [
+    {
+      value: 0,
+      label: " HTML5 "
+    },
+    {
+      value: 1,
+      label: " Sass "
+    },
+    {
+      value: 2,
+      label: " js "
+    },
+    {
+      value: 3,
+      label: " Angular "
+    },
+    {
+      value: 4,
+      label: " React "
+    },
+    {
+      value: 5,
+      label: " mongodb "
+    },
+    {
+      value: 6,
+      label: " Node.js "
+    },
+    {
+      value: 7,
+      label: " PHP "
+    },
+    {
+      value: 8,
+      label: " laravel "
+    },
+    {
+      value: 9,
+      label: " Wordpress "
+    },
+    {
+      value: 10,
+      label: " MYSQL "
+    },
+    {
+      value: 11,
+      label: " SQL "
+    }
+  ];
+
+  const [selectedValue, setSelectedValue] = useState([]);
+const handleChange=(e)=>{
+// const x=document.getElementById("v").value
+setSelectedValue(Array.isArray(e) ? e.map(x => x.label) : []);
+setData({ ...Data,skills: selectedValue });
+}
+console.log(selectedValue)
     return ( 
         <div>
         <form className="d-flex flex-column">
@@ -42,13 +111,20 @@ export const Firstform = ({Data,setData,register}) => {
     <p>Enter up to 5 skills that best describe your project. 
       Freelancers will use these skills to find projects they 
       are most<br/> interested and experienced in.</p>
-    <input type="text"
+    {/* <input type="text"
     className="form-control"
     style={{height:"50px"}}
     name="skills"
     value={Data.skills}
     onChange={(event)=>setData({...Data,skills:event.target.value})}
-    />
+    /> */}
+  <Select options={datta} 
+   name="skills"
+  value={datta.filter(obj => selectedValue.includes(obj.label))}
+  onChange={handleChange}
+  isMulti
+  isClearable
+  />
   </div>
      </form>
         </div>
